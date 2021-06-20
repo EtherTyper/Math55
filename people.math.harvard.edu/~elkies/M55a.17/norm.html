@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Math 55a: Norm basics</title>
+<!-- MathJax header Copyright (c) 2009-2017 The MathJax Consortium -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="../MathJax-2.7.1/MathJax.js"></script>
+
+<style>
+h1 {text-align:center}
+h2 {
+  font-weight: bold;
+  background-color: #DDDDDD;
+  padding: .2em .5em;
+  margin-top: 1.5em;
+  border-top: 3px solid #666666;
+  border-bottom: 2px solid #999999;
+}
+</style>
+</head>
+<body>
+
+<noscript>
+<div style="color:#CC0000; text-align:center">
+<b>Warning: <a href="http://www.mathjax.org/">MathJax</a>
+requires JavaScript to process the mathematics on this page.<br />
+If your browser supports JavaScript, be sure it is enabled.</b>
+</div>
+<hr>
+</noscript>
+
+<body bgcolor="eeccdd">
+
+<font size="+2">
+<b>Math 55a: Norm basics</b>
+</font>
+
+<p>
+
+Let $F$ be either of the fields $\bf R$ and $\bf C$,
+and let $V$ be a vector space over $F$.
+A <em>norm</em> on $V$ is a real-valued function $\|\cdot\|$
+on $V$ satisfying the following axioms:
+<OL>
+<LI> Positivity: $\|0\| = 0$, and $\| v \| &gt; 0$
+for all nonzero <nobr>vectors $v$.</nobr>
+<LI> Homogeneity: $\|cv\| = |c| \, \|v\|$
+for all scalars $c$ and <nobr>vectors $v$.</nobr>
+<LI> Subadditivity:
+$\| v+w \| \leq \|v\| + \|w\|$
+for all vectors $v,w \in V.$
+</OL>
+A normed vector space $V$ is automatically a metric space
+with the distance function $d(v,w) := \| v-w \|$.
+(This still holds if Homogeneity is replaced by the weaker axiom
+$\| v \| = \left\| -v \right\|$.)
+
+<p>
+
+Any inner product space is a normed vector space with norm $| \cdot |$
+(recall that this is defined by $\|v\| = \langle v,v \rangle^{1/2}$).
+This required Cauchy-Schwarz.  An even easier example of a norm is
+the <em>sup norm</em> on a finite-dimensional space relative to
+some choice of basis.  Using the basis to identify $V$ with $F^n$,
+we can define the sup norm of any vector $(a_1,a_2,\ldots,a_n)$ as
+as $\max_i \left| a_i \right|.$
+You should verify that this is indeed a norm <nobr>on $F^n$.</nobr>
+
+<p>
+
+Two norms, say $\|\cdot\|$ and $[[\cdot]]$,
+on a vector space are said to be <em>equivalent</em>
+if there exist positive constants $C,C'$ such that
+$\|v\| \leq C [[v]]$ and $C [[v]] \leq C' \|v\|$
+for all <nobr>vectors $v$.</nobr>
+You should check that this is indeed an equivalence relation.
+When we do topology in 55b, we shall see that equivalent norms
+also yield the same notions of open/closed/bounded/compact sets,
+convergence, continuity and uniform continuity, and completeness.
+For example, if $\| \cdot \|$ and $[[\cdot]]$ are equivalent,
+then for any sequence of vectors $v_n$ and any vector $v$ we have
+$ \| v_n - v \| \to 0$ as $n \to \infty$ if and only if
+$ [[ v_n - v ]] \to 0$ as $n \to \infty$.  (We say the sequence of vectors
+&ldquo;converges <nobr>to $v$&rdquo;</nobr> in both norms.)
+
+<p>
+
+<em>If $V$ is finite-dimensional, all norms on $V$ are equivalent.</em>
+In particular, the above notions are canonically defined,
+independent of choices of basis or norm (since we already know
+that any finite-dimensional <nobr>$F$-vector</nobr> space already has
+at least one norm).  We cannot prove this yet because it hinges
+on topological notions (namely compactness) that we&rsquo;ll develop only
+in 55b.  (To get some sense of the subtlety of this result, note that
+while the notion of norm can be defined also for vector spaces over
+the field $\bf Q$ of rational numbers, equivalence of norms already fails
+in ${\bf Q}^2$ &mdash; can you give an example?)  But we <em>can</em> prove
+that all norms coming from an inner product are equivalent.  By symmetry
+it it enough to prove that if $\| \cdot \|$ and $[[ \cdot ]]$ are two
+inner-product norms then $[[v]] \leq C' \|v\|$ for <nobr>some $C'$.</nobr>
+Fix an orthonormal basis for the inner product
+associated <nobr>with $\|\cdot\|$.</nobr>
+Let $c$ be the largest <nobr>$[[\cdot]]$-norm</nobr> of a basis element.
+Then by homogeneity $[[v]] \leq c \|v\|$
+whenever $v$ is a multiple of a basis vector.
+But any vector $v$ is the sum of $n$ such multiples $v_i$, with
+$\|v_i\| \leq ||v||$ for <nobr>each $i$.</nobr>
+By subadditivity it follows that $[[v]] \leq nc \|v\|$, Q.E.D.
+
+<p>
+
+This gives us a canonical equivalence class of norms on a
+finite-dimensional vector space <nobr>over $F$</nobr>.
+While we cannot yet prove it contains all norms, we can certainly
+go beyond inner-product norms; for example, the sup norm with respect to
+any basis is equivalent with the inner-product norm with respect to
+the same basis (what are the best constants $C$ and $C'$ for this
+equivalence?), and thus equivalent with any other inner-product or sup norm.
+
+<p>
+
+An infinite-dimensional vector space may have inequivalent norms.
+For example, you can easily check that the sup norm on the space of
+continuous functions on $[0,1]$ is not equivalent to the norm coming from
+the inner product $(\,f,g) = \int_0^1 f(x) \, \overline{g(x)} \, dx\,$.

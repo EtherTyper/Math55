@@ -1,0 +1,90 @@
+<TITLE>
+The spectral theorem for self-adjoint operators on a real f.d.i.p.s
+</TITLE>
+<BODY BGCOLOR="#ccffff">
+
+Here's an outline of the standard proof of the Spectral Theorem
+for self-adjoint oprators <EM>T</EM> on a finite-dimensional
+<EM>real</EM> inner product space <EM>V</EM>.  This is clearer
+than Axler's approach (pp.134 ff.), and does not depend on
+the Fundamental Theorem of Algebra.  Since I don't know
+how to get a ``lambda'' or ``epsilon'' in HTML (are there commands
+for these?), I'll use <EM>c</EM> and <EM>e</EM> instead.
+
+<P>
+
+Our aim is to show that there is an orthonormal basis
+<EM>v</EM><SUB>1</SUB>, <EM>v</EM><SUB>2</SUB>, ...,
+<EM>v</EM><SUB><EM>n</EM></SUB> for <EM>V</EM> such that
+<EM>Tv<SUB>j</SUB></EM> =
+<EM>c<SUB>j</SUB>v<SUB>j</SUB></EM>
+for each <EM>j</EM>.  It is enough to prove the existence
+of a single eigenvector, i.e. of a nonzero vector
+<EM>v</EM><SUB>1</SUB> such that
+<EM>Tv</EM><SUB>1</SUB> =
+<EM>c</EM><SUB>1</SUB><EM>v</EM><SUB>1</SUB>
+for some real number <EM>c</EM><SUB>1</SUB>.  This is because
+(using the fact that <EM>T=T<SUP>*</SUP></EM>) if <EM>v</EM>
+is an eigenvector and <<EM>v,v'</EM>>=0 then <<EM>Tv,v'</EM>>=0.
+Thus <EM>T</EM> may be regarded as a self-adjoint operator on
+the orthogonal complement of <EM>v</EM><SUB>1</SUB>; if that
+complement is not the zero space, it will then contain
+an eigenvector <EM>v</EM><SUB>2</SUB> by the same argument,
+which we then repeat for the orthogonal complement of the span of
+<EM>v</EM><SUB>1</SUB> and <EM>v</EM><SUB>2</SUB>, and so on until
+we obtain our basis.  (This concluding part of the argument <EM>is</EM>
+done by Axler (see 7.13); the difference is how we get
+<EM>v</EM><SUB>1</SUB> in the first place.)
+
+<P>
+
+Assume that we have succeeded.  Without loss of generality we may
+list the eigenvalues <EM>c<SUB>j</SUB></EM> in decreasing order.
+Then for all <EM>v</EM> in <EM>V</EM> we find that <<EM>Tv,v</EM>>
+is at most <EM>c</EM><SUB>1</SUB> <<EM>v,v</EM>>, with equality
+if and only if <EM>Tv</EM> = <EM>c</EM><SUB>1</SUB><EM>v</EM>.
+The ratio between <<EM>Tv,v</EM>> and <<EM>v,v</EM>> is called
+the <STRONG>Rayleigh quotient</STRONG> <EM>R<SUB>T</SUB>(v)</EM>.
+[Of course we must have <EM>v</EM> nonzero.] Note that
+<EM>R<SUB>T</SUB>(v)</EM> = <EM>R<SUB>T</SUB>(av)</EM> for
+any nonzero scalar <EM>a</EM>.  This suggests the following strategy:
+Find <EM>v</EM><SUB>1</SUB> which maximizes <EM>R<SUB>T</SUB>(v)</EM>
+subject to <<EM>v,v</EM>>=1, and show that this <EM>v</EM><SUB>1</SUB>
+is an eigenvector.
+
+<P>
+
+The point is that <EM>since V is finite-dimensional</EM>,
+the function from <EM>V</EM> to <STRONG>R</STRONG> taking
+any <EM>v</EM> to <<EM>Tv,v</EM>> is continuous (it's just
+a quadratic polynomial in the coordinates), and the unit
+sphere {<EM>v</EM> : <<EM>v,v</EM>>=1} is compact (using
+Heine-Borel and the continuity of the function taking
+<EM>v</EM> to <<EM>v,v</EM>>).  Now, on <<EM>v,v</EM>>=1,
+the Rayleigh quotient simplifies to <<EM>Tv,v</EM>>.
+So this function is bounded and attains its maximum.
+Call that maximum <EM>c</EM><SUB>1</SUB>, and let
+<EM>v</EM><SUB>1</SUB> be a vector that attains it, i.e.
+a vector such that <<EM>v</EM><SUB>1</SUB>,<EM>v</EM><SUB>1</SUB>>=1
+<<EM>Tv</EM><SUB>1</SUB>,<EM>v</EM><SUB>1</SUB>>=<EM>c</EM><SUB>1</SUB>.
+
+<P>
+
+It remains to show that
+<EM>Tv</EM><SUB>1</SUB>=<EM>c</EM><SUB>1</SUB><EM>v</EM><SUB>1</SUB>.
+Let <EM>u</EM> be any vector in <EM>V</EM>.  Then
+<<EM>T(v</EM><SUB>1</SUB><EM>+eu),v</EM><SUB>1</SUB><EM>+eu</EM>>
+is at most
+<EM>c</EM><SUB>1</SUB><<EM>v</EM><SUB>1</SUB><EM>+eu,v</EM><SUB>1</SUB><EM>+eu</EM>>
+for any scalar <EM>e</EM>.  The difference is a linear combination of
+<EM>e</EM> and <EM>e</EM><SUP>2</SUP>; for it to be nonnegative
+for all <EM>e</EM>, the <EM>e</EM> coefficient must vanish.
+This coefficient is
+2<<EM>Tv</EM><SUB>1</SUB><EM>-c</EM><SUB>1</SUB><EM>v</EM><SUB>1</SUB>,<EM>u</EM>>.
+Taking
+<EM>u=Tv</EM><SUB>1</SUB><EM>-c</EM><SUB>1</SUB><EM>v</EM><SUB>1</SUB>
+we find that
+<EM>Tv</EM><SUB>1</SUB><EM>-c</EM><SUB>1</SUB><EM>v</EM><SUB>1</SUB>=0.
+Therefore
+<EM>Tv</EM><SUB>1</SUB><EM>=c</EM><SUB>1</SUB><EM>v</EM><SUB>1</SUB>
+as desired.

@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Math 55b: Honors Abstract Algebra (Fall 2017)</title>
+<!-- MathJax header Copyright (c) 2009-2017 The MathJax Consortium -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="../MathJax-2.7.1/MathJax.js"></script>
+
+<style>
+h1 {text-align:center}
+h2 {
+  font-weight: bold;
+  background-color: #DDDDDD;
+  padding: .2em .5em;
+  margin-top: 1.5em;
+  border-top: 3px solid #666666;
+  border-bottom: 2px solid #999999;
+}
+</style>
+</head>
+<body>
+
+<noscript>
+<div style="color:#CC0000; text-align:center">
+<b>Warning: <a href="http://www.mathjax.org/">MathJax</a>
+requires JavaScript to process the mathematics on this page.<br />
+If your browser supports JavaScript, be sure it is enabled.</b>
+</div>
+<hr>
+</noscript>
+
+<TITLE>
+Math 55b: Honors Real and Complex Analysis
+</TITLE>
+
+<body bgcolor="#c0e0ff">
+
+
+<BODY BACKGROUND="calabi1.gif">
+
+<strong>
+Lecture notes, etc., for
+Math 55b: Honors Real and Complex Analysis
+(Spring [2017-]2018)
+</strong>
+
+<P>
+
+If you find a mistake, omission, etc., please
+<A HREF="mailto:elkies@math.harvard.edu">let me know</A>
+by e-mail.
+
+<P>
+
+The <FONT COLOR="#B87800">orange</FONT COLOR> balls
+mark our <A HREF="#today">current location</A> in the course,
+and the <A HREF="#current_homework">current problem set</A>.
+
+<!--
+<hr>
+
+<img src="new.gif"> New this term: CAs&rsquo;
+<a href="https://www.sharelatex.com/project/5859b2885cdba1b212140807"
+  target="_blank">TeX notes</a> of class lectures (thanks, A&W!).
+
+-->
+
+<hr>
+
+<img src="redball.gif">
+<b>Office hours</b> will be in the Lowell House Dining Hall
+as in Math&nbsp;55a (usually Tuesday after Math Table, so
+<nobr>7:30-9:00 PM),</nobr> or by appointment.
+
+<br>
+
+<img src="redball.gif">
+
+Math Night will again happen Monday evenings/nights, usually 8-10,
+ in Leverett Dining Hall, starting January 22.
+The course CA&rsquo;s will again hold office hours there.
+<br>
+<img src="redball.gif">
+<b>Section times</b>:
+<br>
+Rohil Prasad: Thursday 3-4 PM, Science Center room 309A.
+<br>
+Vikram Sundar: Wendesday 4-5 PM, Science Center room 304.
+
+<br>
+
+<img src="redball.gif"> Vikram&rsquo;s notes for 55b will be
+<!--
+<a href="https://www.dropbox.com/s/gcqzmgdr574dihh/NotesAll.pdf?dl=0"
+-->
+<a href="https://www.dropbox.com/s/7vyh5zaexi7pymj/NotesAll.pdf?dl=0"
+  target="_blank">here</a>.
+
+<HR>
+
+<img src="redball.gif">
+Our first topic is the <em>topology of metric spaces</em>,
+a fundamental tool of modern mathematics
+that we shall use mainly as a key ingredient in our rigorous development
+of differential and integral calculus
+<nobr>over $\bf R$</nobr> <nobr>and $\bf C$.</nobr>
+To supplement the treatment in Rudin&rsquo;s textbook,
+I wrote up <nobr>20-odd</nobr> pages of notes in six sections;
+copies will be distributed in class, and you also may view them
+and print out copies in advance from the PDF files linked below.
+<font size="-1">[Some of the explanations, e.g. of notations such as
+$f(\cdot)$ and the triangle inequality <nobr>in $\bf C$,</nobr>
+will not be necessary; they were needed when this material was
+the initial topic of Math&nbsp;55<u><em>a</em></u>,
+and it doesn&rsquo;t feel worth the effort to delete them now that it&rsquo;s been
+moved to&nbsp;55b.  Likewise for the comment about the Euclidean distance
+at the top of page&nbsp;2 of the initial handout on
+&ldquo;basic definitions and examples&rdquo;.]</font>
+
+<P>
+
+<img src="redball.gif">
+<A HREF="top1.pdf" target="_blank">Metric Topology I</a>
+<BR>
+Basic definitions and examples:
+the metric spaces <strong>R</strong><sup><em>n</em></sup>
+and other product spaces; isometries; boundedness and function spaces
+
+<blockquote>
+  <img src="purpball.gif">
+  The &ldquo;sup metric&rdquo; on $X^S$ is sometimes also called the
+  &ldquo;uniform metric&rdquo; because
+  $d(\,f,g) \leq r$ is equivalent to a bound,
+  $d(\,f(s),g(s)) \leq r$ for all $s \in S$,
+  that is &ldquo;uniform&rdquo; in the sense that it&rsquo;s
+  independent of the choice <nobr>of $s$.</nobr>
+  Likewise for the sup&nbsp;metric on the space of bounded functions
+  <nobr>from $S$</nobr> to an arbitrary metric <nobr>space $X$</nobr>
+  (see the next paragraph).
+</blockquote>
+
+<blockquote>
+  <img src="purpball.gif">
+  If $S$ is an infinite set and $X$ is an unbounded metric space then
+  we can&rsquo;t use our definition of $X^S$ as a metric space because
+  $\sup_S d_X(\,f(s),g(s))$ might be infinite.
+  But the <em>bounded functions</em> from $S$ to $X$ <u>do</u> constitute
+  a metric space under the same definition of $d_{X^S}$.  A function
+  is said to be &ldquo;bounded&rdquo; if its image is a bounded set.
+  You should check that $d_{X^S}(\,f,g)$
+  is in fact finite for bounded <em>f</em> <nobr>and <em>g</em>.</nobr>
+</blockquote>
+
+<blockquote>
+  <img src="purpball.gif">
+  Now that metric topology is in 55b, not 55a, the following 
+  observation can be made: if $X$ is $\bf R$ <nobr>or $\bf C$,</nobr>
+  the bounded functions in $X^S$ constitute a vector space,
+  and the sup metric comes from a norm on that vector space:
+  $d(\,f,g) = \| \, f-g \|$
+  where the norm $\left\| \cdot \right\|$ is defined by
+  $\| \, f \| = \sup_{s \in S} | \, f(s)|.$
+  Likewise for the bounded functions from $S$ to any normed vector space.
+  Such spaces will figure in our development of real analysis
+  (and in your further study of analysis beyond Math&nbsp;55).
+</blockquote>
+
+<blockquote>
+  <img src="purpball.gif">
+  The &ldquo;Proposition&rdquo; on page 3 of the first topology handout
+  can be extended as follows:
+  <blockquote>
+   iv) For <strong>every</strong> $p \in X$
+   there exists a real number $M$ such that
+   $d(p,q) \lt M$ for all $q \in E.$
+  </blockquote>
+  In other words, for every $p \in X$
+  there exists an open ball about $p$ that contains $E.$
+  Do you see why this is equivalent to (i), (ii), and (iii)?
+</blockquote>
+
+<img src="redball.gif">
+<A HREF="top2.pdf" target="_blank">Metric Topology II</a>
+<BR>
+Open and closed sets, and related notions
+
+<P>
+
+<img src="redball.gif">
+<A HREF="top3.pdf" target="_blank">Metric Topology III</a>
+<BR>
+Introduction to functions and continuity
+
+<P>
+
+<img src="redball.gif">
+<A HREF="top4.pdf" target="_blank">Metric Topology IV</a>
+<BR>
+Sequences and convergence, etc.
+
+<blockquote>
+  <img src="purpball.gif">
+  The proof of &ldquo;uniform limit of continuous is continuous&rdquo;
+  also shows that &ldquo;uniform limit of uniformly continuous is
+  uniformly continuous&rdquo;: if each $f_n$ is uniformly continuous
+  then a single $\delta$ will work for <nobr>all $x$.</nobr>
+</blockquote>
+
+<blockquote>
+  <img src="purpball.gif">
+  A typical application is the continuity of power series such as
+  $\sum_{k=0}^\infty x^k/k!$ (which by definition is the pointwise limit of
+  the partial sums $f_n(x) = \sum_{k=0}^n x^k/k!$).
+  The limit is <em>not</em> uniform as $x$ ranges over all of $\bf R$
+  <nobr>(or $\bf C$),</nobr> but it <em>is</em> uniform for $x$ in every
+  ball $B_R(0)$, and since every $x$ is in some such ball the limit
+  function is continuous.  Likewise for any power series
+  $\sum_{k=0}^\infty a_k x^k$ with $\{a_k\}$ bounded,
+  as long as $x$ is within the open circle of convergence $|x| \lt 1$:
+  the limit is not in general uniform, but it <em>is</em> uniform in the
+  ball $B_r(0)$ for every $r \lt 1$ (why?), which is good enough because
+  $|x|\lt 1$ means that $x$ is contained in such a ball.
+  In either case, each $f_n$ is easily seen to be uniformly continuous
+  on bounded sets, so the argument noted in the previous paragraph shows
+  that the limit function $f$ is also uniformly continuous in every ball
+  on which we showed that it is continuous (that is, arbitrary $B_R(0)$
+  for $\sum_{k=0}^\infty x^k/k!$, or $B_r(0)$ with $r \lt 1$ for
+  $\sum_{k=0}^\infty a_k x^k$ with $\{a_k\}$ bounded).
+  [NB we need to use open balls $B$ so that we can test continuity
+  at $x \in X$ on a neighborhood <nobr><em>in $B$</em>:</nobr>
+  for small enough $\epsilon$, the <nobr>$\epsilon$-neighborhood</nobr>
+  of $x$ <nobr>in $X$</nobr> is contained <nobr>in $B$.]</nobr>
+</blockquote>
+
+<P>
+
+<img src="redball.gif">
+<A HREF="top5.pdf" target="_blank">Metric Topology V</a>
+<BR>
+Compactness and sequential compactness
+
+<P>
+<img src="redball.gif">
+<A HREF="top6.pdf" target="_blank">Metric Topology VI</a>
+<BR>
+Cauchy sequences and related notions
+(completeness, completions, and a third formulation of compactness)
+
+<blockquote>
+  <img src="purpball.gif"> Here is a more direct proof
+  (using sequential compactness) of the theorem that
+  a continuous map $f: X \to Y$ between metric spaces is uniformly
+  continuous if $X$ is compact.  Assume not.  Then there exists
+  $\epsilon \gt 0$ such that for all $\delta \gt 0$
+  there are some points $p,q \in X$ such that
+  $d(p,q) \lt \delta$ but $d(\,f(p),f(q)) \geq \epsilon.$
+  For each $n = 1, 2, 3, \ldots,$ choose $p_n, q_n$
+  that satisfy those inequalities for $\delta = 1/n.$
+  Since $X$ is assumed compact, we can extract a subsequence
+  $\{ p_{n_i} \! \}$ of $\{p_n\!\}$ that converges to some $p \in X.$
+  But then $\{q_{n_i}\!\}$ converges to the <nobr>same $p$.</nobr>
+  Hence both $f(p_{n_i})$ and and $f(q_{n_i})$ converge to $f(p),$
+  which contradicts the fact that
+  $d(\,f(p_{n_i}), f(q_{n_i})) \geq \epsilon$ for <nobr>each $i$.</nobr>
+</blockquote>
+
+<hr>
+
+<img src="redball.gif">
+Our next topic is <em>differential calculus</em> of vector-valuek
+functions of one real variable, building on Chapter 5 of Rudin.
+
+<blockquote>
+You may have already seen &ldquo;little oh&rdquo; and &ldquo;big Oh&rdquo; notations.
+For functions $f,g$ on the same space,
+<nobr>&ldquo;$f = O(g)$&rdquo;</nobr> means that
+$g$ is a nonnegative real-valued function,
+$\,f$ takes values in a normed vector space,
+and there exists a real constant $M$ such that
+$\left|\,f(x)\right| \le M g(x)$ for <nobr>all $x$.</nobr>  The notation
+<nobr>&ldquo;$f = o(g)$&rdquo;</nobr> is used in connection with a limit;
+for instance,
+<nobr>&ldquo;$f(x) = o(g(x))$</nobr> as $x$ <nobr>approaches $x_0$&rdquo;</nobr>
+indicates that $f,g$ are vector- and real-valued functions as above on
+some neighborhood <nobr>of $x_0$,</nobr>
+and that for each $\epsilon \gt 0$ there is a neighborhood
+<nobr>of $x_0$</nobr> such that $\left|\,f(x)\right| \le \epsilon g(x)$
+for all $x$ in the neighborhood.
+(Given $g$ and the target <nobr>of $f\!$,</nobr>
+functions $f=O(g)$ form a vector space, which contains functions $o(g)$
+as a subspace.)  Thus $f'(x_0) = a$ means the same as
+<nobr>&ldquo;$f(x) = f(x_0) + a (x-x_0) + o(\left|x-x_0\right|)$
+as $x$ approaches $x_0\!$&rdquo;,</nobr> with no need to exclude
+the case $x = x_0.$
+Rudin in effect uses this approach when proving the Chain Rule (5.5).
+<p>
+Apropos the Chain Rule: as far as I can see we don&rsquo;t need continuity
+<nobr>of $f$</nobr> at any point <nobr>except $x$</nobr>
+(though that hypothesis will usually hold in any application).
+All that&rsquo;s needed is that $x$ has some relative neighborhood
+$N$ <nobr>in $[a,b]$</nobr> such that $f(N)$ is contained <nobr>in $I$.</nobr>
+Also, it is necessary that $f$ map $[a,b]$ <nobr>to $\bf R$,</nobr>
+but $g$ can take values in any normed vector space.
+<p>
+The derivative of $f/g$ can be obtained from the product rule,
+together with the derivative of $1/g$ &mdash;
+which in turn can be obtained from the Chain Rule together
+with the the derivative of the single <nobr>function $1/x$.</nobr>
+[Also, if you forget the quotient-rule formula, you can also
+reconstruct it from the product rule by differentiating both sides of
+$f = g \cdot (\,f/g)$ and solving for $(\,f/g)';$
+but this is not a proof unless you have some other argument to show that
+the derivative exists in the first place.]
+Once we do multivariate differential calculus,
+we&rsquo;ll see that the derivatives of $f+g$, $f-g$, $fg$, $f/g$
+could also be obtained in much the same way
+that we showed the continuity of those functions,
+by combining the multivariate Chain Rule with the derivatives of
+the specific functions $x+y$, $x-y$, $xy$, $x/y$ of two variables $x,y.$
+<p>
+As Rudin notes at the end of this chapter, differentiation can also
+be defined for vector-valued functions of one real variable.  As Rudin
+does <u>not</u> note, the vector space can even be infinite-dimensional,
+provided that it is normed; and the basic algebraic properties of the
+derivative listed in Thm. 5.3 (p.104) can be adapted to this generality,
+e.g., the formula $(\,fg)' = f'g + fg'$ still holds if $f,g$
+take values in normed vector spaces $U,V$
+and multiplication is interpreted as a continuous bilinear map from
+$U \times V$ to some other normed vector <nobr>space $W$.</nobr>
+<p>
+&ldquo;<a href="https://en.wikipedia.org/wiki/Rolle's_theorem"
+ target="_blank">Rolle&rsquo;s Theorem</a>&rdquo;
+is the special case $f(b) = f(a)$ of
+Rudin&rsquo;s Theorem 5.10; as you can see it is in effect
+the key step in his proof of Theorem 5.9, and thus of 5.10 as well.
+[As you can see from the Wikipedia page, the attribution of this
+result to <a href="https://en.wikipedia.org/wiki/Michel_Rolle"
+  target="_blank">Michelle Rolle</a> (1652&ndash;1719)
+is problematic in several ways, and seems to be a good example of
+&ldquo;<a href="https://en.wikipedia.org/wiki/Stigler's_law_of_eponymy"
+  target="_blank">Stigler&rsquo;s law of eponymy</a>&rdquo;.]
+<p>
+We omit 5.12 (continuity of derivatives) and 5.13 (L&rsquo;H&ocirc;pital&rsquo;s Rule).
+In 5.12, see p.94 for Rudin&rsquo;s notion of &ldquo;simple discontinuity&rdquo;
+(or &ldquo;discontinuity of the first kind&rdquo;) vs.
+&ldquo;discontinuity of the second kind&rdquo;, but please don&rsquo;t
+use those terms in your problem sets or other mathematical writing,
+since they&rsquo;re not widely known.
+In Rudin&rsquo;s proof of L&rsquo;H&ocirc;pital&rsquo;s Rule (5.13),
+why can he assume that $g(x)$ does not vanish for any $x$ in $(a,b)$,
+and that the denominator $g(x) - g(y)$ in equation (18) is never zero?
+
+<p>
+
+NB The norm does not have to come from an inner product structure.
+Often this does not matter because we work in finite dimensional
+vector spaces, where all norms are equivalent, and changing to
+an equivalent norm does not affect the definition of the derivative.
+One exception to this is Theorem 5.19 (p.113) where one needs the
+norm exactly rather than up to a constant factor.  This theorem still
+holds for a general norm but requires an additional argument.
+<A NAME="HahnBanach">
+The key ingredient of the proof is this:
+given a nonzero vector $z$ in a vector space $V\!$,
+we want a continuous functional $w$ <nobr>on $V\,$</nobr> such that
+$\left\| w \right \| = 1$ and $w(z) = \left| z \right|.$
+If $V$ is an inner product space (finite-dimensional or not),
+the inner product with $z \left/ \left| z \right| \right.$ provides
+such a <nobr>functional $w$.</nobr>
+But this approach does not work in general.
+The existence of such $w$ is usually proved as a corollary of the
+<a href="https://en.wikipedia.org/wiki/Hahn-Banach_theorem"
+  target="_blank">Hahn-Banach theorem</a>.
+When $V$ is finite dimensional, $w$ can be constructed by induction on
+the dimension <nobr>$V\!$.</nobr>
+To deal with the general case one must also invoke the Axiom of Choice
+in its usual guise of Zorn&rsquo;s Lemma.
+
+</blockquote>
+
+<img src="redball.gif">
+We next start on <strong>univariate integral calculus</strong>,
+largely following Rudin, chapter 6.
+The following gives some motivation for the definitions there.
+(And yes, it&rsquo;s the same
+<a href="https://en.wikipedia.org/wiki/Bernhard_Riemann"
+  target="_blank">Riemann</a> (1826&ndash;1866) who gave number theorists
+like me the Riemann zeta function and the Riemann Hypothesis.)
+
+<blockquote>
+The Riemann-sum approach to integration goes back to the
+&ldquo;method of exhaustion&rdquo; of classical Greek geometry,
+in which the area of a plane figure (or the volume of a region in space)
+is bounded below and above by finding subsets and supersets
+that are finite unions of disjoint rectangles (or boxes).
+The lower and upper Riemann sums adapt this idea
+to the integrals of functions which may be negative as well as positive
+(recall that one of the weaknesses of geometric Greek mathematics is that
+the ancient Greeks had no concept of negative quantities
+&mdash; nor, for that matter, of zero).
+<A NAME="quadrature">
+You may have encountered the quaint technical term &ldquo;quadrature&rdquo;,
+used in some contexts as a synonym for &ldquo;integration&rdquo;.
+This too is an echo of the geometrical origins of integration.
+&ldquo;Quadrature&rdquo; literally means &ldquo;squaring&rdquo;, meaning not
+&ldquo;multiplying by itself&rdquo; but &ldquo;constructing a square of
+the same size as&rdquo;; this in turn is equivalent to
+&ldquo;finding the area of&rdquo;,
+as in the phrase &ldquo;squaring the circle&rdquo;.
+For instance, Greek geometry contains a theorem equivalent
+to the integration of $\int x^2 \, dx,$
+a result called the &ldquo;quadrature of the parabola&rdquo;.
+The proof is tantamount to the evaluation of lower and upper Riemann sums
+for the integral <nobr>of $x^2 \, dx$.</nobr>
+
+<p>
+
+An alternative explanation of the upper and lower Riemann sums,
+and of &ldquo;partitions&rdquo; and &ldquo;refinements&rdquo;
+(Definitions 6.1 and 6.3 in Rudin),
+is that they arise by repeated application of the following two
+axioms describing the integral (see for instance
+<a href="gillman.pdf" target="_blank">L.Gillman&rsquo;s expository paper</a>
+in the <em>American Mathematical Monthly</em> (Vol.100&nbsp;#1, 16&ndash;25)):
+<ul>
+<li> For any $a,b,c$ (with $a \lt b \lt c$) we have
+$\int_a^c f(x)\, dx = \int_a^b f(x)\, dx + \int_b^c f(x)\, dx;$
+<li> If a function $f: [a,b] \to {\bf R}$ takes values in $[m,M]$
+then $\int_a^b f(x) \, dx \in [m(b-a),M(b-a)]$
+(again assuming <nobr>$a \lt b$).</nobr>
+</ul>
+The latter axiom is a consequence of the following two: the integral
+$\int_a^b K \, dx$ of a constant function $K$ is $K(b-a);$
+and if $f(x) \le g(x)$ for all $x$ in the interval $[a,b]$ then
+$\int_a^b f(x) \, dx \le \int_a^b g(x) \, dx.$
+Note that again all these axioms arise naturally from an interpretation
+of the integral as a &ldquo;signed area&rdquo;.
+
+<p>
+
+The (Riemann-)<a href="https://en.wikipedia.org/wiki/Thomas_Joannes_Stieltjes"
+  target="_blank">Stieltjes</a> integral,
+with $d\alpha$ in place <nobr>of $dx$,</nobr>
+is then obtained by replacing each $\Delta x = b - a$ by
+$\Delta\alpha = \alpha(b) - \alpha(a).$
+
+<P>
+
+<A HREF="vint.pdf">Here</A>&rsquo;s a version of Riemann-Stieltjes integrals
+that works cleanly for integrating bounded functions from $[a,b]$ to
+any complete normed vector space.
+<br>
+
+<p>
+
+In Theorem 6.11 (integrable functions are preserved under continuous maps),
+we readily generalize to the integrability over $[a,b]$ of $h = \phi \circ f$
+when $f:[a,b] \to [m,M]$ is integrable and $\phi$ is a continuous map from
+$[m,M]$ to a complete normed <nobr>vector space $V$.</nobr>  If we want to
+generalize further by letting  $\,f$ itself be vector-valued,
+then we must explicitly assume that $\phi$ is <i>uniformly</i> continuous,
+which Rudin doesn&rsquo;t have to do in 6.11 because $[m,M]$ is compact.
+
+<p>
+
+In Theorem 6.12, property (a) says the integrable functions form
+a vector space, and the integral is a linear transformation;
+property (d) says it&rsquo;s a bounded transformation relative to the
+sup norm, with operator norm at most $\Delta\alpha = \alpha(b)-\alpha(a)$
+(indeed it&rsquo;s not hard to show that the operator norm equals
+$\Delta\alpha = \alpha(b)-\alpha(a);$
+and (b) and (c) are the axioms noted above.  Property (e) <em>almost</em>
+says the integral is linear as a function <nobr>of $\alpha$</nobr> &mdash;
+do you see why &ldquo;almost&rdquo;?
+
+<p>
+
+Recall the &ldquo;integration by parts&rdquo; identity:
+$fg$ is an integral of $\,f \, dg + g \, df.$
+The Stieltjes integral is a way of making sense of this identity
+even when $\,f$ and/or $g$ is not continuously differentiable.
+To be sure, some hypotheses on $\,f$ and $g$ must still
+be made for the Stieltjes integral of $\,f\, dg$ to make sense.
+Rudin specifies one suitable system of such hypotheses in Theorem 6.22.
+
+<p>
+
+<em>Riemann-Stieltjes integration by parts</em>: Suppose both
+$\,f$ and $g$ are increasing functions on $[a,b].$
+For any partition $a = x_0 \lt \cdots \lt x_n = b$
+of the interval, write
+$\,f(b) g(b) - f(a) g(a)$ as the telescoping sum
+$\sum_{i=1}^n \left(f(x_i) g(x_i) - f(x_{i-1}) g(x_{i-1})\right).$
+Now rewrite the <nobr>$i$-th</nobr> summand as
+$$
+f(x_i) (g(x_i) - g(x_{i-1}))
++ g(x_i) (f(x_i) - f(x_{i-1})).
+$$
+[Naturally it is no accident that this identity resembles the one used in
+the familiar proof of the formula for the derivative <nobr>of $fg$!]</nobr>
+Summing this <nobr>over $i$</nobr> yields the upper
+Riemann-Stieltjes sum for the integral of $\,f \, dg$ plus
+the lower R.-S. sum for the integral of $g \, df$.  Therefore:
+<em>if one of these integrals exists, so does the other, and their sum is
+$\,f(b) g(b) - f(a) g(a).$</em>
+[Cf. Rudin, page 141, Exercise 17.]
+
+</blockquote>
+
+<img src="redball.gif">
+Some of <strong>Chapter 7</strong> of Rudin we&rsquo;ve covered already
+in the topology lectures and problem sets.  For more counterexamples
+along the lines of the first section of that chapter, see
+<em>Counterexamples in Analysis</em> by B.R.Gelbaum and J.M.H.Olsted
+&mdash; there&rsquo;s a copy in the Science Center library (QA300.G4).
+Concerning Thm. 7.16, be warned that it can easily fail for
+&ldquo;improper integrals&rdquo; on infinite intervals.
+It is often very useful
+to bring a limit or an infinite sum within an integral sign,
+but this procedure requires justification beyond Thm.&nbsp;7.16.
+
+<p>
+
+We&rsquo;ll cover some of the new parts of Chapter&nbsp;7:
+Weierstrass M, 7.10, extended to vector-valued functions;
+uniform convergence and $\int$ (7.16, again in vector-valued setting,
+  with the target space $V$ normed and complete); and the
+<strong>Stone-Weierstrass theorem</strong>,
+which is the one major result of Chapter&nbsp;7 we haven&rsquo;t seen yet.
+We then proceed to <strong>power series</strong> and the exponential
+and logarithmic functions in <strong>Chapter 8</strong>.
+We omit most of the discussion of Fourier series (185&ndash;192),
+an important topic (which used to be the concluding topic of Math&nbsp;55b),
+but one that alas cannot be accommodated given the mandates of
+the curricular review.  We&rsquo;ll encounter a significant special case
+in the guise of Laurent expansions of an analytic function on a disc.
+See these notes (<a href="hilbert1.pdf" target="_blank">part&nbsp;1</A>,
+<a href="hilbert2.pdf" target="_blank">part&nbsp;2</A>) from 2002-3 on
+<strong>Hilbert space</strong> for a fundamental context for Fourier
+series and much else (notably much of quantum mechanics),
+which is also what we&rsquo;ll use to give one proof of the
+<a href="https://en.wikipedia.org/wiki/Muntz-Szasz_theorem"
+  target"_blank">M&uuml;ntz-Sz&aacute;sz theorem</a>
+on uniform approximation on $[0,1]$ by linear combinations of arbitrary powers.
+[Yes, if I were to rewrite these notes now I would not have to define
+separability, because we already did that in the course of developing
+the general notion of compactness.]
+
+<p>
+
+We also postpone discussion of Euler&rsquo;s Beta and Gamma integrals
+(also in Chapter&nbsp;8) so that we can use multivariate integration to
+give a more direct proof of the formula relating them.
+
+<P>
+
+The result concerning the convergence of alternating series
+is stated and proved on pages <nobr>70-71</nobr> of Rudin (Theorem 3.42).
+
+<P>
+
+The original Weierstrass approximation theorem (7.26 in Rudin)
+can be reduced to the uniform approximation of the single function
+$|x|$ on $[-1,1].$ From this function we can construct
+an arbitrary piecewise linear continuous function, and such
+piecewise linear functions uniformly approximate any continuous function
+on a closed interval.(*)  [They also give yet another example of a natural
+vector space with an uncountably infinite algebraic basis.]
+To get at $|x|,$ we&rsquo;ll rewrite it as
+$[1 - (1-x^2)]^{1/2},$ and use the power series for $(1-X)^{1/2}.$
+<!--
+This power series (and more generally the power series for
+<nobr>(1&minus;<em>X</em>)<sup><em>A</em></sup></nobr>)
+is the first part of Exercise&nbsp;22 for Chapter&nbsp;8, on p.201;
+we outline another approach in
+<a href="p5.pdf" target="_blank">PS6</a>, Problem&nbsp;12
+(under the assumption of the standard formula for differentiating
+<nobr><em>x<sup>r</sup></em></nobr> with respect to&nbsp;<em>x</em>,
+which as we note there is not too hard for <em>r</em> rational).
+-->
+We need $(1-X)^{1/2}$ to be approximated by its power series uniformly on
+the <em>closed</em> interval $[-1,1]$ (or at least [0,1]);
+but fortunately this too follows from the proof
+of Abel&rsquo;s theorem (8.2, pages <nobr>174-5</nobr>).
+Actually this is a subtler result than we need, since
+the <nobr>$X^n$ coefficient</nobr> of the power series for
+$(1-X)^{1/2}$ is negative for every $n \gt 0.$
+If a power series $f(X)$ has radius of <nobr>convergence 1</nobr>
+and all but finitely many of its nonzero coefficients have the same sign,
+then it is easily shown that the sum of the coefficients converges
+if and only if $f(X)$ has a finite limit as $X \to 1,$ in which case
+the sum equals that limit and the power series converges uniformly on
+$[0,1].$ That&rsquo;s all we need because clearly $(1-X)^{1/2}$
+extends to a continuous function on $[0,1].$
+(For an alternative approach to uniformly approximating $|x|,$
+see Exercise&nbsp;23 on <nobr>p.169.)</nobr>
+
+<p>
+<font size="-1">
+(*) Let $\,f$ be any continuous function on $[0,1]$.
+It is uniformly continuous because $[0,1]$ is compact.
+So, given $\epsilon \ge 0$ there exists $\delta \ge 0$ such that
+$|x-x'| \lt \delta \Rightarrow |\,f(x)-f(x')| \lt \epsilon$.
+Now let $g$ be the piecewise linear function such that $g(x) = f(x)$
+at $x=0,\delta,2\delta,3\delta,\ldots,N\delta$ (with
+$N = \lfloor 1/\delta \rfloor$) and at $x=1$,
+and is (affine) linear on $[N\delta,1]$ and on each
+$[(i-1)\delta,i\delta]$ ($1 \leq 1 \leq N$).  Exercise:
+$|\,f(x)-g(x)| \lt \epsilon$ for all $x \in [0,1]$.
+So we have uniformly approximated $\,f$ to within $\epsilon$
+by the piecewise-linear continuous <nobr>function $g$.</nobr>
+</font>
+
+<p>
+
+Rudin&rsquo;s notion of an &ldquo;algebra&rdquo; of functions is <em>almost</em>
+a special case of what we called an 
+&ldquo;algebra <nobr>over $\bf F$&rdquo;</nobr> in 55a
+(with ${\bf F} = \bf R$ or $\bf C$ as usual), except that Rudin
+does not require his algebras to have a unit (else he wouldn&rsquo;t
+have to impose the &ldquo;vanish on no point&rdquo; condition).
+The notion can be usefully abstracted to a
+&ldquo;normed algebra <nobr>over $\bf F$&rdquo;,</nobr>
+which is an algebra together with a vector space norm $\| \cdot \|$
+satisfying $\|xy\| \le \|x\| \, \|y\|$ for all $x$ and $y$ in the algebra.
+Among other things this leads to the Stone-&#x010c;ech theorem.
+
+
+<p>
+
+<img src="redball.gif">
+In the first theorem of <strong>Chapter 8</strong>,
+Rudin obtains the termwise differentiability of a power series at any
+$x$ with $x \lt R$ by applying Theorem&nbsp;7.17.
+That&rsquo;s nice, but we&rsquo;ll want to use the same result
+in other contexts, notably <nobr>over $\bf C$,</nobr>
+where the mean value theorem does not apply.  So we instead give
+an argument that works in any complete field with an absolute value
+&mdash; this includes $\bf R$, $\bf C$,
+and other examples such as the field ${\bf Q}_p$
+of <nobr>$p$-adic</nobr> numbers.  If the sum of $c_n x^n$
+converges for some nonzero $x$ with some $|x| = R$, then
+any $x$ satisfying $x \lt R$ has
+a neighborhood that is still contained in $\{ y : |y| \lt R\}$.
+So if $\,f(x)$ is the sum of that series, then
+for $y \neq x$ in that neighborhood we may form the usual quotient
+$(\,f(y)-f(x)) \, / \, (x-y)$ and expand it termwise,
+then let $y \to x$ and recover the expected power series for $f'(x)$
+using the Weierstrass $M$ test (Theorem 7.10).
+
+<p>
+
+An alternative derivation of formula (26) on p.179:
+differentiate the power series (25) termwise (now that we know
+it works also <nobr>over $\bf C$</nobr>) to show $E(z) = dE(z)/dz$;
+then for any fixed <em>w</em> the difference $E(w+z)-E(w)E(z)$
+is an <em>analytic</em> function <nobr>of $z$</nobr> that vanishes
+at $z = 0$ and is thus zero everywhere.
+
+<p>
+
+In algebraic terms, identities (26) and (27) say that $E$
+(that is, $\exp$) gives <em>group homomorphisms</em> from
+$({\bf R}, +)$ <nobr>to ${\bf R}^*$</nobr>
+and from $({\bf C}, +)$ <nobr>to ${\bf C}^*$.</nobr>
+Theorem 8.6 includes the assertion that in the real case
+this map has image the positive reals, and trivial kernel;
+so there is a well-defined inverse function from the multiplicative
+group of positive reals back to $({\bf R}, +);$
+and that&rsquo;s the logarithm function.  In the complex case,
+we shall soon see that the image is all <nobr>of ${\bf C}^*$,</nobr>
+but the kernel is no longer trivial (in fact, $\ker(\exp)$ consists of
+the integer multiples <nobr>of $2\pi i$),</nobr> which means that
+more care will be needed if we want to define and use logarithms of
+complex numbers.
+
+<p>
+
+Small <strong>error in Rudin</strong>: the argument on p.180 that
+&ldquo;Since $E$ [a.k.a. $\exp$] is strictly increasing and differentiable
+on [the real numbers], it has an inverse function $L$ which is
+also strictly increasing and differentiable &hellip;&rdquo; is not quite correct:
+consider the strictly increasing and differentiable function
+$x \mapsto x^3.$ What&rsquo;s the
+correct statement?  (Hint: the Chain Rule tells you what the
+derivative of the inverse function must be.)
+
+<p>
+
+In any case, we have deliberately omitted the univariate
+Inverse Function Theorem in anticipation of the multivariate setting where
+the Inverse and Implicit Function Theorems are equivalent.  However,
+<em>if</em>&thinsp; there is a differentiable inverse function then
+we known its derivative from the Chain Rule.
+So if $L'(y)$ exists then it equals $1/y;$
+this together with $L(1) = 0$ gives us the integral formula
+$L(y) = \int_1^y dx/x$
+(via the Fundamental Theorem of Calculus), and then we can <em>define</em>
+$L(y)$ by this formula, and differentiate to prove that it is in fact
+the inverse function <nobr>of $E$</nobr> for $y \gt 0.$
+
+<p>
+
+The same approach identifies $\tan^{-1}(y)$ with $\int_0^y dx/(x^2+1)$
+once we have constructed the sine and cosine functions
+(Rudin&rsquo;s <nobr>&ldquo;$S$&rdquo;</nobr> and
+<nobr>and &ldquo;$C$&rdquo;)</nobr>
+and checked that the derivative of their ratio $\tan(x)$
+is $\tan^2(x) + 1.$ This yields the power-series expansion
+$$
+  \tan^{-1}(y) = y - \frac{y^3}{3} + \frac{y^5}{5} - \frac{y^7}{7}
+  + \frac{y^9}{9} - \frac{y^{11}}{11} + - \cdots
+$$
+for $|y| \lt 1$ (be sure you understand how to derive this from the
+formula for the derivative <nobr>of $\tan^{-1}(1)$!),</nobr> and thus also
+$$
+  \frac\pi4 = \tan^{-1}(1)
+   = 1 - \frac13 + \frac15 - \frac17 + \frac19 - \frac1{11} + - \cdots
+$$
+(why?).
+
+Notes:
+<ul>
+<li> You can also check that $1 / (x^2+1)$ is
+$\left( 1/(x-i) - 1/(x+i) \right) / 2i,$
+and that the corresponding linear combination of $\log (x \pm i)$
+seems to agree with $\tan^{-1}(x)$ &mdash;
+though I don&rsquo;t think we are quite in position yet
+to make rigorous sense of this route to  $\int dx/(x^2+1)$.
+<li> The power series for $\sin$, $\cos$, and $\tan^{-1},$
+and the alternating series for $\pi/4$, long predate 19th-century calculus.
+They are often named for Leibniz (1646&ndash;1716) or
+James <a href="https://en.wikipedia.org/wiki/Gregory%27s_series"
+  target="_blank">Gregory</a> (1638&ndash;1675),
+but were already known centuries earlier
+&mdash; together with some computational applications, including
+the evaluation of $\pi$ as $4 \cos^{-1}(0)$ &mdash;
+to the mathematicians of the
+<a href="https://en.wikipedia.org/wiki/Kerala_school_of_astronomy_and_mathematics"
+  target="_blank">Kerala school</a>,
+and &ldquo;are believed to have been discovered by Madhava of Sangamagrama
+<nobr>(c. 1350 – c. 1425)</nobr>&rdquo; according to
+<a href="https://en.wikipedia.org/wiki/Madhava_series"
+  target="_blank">the &ldquo;Madhava series&rdquo; page</a>
+on Wikipedia.
+</ul>
+</blockquote>
+
+Similarly we get $\int_0^y dx/(1-x^2)^{1/2} = \sin^{-1} y$ for $|y| \leq 1$;
+note that this is the &ldquo;principal value&rdquo; of $\sin^{-1} y$
+(i.e., the choice in $[-\pi/2, \pi/2$]), and that for
+$y = \pm 1$ the integral is &ldquo;improper&rdquo;
+and must be interpreted as a limit
+$\lim_{y \to 1-}$ or $\lim_{y \to (-1)+}.$
+Likewise $\int dx/(x^2+1)^{1/2}$
+leads to inverse functions of the
+<a href="https://en.wikipedia.org/wiki/Hyperbolic_function"
+  target="_blank">hyperbolic trigonometric functions</a>
+$\sinh(x) = (e^{x} - e^{-x})/2$ and $\cosh(x) = (e^{x} + e^{-x})/2.$
+These basic indefinite integrals, together with elementary changes of
+variable and integrations by parts, suffice to obtain any indefinite
+integral one is likely to encounter in a first-year calculus class.
+
+<p>
+
+As far as I can tell the final inequality &ldquo;$\le 2$&rdquo; in
+Rudin&rsquo;s (50) can just as easily be &ldquo;$\le 1$&rdquo;,
+because if we have found a choice <nobr> of $y$</nobr> that makes
+$C(y)$ negative then $C$ must already vanish somewhere between
+<nobr>0 and $y$.</nobr> For that matter, we can find such $y$
+directly from the power series <nobr>for $C(y)$:</nobr>
+we calculate $\cos 2 \lt 1 - 2^2/2! + 2^4/4! = -1/3 \lt 0$
+(the omitted terms $-2^6/6! + 2^8/8!$ etc. pair up to a negative sum);
+this yields an explicit upper bound of <nobr>$4$ on $\pi$.</nobr>
+Likewise if $x^2 \leq 2$ then $\cos(x) \gt 0,$ so $\pi^2 \lt 8.$
+Indeed $\cos 1 \gt 1 - 1^2/2! = 1/2 = \cos \pi/3,$ so $\pi \gt 3.$
+It is &ldquo;well known&rdquo; that in fact $\pi^2$
+is less than but rather close to&nbsp;10;
+  <a href="http://www.math.harvard.edu/~elkies/Misc/pi10.pdf"
+    target="_blank">this one-page note</a> explains this fact
+if you believe that $\zeta(2) = \pi^2 / 6$
+(<a href="https://en.wikipedia.org/wiki/Basel_problem">[Euler 1734]</a>
+&mdash; a famous theorem of which we shall give at least one proof before
+the semester&rsquo;s end).  For much better estimates, integrate
+$(x-x^2)^4 dx/(x^2+1)$ from 0 to&nbsp;1, and note that
+<nobr>$1/2 \leq 1/(x^2+1) \leq 1$. <font size="+1">&#x263a;</font></nobr>&nbsp;&nbsp;
+<!-- smilie -->
+[Published by <nobr>D. P. Dalzell</nobr> in 1944, as I learned from the
+replies to <a href="http://mathoverflow.net/questions/67384/"
+  target="_blank">this MathOverflow question</a>, where you can also find
+further information about this nifty proof and some related mathematics.]
+
+<!--
+
+<p>
+
+We can now prove our claims about the image and kernel of the exponential
+homomorphism <nobr>exp: (<b>C</b>, +) &rarr; <b>C</b>*</nobr>.
+We have seen in effect that the restriction of this map to the imaginary axis
+<nobr>{<em>iy</em> : <em>y</em> <font size="-1">&in;</font> <b>R</b>}</nobr>
+has image the unit circle and kernel <nobr>2&pi;<em>i</em><b>Z</b></nobr>.
+Write an arbitrary complex number <em>z</em> as
+<nobr><em>x</em>+<em>iy</em><nobr>.  Then
+<nobr>exp <em>z</em> = <em>e<sup>x</sup>e<sup>iy</sup></em></nobr>, so
+<nobr>|exp <em>z</em>| =
+ |<em>e<sup>x</sup></em>| |<em>e<sup>iy</sup></em>|
+ = <em>e<sup>x</sup></em></nobr>.
+Thus every nonzero complex <em>w</em> is in exp(<b>C</b>): write
+<nobr><em>w</em> = |<em>w</em>| (<em>w</em>/|<em>w</em>|)</nobr>;
+and then the first factor is a positive real number, so of the form
+<em>e<sup>x</sup></em> for some real&nbsp;<em>x</em>,
+and the second factor is
+<em>e<sup>iy</sup></em> for various real&nbsp;<em>y</em> &mdash;
+so we have written <nobr><em>w</em> = exp(<em>x</em>+<em>iy</em>)</nobr>.
+Conversely, <nobr>|<em>e<sup>z</sup></em>| = 1</nobr> <u>iff</u>
+<nobr><em>x</em> = 0</nobr>, that is, <u>iff</u> <em>z</em> is
+on the imaginary axis so ker(exp) is contained in the imaginary axis,
+and we already know that <nobr><em>e<sup>iy</sup></em> = 1</nobr>
+<u>iff</u> <em>y</em> is a multiple of 2&pi;, QED.
+
+<p>
+
+Rudin uses a fact about convex functions that is only presented
+as an exercise earlier in the book (p.100, #23).  Namely:
+let <em>f</em>&thinsp; be a convex function on some interval <em>I</em>,
+and consider the slope
+<nobr><em>s</em>(<em>x</em>, <em>y</em>) :=
+(<em>f</em>&thinsp;(<em>x</em>)&minus;<em>f</em>&thinsp;(<em>y</em>))
+/ (<em>x&minus;y</em>)</nobr>
+as a function on the set of <nobr>(<em>x</em>, <em>y</em>)</nobr> in
+<nobr><em>I</em> &times; <em>I</em></nobr> with
+<nobr><em>x</em> &gt; <em>y</em></nobr>;
+then <em>s</em> is an increasing function of both variables.
+The proof is fortunately not hard.  For instance, to prove that if
+<nobr><em>x</em> &gt; <em>y'</em> &gt; <em>y</em></nobr> then
+<nobr><em>s</em>(<em>x</em>, <em>y'</em>&thinsp;) &gt;
+<em>s</em>(<em>x</em>, <em>y</em>),</nobr>
+write <em>y'</em> as <nobr><em>px</em> + <em>qy</em></nobr>
+with <nobr><em>p</em> + <em>q</em> = 1</nobr>,
+and calculate that
+<nobr><em>s</em>(<em>x</em>, <em>y'</em>&thinsp;) &gt;
+<em>s</em>(<em>x</em>, <em>y</em>)</nobr>
+is equivalent to the usual convexity condition.  The case
+<nobr><em>x</em> &gt; <em>x'</em> &gt; <em>y</em></nobr>
+works in exactly the same way.
+
+<p>
+
+We have already given the proof of the Fundamental Theorem of Algebra
+(Rudin&nbsp;8.8) as an application of the fact that a continuous
+real-valued function on a compact set attains its minimum
+(though at that time we didn&rsquo;t yet officially prove that for
+<nobr><em>k</em> = 1, 2, 3, &hellip;</nobr> the <nobr><em>k</em>-th</nobr>
+power map on the unit circle is surjective).  Section 8.9 is an
+introduction to Fourier series;
+while we must alas skip most of Fourier analysis in Math 55b,
+we can still use our work so far to easily prove the following:
+If <nobr><em>f</em>&thinsp;: <strong>R</strong>/2&pi;<strong>Z</strong>
+&rarr; <strong>C</strong></nobr>
+is a continuous function whose Fourier coefficients
+<nobr><em>a<sub>n</sub></em> :=
+(2&pi;)<sup>&minus;1</sup>&int;<sub>
+ <strong>R</strong>/2&pi;<strong>Z</strong></sub>
+exp(<em>&minus;inx</em>) <em>f</em>&thinsp;(<em>x</em>) <em>dx</em></nobr>
+satisfy
+<nobr>&sum;<sub><em>n</em></sub>|<em>a<sub>n</sub></em>| &lt; &infin;</nobr>,
+then <em>f</em> equals its Fourier series.
+<em>Proof</em>&thinsp;: the difference is a continuous function
+all of whose Fourier coefficients vanish;
+applying Stone-Weierstrass to the real and imaginary parts,
+we see that this difference can be uniformly approximated by
+&ldquo;trigonometric polynomials&rdquo;
+(finite linear combinations of cos(<em>nx</em>) and sin(<em>nx</em>)), etc.
+[This special case of Stone-Weierstrass is also a theorem of
+Fej&eacute;r, who obtained an explicit sequence of trigonometric
+polynomials converging to the function; see the first few pages of
+K&ouml;rner&rsquo;s <em>Fourier Analysis</em>.  NB it&rsquo;s <em>not</em>
+true that the partial sums of the Fourier series of every
+continuous function converge to it pointwise, let alone uniformly!]
+A nice example is
+<nobr><em>f</em>&thinsp;(<em>x</em>)
+= B<sub><em>k</em></sub>(2&pi;<em>x</em>)</nobr>
+for each <em>k&ge;2</em>, where
+<nobr>B<sub><em>k</em></sub></nobr> is the <em>k</em>th Bernoulli polynomial
+(for <em>x</em> in [0,1], and extended to&nbsp;<b>R</b> by periodicity);
+this yields the values of <nobr>&zeta;(<em>k</em>)</nobr> for
+<nobr><em>k</em> = 2, 4, 6, &hellip;</nobr>, and much else in addition.
+<a href="https://en.wikipedia.org/wiki/Parseval's_theorem"
+  target="_blank">Parseval&rsquo;s identity</a>
+for such functions follows as well:
+<nobr> (2&pi;)<sup>&minus;1</sup>&int;<sub>
+ <strong>R</strong>/2&pi;<strong>Z</strong></sub>
+ |<em>f</em>&thinsp;(<em>x</em>)|<sup>2</sup> <em>dx</em>
+= &sum;<sub><em>n</em><font size="-2">&in;</font><b>Z</b></sub>
+   |<em>a<sub>n</sub></em>|<sup>2</sup></nobr>.
+
+-->
+
+<p>
+
+<img src="redball.gif">
+
+We next begin <strong>multivariate differential calculus</strong>,
+starting at the middle of Rudin Chapter 9 (since the first part
+of that chapter is for us a review of linear algebra &mdash;
+but you might want to read through the material on norms of linear maps
+and related topics in pages 208&ndash;9).
+Again, Rudin works with functions from open subsets of ${\bf R}^n$
+to ${\bf R}^m$,
+but most of the discussion works equally well with the target space
+${\bf R}^m$ replaced by an arbitrary normed vector <nobr>space $V\!$.</nobr>
+ If we want to allow arbitrary normed vector spaces for the <em>domain</em>
+<nobr>of $f$,</nobr> we&rsquo;ll usually have to require that the derivative
+$f'$ be a <em>continuous</em> linear map, or equivalently that its norm
+$\| \, f' \| = \sum_{\|v\|=1} \left|\,f'(v)\right|$
+be finite.
+
+<p>
+
+As in the <A HREF="#HahnBanach">univariate case</A>,
+proving the Mean Value Theorem in the multivariate context
+(Theorem 9.19) requires either that $V$ have an inner-product norm,
+or the use of the Hahn-Banach theorem to construct suitable functionals
+<nobr>on $V\!$.</nobr>  Once this is done,
+the key Theorem&nbsp;9.21 can also be proved for functions to <em>V</em>,
+and without first doing the case $m=1.$  To do this,
+first prove the result in the special case when each $D_j({\bf x})$
+vanishes; then reduce to this case by subtracting from $f$
+the linear map from ${\bf R}^n$ <nobr>to $V$</nobr>
+indicated by the partial derivatives $D_j \,f({\bf x}).$
+
+<p>
+
+The <em>Inverse function theorem</em> (9.24) is a special case
+of the <em>Implicit function theorem</em> (9.28), and its
+proof amounts to specializing the proof of the implicit function
+theorem.  But Rudin proves the Implicit theorem as a special
+case of the Inverse theorem, so we have to do Inverse first.
+(NB for these two theorems we will assume
+that our target space is finite-dimensional;
+how far can you generalize to infinite-dimensional spaces?)
+Note that Rudin&rsquo;s statement of the contraction principle
+(Theorem 9.23 on p.220)
+is missing the crucial hypothesis that $X$ be nonempty!
+The end of the proof of 9.24 could be simplified if Rudin allowed
+himself the full use of the hypothesis that $\bf f$
+is continuously differentiable <nobr>on $E$,</nobr>
+not just <nobr>at $\bf a$:</nobr> differentiability of the
+inverse <nobr>function $\bf g$</nobr> at
+${\bf G} = {\bf f}({\bf a})$ is easy given Rudin&rsquo;s
+construction <nobr>of $\bf g$;</nobr>
+differentiability at any other point ${\bf f}({\bf x})$ follows,
+since $\bf x$ might as well be ${\bf a},$
+and then the derivative is continuous because
+$\bf g$ and <nobr>${\bf f}'$ are.</nobr>
+
+<p>
+<font size="-1">
+[We have seen that even in dimension $1$ there can be a function
+$\,f$ that is differentiable everywhere, and has $f'(0) \neq 0$,
+but is not locally injective <nobr>near $0$,</nobr> and thus
+has no inverse function.
+(Necessarily $f'$ is not continuous <nobr>at $0$.)</nobr>
+However, if $f'(x)$ exists <em>and is nonzero</em> for all $x$
+in a neighborhood <nobr>of $0$,</nobr> then $\,f$ <u>is</u>
+injective by Rolle&rsquo;s theorem, and then it does have an inverse
+function with the expected derivative.  Remarkably this generalizes
+to higher dimensions (replacing <nobr>&ldquo;$f'$ nonzero&rdquo;</nobr>
+by <nobr>&ldquo;$f'$ invertible&rdquo;)</nobr>,
+though the proof requires techniques from algebraic topology such as
+the <a href="https://en.wikipedia.org/wiki/Brouwer_fixed-point_theorem"
+ target="_blank">Brouwer fixed point theorem</a> instead of Rolle.
+See <a href="https://terrytao.wordpress.com/2011/09/12/the-inverse-function-theorem-for-everywhere-differentiable-maps/"
+ target="_blank">this Sep.2011 entry on Terry Tao&rsquo;s blog</a>.]
+</font>
+
+<p>
+
+The proof of the second part of the implicit function theorem,
+which asserts that the implicit function <strong>g</strong> not only
+exists but is also continuously differentiable with derivative
+at $\bf b$ given by formula (58) (p.225), can be done
+more easily using the chain rule, since $\bf g$ has been
+constructed as the composition of the following three functions:
+first, send $\bf y$ to $({\bf 0}, {\bf y})$;
+then, apply the inverse function ${\bf F}^{-1}$;
+finally, project the resulting vector $({\bf x}, {\bf y})$
+<nobr>to $\bf x$.</nobr>
+The first and last of these three functions
+are linear, so certainly ${\cal C}^1$; and the continuous
+differentiability of ${\bf F}^{-1}$ comes from
+the inverse function theorem.
+
+<p>
+
+Here&rsquo;s an approach to $D_{ij} = D{ji}$
+that works for a ${\cal C}^2$ function to an arbitrary
+normed space.  As in Rudin (see p.235) we reduce to the case of
+a function of two variables, and define <nobr>$u$ and $\Delta$.</nobr>
+Assume first that $D_{21} \, f$ vanishes <nobr>at $(a,b)$.</nobr>
+Then use the Fundamental Theorem of Calculus to write $\Delta(f,Q)$
+as the integral of $u'(t) \, dt$ on $[a,a+h]$, and then write
+$u(t)$ as an integral of  $D_{21} \, f(t,s) \, ds$ on $[b,b+k]$.
+Conclude that $u'(t) = o(k)$ and thus that $\Delta(\, f,Q) / hk \to 0.$
+Now apply this to the function $\, f - xy D_{21} \, f(x,y)$
+to see that in general $\Delta(\, f,Q) / kh \to D_{21} \, f(x,y)$.
+Do the same in reverse order to conclude that
+$D_{21} \, f(x,y) = D_{12} \, f(x,y).$
+Can you prove $D_{12} \, f = D_{21} \, f$
+for a function $\,f$ to an arbitrary inner product space
+under the hypotheses of Theorem 9.41?
+
+<p>
+
+We omit the &ldquo;rank theorem&rdquo; (whose lesser importance
+is noted by Rudin himself), as well as the section on determinants
+(which we treated at much greater length in Math&nbsp;55a).
+
+<p>
+
+An important application of iterated partial derivatives is the
+Taylor expansion of an <nobr>$m$-times</nobr> differentiable
+function of several variables; see Exercise 30 (Rudin, 243-244).
+As promised at the start of Math 55a and/or Math 55b, this also
+applies to maxima and minima of real-valued functions $\,f$
+of several variables, as follows.  If $\,f$ is differentiable at
+a local maximum or minimum then its derivative there vanishes,
+as was the case for a function of one variable.  Again we say that
+a zero of the derivative is a &ldquo;critical point&rdquo; <nobr>of $\,f$.</nobr>
+Suppose now that $\, f$ is ${\cal C}^2$ near a critical point.
+The second derivative can be regarded as a quadratic form.
+It must be positive semidefinite at a local minimum,
+and negative semidefinite at a local maximum.  Conversely,
+if it is strictly positive (negative) definite at a critical point
+then that point is a strict local minimum (resp.&nbsp;maximum)
+<nobr>of $\,f$.</nobr>  
+Compare with Rudin&rsquo;s exercise 31 on page 244
+(which however assumes that $\, f$ is ${\cal C}^3$ &mdash;
+which I don&rsquo;t think is needed, though it makes some of the estimates
+easier to obtain).
+
+<p>
+
+<img src="redball.gif">
+
+Next topic, and last one from Rudin, is
+<strong>multivariate integral calculus</strong> (Chapter 10).
+Most of the chapter is concerned with setting up a higher-dimensional
+generalization of the Fundamental Theorem of Calculus that comprises
+the divergence, Stokes, and Green theorems and much else besides.
+With varying degrees of regret we&rsquo;ll omit this material, as well as
+the Lebesgue theory of Chapter&nbsp;11.  We will, however, get
+some sense of multivariate calculus by giving a definition of
+integrals over ${\bf R}^n$
+and proving the formula for change of variables (Theorem 10.9).
+this will already hint why in general an integral over an
+<nobr>$n$-dimensional</nobr> space is often best viewed
+as an integral not of a function but a &ldquo;differential
+<nobr>$n$-form</nobr>&rdquo;.  For instance, in two dimensions
+an integrand of
+<nobr>&ldquo;$\,f(x,y) \, dx \, dy$ &rdquo;</nobr>
+can be thought of as
+<nobr>&ldquo;$\,f(x,y) \, dx \wedge dy$ &rdquo;,</nobr>
+and then we recover the formula involving the Jacobian from
+the rules of exterior algebra.  You&rsquo;ll have to read the
+rest of this chapter of Rudin, and/or take a course on
+differential geometry or &ldquo;calculus on manifolds&rdquo;,
+to see these ideas developed more fully.
+
+<p>
+
+By induction on $n$, the map taking a continuous function $\,f$ on
+a box $B = \{ x \in {\bf R}^n: \forall i, x_i \in [a_i,b_i] \}$
+to its integral on $B$ is bounded linear map of norm equal to
+the volume $\prod_{i=1}^n (b_i-a_i)$ of the box.
+The application of Stone-Weierstrass that Rudin uses to derive
+Fubini&rsquo;s theorem (for continuous integrands on a box)
+suggests the following generalization:
+for <em>any</em> compact metric spaces $X_1,\ldots,X_n$, any continuous
+$\, f: X_1 \times X_2 \times \cdots \times X_n \to {\bf R}$
+can be uniformly approximated by linear combinations of functions
+of the form $(x_1,x_2,\ldots,x_n) \mapsto
+\, f_1(x_1) \; f_2(x_2) \cdots \, f_n(x_n)$
+for continuous $\, f_i: X_i \to {\bf R}.$  The proof is much the same
+as in the case of intervals $X_i = [a_i,b_i]$ that Rudin uses.
+
+<p>
+
+Rudin&rsquo;s use of &ldquo;compact support&rdquo;
+(top of page 247) doesn&rsquo;t quite match the definition
+(10.3, bottom of page 246): as defined there, the only continuous
+function of compact support is zero!  But all that is needed is that
+the support is <em>contained</em> in a compact set (which is what
+&ldquo;compact support&rdquo; actually means in practice), which by Heine-Borel
+is equivalent to the assumption that the function has <em>bounded</em> support.
+
+<p>
+
+The &ldquo;partition of unity&rdquo; constructed in Theorem 10.8
+works for compact subsets of any metric space, not just ${\bf R}^n$.
+In ${\bf R}^n$, it can be done also with differentiable $\psi_i$,
+or even ${\cal C}^\infty$ functions (but not analytic ones&hellip;),
+by choosing differentiable or ${\cal C}^\infty$
+<nobr>functions $\varphi_i$.</nobr>
+
+<P>
+
+<img src="redball.gif">
+<A HREF="analytic1.pdf" target="_blank">Complex Analysis 1</a>:
+<br>
+Outline of solutions and extensions for the complex analysis problems from 
+the 8th and 9th problem set
+<br>
+Having defined line integrals, we can deduce that if $f$ is analytic in
+an open <nobr>rectangle $R$</nobr> then $\oint_\gamma f(z)\, dz = 0$ for
+<em>any</em> closed path <nobr>in $R$,</nobr> because that's $\oint_\gamma dF(z)$
+where $F$ is an antiderivative (as constructed in #4).
+Likewise for $f$ analytic on an open circle, or on any other <em>convex</em>
+region (so that we can consistently <nobr>construct $F$).</nobr>
+Note that these paths are <em>not</em> required to be simple
+(i.e., they may self-intersect).  In fact this is true on any
+<em>simply-connected</em> <nobr>region $E$.</nobr>  We are not
+in position in 55a to properly define this notion, but it is preserved
+under 1:1 ${\cal C}^1$ maps $T$ with ${\cal C}^1$ inverses
+(recall that by the Inverse Function Theorem the
+${\cal C}^1$ inverse is equivalent to the condition that $T$
+at each point is an invertible linear map).  Note that $T$ is
+<u>not</u> required to be complex analytic!(*) The point is that
+since $\omega = f(z) \, dz$ is closed, so is its &ldquo;pullback&rdquo;
+$T^*\omega$ (obtained by substituting for $dx$ and $dy$ the
+total derivatives of the <nobr>$x$-</nobr> and <nobr>$y$-coordinates</nobr>
+<nobr>of $T$);</nobr> but then $\oint_\gamma T^*\omega = 0$
+for every closed path $\gamma$ (because $T^*\omega = dF$ for
+<nobr>some $F$),</nobr> so
+$\oint_{T\gamma} f(z) \, dz
+ = \oint_{T\gamma} \omega = \oint_\gamma T^*\omega = 0$.
+It then follows that $f = F'$ for some analytic function $F$
+on our region: we can define $F$ on any connected component by
+fixing $z_0$ in the component and setting $F(z) = \int_\gamma f(z) \, dz$
+for any path $\gamma$ from $z_0$ <nobr>to $z$</nobr>; this is well-defined
+because two different choices of $\gamma$ differ by a close path,
+and the integral of $f(z) \, dz$ on a closed path vanishes.
+
+<br>
+
+<font size="-1">(*) In fact any two connected and simply-connected
+regions in $\bf C$ are related by an <em>analytic</em> 1:1 map,
+unless exactly one of them is all of $\bf C$.  But that is
+ <a href="https://en.wikipedia.org/wiki/Riemann_mapping_theorem"
+   target="_blank">a considerably harder theorem</a>.</font>
+
+<p>
+
+Now that we recognize the rectangular $\oint_{\partial R}$ as
+a special case of a contour integral, we can also recognize
+$\int_0^{\theta_0} f(Re^{i\theta}) \, d\theta$ as
+$\int_\gamma f(z) \, \frac{dz}{iz}$ where $\gamma$ is the
+circular arc from $R$ to $Re^{i\theta_0}$.
+In particular, the formula
+$f(a) = (2\pi)^{-1} \int_0^{2\pi} f(a + Re^{i\theta}) \, d\theta$
+is tantamount to
+<a href="https://en.wikipedia.org/wiki/Cauchy's_integral_formula"
+ target="_blank">Cauchy&rsquo;s integral formula</a>
+$f(a) = (2\pi i)^{-1} \oint_\gamma f(z) \, \frac{dz}{z-a}$
+for a circular contour $\gamma$ centered at $a$
+(in each case $\,f$ must be analytic in a neighborhood of the
+corresponding circular disc).  Likewise for our generalization
+where $a$ can be any point in the open disc, not necessarily
+its center.
+
+<p>
+
+An important application is the
+<a href="https://en.wikipedia.org/wiki/Laurent_series"
+  target="_blank">Laurent series</a>
+of a function analytic in a neighborhood of an annulus
+$\{ z \in {\bf C} : r \leq |z-a| \leq R \}$,
+generalizing the power series expansion of an analytic function
+in a disc.  This time we find that if $r \lt |z_0-a| \lt R$ then
+$$
+f(z_0) = \frac1{2\pi i} \oint_{|z|=R} f(z) \, \frac{dz}{z-z_0}
+         - \frac1{2\pi i} \oint_{|z|=r} f(z) \, \frac{dz}{z-z_0}.
+$$
+The first integral is still $\sum_{n=0}^\infty c_n (z_0-a)^n$
+where $c_n = (2\pi i)^{-1} \oint_{|z|=R} f(z) \, dz/(z-a)^{n+1},$
+using the geometric series
+$$
+\frac 1{z-z_0} = \frac 1{(z-a)-(z_0-a)}
+ = \sum_{n=0}^\infty \frac{(z_0-a)^n}{(z-a)^{n+1}}
+$$
+uniformly convergent in compact subsets of the open annulus
+(and indeed of the circle <nobr>$|z| \lt R$).</nobr>
+For the second integral we use the geometric series
+$$
+\frac 1{z-z_0} = \frac 1{(z-a)-(z_0-a)}
+ = -\sum_{n=1}^\infty \frac{(z-a)^{n-1}}{(z_0-a)^n}
+ = \! -\sum_{n=-\infty}^{-1} \frac{(z_0-a)^n}{(z-a)^{n+1}},
+$$
+also uniformly convergent in compact subsets of the annulus
+(and indeed in $|z| \geq \rho$ for any <nobr>$\rho \gt r$).</nobr>
+We conclude that $f(z) = \sum_{n\in\bf Z} c_n z^n$ with
+$c_n = \frac1{2\pi i} \oint f(z) \, dz/(z-a)^{n+1}$
+for all $n,$ positive as well as negative.  The contour $\gamma$
+can be any circle $|z|=\rho$ with $\rho \in [r,R],$
+or for that matter any closed contour in the annulus that
+winds around it once.  In particular, taking $\rho = |z_0|$
+recovers the Fourier series of the restriction of $\,f$ to the
+circle $|z_0| = \rho.$
+
+<p>
+
+<a href="https://en.wikipedia.org/wiki/Liouville's_theorem_(complex_analysis)"
+  target="_blank">Liouville&rsquo;s theorem</a>
+soon follows: <em>every bounded entire function is constant</em>.
+(An &ldquo;entire function&rdquo; is an analytic function
+$\,f: {\bf C} \to {\bf C}$.)  Write $f(z) = \sum_{n=0}^\infty a_n z^n.$
+Since the domain is the entire complex plane,
+we can apply the integral formula for $a_n$ with $R$ arbitrarily large.
+This shows that $a_n = O(1/R^n),$ and thus $a_n = 0$ for each $n &gt; 0.$
+The hypothesis may seem very restrictive, but note that the
+Fundamental Theorem of Algebra follows immediately on setting
+$\,f(z) = 1/P(z)$ for a polynomial $P \in {\bf C}[z]$ with no complex roots:
+$1/P,$ and thus $P,$ must be constant!
+
+<p>
+
+The same argument shows more generally that if an entire function grows
+no faster than a polynomial then it <em>is</em> a polynomial;
+more precisely, if for some $d$ we have constants $C,R_0$ such that
+$|\,f(z)| \leq C |z|^d$ for all $z\in\bf C$ with $|z| \geq R_0,$
+then $\,f$ is a polynomial of degree at <nobr>most $d$.</nobr>
+Indeed the integral formula shows $|a_n| \leq C R^{d-n}$ for all
+$R \geq R_0,$ whence $a_n = 0$ for $n \gt d.$
+
+<p>
+
+<A NAME="today">
+<img src="orangeball.gif">
+
+The &ldquo;<em>calculus of residues</em>&rdquo; is a central tool,
+both for developing complex analysis and for applications beyond it.
+If $\,f$ is an analytic function on a punctured neighborhood $E$
+of $a \in \bf C$ then the <em>residue</em> <nobr>of $\,f$</nobr>
+<nobr>(better, of $\,f(z)\,dz$)</nobr> at $a$ is
+$(2\pi i)^{-1} \oint_\gamma f(z) \, dz$ where $\gamma$ is
+the oriented boundary of a circle about $a$ lying in $E \cup \{a\}$.
+The factor of $(2\pi i)^{-1}$ is convenient because the residue of
+a power series $\sum_n c_n (z-a)^n$ (with negative $n$ allowed) is
+$c_{-1}.$  (Proof: the residue is additive, and the residue of
+$\sum_{n\neq -1} c_n (z-a)^n$ vanishes because there is an analytic
+antiderivative $\sum_{n\neq -1} c_n (z-a)^{n+1}/(n+1)$;
+so it remains to check that $c_{-1} \, dz/(z-a)$ has residue $c_{-1},$
+which is a restatement of something we have already shown.)
+For example, if $\,f$ is actually analytic on an (unpunctured)
+neighborhood <em>of $a$,</em> then $f(z) \, dz/(z-a)$ has
+a residue of $f(a)$ at $z=a,$ from which we recover the
+Cauchy integral formula.
+
+<p>
+If $\gamma$ is the oriented boundary of a
+simply connected region $E,$ and $\,f$ is analytic on a neighborhood of
+$\overline{E}$ except for some points $a_1,\ldots,a_k$ in $E,$ then
+$\oint_\gamma f(z) \, dz = 2\pi i \sum_{j=1}^k {\rm Res}_{z=a_j} f(z) \, dz$.
+In particular this is true if $\,f$ is <em>meromorphic</em> on a
+neighborhood of $\overline E$ (that is, if each $a_j$ is at worst a pole).
+This will be the basis for most of our applications of contour integration
+to the evaluation of definite integrals.  (The main exception is
+$\int_0^\infty \sin x \, dx/x
+= \frac12 \int_{-\infty}^\infty \sin x \, dx/x,$
+for which we had to deal with the pole of $e^{iz} \, dz/z$
+<em>on</em> the natural contour, and got a contribution of half its residue.)
+For example, if $\gamma$ is the oriented boundary of the semicircle
+$\{ z \in {\bf C}: |z| \leq R, {\rm Re}(z) \geq 0 \}$, then
+$e^{iyz} \, dz/(z^2+1)$ is analytic in a neighborhood of that semicircle
+except for the simple pole at $z=i,$ where its residue is $e^{-y}/2i$
+(because $1/(z^2+1) = 1/(z-i)(z+i)$ etc.); thus if $y \geq 0$
+we can let $R \to \infty$ to deduce that
+$\int_{-\infty}^\infty e^{ixy} \, dx/(x^2+1) = \pi e^{-y},$ whence also
+$\int_0^\infty \cos(xy) \, dx/(x^2+1) = (\pi/2) e^{-y}.$
+
+<p>
+
+An important example is a <em>logarithmic derivative</em>
+$(\log \, f)' = \,f'/f$ (better, a logarithmic differential
+<nobr>$d(\log f) = df/f = (\,f'/f) \, dz$).</nobr>
+Here $\,f$ is any mermomorphic function that is not identically zero.
+This makes sense even though $\log f$ is not in general well-defined,
+and is additive: $d(\,fg)/fg = df/f + dg/g.$  The key fact is that
+$df/f$ has poles only at zeros and poles <nobr>of $\,f$:</nobr>
+a simple pole of residue $n$ at $z=a$ if $a$ is
+an <nobr>order-$n$</nobr> zero <nobr>of $\,f$</nobr>,
+and a simple pole of residue $-n$ at $z=a$ if $a$ is 
+an <nobr>order-$n$</nobr> pole.  Therefore $\oint_\gamma df/f$
+is $2\pi i$ times the difference between the numbers of zero and poles
+<nobr>of $\,f$</nobr> enclosed <nobr>by $\gamma$,</nobr> counted
+with multiplicity (assuming that there is no zero and pole on
+$\gamma$ itself &mdash; and also assuming as usual that $\gamma$ is
+traversed &ldquo;in the positive direction&rdquo;).  This is a form of
+the <a href="https://en.wikipedia.org/wiki/Argument_principle"
+ target="_blank">argument principle</a>.
+
+<p>
+
+Now, since $2\pi i {\bf Z}$ is a discrete subset of ${\bf C},$
+continuous changes <nobr>in $\,f$</nobr> cannot change $\oint_\gamma df/f,$
+and thus leave invariant the number of zeros minus poles: zeros can merge
+with zeros, and poles with poles (combining multiplicity), or can cancel
+each other (consider $\,f_a(z) = z/(z-a)$ as $a \to 0$, with $\,f_a(z)$
+varying continuously <nobr>on $|z|=1$)</nobr>, but they cannot
+&ldquo;escape&rdquo; or &ldquo;enter&rdquo; the region enclosed
+<nobr>by $\gamma$.</nobr>  One might more simply say that the
+total number of zeros with multiplicity remains constant, where a pole
+of order $n$ is counted as a &ldquo;zero of order <nobr>$-n$&rdquo;.</nobr>
+An example is
+<a href="https://en.wikipedia.org/wiki/Rouche's_theorem"
+ target="_blank">Rouch&eacute&rsquo;s theorem</a>:
+If $|g(z)| &lt; |\,f(z)|$ for all $z$ on $\gamma$ then
+$\,f$ and $\,f+g$ have the same counts of
+zeros minus poles with multiplicity enclosed <nobr>by $\gamma$.</nobr>
+(Proof: consider $\oint_\gamma d(\,f+tg) \, / \, (\,f+tg)$ as $t$ varies from
+$0$ to $1$ (an example of a &ldquo;homotopy&rdquo;).)  In particular,
+if $\,f$ and $g$ are both analytic then $\gamma$ encloses at least one
+zero of $\,f$ if and only if it encloses at least one zero of $\,f+g.$
+An easy consequence is the
+<a href="https://en.wikipedia.org/wiki/Open_mapping_theorem_(complex_analysis)"
+ target="_blank">open mapping theorem</a>:
+a nonconstant analytic function takes open sets to open sets.
+(NB this is not generally true of continuous functions, nor even of
+analytic functions on $\bf R$ &mdash; can you find an easy counterexample?)
+
+
+<!--
+<p>
+
+After deriving (at least part of) the change of variables formula,
+we can return to the section of Chapter&nbsp;8 concerning
+Euler&rsquo;s Beta and Gamma integrals and give a more natural
+treatment of the formula relating them (Theorem&nbsp;8.20).
+
+<p>
+
+The rather obscure integration by parts in Rudin, p.194 is not necessary.
+A straightforward choice of &ldquo;parts&rdquo; yields
+<p>
+<center>
+<em>x</em> B(<em>x</em>, <em>y</em>+1) =
+<em>y</em> B(<em>x</em>+1, <em>y</em>) ;
+</center>
+<p>
+This may seem to go in a useless direction,
+but the elementary observation that
+<p>
+<center>
+B(<em>x</em>, <em>y</em>) =
+B(<em>x</em>, <em>y</em>+1) + B(<em>x</em>+1, <em>y</em>)
+</center>
+<p>
+recovers the recursion (97).
+
+<p>
+
+In addition to the trigonometric definite integrals noted by Rudin
+(formula 98), Beta functions also turn up in the evaluation of
+the definite integral of
+<nobr><em>u<sup>a</sup> du</em> /
+(1+<em>u<sup>b</sup></em>)<sup><em>c</em></sup></nobr>
+over <nobr>(0,&infin;)</nobr>: let
+<nobr><em>t</em> = <em>u<sup>b</sup></em> / (1+<em>u<sup>b</sup></em>)</nobr>.
+What is the value of that integral?
+Can you obtain in particular the formula
+<nobr>&pi; / (<em>b</em> sin(<em>a</em> &pi;/<em>b</em>))</nobr>
+for the special case <em>c</em>=1?
+
+<p>
+
+The limit formula for &Gamma;(<em>x</em>) readily yields
+the product formula:
+<blockquote>
+&Gamma;(<em>x</em>) = 
+<em>x</em><sup>&minus;1</sup> <em>e</em><sup>&minus;<em>Cx</em></sup>
+Prod(exp(<em>x</em>/<em>k</em>) / (1+<em>x</em>/<em>k</em>),
+<em>k</em>=1,2,3,...)
+</blockquote>
+where <em>C</em>=0.57721566490... is <em>Euler&rsquo;s constant</em>
+(a.k.a. the <a href="https://en.wikipedia.org/wiki/Euler-Mascheroni_constant"
+  target="_blank">Euler-Mascheroni constant</a>),
+which is the limit as <nobr><em>N</em>&rarr;&infin;</nobr> of
+<nobr>1 + (1/2) + (1/3) + ... + (1/<em>N</em>) &minus; log(<em>N</em>)</nobr>.
+This lets us easily show that &Gamma; is infinitely differentiable
+(in fact analytic) and to obtain nice formulas for the derivatives
+of log(&Gamma;(<em>x</em>)); for instance,
+<nobr>&Gamma;&thinsp;'(1) = &minus;<em>C</em></nobr>, and more generally
+the logarithmic derivative of <nobr>&Gamma;(<em>x</em>)</nobr> at
+<nobr><em>x</em> = <em>N</em>+1</nobr> is
+<nobr>1 + (1/2) + (1/3) + ... + (1/<em>N</em>) &minus; <em>C</em>.</nobr>
+
+<p>
+
+<img src="redball.gif"> Let
+<nobr><em>I</em>(<em>w</em>) = &int;<sub>&minus;&infin;</sub><sup>&infin;</sup>
+  exp(&minus;<em>x</em><sup>2</sup>+<em>wx</em>) <em>dx</em></nobr>
+for any <u>complex</u> <em>w</em>.  The integral is &ldquo;improper&rdquo;
+but converges absolutely for all&nbsp;<em>w</em>.  We know
+<nobr><em>I</em>(0) = &pi;<sup>&frac12;</sup></nobr>.
+If <em>w</em> is real then
+<nobr><em>I</em>(<em>w</em>) = exp(<em>w</em><sup>2</sup>/4) <em>I</em>(0)</nobr>
+by &ldquo;completing the square&rdquo;.  We showed in effect that
+the same formulas holds for purely imaginary&nbsp;<em>w</em>:
+if <nobr><em>w</em> = <em>it</em></nobr> then the real part of the integral
+is
+<nobr><em>I</em>(<em>w</em>) = &int;<sub>&minus;&infin;</sub><sup>&infin;</sup>
+  exp(&minus;<em>x</em><sup>2</sup>) cos(<em>tx</em>) <em>dx</em></nobr>,
+which we evaluated as 
+<nobr>exp(&minus;<em>t</em><sup>2</sup>/4) <em>I</em>(0)</nobr>,
+and the imaginary part is
+<nobr><em>I</em>(<em>w</em>) = &int;<sub>&minus;&infin;</sub><sup>&infin;</sup>
+  exp(&minus;<em>x</em><sup>2</sup>) sin(<em>tx</em>) <em>dx</em></nobr>,
+which vanishes by antisymmetry.  Combining these two tools we can show
+<nobr><em>I</em>(<em>w</em>) = exp(<em>w</em><sup>2</sup>/4) <em>I</em>(0)</nobr>
+for all complex&nbsp;<em>w</em>.  We shall give a better explanation
+for this when we can think of <em>I</em> as an analytic function of
+a complex variable.
+
+<p>
+
+<img src="redball.gif">
+Context for Bohr-Mollerup etc.:
+Some generalities about
+<a href="https://en.wikipedia.org/wiki/Convex_set"
+  target="_blank">convexity</a>.
+A subset <em>E</em> of a <i>real</i> vector space <em>V</em>
+is said to be <u>convex</u> if <em>E</em> contains the line segment
+<nobr>{(1&minus;<em>t</em>)<em>x</em> + <em>ty</em> :
+  <em>x</em>, <em>y</em> <font size="-2">&in;</font> <em>E</em>,
+  0 &le; <em>t</em> &le; 1}</nobr> joining any two points
+<nobr><em>x</em>, <em>y</em> <font size="-2">&in;</font> <em>E</em></nobr>.
+Examples are <em>V</em>, &empty;, a vector subspace, or a closed or open
+ball with respect to <em>any</em> norm on&nbsp;<em>V</em> (why?);
+also the intersection of any convex sets
+<nobr><em>E</em> and <em>E'</em></nobr>
+(and indeed the intersection of any family of convex sets),
+the <em>sum</em>
+<nobr>{<em>x</em> + <em>x'</em> :
+  <em>x</em> <font size="-2">&in;</font> <em>E</em>,
+  <em>x'</em> <font size="-2">&in;</font> <em>E'</em>}</nobr>
+of any convex sets <nobr><em>E</em> and <em>E'</em></nobr>
+(so in particular the translate of a convex set by a fixed vector),
+and the image or preimage of a convex set under any linear transformation
+(so in particular a convex subset of a vector subspace).
+By induction, a convex set is closed under &ldquo;convex combinations&rdquo;:
+if <nobr><em>x</em><sub>1</sub>, &hellip;, <em>x<sub>n</sub></em>
+ <font size="-2">&in;</font> <em>E</em></nobr>
+then <em>E</em> also contains
+<nobr>&sum;<sub><em>i</em></sub> <em>t<sub>i</sub>x<sub>i</sub></em></nobr>
+for all real <em>t<sub>i</sub></em> such that 
+<nobr>&sum;<sub><em>i</em></sub> <em>t<sub>i</sub></em> = 1</nobr>
+and each <nobr><em>t<sub>i</sub></em> &ge; 0</nobr>
+(whence also each <nobr><em>t<sub>i</sub></em> &le; 1</nobr>).
+
+<p>
+
+A subset <em>E</em> of <em>V</em> is &ldquo;midpoint-convex&rdquo;
+if it contains the midpoint <nobr>(<em>x</em> + <em>y</em>) / 2</nobr>
+of the line segment joining any two points
+<nobr><em>x</em>, <em>y</em> <font size="-2">&in;</font> <em>E</em></nobr>.
+That&rsquo;s the special case <nobr><em>t</em>=&frac12;</nobr>
+of <nobr>(1&minus;<em>t</em>)<em>x</em> + <em>ty</em></nobr>.
+By induction <em>E</em> then contains
+<nobr>(1&minus;<em>t</em>)<em>x</em> + <em>ty</em></nobr>
+for all &ldquo;dyadic rationals&rdquo; (rational numbers with
+<nobr>power-of-2</nobr> denominator) <nobr><em>t</em> in [0,1]</nobr>.
+This does <u>not</u> imply that <em>E</em> is convex (for instance,
+the rational numbers constitute a subset of <b>R</b> that is
+midpoint-convex but not convex); however, in a normed vector space,
+an open or closed midpoint-convex subset <em>is</em> automatically convex
+(basically because the dyadic rationals are dense in&nbsp;<b>R</b>).
+
+<p>
+
+If <em>E</em> is convex, a <em>function</em>
+<nobr><em>g</em> : <em>E</em> &rarr; <b>R</b></nobr>
+is said to be &ldquo;convex&rdquo; if its
+&ldquo;<a href="https://en.wikipedia.org/wiki/Epigraph_(mathematics)"
+  target="_blank">epigraph</a>&rdquo;
+<nobr>{(<em>v</em>, <em>y</em>)
+  <font size="-2">&in;</font> <em>V</em> &times; <b>R</b> :
+  <em>y</em> &ge; <em>g</em>(<em>v</em>)}</nobr>
+is a convex subset of <nobr><em>V</em> &oplus; <b>R</b></nobr>.
+[One can also use the &ldquo;strict epigraph&rdquo; with the condition
+<nobr><em>y</em> &ge; <em>g</em>(<em>v</em>)</nobr> replaced by
+<nobr><em>y</em> &gt; <em>g</em>(<em>v</em>)</nobr>.]
+Equivalently, &nbsp;
+<nobr><em>g</em>((1&minus;<em>t</em>)<em>x</em> + <em>ty</em>)
+ &le; (1&minus;<em>t</em>) <em>g</em>(<em>x</em>)
+    + <em>t</em> <em>g</em>(<em>y</em>)</nobr>
+for all
+<nobr><em>x</em>, <em>y</em> <font size="-2">&in;</font> <em>E</em></nobr>
+and <nobr><em>t</em> <font size="-2">&in;</font> [0,1]</nobr>.
+Examples are constants, linear functions, norms (check this!),
+quadratic forms <u>iff</u> they&rsquo;re positive-semidefinite (why?),
+the pointwise maximum of any two convex functions (or even the pointwise
+supremum of any nonempty family of convex functions, provided it is
+everywhere positive &mdash; because this corresponds to intersecting
+the epigraphs), and any <em>positive</em> linear combination of
+convex functions.  By induction, the criterion
+<nobr><em>g</em>((1&minus;<em>t</em>)<em>x</em> + <em>ty</em>)
+ &le; (1&minus;<em>t</em>) <em>g</em>(<em>x</em>)
+    + <em>t</em> <em>g</em>(<em>y</em>)</nobr>
+generalizes to convex linear combinations:
+<nobr><em>g</em>(&sum;<sub><em>i</em></sub>
+   <em>t<sub>i</sub>x<sub>i</sub></em>) &le; 
+   &sum;<sub><em>i</em></sub> <em>t<sub>i</sub></em>
+     <em>g</em>(<em>x<sub>i</sub></em>)</nobr>
+with <em>t<sub>i</sub></em> as above
+(i.e. <nobr>&sum;<sub><em>i</em></sub> <em>t<sub>i</sub></em> = 1</nobr>
+and each <nobr><em>t<sub>i</sub></em> &ge; 0</nobr>); in other words,
+a weighted average of function values is &ge; the value at the function
+at the corresponding weighted average.  This is
+<a href="https://en.wikipedia.org/wiki/Jensen%27s_inequality"
+  target="_blank">Jensen&rsquo;s inequality</a>.
+
+<p>
+
+We say <em>g</em> is &ldquo;midpoint-convex&rdquo; if
+<nobr><em>g</em>((1&minus;<em>t</em>)<em>x</em> + <em>ty</em>)
+ &le; (1&minus;<em>t</em>) <em>g</em>(<em>x</em>)
+    + <em>t</em> <em>g</em>(<em>y</em>)</nobr>
+holds only for <em>t</em>=&frac12; (i.e. for unweighted averages),
+and thus by induction for all dyadic <em>t</em> in [0,1]
+(and by a clever variation of the argument, even for all rational
+<em>t</em> in [0,1], whether dyadic or not).  If <em>g</em> is continuous
+then it is convex <u>iff</u> it is midpoint convex.
+For example, the exponential function on <b>R</b>, and the function
+<nobr><em>g</em>(<em>x</em>) = &minus;log(<em>x</em>)</nobr> on
+<nobr>(0,&infin;)</nobr>, are readily seen to be midpoint-convex,
+being continuous, these functions are thus both convex.
+Applying Jensen then yields the
+<a href="https://en.wikipedia.org/wiki/Inequality_of_arithmetic_and_geometric_means#Generalizations"
+  target="_blank">weighted AM-GM inequality</a>.
+
+<p>
+
+Rudin uses a fact about convex functions on intervals in&nbsp;<b>R</b>
+that is only presented as an exercise earlier in the book (p.100, #23).
+Namely: let <em>f</em>&thinsp; be a convex function on some interval <em>I</em>,
+and consider the slope
+<nobr><em>s</em>(<em>x</em>, <em>y</em>) :=
+(<em>f</em>&thinsp;(<em>x</em>)&minus;<em>f</em>&thinsp;(<em>y</em>))
+/ (<em>x&minus;y</em>)</nobr>
+as a function on the set of <nobr>(<em>x</em>, <em>y</em>)</nobr> in
+<nobr><em>I</em> &times; <em>I</em></nobr> with
+<nobr><em>x</em> &gt; <em>y</em></nobr>;
+then <em>s</em> is an increasing function of both variables.
+The proof is fortunately not hard.  For instance, to prove that if
+<nobr><em>x</em> &gt; <em>y'</em> &gt; <em>y</em></nobr> then
+<nobr><em>s</em>(<em>x</em>, <em>y'</em>&thinsp;) &gt;
+<em>s</em>(<em>x</em>, <em>y</em>),</nobr>
+write <em>y'</em> as <nobr><em>px</em> + <em>qy</em></nobr>
+with <nobr><em>p</em> + <em>q</em> = 1</nobr>,
+and calculate that
+<nobr><em>s</em>(<em>x</em>, <em>y'</em>) &gt;
+<em>s</em>(<em>x</em>, <em>y</em>)</nobr>
+is equivalent to the usual convexity condition.  The case
+<nobr><em>x</em> &gt; <em>x'</em> &gt; <em>y</em></nobr>
+works in exactly the same way.
+
+<p>
+
+If <em>G</em> takes only positive values then <em>G</em> is said to be
+<em>logarithmically convex</em> if log&nbsp;<em>G</em> is convex
+(equivalently, if <nobr><em>G</em>=exp(<em>g</em>)</nobr> for some
+convex function&nbsp;<em>g</em>); that is,
+<nobr><em>g</em>((1&minus;<em>t</em>)<em>x</em> + <em>ty</em>)
+ &le; <em>g</em>(<em>x</em>)<sup>1&minus;<em>t</em></sup>
+   <em>g</em>(<em>y</em>)</nobr><sup><em>t</em></sup></nobr>
+for all <nobr><em>x</em>, <em>y</em>, <em>t</em></nobr> as above
+(or <em>t</em>=&frac12; for &ldquo;logarithmically midpoint-convex&rdquo;).
+This is a strictly stronger condition than convexity (why?).
+It is satisfied by any function of the form
+<nobr><em>G</em>(<em>x</em>) = &int;<sub><em>t</em></sub>
+   <em>A</em>(<em>t</em>)<sup><em>x</em></sup><em>B</em>(<em>t</em>)</nobr>
+for any nonnegative functions <em>A</em>,&thinsp;<em>B</em>
+for which the integral converges.
+(For <em>t</em>=&frac12; this is an application of Cauchy-Schwarz;
+to prove it directly for other <em>t</em> in [0,1], use
+<a href="https://en.wikipedia.org/wiki/Holder's_inequality"
+  target="_blank">H&ouml;lder&rsquo;s inequality</a>.)
+In particular, &Gamma; is logarithmically convex on <nobr>(0,&infin;)</nobr>,
+as is <nobr>B(<em>x</em>,<em>y</em>)</nobr> as a function of two variables
+with <nobr><em>x</em>,<em>y</em> &gt; 0</nobr> (why?).
+This lets Rudin prove the formula
+<nobr>B(<em>x</em>,<em>y</em>) =
+   &Gamma;(<em>x</em>) &Gamma;(<em>y</em>) / &Gamma;(<em>x</em>+<em>y</em>)</nobr>
+via <a href="https://en.wikipedia.org/wiki/Bohr-Mollerup_theorem"
+  target="_blank">Bohr-Mollerup</a>
+without the usual double integral, and also obtain the product formula
+<nobr>&Gamma;(<em>x</em>)</nobr>.  Further consequences of this
+product formula are the identity
+<nobr>[B(<em>x</em>, 1&minus;<em>x</em>) = ]
+&Gamma;(<em>x</em>) &Gamma;(1&minus;<em>x</em>)
+= &pi; / sin(&pi;<em>x</em>)</nobr>
+for <em>x</em> in (0,1) (via the product formula for the sine),
+and also the duplication formula, and similar identities such as
+the &ldquo;triplication formula&rdquo; expressing
+<nobr>&Gamma;(<em>x</em>/3) &Gamma;((<em>x</em>+1)/3) &Gamma;((<em>x</em>+2)/3)</nobr>
+as a multiple of <nobr>&Gamma;(<em>x</em>)</nobr>.
+
+<p>
+
+<img src="redball.gif"> &ldquo;Partitions of unity&rdquo;
+can even be made smooth (a.k.a. <em>C</em><sup>&thinsp;&infin;</sup>).
+This requires a smooth function <nobr>&phi; : <b>R</b> &rarr; [0,1]</nobr>
+such that
+<nobr>&phi;(<em>t</em>) = 0</nobr> for <nobr><em>t</em> &le; 0</nobr>
+and <nobr>&phi;(<em>t</em>) = 1</nobr> for <nobr><em>t</em> &ge; 1</nobr>.
+Here is one construction.  Recall that the function <em>g</em> defined by
+<nobr><em>g</em>(<em>t</em>) = exp(&minus;1/<em>t</em>)</nobr>
+for <nobr><em>x</em> &gt; 0</nobr> and
+<nobr><em>g</em>(<em>t</em>) = 0</nobr> for <nobr><em>t</em> &le; 0</nobr>
+is smooth and already satisfies
+<nobr><em>g</em>(<em>t</em>) = 0</nobr> for <nobr><em>t</em> &le; 0</nobr>,
+as well as
+<nobr>0 &lt; <em>g</em>(<em>t</em>) &lt; 1</nobr> for
+<nobr><em>t</em> &gt; 0</nobr>.  So one construction of &phi; is
+<nobr>&phi;(<em>t</em>) = <em>g</em>(<em>t</em>) / 
+  (<em>g</em>(<em>t</em>) + <em>g</em>(1&minus;<em>t</em>)).</nobr>
+Alternatively, we can use
+<nobr>&phi;(<em>t</em>) =
+  <em>c</em> &int;<sub>&minus;&infin;</sub><sup><em>t</em></sup>
+    <em>f</em>&thinsp;(<em>u</em>) <em>du</em><nobr>,
+where <em>f</em> is a smooth nonnegative function with support (0,1)
+and the normalizing constant <em>c</em> is
+<nobr>1 <font size="+1"> / </font> &int;<sub>0</sub><sup>1</sup>
+    <em>f</em>&thinsp;(<em>u</em>) <em>du</em></nobr>;
+for example, take
+<nobr><em>f</em>&thinsp;(<em>u</em>)
+  = &phi;(<em>u</em>) &phi;(1&minus;<em>u</em>)</nobr>,
+which is
+<nobr>exp(&minus;1/(<em>u</em>&minus;<em>u</em><sup>2</sup>))<nobr>
+if <nobr>0 &lt; <em>u</em> &lt; 1<nobr> and zero otherwise.
+
+<p>
+
+<img src="redball.gif">
+Once we&rsquo;ve obtained
+<a href="https://en.wikipedia.org/wiki/Green's_theorem"
+  target="_blank">Green&rsquo;s thoerem</a>
+<nobr>&int;<sub>&part;<em>B</em></sub> &omega;
+  = &int;<sub><em>B</em></sub> d&omega;</nobr>
+for a <em>C</em><sup>1</sup> <nobr>1-form</nobr> on a neighborhood
+<em>E</em> of a rectangle&nbsp;<em>B</em>, it follows by change of variable
+for the image of <em>B</em> in any invertibly <em>C</em><sup>1</sup>
+image of&nbsp;<em>E</em>.  This, together with patching together such
+images and taking limits, gives us gives us Green&rsquo;s theorem 
+for all&nbsp;<em>B</em> that we shall need.  (You might think of
+the &ldquo;oriented boundary&rdquo; &part; as a group homomorphism from
+combinations of oriented <nobr><em>d</em>-dimensional</nobr> figures to
+combinations of oriented <nobr>(<em>d</em>-1)dimensional</nobr> figures;
+this makes
+<nobr>(&gamma;,&thinsp;&omega;)
+  &mapsto; &int;<sub>&gamma;</sub> &omega;</nobr>
+a pairing.  The identity 
+<nobr>&int;<sub>&part;<em>B</em></sub> &omega;
+  = &int;<sub><em>B</em></sub> d&omega;</nobr>
+is the Fundamental Theorem of Calculus for <em>d</em>=1,
+and Green&rsquo;s theorem for <em>d</em>=2.
+For the vast generalizations of this to Stokes&rsquo; theorem,
+and of identities such as <nobr>&part;<sup>2</sup> = 0</nobr> and
+<nobr><em>d</em><sup>2</sup> = 0</nobr>, exact vs. closed
+differentials, etc., if/when you take courses in differential geometry
+and algebraic topology.
+
+<p>
+
+A very special, but still very important, case of Green&rsquo;s theorem
+is obtained by identifying <b>R</b><sup>2</sup> with <b>C</b>
+in the usual way and considering (the real and imaginary parts of)
+the contour integral
+<nobr>&int;<sub>&gamma;</sub> <em>w</em>(<em>z</em>) <em>dz</em></nobr>
+where
+<nobr><em>w</em> = <em>u</em> + <em>iv</em></nobr>
+is differentiable <em>as a function of a complex variable</em>
+<nobr><em>z</em> = <em>x</em> + <em>iy</em></nobr>
+on a neighborhood of&nbsp;<em>B</em>, and
+<nobr><em>dz</em> = <em>dx</em> + <em>i dy</em></nobr>.
+Using the Cauchy-Riemann equations we find that if
+<nobr>&omega; = <em>w</em>(<em>z</em>) <em>dz</em></nobr>
+then <nobr>d&omega; = 0</nobr>, so
+<nobr>&int;<sub>&part;<em>B</em></sub>
+  <em>w</em>(<em>z</em>) <em>dz</em> = 0</nobr>.
+It follows that <em>w</em> has an indefinite integral on any convex
+open region (or its image under an invertibly 1:1 map).
+The example of <em>dz</em>/<em>z</em> on <b>C</b><sup>*</sup>
+shows that this result can fail for other regions (again,
+you can explore this more thoroughly in 100- and 200-level classes).
+With a bit more work we obtain
+<a href="https://en.wikipedia.org/wiki/Cauchy's_integral_formula"
+  target="_blank">Cauchy&rsquo;s integral formula</a>,
+and thus the analyticity of&nbsp;<em>w</em>.
+
+
+<p>
+
+<img src="redball.gif">
+Math 55b concludes with an introduction to
+<strong>complex analysis</strong>
+(a.k.a. &ldquo;functions of one complex variable&rdquo;).
+We'll start with contour integrals and the fundamental
+theorems of Cauchy, roughly following the exposition in Ahlfors,
+chapter&nbsp;III (p.82&nbsp;ff.).  We'll prove:
+<ul>
+<li> Cauchy&rsquo;s theorem for a rectangle: if <em>f</em>&thinsp; is
+ continuously differentiable on a neighborhood of the rectangle,
+ then the contour integral of
+ <nobr><em>f</em>&thinsp;(<em>z</em>)&thinsp;<em>dz</em></nobr>
+ on the boundary of the rectangle vanishes; curiously this can be proved
+ even without the assumption that <em>f</em>' is continuous,
+ using a neat subdivision trick that Ahlfors attributes to Goursat,
+ but I don&rsquo;t know when one would ever need this refinement.
+<li> The variant when <em>f</em>&thinsp; is defined on the complement
+ in the rectangle of finitely many points &zeta;, as long as
+ <nobr>(<em>z</em>&minus;&zeta;) <em>f</em>&thinsp;(<em>z</em>) &rarr; 0</nobr>
+ on each such point.
+<li> Same theorems for a circle.
+<li> Likewise for the annulus between two concentric circles: the
+ integrals over the two circles are equal.  (One proof: change
+ variables to a rectangle of height 2&pi; using complex exponential.)
+<li> Cauchy&rsquo;s integral formula for a rectangle or circle:
+ under the same hypotheses,
+ if <em>a</em> is any interior point then
+ <nobr><em>f</em>&thinsp;(<em>a</em>)<nobr>
+ is <nobr>(1/2&pi;<em>i</em>)</nobr> times the contour integral of
+ <nobr><em>f</em>&thinsp;(<em>z</em>)&thinsp;<em>dz</em>
+  / (<em>z</em>&minus;<em>a</em>)</nobr>.
+<li> Consequences:
+ <ol>
+  <li> If <em>f</em>&thinsp; is differentiable in a circle of radius
+   <nobr><em>R</em> &gt; <em>r</em> &gt; 0</nobr> about&nbsp;<em>a</em>
+   then <em>f</em>&thinsp;(<em>a</em>) is the average of
+   <nobr><em>f</em>&thinsp;(<em>a</em>
+    + <em>re</em><sup><em>i</em>&theta;</sup>)
+   </nobr>
+   over &theta; in <nobr>[0,&thinsp;2&pi;]</nobr>; corollary(!):
+   Fundamental Theorem of Algebra; also:
+   <nobr>|<em>f</em>&thinsp;(&middot;)|</nobr> has no local maximum
+   unless it is constant
+   (&ldquo;maximum principle&rdquo; for analytic functions).
+  <li> [via power series expansion of
+   <nobr>1&thinsp;/&thinsp;(<em>z</em>&minus;<em>a</em>)</nobr>]:
+   <em>f</em>&thinsp; is analytic, and its power-series expansion about
+   any <nobr><em>z</em><sub>0</sub></nobr> converges in
+   <nobr>|<em>z</em>&minus;<em>z</em><sub>0</sub>| &lt; <em>r</em></nobr>
+   if that open circle is contained in the interior of our rectangular
+   or circular contour.  This again yields the maximum principle above,
+   and also shows that
+   <nobr>|<em>f</em>&thinsp;(&middot;)|</nobr> has no <em>nonzero</em>
+   local <u>minimum</u> unless it is constant.
+  <li> Same argument (or contour integration by parts) also yields
+   an integral formula for the derivative
+   <nobr><em>f</em>&thinsp;'(<em>z</em><sub>0</sub>)</nobr>, which
+   in turn gives Liouville's theorem: a bounded analytic function on
+   all of&nbsp;<strong>C</strong> is constant.  [An analytic function
+   on all of&nbsp;<strong>C</strong> is also known as an
+   <em>entire function</em>.]
+  <li> Using also the integral formula for higher derivatives of
+   an analytic function: The uniform limit <em>f</em>&thinsp;
+   of a sequence <nobr>{<em>f<sub>n</sub></em>}</nobr>
+   of analytic functions is analytic,
+   and each term in a power series expanion of&nbsp;<em>f</em>&thinsp;
+   is the limit of the corresponding terms for the
+   <nobr><em>f<sub>n</sub></em></nobr>.  Thus the same is true
+   for a uniformly convergent sum of analytic functions.
+   This is very useful for constructing/defining analytic functions;
+   e.g. the Riemann zeta function <nobr>&zeta;(<em>s</em>)</nobr>
+   is defined for <nobr>Re(<em>s</em>)&gt;1</nobr> as
+   <nobr>&sum;<sub><em>n</em>&thinsp;</sub><em>n<sup>&minus;s</sup></em></nobr>
+   (summed over <nobr><em>n</em>=1,2,3,&hellip;</nobr>).
+ </ol>
+<li> (&ldquo;analytic continuation&rdquo;)
+ An analytic function&nbsp;<em>f</em>
+ on a neighborhood of&nbsp;<em>z</em> that vanishes on distinct points
+ <nobr><em>z<sub>n</sub></em> &rarr; <em>z</em></nobr>
+ is identically zero.  (Proof: by induction each coefficient in the
+ power series expansion of&nbsp;<em>f</em> about&nbsp;<em>z</em>
+ vanishes.)  Hence if two analytic functions
+ <nobr><em>f</em>, <em>g</em></nobr> agree at each
+ <nobr><em>z<sub>n</sub></em></nobr> then they are equal.
+<li> Cauchy's integral formula also works under the weaker hypothesis
+ we&rsquo;ve seen above, allowing a finite number of exceptional &zeta;;
+ the formula shows that in this case <em>f</em>&thinsp; extends to
+ an analytic function on all of the interior of our rectangular or
+ circular contour.
+ Thus such &zeta; is called a <em>removable singularity</em>.
+<li> More generally, if <em>f</em>&thinsp; is analytic in a
+ punctured neighborhood of&nbsp;&zeta;, and
+ <nobr>(<em>z</em>&minus;&zeta;)<sup><em>n</em></sup>
+  <em>f</em>&thinsp;(<em>z</em>) &rarr; 0</nobr>
+ for some positive integer&nbsp;<em>n</em>, then
+ <nobr>(<em>z</em>&minus;&zeta;)<sup><em>n</em>&minus;1</sup>&thinsp;<em>f</em>&thinsp;(&middot;)</nobr>
+ has a removable singularity at&nbsp;&zeta;.  Then
+ <em>f</em>&thinsp; is said to have a <em>pole</em> at&nbsp;&zeta;:
+ we can write <nobr><em>f</em>&thinsp;(<em>z</em>)</nobr>
+ as an polynomial of degree &lt;<em>n</em> in
+ <nobr>1&thinsp;/&thinsp;(<em>z</em>&minus;&zeta;)</nobr>
+ plus an analytic function on a neighborhood of&nbsp;&zeta;.
+ We say &zeta; is a simple, double, triple, etc.&nbsp;pole
+ if that polynomial in
+ <nobr>1&thinsp;/&thinsp;(<em>z</em>&minus;&zeta;)</nobr>
+ has degree 1, 2, 3, &hellip;, or a pole of order&nbsp;<em>d</em>
+ if the polynomial has degree&nbsp;<em>d</em>.
+ (A removable singularity then has <em>d</em>=0
+ but is rarely called a &ldquo;pole of order zero&rdquo;.)
+ If there's no such&nbsp;<em>n</em> then <em>f</em>&thinsp;
+ is said to have an <em>essential singularity</em> at&nbsp;&zeta;.
+ The standard example of such a function is
+ <nobr><em>f</em>&thinsp;(<em>z</em>) = exp(1/<em>z</em>)</nobr>
+ with <nobr>&zeta; = 0</nobr>.
+<li> If <em>f</em>&thinsp; is analytic on an open set <em>E</em>,
+ and has a set <em>P</em> of poles, then <em>f</em> is said to be
+ <em>meromorphic</em> on the union of <em>E</em> and&nbsp;<em>P</em>.
+ In the special case of an analytic function (i.e.&nbsp;with <em>P</em>
+ empty) we also say <em>f</em>&thinsp; is <em>holomorphic</em>.
+ As the holomorphic functions form a ring, the meromorphic functions
+ on a subset of&nbsp;<strong>C</strong> form a field; it turns out
+ to be the fraction field of the holomorphic functions: for any
+ meromorphic function&nbsp;<em>f</em>&thinsp; we can find
+ a holomorphic function <em>h</em> that vanishes at the poles
+ of <em>f</em>&thinsp; to the necessary multiplicities for
+ <nobr><em>g</em>=<em>hf</em>&thinsp;</nobr> to be holomorphic,
+ and then <nobr><em>f</em>&thinsp;=</em>g</em>/<em>h</em></nobr>.
+ [NB: Analytic continuation also works for meromorphic functions;
+ indeed it's easy to see that a function continuous at&nbsp;<em>z</em>
+ cannot have a sequence of poles approaching&nbsp;<em>z</em>,
+ so by restricting to a small enough neighborhood we get
+ a holomorphic function.]
+<li> Example: if <em>f</em>&thinsp; is analytic on the unit disc
+ and vanishes at the origin then <nobr><em>f</em>/<em>z</em></nobr>
+ is analytic too; this yields the
+ <a href="http://en.wikipedia.org/wiki/Schwarz_lemma"
+ target="_blank">Schwarz Lemma</a>.
+</ul>
+<img src="orangeball.gif">
+<A NAME="today">
+A key concept in the theory and application of complex analysis
+is the residue of a function &mdash; more properly, a differential
+&mdash; on a punctured neighborhood of some complex number.
+<ul>
+<li>
+ For an analytic function <em>f</em>&thinsp; on a punctured
+ neighborhood of &zeta;, the <em>residue</em> at&nbsp;&zeta; of the
+ <em>differential</em>
+ <nobr><em>f</em>&thinsp;(<em>z</em>) <em>dz</em></nobr>
+ is invariant under locally invertible analytic changes of variable;
+ i.e. is the same as the residue of
+ <nobr><em>f</em>&thinsp;(<em>g</em>(<em>w</em>))
+  <em>g</em>'(<em>w</em>) <em>dw</em></nobr>
+ at the preimage of&nbsp;&zeta; under&nbsp;<em>g</em>,
+ assuming <em>g</em>' does not vanish there.
+ <nobr>The residue is defined as the integral of
+ (1/2&pi;<em>i</em>) <em>f</em>&thinsp;(<em>z</em>) <em>dz</em></nobr> 
+ on (say) a circle around&nbsp;&zeta;.  If
+ <nobr><em>f</em>&thinsp;(<em>z</em>)</nobr>
+ has a power series expansion
+ <nobr>&sum;<sub><em>n</em>&thinsp;</sub><em>c<sub>n</sub></em>
+  (<em>z</em>&minus;&zeta;)<sup><em>n</em></sup>
+ </nobr> in a punctured neighborhod of&nbsp;&zeta;
+ then the residue is the coefficient
+ <nobr><em>c</em><sub>&minus;1</sub></nobr>.
+<li>
+ The integral of a differential on a closed contour (at least one of our
+ standard contours: circles, rectangles, and their images under
+ invertible conformal maps) is 2&pi;<em>i</em> times the sum of
+ the residues at the poles or essential singularities the contour
+ encloses, assuming the differential is analytic except at those
+ finitely many points.
+<li> This has numerous applications to the evaluation of (often
+ non-elementary) definite integrals of elementary functions.
+ Some paradigmatic examples:
+ <ul>
+ <li>
+  &int;<sub>&thinsp;0</sub><sup>&infin;</sup>
+   <em>dx</em> / (<em>x</em><sup>2</sup> + 1) &nbsp;=&nbsp; &pi; / 2
+ <li>
+  &int;<sub>&thinsp;0</sub><sup>&infin;</sup>
+   <em>dx</em> / (<em>x</em><sup>2</sup> + 1)<sup>2</sup>
+    &nbsp;=&nbsp; &pi; / 4
+ <li>
+  &int;<sub>&thinsp;0</sub><sup>&infin;</sup>
+   cos(<em>cx</em>)
+   <em>dx</em> / (<em>x</em><sup>2</sup> + 1)
+   &nbsp;=&nbsp; (&pi;&thinsp;/&thinsp;2) <em>e</em><sup>&minus;|<em>c</em>|</sup>
+   &nbsp; for all real&nbsp;<em>c</em>
+ <li>
+  &int;<sub>&thinsp;0</sub><sup>&infin;</sup>
+   sin(<em>cx</em>)
+   <em>dx</em> / <em>x</em>
+   &nbsp;=&nbsp; &pi; / 2
+   &nbsp; for all <nobr><em>c</em>&thinsp;&gt;&thinsp;0</nobr>
+   [via the &ldquo;principal value&rdquo; of the integral of
+   <nobr>exp(<em>icx</em>) <em>dx</em>&thinsp;/&thinsp;<em>x</em></nobr>
+   over <nobr>(&minus;&infin;,&infin;)</nobr>]
+ <li>
+  For &alpha; in (0,1), the special value
+  B(&alpha;, 1&minus;&alpha;) of the Beta function is given by
+  <br>
+   &int;<sub>&thinsp;0</sub><sup>1</sup>
+   <em>dx</em> / (<em>x</em><sup>&alpha;</sup>(<em>x</em> + 1))
+    &nbsp;=&nbsp; &pi; / sin(&alpha;&pi;)
+ </ul>
+<li> An important special case: the <em>logarithmic differential</em>
+ <nobr><em>df</em> / <em>f</em></nobr> of a meromorphic
+ function&nbsp;<em>f</em>&thinsp; has only simple poles, at the
+ zeros and poles of&nbsp;<em>f</em>&thinsp;, with residue <em>n</em>
+ at a zero of order&nbsp;<em>n</em> and <nobr>&minus;<em>n</em></nobr>
+ at a pole of order&nbsp;<em>n</em>.  Hence the integral of
+ <nobr><em>df</em> / <em>f</em> =
+  (<em>f</em>&thinsp;'(<em>z</em>) / <em>f</em>&thinsp;(<em>z</em>))
+  <em>dz</em> </nobr>
+ on a closed contour is 2&pi;<em>i</em> times the difference between
+ the number of zeros and poles enclosed by the contour, counted with
+ multiplicity.  This assumes that <em>f</em>&thinsp; is analytic on
+ the interior of the contour and has neither zero nor pole on
+ the contour itself.  This formula is often called the
+ &ldquo;argument principle&rdquo;, because the integral can be
+ interpreted as <em>i</em> times the change of the &ldquo;argument&rdquo;
+ (=&nbsp;imaginary part of the logarithm) of&nbsp;<em>f</em>&thinsp;
+ around the contour.
+
+-->
+
+<!--
+ A nice and occasionally useful corollary is
+ <em>Rouch&eacute;'s theorem</em>: if
+ <nobr>|<em>g</em>(<em>z</em>)| &lt; |<em>f</em>&thinsp;(<em>z</em>)|</nobr>
+ for every <em>z</em> <u>on</u> the contour, then
+ <nobr><em>f</em>&thinsp;+</em>g</em></nobr> has the same change of
+ argument around the contour as&nbsp;<em>f</em>, and thus the same
+ count of zeros minus poles with multiplicity on the <u>interior</u>
+ of the contour.
+-->
+
+<!--
+ <li>The <em>Gamma function</em> extends to a meromorphic function
+ on <strong>C</strong>, satisfying the same functional equation
+ <nobr>&Gamma;(<em>z</em>+1) = <em>z</em> &Gamma;(<em>z</em>)</nobr>,
+ and holomorphic except for simple poles at
+ <nobr><em>z</em> = 0, &minus;1, &minus;2, &minus;3, &hellip; .</nobr>
+ Given that there exists a meromorphic function
+ &Gamma; on <strong>C</strong> that agrees with the usual
+ Gamma function on the positive real axis, this extension is unique
+ (analytic continuation again), but it is not immediate that
+ such an extension is possible. We give two approaches:
+ <ol>
+ <li>Use the Euler integral to define <nobr>&Gamma;(<em>z</em>)</nobr>
+  for <nobr><em>z</em> = <em>x</em> + <em>iy</em></nobr>
+  of positive real part&nbsp;<em>x</em>; prove the functional equation
+  for such <em>x</em> (either by analytic continuation or by the
+  usual integration by parts); and then use the functional equation
+  to inductively extend &Gamma; to
+  <nobr><em>x</em> &gt; &minus;1</nobr>,
+  <nobr><em>x</em> &gt; &minus;2</nobr>,
+  <nobr><em>x</em> &gt; &minus;3</nobr>, etc.,
+  at each stage finding a simple pole at
+  <nobr>0, &minus;1, &minus;2, etc.</nobr>
+ <li>Use the formula
+  <nobr>&Gamma;(<em>z</em>) =
+   lim<sub><em>n</em>&rarr;&infin;</sub>
+    <em>n</em>! <em>n<sup>z</sup></em> <font size="+1">/</font>
+     (<em>z</em> (<em>z</em>+1) (<em>z</em>+2) &hellip;
+      (<em>z</em>+<em>n</em>)) </nobr>.
+   This sequence of analytic functions converges uniformly
+   on bounded subsets of
+   <nobr><strong>C</strong> &minus;
+    {0, &minus;1, &minus;2, &minus;3, &hellip;}</nobr>,
+   whence its limit is analytic.
+
+-->
+
+<!--
+  <li> Let <em>C</em> be a contour that goes from
+   <nobr>&ldquo;&infin; &minus; <em>i</em>&epsilon;&rdquo;</nobr>
+   horizontally
+   <nobr>to &minus;&epsilon;&minus;<em>i</em>&epsilon;,</nobr>
+   then vertically to
+   <nobr>to &minus;&epsilon;+<em>i</em>&epsilon;,</nobr>
+   and horizontally to
+   <nobr>to &ldquo;&infin; + <em>i</em>&epsilon;&rdquo;.</nobr>
+   The integral along&nbsp;<em>C</em> of
+   <nobr><em>t</em><sup>&thinsp;<em>z</em>&minus;1</nobr>
+    <em>e</em><sup>&minus;<em>t</em></sup> <em>dt</em></nobr>
+   defines an entire function of&nbsp;<em>z</em> that equals
+   <nobr>(1&minus;<em>e</em><sup>2&pi;<em>iz</em></sup>) &Gamma;(<em>z</em>)</nobr>
+   for <nobr>Re(<em>z</em>) &gt; 0</nobr>, so we can solve for
+   <nobr>&Gamma;(<em>z</em>)</nobr> for any complex&nbsp;<em>z</em>.
+-->
+
+<!--
+ </ol>
+ Each of these can be used to prove the functional equation; the second
+ most easily yields the following additional properties:
+ <ul>
+ <li>For each <em>x</em>&thinsp;&gt;&thinsp;0, the function
+  <nobr>|&thinsp;&Gamma;(<em>x</em>+<em>iy</em>)&thinsp;|</nobr>
+  of a real variable&nbsp;<em>y</em> is maximized at
+  <nobr><em>y</em>&thinsp;=&thinsp;0</nobr>,
+  and is increasing for
+  <nobr><em>y</em>&thinsp;&ge;&thinsp;0</nobr>
+  and decreasing for
+  <nobr><em>y</em>&thinsp;&le;&thinsp;0</nobr>;
+ <li>In particular, &Gamma;(<em>z</em>) &ne; 0
+  for all complex <em>z</em>;
+ <li>The Stirling approximation holds for the complex Gamma function,
+  in the following sense:
+  given <nobr>&epsilon;&thinsp;&gt;&thinsp;0</nobr>,
+  we have &Gamma;(<em>z</em>) asymptotic to
+  <nobr>(2&pi;)<sup>1/2</sup> <em>z</em><sup><em>z</em>&minus;(1/2)</sup>
+   <em>e</em><sup>&minus;<em>z</em></nobr> as
+   <nobr>|<em>z</em>|&thinsp;&rarr;&infin;&thinsp;</nobr>
+   as long as <em>z</em> has argument in
+-->
+ <!-- <nobr>[&pi;&minus;&epsilon;, &epsilon;&minus;&pi;]</nobr>. -->
+ <!-- oops...  spotted by L.Alpoge --NDE] -->
+<!--
+   <nobr>[&epsilon;&minus;&pi;, &pi;&minus;&epsilon;]</nobr>.
+ </ul>
+ [NB We did not prove this last part in class, and yes, it does
+ reduce to the usual Stirling approximation to <em>n</em>! for
+ <nobr><em>z</em> = <em>n</em>+1</nobr>
+ even though it looks different.]
+ <li>The Beta identity
+ <nobr>B(<em>x</em>,<em>y</em>)
+  =
+  &Gamma;(<em>x</em>) &Gamma;(<em>y</em>)
+  / &Gamma;(<em>x</em>+<em>y</em>)</nobr>
+ still holds for <em>x</em> and <em>y</em> of positive real part,
+ and can be used to define <nobr>B(<em>x</em>,<em>y</em>)</nobr>
+ for all complex <em>x</em> and <em>y</em> not among the
+ poles of&nbsp;&Gamma;.  In particular, the identity
+ <nobr> B(&alpha;, 1&minus;&alpha;)
+   &nbsp;=&nbsp; &pi;&thinsp;/&thinsp;sin(&alpha;&pi;)</nobr>
+ holds for all non-integer complex numbers&nbsp;&alpha;.
+ We can use this, together with the formula
+  <nobr>&Gamma;(<em>z</em>) =
+   lim<sub><em>n</em>&rarr;&infin;</sub>
+    <em>n</em>! <em>n<sup>z</sup></em> <font size="+1">/</font>
+     (<em>z</em> (<em>z</em>+1) (<em>z</em>+2) &hellip;
+      (<em>z</em>+<em>n</em>)) </nobr>,
+ to give a proof (admittedly more convoluted than necessary or usual)
+ of the product expansion of the sine, and thus (via logarithmic
+ differentiation) of the partial-fraction decomposition of
+ <nobr>cot(<em>x</em>)</nobr> and (differentiating once more)
+ <nobr>sec<sup>2</sup>(<em>x</em>)</nobr>, etc.  Evaluation at
+ special points like &pi;/2 yields classical formulas: Wallis's
+ product, the values of <nobr>&zeta;(<em>k</em>)</nobr> for
+<nobr><em>k</em> = 2, 4, 6, &hellip;</nobr> (again), and others.
+ <li> (not covered in the final exam) Introduction to conformal mapping
+ and the <a href="http://en.wikipedia.org/wiki/Riemann_mapping_theorem"
+   target="_blank">Riemann mapping theorem</a>;
+ <a href="https://en.wikipedia.org/wiki/Hilbert_space"
+   target="_blank">Hilbert space</a> basics; and 1.5 proofs of
+ <a href=http://en.wikipedia.org/wiki/Muntz-Szasz_theorem
+ target="_blank">M&uuml;ntz&rsquo;s generalization</a> of the
+ Weierstrass approximation theorem.
+</ul>
+
+-->
+
+<hr>
+
+<img src="redball.gif">
+<A HREF="p1.pdf">Problem sets 1 and 2</A>: Metric topology basics
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p3.pdf">Problem set 3</A>: Metric topology cont&rsquo;d
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p4.pdf">Problem set 4</A>:
+Topology finale; differential-calculus prelude
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p5.pdf">Problem set 5</A>:
+More univariate differential calculus; introducing univariate integral calculus
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p6.pdf">Problem set 6</A>:
+Riemann(-Stieltjes) integration cont&rsquo;d
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p7.pdf">Problem set 7</A>: Fourier series via Stone-Weierstrass;
+power series; manipulating and estimating definite integrals to prove
+some classical product and sum formulas
+<br>
+Typos in problems 1 (F.Flesher), 2 (C.J.Dowd), and 4,5 (T.Piazza)
+<strong>corrected</strong>
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p8.pdf">Problem set 8</A>:
+Introduction to multivariate differentiation &mdash;
+and to contour integration and complex analysis
+<br>
+Typo in problem 7 (D.Chiu) <strong>corrected</strong> 27.iii.2018
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p9.pdf">Problem set 9</A>:
+More complex analysis, and (counter)examples of multivariate real analysis
+<br>
+Typos in problem 5 and 9 (A.Sun) <strong>corrected</strong> 5.iv.2018
+
+
+<p>
+
+<img src="redball.gif">
+<A HREF="p10.pdf">Problem set 10</A>:
+Integration in ${\bf R}^k$; more analysis in $\bf C$
+<br>
+Small error in problem 2 (J.Ahn) <strong>corrected</strong> 11.iv.2018;
+typo in problem 3, and missing hypothesis a the end of problem 7
+(both D.Xiang), <strong>corrected</strong> 15.iv.2018
+
+<p>
+
+<img src="orangeball.gif">
+<A NAME="current_homework">
+<A HREF="p11.pdf">Problem set 11</A>:
+Complex analysis cont&rsquo;d:
+<br> definite integrals and other uses of residues; product formulas;
+rational functions; variation on a theme of Jensen
+<br>
+Problem 11 <strong>corrected</strong> (S. Hu)

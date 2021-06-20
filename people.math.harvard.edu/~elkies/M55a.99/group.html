@@ -1,0 +1,154 @@
+<TITLE>
+Group theory basics
+</TITLE>
+<BODY BGCOLOR="#ccffff">
+
+In our exposition of the <A HREF="field.html">field axioms</A>,
+we noted that a <EM>group</EM> is a set <EM>G</EM> equipped
+with an identity element 1, a function <SUP>-1</SUP> from
+<EM>G</EM> to <EM>G</EM> called ``inverse'', and a function
+(``group operation'') from <EM>G</EM>x<EM>G</EM> to <EM>G</EM>
+denoted by *, satisfying the axioms:
+
+<BR>
+i) For all <EM>a</EM> in <EM>G</EM>, <EM>a</EM>*1=1*<EM>a=a</EM>
+<BR>
+ii) For all <EM>a</EM> in <EM>G</EM>,
+<EM>a</EM>*<EM>a</EM><SUP>-1</SUP>=<EM>a</EM><SUP>-1</SUP>*<EM>a</EM>=1
+<BR>
+iii) For all <EM>a,b,c</EM> in <EM>G</EM>,
+<EM>a</EM>*(<EM>b</EM>*<EM>c</EM>)=<EM>a</EM>*(<EM>b</EM>*<EM>c</EM>)
+<BR>
+[we'll usually suppress the ``*'', so for instance the
+associateive law will be written
+<EM>a</EM>(<EM>b</EM><EM>c</EM>)=<EM>a</EM>(<EM>b</EM><EM>c</EM>)]
+
+<P>
+
+You may have wondered why we have a special term for an operation
+satisfying the associative rule rather than the simpler commutative
+rule.  The reason is that associativity naturally arises for the
+set of <EM>symmetries</EM> (a.k.a. <EM>automorphisms</EM>) of
+a mathematical space <EM>A</EM>, i.e. of bijections of <EM>A</EM>
+that preserve the structure of <EM>A</EM>.  When we impose no
+structure, the automorphism group is just the group of all
+permutations of <EM>A</EM>; if <EM>A</EM> is a finite set of size
+<EM>n</EM>, this group is called the ``symmetric group''
+<EM>S<SUB>n</SUB></EM>.  If our space is a vector space <EM>V</EM>,
+the automorphisms are invertible linear operators on <EM>V</EM>,
+which constitute the ``general linear group'' <EM>GL</EM>(<EM>V</EM>).
+[``General'' as opposed to ``special'', which we'll define for
+finite-dimensional <EM>V</EM> once we've sufficiently developed
+the theory of determinants.]  If <EM>V</EM> is finite dimensional,
+of dimension <EM>n</EM>, we may choose a basis and thus identify
+<EM>GL</EM>(<EM>V</EM>) with the group
+<EM>GL<SUB>n</SUB></EM>(<EM>F</EM>) of invertible
+<EM>n</EM>-by-<EM>n</EM> matrices with entries in the field <EM>F</EM>.
+If <EM>V</EM> is endowed with the further structure of an inner product,
+we obtain a subgroup of <EM>GL</EM>(<EM>V</EM>) preserving this inner
+product, called the ``orthogonal'' or ``unitary'' group according as
+<EM>F</EM> is <STRONG>R</STRONG> or <STRONG>C</STRONG> respectively.
+A choice of orthonormal basis identifies these groups with the groups
+<EM>O<SUB>n</SUB></EM>, <EM>U<SUB>n</SUB></EM> of
+orthogonal and unitary <EM>n</EM>-by-<EM>n</EM> matrices.
+
+<P>
+
+The identification of the group of permutations of a finite set with
+<EM>S<SUB>n</SUB></EM>, or of the group of invertible linear operators
+on a finite-dimensional vector space with
+<EM>GL<SUB>n</SUB></EM>(<EM>F</EM>),
+depends on the choice of identification of the space <EM>A</EM>
+with a standard <EM>n</EM>-element set {1,2,3,...,<EM>n</EM>} or
+a standard <EM>n</EM>-dimensional vector space <EM>F<SUP>n</SUP></EM>.
+But any two different identifications are related by some automorphism
+of <EM>A</EM>, i.e. by an element <EM>h</EM> of the group <EM>G</EM>.
+If any automorphism is represented by <EM>g</EM> under one
+identification, it is represented by <EM>h</EM><SUP>-1</SUP><EM>gh</EM>
+in the other.  This expression <EM>h</EM><SUP>-1</SUP><EM>gh</EM> is
+known as the <EM>conjugate</EM> of <EM>g</EM> by <EM>h</EM>.  So,
+for instance, the real spectral theorem applied to
+invertible operators says that an element of
+<EM>GL<SUB>n</SUB></EM>(<STRONG>R</STRONG>)
+is conjugated to a diagonal matrix <EM>by an element
+of the orthogonal group O<SUB>n</SUB></EM>
+if and only if it is self-adjoint.
+
+<P>
+
+Given any group <EM>G</EM> and any element <EM>h</EM>, the map taking
+any <EM>g</EM> in <EM>G</EM> to <EM>h</EM><SUP>-1</SUP><EM>gh</EM>
+is an automorphism of <EM>G</EM>.  An automorphism of this form
+is called an ``inner automorphism''; all such automorphisms
+are ``trivial'' (the identity) if and only if <EM>G</EM> is 
+a commutative group.  Such groups may still have nontrivial
+automorphisms (such as the automorphism of the additive group
+<STRONG>Z</STRONG> taking each <EM>a</EM> to <EM>-a</EM>).
+An automorphism which is not inner is called ``outer'' (surprise!).
+
+As with vector spaces, groups can be studied via a natural
+generalization of automorphisms called ``homomorphisms''.
+A homomorphism between two groups <EM>G</EM> and <EM>G'</EM>
+is a map <EM>f</EM> that respects the group operations:
+<EM>f</EM>(1)=1,
+<EM>f</EM>(<EM>a</EM><SUP>-1</SUP>)=(<EM>f</EM>(<EM>a</EM>))<SUP>-1</SUP>
+for all <EM>a</EM> in <EM>G</EM>, and
+<EM>f</EM>(<EM>ab</EM>)=<EM>f</EM>(<EM>a</EM>)<EM>f</EM>(<EM>b</EM>)
+for all <EM>a,b</EM> in <EM>G</EM>.  Again the image and kernel
+of a homomorphism are <EM>subgroups</EM> of <EM>G'</EM> and <EM>G</EM>
+respectively, i.e. subsets containing the identity and closed under
+inverse and *, which thus become groups in their own right.
+
+<P>
+
+As with homomorphisms of vector spaces (i.e. linear transformations),
+any subgroup <EM>H</EM> of a group <EM>G</EM> is the image of a
+homomorphism, namely the inclusion homomorphism from <EM>H</EM>
+to <EM>G</EM> obtained by sending each element of <EM>H</EM> to itself.
+However, unlike the situation for vector spaces, <EM>not</EM> every
+subgroup can be the kernel of a homomorphism.  The subgroups of
+<EM>G</EM> which <EM>are</EM> kernels of homomorphisms are called
+<EM>normal subgroups</EM> of <EM>G</EM>.  A subgroup <EM>N</EM> is
+normal if and only if it contains the conjugate
+<EM>g</EM><SUP>-1</SUP><EM>hg</EM> of any <EM>h</EM> in <EM>N</EM>
+by any <EM>g</EM> in <EM>G</EM> (not only in <EM>N</EM>!).  The
+``only if'' is easy; for ``if'', construct a <EM>quotient group</EM>
+<EM>G/N</EM>, and then consider the natural homomorphism from
+<EM>G</EM> to <EM>G/N</EM>.  For instance, <EM>GL</EM>(<EM>V</EM>)
+contains as a normal subgroup the nonzero scalar multiples of
+the identity; the quotient group is called the <EM>projective
+general linear group</EM> of <EM>V</EM> and denoted by
+<EM>PGL</EM>(<EM>V</EM>) [the matrix version of this is
+naturally denoted <EM>PGL<SUB>n</SUB></EM>(<EM>F</EM>)].
+
+<P>
+
+<SMALL>
+You may have heard or read of <EM>simple</EM> groups.  For any
+group <EM>G</EM>, the group <EM>G</EM> itself, and the
+one-element subgroup {1}, are clearly normal.  <EM>G</EM>
+is called ``simple'' if these are the only normal subgroups
+of <EM>G</EM>.  Simple groups play a role in group theory
+analogous to that of primes in number theory; indeed one readily sees
+that the group <STRONG>Z</STRONG>/<EM>n</EM><STRONG>Z</STRONG> is
+simple if and only if <EM>n</EM> is prime.  But there are other,
+much more interesting, examples of simple groups.  We shall not
+pursue this further in Math 55; the topic is addressed in 100-level
+algebra courses.
+</SMALL>
+
+<P>
+
+We will construct a homomorphism ``sign'' from the symmetric
+group <EM>S<SUB>n</SUB></EM> to the two-element group {1,-1},
+and use it to define for any finite-dimensional vector space <EM>V</EM>
+over a field <EM>F</EM> the <EM>determinant</EM>, a function from
+Hom(<EM>V,V</EM>) to <EM>F</EM>.  We shall show that the determinant
+of a linear operator on <EM>V</EM> vanishes if and only if it is
+not invertible, and that on the invertible operators it yields
+a homomorphism from <EM>GL</EM>(<EM>V</EM>) to <EM>F<SUP>*</SUP></EM>.
+The kernel of this homomorphism, consisting of all linear
+transformations of <EM>V</EM> whose determinant equals 1,
+is called the ``special linear group'' <EM>SL</EM>(<EM>V</EM>),
+identified with <EM>SL<SUB>n</SUB></EM>(<EM>F</EM>) once a basis
+is chosen for <EM>V</EM>.

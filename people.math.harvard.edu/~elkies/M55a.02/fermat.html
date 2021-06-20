@@ -1,0 +1,79 @@
+<TITLE>
+How Fermat integrated x^t dx
+</TITLE>
+
+<body bgcolor="ccddff">
+
+<center>
+<STRONG>
+<font size=+3>
+How Fermat integrated <em>x<sup>t</sup>&nbsp;dx</em>
+</font>
+</STRONG>
+</center>
+
+<p>
+
+<font size=+1>
+<strong>Theorem.</strong> (Fermat) For all rational <em>t</em>
+other than -1, and any positive <em>a,b</em>, the integral of
+<em>x<sup>t</sup>&nbsp;dx</em> from
+<em>x</em>=<em>a</em> to <em>x</em>=<em>b</em> equals
+(<em>b</em><sup><em>t</em>+1</sup>-<em>a</em><sup><em>t</em>+1</sup>)/(<em>t</em>+1).
+
+<p>
+
+<em>Proof</em>:
+Without loss of generality assume <em>b</em>&gt;<em>a</em>.
+Suppose <em>b</em>=<em>r<sup>n</sup>a</em> for some integer <em>n</em>
+and positive <em>r</em>.  Use the partition
+{<em>x<sub>i</sub></em>=<em>r<sup>i</sup>a</em>&nbsp;|&nbsp;0&lt;=<em>i</em>&lt;=<em>n</em>}
+of [<em>a</em>,<em>b</em>].  Then a Riemann sum for the integral is
+<center>
+(<em>x</em><sub>1</sub>-<em>x</em><sub>0</sub>)
+<em>x</em><sup><em>t</em></sup><sub>0</sub>
++
+(<em>x</em><sub>2</sub>-<em>x</em><sub>1</sub>)
+<em>x</em><sup><em>t</em></sup><sub>1</sub>
++ ... +
+(<em>x</em><sub><em>n</em></sub>-<em>x</em><sub><em>n</em>-1</sub>)
+<em>x</em><sup><em>t</em></sup><sub><em>n</em>-1</sub> .
+</center>
+This is the sum of a geometric series with initial term
+(<em>r</em>-1)<em>a</em><sup><em>t</em>+1</sup>,
+common ratio <em>r</em><sup><em>t</em>+1</sup>,
+and post-final term
+(<em>r</em>-1)<em>b</em><sup><em>t</em>+1</sup>.
+Hence the Riemann sum for this partition is
+<center>
+((r-1)&nbsp;/&nbsp;(<em>r</em><sup><em>t</em>+1</sup>-1))
+&nbsp;&middot;&nbsp;
+(<em>b</em><sup><em>t</em>+1</sup>-<em>a</em><sup><em>t</em>+1</sup>).
+</center>
+As <em>n</em> ``approaches infinity'', <em>r</em> approaches 1,
+so the mesh (1-<em>r</em><sup>-1</sup>)<em>b</em> of our partition
+approaches zero.  Therefore the Riemann sum approaches the integral.
+So, it remains to prove that as <em>r</em> approaches 1
+the factor ((r-1)&nbsp;/&nbsp;(<em>r</em><sup><em>t</em>+1</sup>-1))
+tends to 1/(<em>t</em>+1).  This is true for all nonzero <em>t</em>+1,
+but it's particularly easy to prove when <em>t</em> is rational.
+Let <em>t</em>+1=<em>c</em>/<em>d</em>, and let <em>z</em> be
+the <em>d</em><sup>th</sup> root of <em>r</em>.
+Then we want the limit as <em>z</em> approaches 1 of
+(<em>z<sup>d</sup></em>-1)/(<em>z<sup>c</sup></em>-1).
+Simply remove the common factor <em>z</em>-1
+from both numerator and denominator of this fraction;
+then the numerator approaches <em>d</em>,
+and the denominator approaches <em>c</em>.
+Hence the limit is <em>d</em>/<em>c</em>=1/(<em>t</em>+1) as claimed.
+<strong>QED</strong>
+
+<p>
+
+P.S. For irrational <em>t</em> we can now integrate
+<em>x<sup>t</sup>&nbsp;dx</em> over [<em>a</em>,<em>b</em>]
+by writing <em>x<sup>t</sup></em>
+as the uniform limit over that interval of <em>x<sup>t'</sup></em>
+with <em>t'</em> ranging over a sequence of rational numbers
+that approach&nbsp;<em>t</em>.
+</font>

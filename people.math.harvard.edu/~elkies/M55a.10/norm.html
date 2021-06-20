@@ -1,0 +1,116 @@
+<TITLE>
+Math 55a: Norm basics
+</TITLE>
+
+<body bgcolor="eeccdd">
+
+<H2>
+Math 55a: Norm basics
+</H2>
+
+Let <em>F</em> be either of the fields
+<strong>R</strong> and <strong>C</strong>,
+and let <em>V</em> be a vector space over <em>F</em>.
+A <em>norm</em> on <em>V</em> is a real-valued function ||&middot;||
+on <em>V</em> satisfying the following axioms:
+<OL>
+<LI> Positivity: ||0||=0, and ||<em>v</em>|| &gt; 0
+for all nonzero vectors <em>v</em>.
+<LI> Homogeneity: ||<em>cv</em>|| = |c| ||<em>v</em>||
+for all scalars <em>c</em> and vectors <em>v</em>.
+<LI> Subadditivity:
+||<em>v</em>+<em>w</em>|| &le; ||<em>v</em>|| + ||<em>w</em>||
+for all vectors <em>v</em>,<em>w</em> in <em>V</em>.
+</OL>
+A normed vector space <em>V</em> is automatically a metric space
+with the distance function
+<em>d</em>(<em>v</em>,<em>w</em>):=||<em>v</em>-<em>w</em>||.
+(This still holds if Homogeneity is replaced by the weaker axiom
+||<em>v</em>||=||-<em>v</em>||.)
+
+<p>
+
+Any inner product space is a normed vector space with norm
+<nobr>|&middot;|</nobr> (recall that this is defined by
+<nobr>|<em>v</em>| = &lang;<em>v</em>,<em>v</em>&rang;<sup>1/2</sup></nobr>).
+This required Cauchy-Schwarz.  An even easier example of a norm is
+the <em>sup norm</em> on a finite-dimensional space relative to
+some choice of basis.  Using the basis to identify <em>V</em> with
+<em>F<sup>n</sup></em>, we can define the sup norm of any vector
+<nobr>(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, &hellip; <em>a<sub>n</sub></em>)</nobr>
+as <nobr>max<sub><em>i</em></sub>|<em>a<sub>i</sub></em>|</nobr>.
+You should verify that this is indeed a norm on
+<em>F<sup>n</sup></em>.
+
+
+<p>
+
+Two norms, say ||&middot;|| and [[&middot;]],
+on a vector space are said to be <em>equivalent</em>
+if there exist positive constants <em>C</em>,<em>C'</em>
+such that <nobr>||<em>v</em>|| &le; <em>C</em>[[<em>v</em>]]</nobr>
+and <nobr>[[<em>v</em>]] &le; <em>C' </em>||<em>v</em>||</nobr>
+for all vectors&nbsp;<em>v</em>.
+You should check that this is indeed an equivalence relation.
+When we do topology in 55b, we shall see that equivalent norms
+also yield the same notions of open/closed/bounded/compact sets,
+convergence, continuity and uniform continuity, and completeness.
+For example, if ||&middot;|| and [[&middot;]] are equivalent,
+then for any sequence of vectors
+<nobr><em>v<sub>n</sub></em></nobr> and any vector <em>v</em> we have
+<nobr>||<em>v</em>-<em>v<sub>n</sub></em>||&rarr;0</nobr> as
+<nobr><em>n</em>&rarr;&infin;</nobr> if and only if
+<nobr>[[<em>v</em>-<em>v<sub>n</sub></em>]]&rarr;0</nobr> as
+<nobr><em>n</em>&rarr;&infin;</nobr>.  (We say the sequence of vectors
+&ldquo;converges to&nbsp<em>v</em>&rdquo; in both norms.)
+
+<p>
+
+<em>If V is finite-dimensional, all norms on V are equivalent.</em>
+In particular, the above notions are canonically defined,
+independent of choices of basis or norm (since we already know
+that any finite-dimensional <em>F</em>-vector space already has
+at least one norm).  We cannot prove this yet because it hinges
+on topological notions (namely compactness) that we'll only develop
+in 55b.  (To get some sense of the subtlety of this result, note that
+while the notion of norm can be defined also for vector spaces over
+the field <strong>Q</strong> of rational numbers, equivalence of norms
+already fails in <nobr><strong>Q</strong><sup>2</sup></nobr> &mdash;
+can you give an example?)  But we <em>can</em> prove that all norms
+coming from an inner product are equivalent.  By symmetry it it enough
+to prove that if ||&middot;|| and [[&middot;]] are two inner-product
+norms then <nobr>[[<em>v</em>]] &le; <em>C'</em> ||<em>v</em>||</nobr>
+for some&nbsp;<em>C</em>.
+Fix an orthonormal basis for the inner product associated with ||&middot;||.
+Let <em>c</em> be the largest <nobr>[[&middot;]]-norm</nobr> of a
+basis element.  Then by homogeneity
+<nobr>[[<em>v</em>]] &le; <em>c</em>||<em>v</em>||</nobr>
+whenever <em>v</em> is a multiple of a basis vector.
+But any vector <em>v</em> is the sum of <em>n</em> such multiples
+<nobr><em>v<sub>i</sub></em></nobr>, with
+<nobr>||<em>v<sub>i</sub></em>|| &le; ||<em>v</em>||</nobr>
+for each&nbsp;<em>i</em>.  By subadditivity it follows that
+<nobr>[[<em>v</em>]] &le; <em>nc</em>||<em>v</em>||</nobr>, Q.E.D.
+
+<p>
+
+This gives us a canonical equivalence class of norms on a
+finite-dimensional vector space over&nbsp;<em>F</em>.
+While we cannot yet prove it contains all norms, we can certainly
+go beyond inner-product norms; for example, the sup norm with respect to
+any basis is equivalent with the inner-product norm with respect to
+the same basis (what are the best constants <em>C</em> and <em>C'</em>
+for this equivalence?), and thus equivalent with any other
+inner-product or sup norm.
+
+<p>
+
+An infinite-dimensional vector space may have inequivalent norms.
+For example, you can easily check that the sup norm on the space of
+continuous functions in <nobr>[0,1]</nobr> is not equivalent to
+the norm coming from the inner product
+<nobr>(<em>f</em>, <em>g</em>) = &int;<sub> 0</sub><sup>1</sup>
+<em>f</em>(<em>x</em>)
+<font style="text-decoration:overline;"><em>g</em>(<em>x</em>)</font>
+<em>dx</em></nobr>.
+[sorry, HTML doesn't combine sub- and super-scripts as well as TeX&hellip;]

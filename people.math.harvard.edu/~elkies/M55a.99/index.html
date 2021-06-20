@@ -1,0 +1,382 @@
+<TITLE>
+Math 55a: Honors Advanced Calculus and Linear Algebra (Fall 1999)
+</TITLE>
+
+<BODY BACKGROUND="http:/~elkies/M55a.99/calabi.gif">
+
+<STRONG>
+Lecture notes for
+Math 55a: Honors Advanced Calculus and Linear Algebra
+(Fall 1999)
+</STRONG>
+
+<P>
+
+If you find a mistake, omission, etc., please
+<A HREF="mailto:elkies@math.harvard.edu">let me know</A>
+by e-mail.
+
+<P>
+
+The <FONT COLOR="#B87800">orange</FONT COLOR> balls
+mark our <A HREF="#today">current location</A> in the course,
+and the <A HREF="#current_homework">current problem set</A>.
+
+<HR>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/h1.ps">h1.ps</A>:
+<EM>Ceci n'est pas un</EM> Math 55a syllabus.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/top1.ps">top1.ps</A>:
+Metric Topology I, basic definitions and examples
+(the metric spaces <STRONG>R</STRONG><SUP><EM>n</EM></SUP>
+and other product spaces; isometries; boundedness and function
+spaces)
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/top2.ps">top2.ps</A>:
+Metric Topology II, open and closed sets and related notions
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/top3.ps">top3.ps</A>:
+Metric Topology III, introduction to functions and continuity
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/top4.ps">top4.ps</A>:
+Metric Topology IV, sequences and convergence etc.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/top5.ps">top5.ps</A>:
+Metric Topology V, compactness and sequential compactness
+
+<P>
+
+<BLOCKQUOTE>
+
+<img src="http:/~elkies/purpball.gif">
+
+a bit of
+<A HREF="http:/~elkies/M55a.99/hausdorff.html">Hausdorff</A> stuff
+
+</BLOCKQUOTE>
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/top6.ps">top6.ps</A>:
+Metric Topology VI, Cauchy sequences and related notions
+(completeness, completions, and a third formulation of compactness)
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+at least in the beginning of the <STRONG>linear algebra</STRONG>
+unit, we'll be following the Axler textbook closely enough that
+supplementary lecture notes should not be needed.  Some important
+extensions/modifications to the treatment in Axler:
+
+<UL>
+<LI> [cf. Axler, p.3]
+Unless noted otherwise, <STRONG>F</STRONG> may be an arbitrary
+field, not only <STRONG>R</STRONG> or <STRONG>C</STRONG>.  The
+most important fields other than those of real and complex numbers
+are the field <STRONG>Q</STRONG> of rational numbers, and the
+finite fields <STRONG>Z</STRONG>/<EM>p</EM><STRONG>Z</STRONG>
+(<EM>p</EM> prime).  Other examples are the field
+<STRONG>Q</STRONG>(<EM>i</EM>) of complex numbers with rational
+real and imaginary parts; more generally,
+<STRONG>Q</STRONG>(<EM>d</EM><SUP>1/2</SUP>) for any nonsquare
+rational number <EM>d</EM>; the ``<EM>p</EM>-adic numbers''
+<STRONG>Q</STRONG><SUB><EM>p</EM></SUB> (<EM>p</EM> prime),
+introduced at the end of our topology unit; and more exotic
+finite fields such as the 9-element field
+(<STRONG>Z</STRONG>/<EM>3</EM><STRONG>Z</STRONG>)(<EM>i</EM>).
+Here's a <A HREF="field.html">review</A>
+of the axioms for fields, vector spaces, and related mathematical
+structures.
+
+<LI> [cf. Axler, p.22] We define the span of an arbitrary subset
+<EM>S</EM> of (or tuple in) a vector space <EM>V</EM> as follows:
+it is the set of all (finite) linear combinations
+<EM>a</EM><SUB>1</SUB> <EM>v</EM><SUB>1</SUB> + ... +
+<EM>a<SUB>n</SUB> v<SUB>n</SUB></EM>
+with each <EM>v<SUB>i</SUB></EM> in <EM>V</EM> and each
+<EM>a<SUB>i</SUB></EM> in <EM>F</EM>.  This is still the smallest
+vector subspace of <EM>V</EM> containing <EM>S</EM>.  In particular,
+if <EM>S</EM> is empty, its span is by definition {0}.  We do
+<EM>not</EM> require that <EM>S</EM> be finite.
+
+<LI> Axler does not seem to explicitly use the important notion
+of a <EM>quotient</EM> vector space.  If <EM>U</EM> is a subspace
+of a vector space <EM>V</EM>, we get an equivalence relation
+on <EM>V</EM> by defining two vectors <EM>v,v'</EM> to be equivalent
+(``congruent mod <EM>U</EM>'') if <EM>v-v'</EM> is in <EM>U</EM>.
+The set of equivalence classes then itself becomes a vector space
+(this must be proved!), called the quotient space <EM>V/U</EM>.
+[Note that this is also a notation for <EM>V</EM> being a vector
+space over a field <EM>U</EM> -- we shall strive to make it clear
+which meaning we intend when both meanings might make sense.]
+
+<LI> Axler proves the Fundamental Theorem of Algebra using
+complex analysis, which cannot be assumed in Math 55.
+<A HREF="fta.ps">Here</A>'s a proof using the topological
+tools we developed in the first month of class.
+(Axler gives the complex-analytic proof on page 67.)
+
+<LI> Axler unaccountably soft-pedals the important notion of
+<EM>duality</EM>; we devote much of the seventh problem set
+to this, and return to it often later.
+
+<LI> We shall need some ``eigenstuff'' also in an infinite-dimensional
+setting, so will not assume that any vector space is (nonzero) finite
+dimensional unless we really must.
+
+<LI> Triangular matrices are intimately related with ``flags''.
+A <EM>flag</EM> in a finite dimensional vector space <EM>V</EM>
+is a sequence of subspaces {0}=<EM>V</EM><SUB>0</SUB>,
+<EM>V</EM><SUB>1</SUB>, <EM>V</EM><SUB>2</SUB>, ...,
+<EM>V<SUB>n</SUB>=V</EM>, with each
+<EM>V<SUB>i</SUB></EM> of dimension <EM>i</EM> and containing
+<EM>V</EM><SUB><EM>i</EM>-1</SUB>.  A basis
+<EM>v</EM><SUB>1</SUB>, <EM>v</EM><SUB>2</SUB>, ..., <EM>v<SUB>n</SUB></EM>
+determines a flag: <EM>V<SUB>i</SUB></EM> is the span of the first
+<EM>i</EM> basis vectors.  Another basis
+<EM>w</EM><SUB>1</SUB>, <EM>w</EM><SUB>2</SUB>, ..., <EM>w<SUB>n</SUB></EM>
+determines the same flag if and only if each
+<EM>w<SUB>i</SUB></EM> is a linear combination of
+<EM>v</EM><SUB>1</SUB>, <EM>v</EM><SUB>2</SUB>, ..., <EM>v<SUB>i</SUB></EM>
+(necessarily with nonzero <EM>v<SUB>i</SUB></EM> coefficient).
+The <EM>standard flag</EM> in <EM>F<SUB>n</SUB></EM> is the flag
+obtained in this way from the standard basis of unit vectors
+<EM>e</EM><SUB>1</SUB>, <EM>e</EM><SUB>2</SUB>, ..., <EM>e<SUB>n</SUB></EM>.
+The punchline is that, just as a diagonal matrix is one that respects
+the standard basis (equivalently, the associated decomposition of
+<EM>V</EM> as a direct some of 1-dimensional subspaces),
+<EM>an upper-triangular matrix is one that respects the standard flag.</EM>
+Note that the <EM>i</EM>-th diagonal entry of a triangular matrix
+gives the action on the one-dimensional quotient space
+<EM>V<SUB>i</SUB></EM>/<EM>V</EM><SUB><EM>i</EM>-1</SUB>
+(each <EM>i</EM>=1,...,<EM>n</EM>).
+
+<LI> As explained in class, the generalization to arbitrary fields
+<EM>F</EM> of Axler's treatment (pages 91-93) of invariant subspaces
+on real vector spaces looks like this:<BR>
+Suppose <EM>u</EM> is a nonzero vector in an <EM>F</EM>-vector space
+<EM>V</EM>, and <EM>Q</EM> is an irreducible polynomial of degree
+<EM>d</EM>>0 in <EM>F</EM>[<EM>X</EM>] such that <EM>(Q(T))u</EM>=0.
+Then the <EM>d</EM> vectors <EM>u,Tu,T</EM><SUP>2</SUP><EM>u, ...,
+T</EM><SUP><EM>d</EM>-1</SUP>u span a <EM>T</EM>-invariant subspace
+<EM>U</EM> of <EM>V</EM>.  Our key claim was that these vectors
+are in fact linearly independent, and thus that <EM>U</EM> is
+<EM>d</EM>-dimensional.  Indeed, a purported linear relation
+would take the form <EM>(R(T))u</EM>=0 for some polynomial
+<EM>R</EM>, not identically zero, of degree strictly less than
+<EM>d</EM>.  But then <EM>Q</EM> and <EM>R</EM> are relatively prime,
+so there exist polynomials <EM>A,B</EM> such that <EM>AQ+BR</EM>=1.
+Thus <EM>A(T)Q(T)+B(T)R(T)</EM> is the identity operator on <EM>V</EM>.
+Evaluating at <EM>u</EM> yields 0=<EM>u</EM>, contradiction.
+
+<P>
+
+To put this <EM>AQ+BR</EM> trick in context: let <EM>I<SUB>u</SUB></EM>
+be the set of polynomials <EM>P</EM> such that <EM>P(T)u=0</EM>.
+Then <EM>I<SUB>u</SUB></EM> is an <STRONG>ideal</STRONG> in
+<EM>F</EM>[<EM>X</EM>]: if <EM>P,P'</EM> are in <EM>I<SUB>u</SUB></EM>
+then so is <EM>P+P'</EM>, as well as <EM>AP</EM> for <EM>any</EM>
+polynomial <EM>A</EM>.  Now for any polynomial <EM>Q</EM>, the
+set of all polynomials of the form <EM>AQ</EM> is an ideal, the
+so-called ``principal ideal'' generated by <EM>Q</EM>.  Conversely,
+<STRONG>every ideal in</STRONG> <EM>F</EM>[<EM>X</EM>]
+<STRONG>is principal</STRONG>.  This is proved as it is for
+ideals in <STRONG>Z</STRONG>, using the division algorithm
+(Axler, 4.5 on page 66 ff.).  This means than if an ideal <EM>I</EM>
+contains an <EM>irreducible</EM> polynomial <EM>Q</EM> --
+and thus contains the principal ideal generated by <EM>Q</EM> --
+then either <EM>I</EM> is that principal ideal, or it is all
+of <EM>F</EM>[<EM>X</EM>].  Going back to our case
+<EM>I</EM>=<EM>I<SUB>u</SUB></EM>, we find that in the first
+case <EM>U</EM> has dimension <EM>d</EM>, and in the second
+case <EM>I<SUB>u</SUB></EM> contains 1 so <EM>u</EM>=0.
+[Alternatively, given <EM>Q</EM> and <EM>R</EM>,
+the set of all polynomials of the form <EM>AQ+BR</EM>
+is again an ideal, etc.]
+
+<LI> A bilinear pairing on a vector space <EM>V</EM> is said
+to be <STRONG>skew-symmetric</STRONG> (a.k.a. ``anti-symmetric''
+or ``alternating'') if <<EM>x</EM>,<EM>x</EM>>=0 for all
+<EM>x</EM> in <EM>V</EM>.  By expanding
+<<EM>x</EM>+<EM>y</EM>, <EM>x</EM>+<EM>y</EM>>
+we deduce that <<EM>x</EM>,<EM>y</EM>> = - <<EM>y</EM>,<EM>x</EM>>
+for all <EM>x</EM>, <EM>y</EM> in <EM>V</EM>, whence the terminology.
+Conversely the identity
+<<EM>x</EM>,<EM>y</EM>> = - <<EM>y</EM>,<EM>x</EM>>
+implies <<EM>x</EM>,<EM>x</EM>>=0 (let <EM>y</EM>=<EM>x</EM>),
+except when the ground field <EM>F</EM> has characteristic 2,
+in which case <<EM>x</EM>,<EM>y</EM>> = - <<EM>y</EM>,<EM>x</EM>>
+amounts to the condition that the pairing be symmetric.
+
+<LI> A <STRONG>norm</STRONG> on a real or complex vector space
+<EM>V</EM> is any function <EM>v</EM> |--> |<EM>v</EM>| from
+<EM>V</EM> to the real numbers such that:
+<UL>
+<LI> The identity |<EM>cv</EM>| = |<EM>c</EM>| |<EM>v</EM>|
+holds for all scalars <EM>c</EM> and all vectors <EM>v</EM>;
+<LI> <EM>d</EM>(<EM>x,y</EM>) := |<EM>x-y</EM>|
+defines a distance function on <EM>V</EM>.
+</UL>
+The second condition means that: |<EM>v</EM>| is nonnegative
+for all <EM>v</EM>, and zero iff <EM>v</EM>=0; and
+|<EM>v</EM>+<EM>v'</EM>| <= |<EM>v</EM>| + |<EM>v'</EM>|
+for all vectors <EM>v</EM>, <EM>v'</EM>.  (These correspond
+to the nonnegativity and triangle inequality respectively;
+what happened to symmetry?)  For instance, we have seen in
+effect that |<EM>x</EM>| := max(|<EM>x</EM><SUB>1</SUB>|, ...,
+|<EM>x</EM><SUB><EM>n</EM></SUB>|) defines a norm on
+<STRONG>R</STRONG><SUP><EM>n</EM></SUP> or
+<STRONG>C</STRONG><SUP><EM>n</EM></SUP>; on pages 102-105,
+Axler in effect verifies that |<EM>x</EM>|<SUP>2</SUP> =
+(<EM>x</EM>,<EM>x</EM>) gives a norm on an inner-product space.
+
+<LI>
+<A HREF="spectral.html">Here</A>'s an outline of the standard proof of
+the Spectral Theorem for self-adjoint oprators on a finite-dimensional
+<EM>real</EM> inner product space.
+
+<LI> Here are basic definitions and constructions involving
+<A HREF="group.html">groups</A> that give a more general context
+for some of our results so far and will be especially useful in
+our coming discussion of determinants.
+
+<LI> Here are definitions and basic results concerning
+<A HREF="minor.html">cofactors and minors</A> of a matrix.
+
+<LI> And <A HREF="pfaff.html">here</A> are some symple results
+and pfacts about symplectic spaces and the Pfaffian.
+
+</UL>
+
+<A NAME="today">
+<img src="http:/~elkies/orangeball.gif">
+Here are some <A HREF="pp.ps">practice problems</A>
+for the final exam, covering both topology and linear
+algebra (sometimes both in the same problem).  These
+are intentionally harder than I expect the final to be.
+
+<P>
+
+The following remarks concerning ``little <EM>o</EM> notation''
+are relevant to the concepts of differentiability etc.; cf. the
+first ``Remark'' in Rudin, p.213.  If <EM>f,g</EM> are functions
+on the same metric space, the notation ``<EM>f=o(g)</EM> as
+<EM>x</EM> approaches <EM>x</EM><SUB>0</SUB>'' means:
+for every positive epsilon there is a neighborhood of
+<EM>x</EM><SUB>0</SUB> on which |<EM>f(x)</EM>| <= epsilon <EM>g(x)</EM>.
+Note that for this to make sense, <EM>g</EM> had better be a nonnegative
+real function, and <EM>f</EM> must take values in a normed vector
+space -- though equivalent norms yield the same meaning for
+``<EM>f=o(g)</EM>''.  Thus: <EM>F</EM> has derivative <EM>F'(x)</EM>
+at <EM>x</EM> if and only if
+<EM>F(x+h)=F(x)+F'(x)h+o(</EM>|<EM>h</EM>|<EM>)</EM>
+as <EM>h</EM> approaches 0.  (Here <EM>F</EM> is a vector-valued
+function defined on some neighborhood of <EM>x</EM>.)
+The advantage of this is that we don't have to fiddle
+with the special case <EM>h</EM>=0.
+
+<P>
+
+Check that: if <EM>f=o(h)</EM> and <EM>g=o(h)</EM> then
+<EM>f+g=o(h)</EM>; if <EM>f=o(h)</EM> and <EM>g</EM> is
+a bounded scalar-valued function then
+<EM>fg=o(h)</EM>; if <EM>f=o(g)</EM> and <EM>g=o(h)</EM> then
+<EM>f=o(h)</EM>; if <EM>x</EM> is a function of <EM>y</EM>
+continuous at <EM>y</EM><SUB>0</SUB>, and <EM>f=o(g)</EM>
+as <EM>x</EM> approaches <EM>x(y</EM><SUB>0</SUB><EM>)</EM>,
+then <EM>f=o(g)</EM> as <EM>y</EM> approaches <EM>y</EM><SUB>0</SUB>.
+The chain rule for vector-valued functions (Rudin., p.214, Theorem 9.15)
+then becomes clear.
+
+<P>
+
+[Incidentally, there's also a ``big <EM>O</EM>'' notation:
+``<EM>f=O(g)</EM>'' means ``there exists a constant <EM>C</EM>
+such that |<EM>f(x)</EM>| <= <EM>C g(x)</EM> for all <EM>x</EM>''.
+Note that this is conceptually simpler since there is no choice
+of epsilons.]
+
+<HR>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p1.ps">p1.ps</A>:
+First problem set: Metric topology
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p2.ps">p2.ps</A>:
+Second problem set: Metrics, topologies, continuity, and sequences
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p3.ps">p3.ps</A>:
+Third problem set: Sequences cont'd; compactness start'd
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p4.ps">p4.ps</A>:
+Fourth problem set: Completeness, and compactness: the grand finale
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p5.ps">p5.ps</A>:
+Fifth problem set: Vector space basics
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p6.ps">p6.ps</A>:
+Sixth problem set: Bases, dimension, etc.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p7.ps">p7.ps</A>:
+Seventh problem set: Linear maps; duality and adjoints; 
+a bit about field extensions.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p8.ps">p8.ps</A>:
+Eighth problem set: Duality, cont'd; eigenstuff;
+a bit about bilinear forms and general norms.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55a.99/p9.ps">p9.ps</A>:
+Ninth problem set: Inner-product spaces, and more about duality.
+
+<P>
+
+<A NAME="current_homework">
+<img src="http:/~elkies/orangeball.gif">
+<A HREF="http:/~elkies/M55a.99/p10.ps">p10.ps</A>:
+Tenth problem set: more about inner products; normal and self-adjoint
+operators; a bit about permutations and determinants.
+
+<P>

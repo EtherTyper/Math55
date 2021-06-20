@@ -1,0 +1,49 @@
+<TITLE>
+Cofactors and other minors
+</TITLE>
+<BODY BGCOLOR="#ccffff">
+
+Let <EM>A</EM> be a square matrix of order <EM>n</EM>,
+and <EM>B</EM> be the matrix of the same size whose (<EM>i,j</EM>)
+entry is (-1)<SUP><EM>i+j</EM></SUP> times the determinant of the
+matrix obtained from <EM>A</EM> by deleting its (<EM>j,i</EM>)
+[sic] entry.  (This <EM>B</EM> is often, and confusingly,
+called the adjoint of <EM>A</EM>.  Blecch.  We'll call it
+the cofactor matrix; see below.)  Then
+<EM> A B = B A</EM> = det(<EM>A</EM>) times the identity
+matrix.  Corollary: a square matrix with integer entries
+has an integer inverse if and only if its determinant is 1
+or -1.  (Likewise with <STRONG>Z</STRONG> replaced by any
+commutative ring: the determinant must be a ``unit'', i.e. an
+invertible element of the ring.)
+
+<P>
+
+The entries if <EM>B</EM> are called ``cofactors'' of <EM>A</EM>.
+These are (up to a plus-or-minus sign) special cases of ``minors''
+of a matrix.  A minor of a (not necessarily square) matrix <EM>A</EM>
+is the determinant of a square matrix obtained by omitting some
+rows and/or columns of <EM>A</EM>.
+[A determinant of order 0 is deemed to equal 1, as in
+0!=<EM>x</EM><SUP>0</SUP>=1.]  We have seen already that a square
+matrix of order <EM>n</EM> has rank <<EM>n</EM> if and only if
+its determinant vanishes.  This generalizes as follows: the rank
+of any matrix <EM>A</EM> is the largest integer <EM>r</EM> such that
+some order-<EM>r</EM> minor of <EM>A</EM> does not vanish.
+
+<P>
+
+Proof: It is clear that the rank is at least <EM>r</EM>, because
+we have <EM>r</EM> linearly independent columns.  We'll show that,
+conversely, if there are <EM>r</EM> linearly independent columns
+then at least one of the minors formed with these columns is nonzero.
+This is because the submatrix of <EM>A</EM> formed with these columns
+has rank <EM>r</EM>; therefore, so does its transpose.  So, its
+rows span <EM>F<SUP>r</SUP></EM>, and include a basis.  Using these
+rows gives the desired minor.
+
+<P>
+
+Corollary: the rank of the cofactor matrix of <EM>A</EM> is
+<EM>n</EM>,1,0 according as the rank of <EM>A</EM> is
+<EM>n</EM>, <EM>n</EM>-1, or less than <EM>n</EM>-1.

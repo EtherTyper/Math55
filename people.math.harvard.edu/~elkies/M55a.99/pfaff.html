@@ -1,0 +1,259 @@
+<TITLE>
+Symplectic spaces
+</TITLE>
+<BODY BGCOLOR="#ccffff">
+
+We'll use <EM>symplectic space</EM> for a finite-dimensional
+vector space <EM>V</EM> over a field <EM>F</EM>, equipped
+with a bilinear pairing (.,.) that is alternating and nondegenerate.
+Recall that ``alternating'' means that (<EM>v</EM>,<EM>v</EM>)=0
+for all <EM>v</EM> in <EM>V</EM>, from which it follows that
+(<EM>v</EM>,<EM>w</EM>) = -(<EM>w</EM>,<EM>v</EM>) for all
+<EM>v</EM>,<EM>w</EM> in <EM>V</EM>; and ``nondegenerate'' means
+that the only vector <EM>v</EM> such that (<EM>v</EM>,<EM>w</EM>=0)
+for all <EM>v</EM> in <EM>V</EM> is the zero vector.  [The same
+condition is usually required from the right, but we have seen
+that for a pairing on a single finite-dimensional space the
+two are equivalent, and here the equivalence follows directly
+from the identity (<EM>v</EM>,<EM>w</EM>) = -(<EM>w</EM>,<EM>v</EM>).]
+
+<P>
+
+We shall show: <STRONG>every symplectic space is even-dimensional,
+and all symplectic spaces of the same dimension are isomorphic.</STRONG>
+
+<P>
+
+It is clear at any rate that the dimension, if positive,
+must be at least 2, since the only alternating pairing on
+a 1-dimensional space is the zero pairing, which is degenerate.
+
+<P>
+
+We proceed to give some examples of symplectic spaces.
+The symplest nontrivial example of a symplectic space is the so-called
+``hyperbolic plane'': <EM>H=F</EM><SUP>2</SUP>, with pairing defined by
+((<EM>a</EM>,<EM>b</EM>), (<EM>c</EM>,<EM>d</EM>)) = <EM>ad-bc</EM>.
+(This formula should look familiar!)
+We know already that the alternating pairings on a
+<EM>n</EM>-dimensional space constitute a vector space of dimension
+(<EM>n</EM><SUP>2</SUP>-<EM>n</EM>)/2; thus any alternating pairing
+on </EM>F</EM><SUP>2</SUP> is a multiple of the hyperbolic one, and
+if it is a nonzero multiple <EM>r</EM>(<EM>ad-bc</EM>) then scaling
+one of the unit vectors by <EM>r</EM> identifies </EM>F</EM><SUP>2</SUP>
+with <EM>H</EM> as a symplectic space.
+
+<P>
+
+If <EM>V,W</EM> are symplectic spaces, so is their direct sum,
+with the pairing defined by
+((<EM>v</EM>,<EM>w</EM>), (<EM>v'</EM>,<EM>w'</EM>)) =
+(<EM>v</EM>,<EM>v'</EM>) + (<EM>w</EM>,<EM>w'</EM>).
+[Check that this is not only alternating but also nondegenerate.]
+Likewise an arbitrary finite direct sum of symplectic spaces has
+a natural symplectic structure.  In particular, the direct sum
+of <EM>m</EM> copies of the hyperbolic plane <EM>H</EM>
+is a symplectic space <EM>H</EM><SUP><EM>m</EM></SUP>
+of dimension 2<EM>m</EM>.
+The pairing can be described as follows: the space has basis vectors
+<EM>e</EM><SUB>1</SUB>,...<EM>e</EM><SUB><EM>m</EM></SUB>,
+<EM>f</EM><SUB>1</SUB>,...<EM>f</EM><SUB><EM>m</EM></SUB>;
+the pairing of any two of them is zero, except that
+(<EM>e</EM><SUB><EM>i</EM></SUB>,<EM>f</EM><SUB><EM>i</EM></SUB>)=1,
+(<EM>f</EM><SUB><EM>i</EM></SUB>,<EM>e</EM><SUB><EM>i</EM></SUB>)=-1
+for each <EM>i</EM>.
+
+<P>
+
+We shall show that every symplectic space <EM>V</EM> of positive
+dimension is the direct sum of <EM>H</EM> with another symplectic
+space <EM>W</EM>, necessarily of dimension dim(<EM>V</EM>)-2.
+By induction on dim(<EM>V</EM>), it will follow that <EM>V</EM> has
+even dimension and is isomorphic with <EM>H</EM><SUP><EM>m</EM></SUP>
+for some positive integer <EM>m</EM>.
+
+<P>
+
+Fix a nonzero vector <EM>e</EM><SUB>1</SUB> in <EM>V</EM>.
+Since the pairing is nondegenerate, there exists
+<EM>f</EM><SUB>1</SUB> in <EM>V</EM> such that
+(<EM>e</EM><SUB>1</SUB>,<EM>f</EM><SUB>1</SUB>)=1.
+Moreover, <EM>e</EM><SUB>1</SUB> and <EM>f</EM><SUB>1</SUB>
+are linearly independent: if one was a multiple of the other,
+(<EM>e</EM><SUB>1</SUB>,<EM>f</EM><SUB>1</SUB>) would vanish
+because the pairing is alternating.  Thus <EM>e</EM><SUB>1</SUB>
+and <EM>f</EM><SUB>1</SUB> span a hyperbolic plane in <EM>V</EM>.
+Call this plane <EM>H</EM>.
+
+<P>
+
+Now let <EM>W</EM> be the subspace of <EM>V</EM>
+consisting of all <EM>v</EM> such that
+(<EM>v</EM>,<EM>e</EM><SUB>1</SUB>)=(<EM>v</EM>,<EM>f</EM><SUB>1</SUB>)=0.
+[That is, <EM>W</EM> is what we would call the ``orthogonal complement''
+of <EM>H</EM> if our pairing were an inner product.]  We claim:
+
+<UL>
+<LI> <EM>W</EM> has dimension dim(<EM>V</EM>)-2;
+<LI> The intersection of <EM>W</EM> with <EM>H</EM> is {0};
+<LI> The pairing on <EM>V</EM>, restricted to <EM>W</EM>, is nondegenerate
+(so makes <EM>W</EM> a symplectic space too);
+<LI> <EM>V</EM> is the direct sum of <EM>W</EM> and <EM>H</EM>, not only
+as a vector space (which already follows from the first two claims)
+but also as a symplectic space.
+</UL>
+
+The first claim is clear: any nondegenerate pairing identifies
+<EM>V</EM> with its dual; under this identification, <EM>W</EM>
+is just the annihilator of <EM>H</EM>; and we know that the
+dimensions of a space and its annihilator add up to dim(<EM>V</EM>).
+Since <EM>H</EM> has dimension 2, the claim follows.
+
+<P>
+
+The second claim is a consequence of the fact that the pairing on <EM>H</EM>
+is nondegenerate.  Indeed a vector in both <EM>W</EM> and <EM>H</EM>
+is a vector <EM>v</EM> in <EM>H</EM> such that (<EM>v</EM>,<EM>w</EM>)=0
+for all <EM>w</EM> in <EM>H</EM>, and by nondegeneracy the only such
+<EM>v</EM> is the zero vector.  As already noted, it follows that
+<EM>V</EM> is the direct sum of <EM>W</EM> and <EM>H</EM>, at least
+as a vector space.
+
+<P>
+
+For the third claim, we must show that if <EM>v</EM> is a vector of
+<EM>W</EM> such that (<EM>v</EM>,<EM>w</EM>)=0
+for all <EM>w</EM> in <EM>W</EM> then <EM>v</EM>=0.  But we already
+know that (<EM>v</EM>,<EM>w</EM>)=0 for all <EM>w</EM> in <EM>H</EM>;
+thus by linearity (<EM>v</EM>,<EM>w</EM>)=0 for all <EM>w</EM> in
+<EM>W</EM>+<EM>H</EM>, which is <EM>V</EM>.  But our pairing (.,.)
+is nondegenerate on <EM>V</EM>.  Thus <EM>v</EM>=0 as claimed.
+
+<P>
+
+For the final claim, we need only check that for any vectors
+<EM>v</EM>,<EM>v'</EM> in <EM>H</EM>
+and <EM>w</EM>,<EM>w'</EM> in <EM>W</EM> we have
+(<EM>v+w</EM>,<EM>v'+w'</EM>)=
+(<EM>v</EM>,<EM>v'</EM>)+(<EM>w</EM>,<EM>w'</EM>).
+But this is clear, because the cross-terms
+(<EM>v</EM>,<EM>w'</EM>) and (<EM>w</EM>,<EM>v'</EM>)
+vanish by the definition of <EM>V'</EM>.
+
+<P>
+
+This completes the induction step and the proof.
+
+<P>
+
+A linear transformation <EM>T</EM> of <EM>V</EM> is said to be
+<EM>symplectic</EM> if it preserves the pairing, i.e. if
+(<EM>Tv</EM>,<EM>Tw</EM>)=(<EM>v</EM>,<EM>w</EM>) for all
+<EM>v</EM>,<EM>w</EM> in <EM>V</EM>.  Necessarily <EM>T</EM>
+is invertible; such <EM>T</EM> constitute a group, called the
+<EM>symplectic group</EM> of <EM>V</EM>, and written Sp(<EM>V</EM>).
+
+<P>
+
+When <EM>F</EM> is finite, say of size <EM>q</EM>, our proof that
+all symplectic spaces of the same dimension are equivalent also
+lets us count the symplectic transformations, as we did for linear
+transformations of a vector space of given dimension over <EM>F</EM>.
+We find that there are <EM>q</EM><SUP><EM>m</EM><SUP>2</SUP></SUP>
+times the product of (<EM>q</EM><SUP>2<EM>i</EM></SUP>-1) over
+<EM>i</EM>=1,...,<EM>m</EM>.  How many nondegenerate bilinear forms
+are there on a (2<EM>m</EM>)-dimensional space over <EM>F</EM>?
+
+<P>
+
+Our results can be interpreted in terms of skew-symmetric matrices.
+Let <EM>J</EM><SUB><EM>m</EM></SUB> be the matrix for the pairing on
+<EM>H</EM><SUP><EM>m</EM></SUP> with respect to the basis
+<EM>e</EM><SUB>1</SUB>,...<EM>e</EM><SUB><EM>m</EM></SUB>,
+<EM>f</EM><SUB>1</SUB>,...<EM>f</EM><SUB><EM>m</EM></SUB>.
+This is a block-diagonal matrix with <EM>m</EM> 2-by-2 blocks,
+each block being the matrix <EM>J</EM><SUB>1</SUB> with entries
+
+<P>
+
+<table cellspacing="6">
+<td align="right">  0 </td> <td align="right"> 1 </td>
+<tr>
+<td align="right"> -1 </td> <td align="right"> 0 </td>
+</table>
+
+<P>
+
+which gives the matrix for the pairing on <EM>H</EM>.
+Of necessity, <EM>J</EM><SUB>1</SUB> and (thus)
+<EM>J</EM><SUB><EM>m</EM></SUB> are skew-symmetric.
+
+<P>
+
+Now let <EM>A</EM> be any skew-symmetric matrix.  The
+skew-symmetry condition is equivalent to the requirement
+that <EM>A</EM> is the matrix of an alternating form.
+Our result then says: if <EM>A</EM> is of odd order,
+it must be degenerate; if <EM>A</EM> is of even order
+2<EM>m</EM>, it is either degenerate or of the form
+<EM>S</EM><EM>J</EM><SUB><EM>m</EM></SUB><EM>S</EM><SUP>*</SUP>
+for some invertible matrix <EM>S</EM> (giving the change of basis to
+<EM>e</EM><SUB>1</SUB>,...<EM>e</EM><SUB><EM>m</EM></SUB>,
+<EM>f</EM><SUB>1</SUB>,...<EM>f</EM><SUB><EM>m</EM></SUB>).
+
+<P>
+
+The odd case can be obtained also by considering the
+determinant: by assumption,
+det(<EM>A</EM>)=det(-<EM>A</EM><SUP>*</SUP>)=det(-<EM>A</EM>);
+for a matrix of odd order, this last is -det(<EM>A</EM>).
+So, at least in characteristic zero, det(<EM>A</EM>)=0.
+We deduce the same result in arbitrary characteristic using
+a familiar argument: ``det(<EM>A</EM>)=0'' is a polynomial
+identity with integer coefficients, so having verified it
+over the complex numbers we know it is true in general.
+
+<P>
+
+Taking determinants in the even case, and noting that
+det(<EM>J</EM><SUB><EM>m</EM></SUB>)=
+det(<EM>J</EM><SUB>1</SUB>)<SUP><EM>m</EM></SUP>=
+1<SUP><EM>m</EM></SUP>=1, we find that the determinant of
+any skew-symmetric matrix of even order is of the form
+det(<EM>S</EM>)<SUP>2</SUP>.  In particular, it is a perfect
+square.  For instance, for order 2, it is the square of
+<EM>a</EM><SUB>12</SUB>; for order 4, the square of
+  <EM>a</EM><SUB>12</SUB> <EM>a</EM><SUB>34</SUB>
+- <EM>a</EM><SUB>13</SUB> <EM>a</EM><SUB>24</SUB>
++ <EM>a</EM><SUB>14</SUB> <EM>a</EM><SUB>23</SUB>.
+In general, it turns out to be the square of a homogeneous
+polynomial of degree <EM>m</EM> in the coefficients of <EM>A</EM>,
+linear in each variable separately, called the <EM>Pfaffian</EM>
+of <EM>A</EM>.  By now you know enough about permutations, signs
+and determinants to guess the formula for the Pfaffian of an
+skew-symmetric matrix of any even order, and then prove that
+its square equals the determinant of the matrix.
+
+<P>
+
+This also yields us to the matrix version of the symplectic group:
+it consists of those square matrices <EM>S</EM> of order 2<EM>m</EM>
+such that <EM>J</EM><SUB><EM>m</EM></SUB> = 
+<EM>S</EM><EM>J</EM><SUB><EM>m</EM></SUB><EM>S</EM><SUP>*</SUP>.
+
+<P>
+
+An alternative definition of the Pfaffian uses the ``exterior algebra''
+of a finite-dimensional vector space, which we have more or less
+introduced when discussing <EM>k</EM>-linear alternating forms:
+these are functionals on the <EM>k</EM>-th exterior power of
+<EM>V</EM>.  So, for instance, the determinant of vectors
+<EM>v</EM><SUB>1</SUB>, ..., <EM>v</EM><SUB><EM>n</EM></SUB>
+in an <EM>n</EM> dimensional space <EM>V</EM> can be regarded as
+<EM>v</EM><SUB>1</SUB>^<EM>v</EM><SUB>2</SUB>^...^<EM>v</EM><SUB><EM>n</EM></SUB>,
+an elements of the 1-dimensional <EM>n</EM>-th (a.k.a. top) exterior
+power of <EM>V</EM>.  Well, a skew-symmetric matrix can be regarded
+as an element <EM>q</EM> of the alternating square of <EM>V</EM>;
+if <EM>V</EM> has even dimension 2<EM>m</EM>, the Pfaffian can be
+interpreted as (1/m!) <EM>q</EM>^<EM>q</EM>^...^<EM>q</EM>
+(<EM>m</EM> times) in the same top exterior power.

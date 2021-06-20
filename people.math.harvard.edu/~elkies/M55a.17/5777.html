@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5777 and all that</title>
+<!-- MathJax header Copyright (c) 2009-2017 The MathJax Consortium -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="../MathJax-2.7.1/MathJax.js"></script>
+
+<style>
+h1 {text-align:center}
+h2 {
+  font-weight: bold;
+  background-color: #DDDDDD;
+  padding: .2em .5em;
+  margin-top: 1.5em;
+  border-top: 3px solid #666666;
+  border-bottom: 2px solid #999999;
+}
+</style>
+</head>
+<body>
+
+<noscript>
+<div style="color:#CC0000; text-align:center">
+<b>Warning: <a href="http://www.mathjax.org/">MathJax</a>
+requires JavaScript to process the mathematics on this page.<br />
+If your browser supports JavaScript, be sure it is enabled.</b>
+</div>
+<hr>
+</noscript>
+
+<h3>5777 and all that</h3>
+
+October 3, 2016 was the Jewish New Year, first of Tishrei 5777.
+It is unusually late (as will be the remaining Jewish holidays this year),
+for reasons that relate to some neat arithmetical facts about 5777 and
+its neighbors 5778 and 5776.
+
+<p>
+
+Math 55a alum
+<a href="http://www.scottkom.com" target="_blank">Scott Kominers</a>
+notes that $5777 = \lfloor\varphi^{18}\rfloor$, where $\varphi$ is the
+&ldquo;<a href="https://en.wikipedia.org/wiki/Golden_ratio"
+  target="_blank">golden ratio</a>&rdquo;
+$\frac12(1 + \sqrt5) = 1.61803\ldots$,
+which is the positive root of $x^2-x-1$.
+(The number $18$ is regarded as auspicious in Judaism, being the
+<a href="https://en.wikipedia.org/wiki/Gematria"
+  target="_blank">gematria</a> value of Hebrew
+<a href="https://en.wikipedia.org/wiki/Chai_(symbol)"
+  target="_blank"><font size="-1">CHAI</font></a> &#x5d7;&#x5d9; &ldquo;life, living&rdquo;.)
+
+<p>
+
+Numerically, $\varphi^{18} = 5777.9998269\ldots$,
+so the floor function is $5777$ only barely; the difference
+$5778 - \varphi^{18}$ is exactly $1 / \varphi^{18}$.
+The sum $\varphi^{18} + \varphi^{-18}$
+is an integer &mdash; namely the 18th
+<a href="https://en.wikipedia.org/wiki/Lucas_number"
+  target="_blank">Lucas number</a> $L_{18}$ &mdash; because
+$-1/\varphi$ is the algebraic conjugate $1-\varphi$ of&nbsp;$\varphi$,
+so $\varphi^{18} + \varphi^{-18}$ is the sum of $\varphi^{18}$ and
+its algebraic conjugate (and thus the trace of $T^{18}$ if $T$ is
+a linear operator on a two-dimensional space whose eigenvalues are
+<nobr>$\varphi$ and $-1/\varphi$</nobr>, such as
+<nobr>$T(x,y) = (x+y,x)$ ).</nobr>
+
+<p>
+
+Now
+$\varphi^{18} + \varphi^{-18} = (\varphi^9 - \varphi^{-9})^2 + 2 = L_9^2 + 2$
+(in general $L_{2m} = L_m^2 \pm 2$,
+the sign depending on the parity of&nbsp;$m$);
+and indeed the recently departed year was numbered $5776$
+which is a perfect square, indeed the only four-digit square
+that ends with its own root.  Some context for this:
+For each $r = 1, 2, 3, \ldots$ there are four &ldquo;idempotents&rdquo;
+(solutions of $x^2 \equiv x \bmod 10^r$): the trivial 0 and&nbsp;1, and two
+nontrivial solutions that sum to $1 \bmod 10^r$
+(in general $x$ is an idempotent in some ring if and only if
+$1-x$ is an idempotent).
+The two nontrivial idempotents can be recovered from the simultaneous
+(&ldquo;Chinese remainder&rdquo;) congruences
+$x \equiv 0 \bmod 2^r, \  x \equiv 1 \bmod 5^r$ or
+$x \equiv 1 \bmod 2^r, \  x \equiv 0 \bmod 5^r$.
+At least one of them exceeds $10^{r-\frac12}$
+and thus has a <nobr>$2r$-digit</nobr> square.
+In our case of $r=2$, this solution is 76,
+which is both $0 \bmod 4$ and $1 \bmod 25$.
+The complementary idempotent $25$ is not another example becuase
+it is a bit under $10^{3/2} = 31.62 \ldots$,
+so instead is the unique root of a <nobr><em>three</em>-digit</nobr> square
+(namely 625) that ends with its own root.
+
+<p>
+
+What has all this to do with the Jewish holidays?  Well 76,
+besides being $L_9$ and a <nobr>mod-100</nobr> idempotent,
+is also $4 \cdot 19$, which makes $5776 = 76^2$ a multiple of&nbsp;19.
+(It had to be, because 19 is prime and the Legendre symbol $(5/19)$ is $+1$,
+so $\varphi$ and $-1/\varphi$ have representatives mod&nbsp;19
+in the &ldquo;prime field&rdquo; ${\bf Z} / 19{\bf Z}$  &mdash;
+namely $-4$ and $5$, as it happens &mdash;
+so their 18th powers are 1 by Fermat&rsquo;s Little Theorem, whence their
+sum $L_{18}$ is $2 \bmod 19$, and $L_{18} - 2$ is the square of $L_9$.)
+
+<p>
+
+Now 18 is auspicious in Judaism, but 19 is a key number in the
+Jewish calendar, which has lunar months (the Hebrew &#x5d9;&#x5e8;&#x5d7
+can be read as either <font size="-1">YERACH</font> [month] or
+<font size="-1">YAREACH</font> [moon(*)]),
+but must not stray too far from the solar year because some of the
+Jewish festivals are tied to the seasons (e.g.
+  <a href="https://en.wikipedia.org/wiki/Shavuot" target="_blank">Shavuot</a>
+is a harvest festival, and during the week of
+  <a href="https://en.wikipedia.org/wiki/Sukkot" target="_blank">Sukkot</a>
+one is to eat outside in a makeshift booth, which is tolerable this time
+of the year but would be problematic in mid-winter).  But a lunar month
+is about 29&frac12; days long, and a solar year about 365&frac14;,
+longer than 12 lunar months but shorter than&nbsp;13.
+So a &ldquo;<a href="https://en.wikipedia.org/wiki/Lunisolar_calendar"
+  target="_blank">lunisolar calendar</a>&rdquo; must combine years of
+12 and 13 lunar months to keep synchronized on average with
+the Earth&rsquo;s orbit around the Sun.
+
+<blockquote>
+(*) Indeed the English word &ldquo;month&rdquo;
+is likewise related with &ldquo;moon&rdquo;, and for that matter
+&ldquo;moon&rdquo; itself is sometimes used for &ldquo;month&rdquo;
+as in &ldquo;honeymoon&rdquo; and &ldquo;many moons ago&rdquo;.
+</blockquote>
+
+What proportion of years must have a 13th month to maintain this
+synchronization?  About 0.3683, using the lengths of the month and year
+derived from the values in <a href="https://en.wikipedia.org/wiki/Metonic_cycle"
+ target="_blank">this Wikipedia page</a>.  That is more accuracy than was
+available thousands of years ago, but the ancients observed the Sun and Moon
+long and accurately enough to find the excellent approximation
+<nobr>7/19 = 0.3684&hellip;</nobr> to this ratio, meaning that
+7 of every 19 years need a thirteenth month.  (Such an extra month is nowadays
+called a &ldquo;leap month&rdquo;, making the year a &ldquo;leap year&rdquo;;
+in Hebrew a <nobr>13-month</nobr> year is known somewhat quaintly as a
+&ldquo;pregnant year&rdquo;
+[<nobr>&#x5e9;&#x5e0;&#x5d4; &#x5de;&#x5e2;&#x5d5;&#x5d1;&#x5e8;&#x5ea;</nobr>
+= <font size="-1">SHANAH M</font>&#x0259;<font size="-1">UBERET</font>].)
+ <!-- that &#x0259; is a schwa -->
+So, to know whether <nobr>Year $N$</nobr> was a leap year
+you need to know $N \bmod 19$.
+For those $N$, The Jewish New Year and other Tishrei holidays
+(Yom Kippur, Sukkot, Shmini Atzeret) come late in the solar calendar
+on the <em>following</em> year, $N+1$.
+
+<p>
+
+Of course we need to also know which 7 years in each cycle of&nbsp;19
+get the extra month.  They are spread as evenly as possible over the cycle,
+which specifies the pattern uniquely, but only up to translation mod&nbsp;19.
+The Babylonians chose years 3, 6, 8, 11, 14, 17, and&nbsp;19
+of each <nobr>19-year</nobr> cycle, and the Jewish calendar retains
+this choice
+(known as the <a href="https://en.wikipedia.org/wiki/Metonic_cycle"
+ target="_blank">Metonic cycle</a>,
+though it was already known in Babylonia and China when
+<a href="https://en.wikipedia.org/wiki/Meton_of_Athens"
+ target="_blank">Meton of Athens</a> found the 7/19 approximation).
+So usually leap years are spaced three apart, but twice in each cycle
+they come closer, and then the next year starts even later than usual.
+Since 5776 is a multiple of&nbsp;19, we&rsquo;ve just had one of these
+close pairs (17/19), so Rosh Ha-Shanah and the rest are pushed even
+further back.
+
+<p>
+
+The &ldquo;Metonic cycle&rdquo; affects not just the solar date but also the
+start and end time of the Jewish holidays, because they are celebrated from
+sundown to sundown, so for example Rosh Ha-Shanah 5777 actually started
+at sundown the evening of the last day of&nbsp;5776.  (This already appears
+in the first chapter of Exodus, where each day of Creation concludes with
+the formula <font size="-1">VAYHI-EREV VAYHI-VOKER</font>
+&ldquo;and there was evening and there was morning&rdquo;,
+<em>in that order</em>; <font size="-1">EREV</font> is thus used for the
+&ldquo;Eve&rdquo; of a holiday, as in <font size="-1">EREV SHABBAT</font> =
+Friday evening.  Note that
+&ldquo;New Year&rsquo;s Eve&rdquo; = December&nbsp;31 works the same way,
+and likewise for other &ldquo;Eves&rdquo;.)  In this part of the year,
+and in our Northern Hemisphere, later in the calendar means
+earlier sundowns.  We are near the equinox (Sep.22), when the days
+are getting shorter most quickly.  This also means that each
+sundown-to-sundown interval is a bit less than 24 hours.
+The shortest possible Yom Kippur fast would be when the day falls
+exactly on the equinox; afterwards the fasts get longer as the
+days keep getting shorter.  But this effect is negligible:
+even at the equinox the interval between sundowns is not as much as
+2&nbsp;minutes less than 24 hours, and the <em>difference</em> between
+that minimal interval and what we have this year is measured in seconds.
+
+<hr>
+
+Further notes:
+
+<ol>
+<li> Scott explains that he found the formula
+$5777 = \lfloor\varphi^{18}\rfloor$
+simply by entering 5777 into the
+<a href="http://oeis.org" target="_blank">OEIS</a> search window;
+indeed the second hit is
+<a href="http://oeis.org/A014217" target="_blank">Sequence A014217</a>,
+whose <nobr><em>n</em>-th</nobr> term is $\lfloor\varphi^n\rfloor$.
+(The first hit is
+<a href="http://oeis.org/A053755" target="_blank">Sequence A053755</a>,
+whose <nobr><em>n</em>-th</nobr> term is $4n^2+1$; most of the
+<a href="http://oeis.org/search?q=5777" target="_blank">other top hits</a>
+involve Fibonacci/Lucas/$\varphi$ matters, including
+$5777 = F_{27} / F_9$ and the fact that $5777$ is the sixth-smallest
+<a href="http://oeis.org/A005845" target="_blank">Lucas pseudoprime</a>.)
+[Added in 2017: also related is $5779 = L_{27}/L_9$.]
+
+<li> The Hebrew calendar actually inserts the 13th month in the
+<em>middle</em> of the year: instead of the sixth month Adar
+it&rsquo;s Adar&nbsp;Aleph and Adar&nbsp;Beth.  [Adar <em>used</em> to be
+the last month; the Biblical name for the 1&nbsp;Tishrei holiday is
+<font size="-1">YOM TRUAH</font> (&ldquo;day of the [shofar] blast&rdquo;),
+not Rosh Ha-Shanah (New Year, literally &ldquo;head of the year&rdquo;).]
+That means that Passover (7th month) and all later holidays are already
+delayed in the leap year itself.  So is Purim, which falls in Adar,
+and is celebrated on Adar&nbsp;Beth on leap years,
+though the corresponding day in Adar&nbsp;Aleph is still recognized as
+&ldquo;<a href="https://en.wikipedia.org/wiki/Purim#Purim_Katan"
+ target="_blank">Purim Katan</a>&rdquo; (&ldquo;Little Purim&rdquo;)
+and marked by minor observances.
+
+<li> Since a lunar month is about 29&frac12; days, the months of the
+Hebrew calendar usually alternate between 30 and 29 days.  But the
+second and third months, normally 29+30, sometimes go 29+29 or 30+30,
+either to compensate for the discrepancy between 29&frac12; and the
+actual astronomical period of about 29.53 days, or to prevent
+ritually awkward coincidences (such as Yom Kippur falling
+the day before or after Shabbat).  So there are not two but six
+possible lengths of a Jewish year: 353/354/355 for a common year,
+383/384/385 for a leap year.  See for instance
+<a href="https://en.wikipedia.org/wiki/Hebrew_calendar"
+ target="_blank">Wikipedia&rsquo;s extensive page</a> on the Hebrew calendar.
+It is sometimes claimed that the alignment of the Jewish and the
+common (Gregorian) calendar, and/or the Jewish calendar and the week,
+repeats <em>exactly</em> every 19 years, so that your
+19th, 38th, 57th, &hellip; Jewish birthday always coincides with the
+common birthday, and/or falls on the same weekday; but this is
+a misconception: there is neither a condition nor a consequence of
+the (complicated) rules of the Jewish calendar that forces
+such a coincidence.  For example, 19 years ago Rosh Ha-Shanah fell on
+  <a href="http://www.hebcal.com/hebcal/?year=1997&v=1&month=x&yt=G&nh=on&nx=on&i=&c=off#cal-1997-10"
+   target="_blank">Thursday, October&nbsp;2</a>,
+while this year&rsquo;s was Monday the&nbsp;3rd.
+
+<li> The pattern of 3- and 2-year intervals between leap years is the same
+as the pattern of whole and half notes in a major scale: starting from C/0,
+two long gaps (C-D-E/0-3-6) and a short one (E-F/6-8),
+three long gaps (F-G-A-B/8-11-14-17) and a short one (B-C/17-19).
+That makes sense because 19/7 is 1 more than the ratio 12/7 of
+the lengths of the chromatic and diatonic scales, which in turn arises as
+an approximation to $\log(2) \, / \log(1.5)$.
+So our solar-lunar discrepancy of about 0.3684 is close to
+$\log(1.5) \, / \log(3) \approx 0.3691$.
+<em>That</em>&nbsp;numerical approximation is surely pure coincidence,
+though it does afford a nice mnemonic for the leap-year pattern
+(which I noticed independently, but see now is also mentioned on
+<a href="https://en.wikipedia.org/wiki/Hebrew_calendar"
+ target="_blank">that Wikipedia page</a>).
+<li> The title &ldquo;5777 and all that&rdquo; of this page is a parody of
+the title of Joe Harris and David Eisenbud&rsquo;s
+&ldquo;<a href="http://scholar.harvard.edu/files/joeharris/files/000-final-3264.pdf"
+  target="_blank">3264 &amp; All That: Intersection Theory in
+Algebraic Geometry</a>&rdquo;, which itself parodies
+the title 
+&ldquo;<a href="https://en.wikipedia.org/wiki/1066_and_All_That"
+  target="_blank">1066 and All That: A Memorable History of England,
+comprising all the parts you can remember, including 103 Good Things,
+5 Bad Kings and 2 Genuine Dates</a>&rdquo; of the Sellar-Yeatman book
+described by its Wikipedia entry as &ldquo;a tongue-in-cheek reworking of the
+<a href="https://en.wikipedia.org/wiki/History_of_England"
+  target="_blank">history of England</a>.&rdquo;
+As the same Wikipedia entry explains, &ldquo;3264 refers to the number of
+smooth conic plane curves tangent to 5 given general conics,
+an answer to a problem in enumerative geometry.&rdquo;
+Note that in the present page 5777 refers to both a mathematical number
+(as in &ldquo;3264&rdquo;) and a year number (as in &ldquo;1066&rdquo;).
+</ol>
+
+

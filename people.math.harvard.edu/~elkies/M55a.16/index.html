@@ -1,0 +1,1216 @@
+<TITLE>
+Math 55a: Honors Abstract Algebra (Fall 2016)
+</TITLE>
+
+<body bgcolor="#c0e0ff">
+
+<strong>
+Lecture notes for
+Math 55a: Honors Abstract Algebra
+(Fall 2016)
+</strong>
+
+<P>
+
+If you find a mistake, omission, etc., please
+<A HREF="mailto:elkies@math.harvard.edu">let me know</A>
+by e-mail.
+
+<P>
+
+The <FONT COLOR="#B87800">orange</FONT COLOR> balls
+mark our <A HREF="#today">current location</A> in the course,
+and the <A HREF="#current_homework">current problem set</A>.
+
+<HR>
+
+<img src="redball.gif">
+<A HREF="h1.pdf"><em>Ceci n&rsquo;est pas un</em> Math 55a syllabus</A>
+<br>
+[No, you don&rsquo;t have to know French to take Math 55a.
+Googling <tt>ceci+n'est</tt> suffices to turn up
+ <a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images"
+   target="_blank">the explanation</a>, such as it is.]
+<br>
+<img src="blueball.gif"> Update 9/9: We now have two CA&rsquo;s for the class:
+Wyatt Mackey (<tt>wmackey@college</tt>) and Andrew (Andy) Gordon
+(<tt>andrewgordon@college</tt>)
+<br>
+[if writing from outside the Harvard network, append
+<tt>.college.edu</tt> to <tt>...@harvard</tt>].
+<br>
+<font size="+3"><font color="red">!</font></font>
+<font size="+1"><font color="brown">If you are coming to class but not
+ officially registered for Math 55</font></font> (e.g. you are auditing,
+ or still undecided between 25a and 55a but officially signed up for 25a),
+<font size="+1"><font color="brown">send me your e-mail address</font></font>
+ so that I and the CA's can include you in class announcements.
+<br>
+<img src="blueball.gif">
+The Sep.13 office hours will be an hour later than usual,
+that is, <u>8:30 to 10:00 PM</u> in the Lowell House Dining Hall,
+due to Lowell&rsquo;s Sophomore Dinner happening earlier that evening.
+<br>
+<img src="blueball.gif">
+CA office hours are <u>Wednesdays 8 to 10 PM</u> in the Leverett House
+Dining Hall (same location as Math Nights), starting September 14.
+<br>
+<img src="blueball.gif">
+Wyatt will hold section <u>Wednesdays 2-3 PM</u> in Science Center 304.
+Andy will hold section <u>Fridays 2-3 PM</u><strike>, room TBA</strike>
+  in Science Center 310.
+<br>
+<font size="+3"><font color="red">!</font></font>
+<b>First Quiz Friday, October 7</b> in class.
+Andy will hold a review section
+<b>Thursday, October 6, at 8PM in Science Center Room 304</b>
+in place of his usual Friday section.
+<br>
+Also, <em>no class Monday, Oct. 10</em> (University holiday);
+I <em>will</em> lecture Wednesday the 12th, but on a scenic detour from the
+main sequence of 55a topics so as not to disadvantage students observing
+the Yom Kippur fast.  (The talk was on linear error-correcting codes,
+which were the hidden(?) agenda of some of the recent homework problems.
+While I&rsquo;m at it, <a href="5777.html" target="_blank">here</a> is
+the interlude on 5777, Jewish leap years, etc., with probably too much
+additional information.)  Thus the due date for <nobr>Problem Set 5</nobr>
+is postponed from Friday the 7th (the quiz date) to Wednesday the 12.
+<br>
+<font size="+2"><font color="red">!</font></font>
+<b>Office Hours moved to Thursday</b> starting the week of October 31
+(paralleling the shift in the due dates of problem sets from
+Friday to Monday).  So November&nbsp;3 instead of November&nbsp;1, etc.
+<br>
+<font size="+3"><font color="red">!</font></font>
+<b>Second Quiz Friday, December 2</b> in class.
+Andy will hold a review section
+<b>Thursday, December 1, at 7PM in Science Center Room 304</b>
+in place of his usual Friday section.
+I'll hold office hours 8:00-9:30 at Lowell House (not the usual 7:30-9:00,
+to avoid conflict with Andy's section), in addition to Tuesday's
+office hours.
+
+
+
+<p>
+
+<!--
+<img src="redball.gif">
+Wyatt Mackey&rsquo;s section and office hours:
+<br>
+Section: Wednesdays (starting September 8), 4-5 PM, Science Center 103b
+<br>
+Office hours: Thursdays (starting September 9), 7-8 PM, Science Center 310
+<br>
+<strong>revised:</strong> now Thursdays 8-9 and 9-10, both in
+Science Center 411
+-->
+
+<p>
+
+<hr>
+
+<img src="redball.gif">
+At least in the beginning of the <strong>linear algebra</strong>
+unit, we&rsquo;ll be following the Axler textbook closely enough that
+supplementary lecture notes should not be needed.  Some important
+extensions/modifications to the treatment in Axler:
+
+<UL>
+<LI> [see Axler, page 5]
+  <a href="https://en.wikipedia.org/wiki/List_of_Latin_phrases_(P)"
+    target="_blank"><em>Pace</em></a> the boxed note on that page,
+ virtually <em>all</em> mathematicians say and write
+ <nobr>&ldquo;<em>n</em>-tuple&rdquo;</nobr>
+ (more fully, <nobr>&ldquo;ordered <em>n</em>-tuple&rdquo;</nobr>),
+ while I cannot recall another instance of &ldquo;list&rdquo; used
+ for this as Axler does.
+ (One sometimes sees &ldquo;tuple&rdquo; for an
+ <nobr><em>n</em>-tuple</nobr> of unspecified length&nbsp;<em>n</em>,
+ and &ldquo;ordered pair&rdquo; and perhaps &ldquo;ordered triple&rdquo;,
+ &ldquo;ordered quadruple&rdquo;,
+ etc. for <nobr><em>n</em> = 2, 3, 4, &hellip;)</nobr>
+<LI> [cf. Axler, Notation 1.6 on page 4, and the
+ &ldquo;Digression on Fields&rdquo; on page 10]
+<br>
+Unless noted otherwise, <strong>F</strong> may be an arbitrary
+field, not only <strong>R</strong> or <strong>C</strong>.  The
+most important fields other than those of real and complex numbers
+are the field <strong>Q</strong> of rational numbers, and the
+finite fields <strong>Z</strong>/<em>p</em><strong>Z</strong>
+(<em>p</em> prime).  Other examples are: the field
+<strong>Q</strong>(<em>i</em>) of complex numbers with rational
+real and imaginary parts; more generally,
+<strong>Q</strong>(<em>d</em><SUP>1/2</SUP>) for any nonsquare
+rational number <em>d</em>; the &ldquo;<em>p</em>-adic numbers&rdquo;
+<strong>Q</strong><SUB><em>p</em></SUB> (<em>p</em> prime),
+of which we&rsquo;ll say more when we study topology next term;
+and more exotic finite fields such as the 9-element field
+(<strong>Z</strong>/<em>3</em><strong>Z</strong>)(<em>i</em>).
+Here&rsquo;s a <A HREF="field.html">review</A> of the axioms for
+fields, vector spaces, and related mathematical structures.
+
+<LI> [cf. Axler, p.28 ff.] We define the <em>span</em> of an arbitrary subset
+<em>S</em> of (or tuple in) a vector space <em>V</em> as follows:
+it is the set of all (finite) linear combinations
+<nobr><em>a</em><SUB>1</SUB><em>v</em><SUB>1</SUB> + &hellip; +
+<em>a<SUB>n</SUB>v<SUB>n</SUB></em></nobr>
+with each <em>v<SUB>i</SUB></em> in <em>S</em> and each
+<em>a<SUB>i</SUB></em> in <em>F</em>.  This is still the smallest
+vector subspace of <em>V</em> containing <em>S</em>.  In particular,
+if <em>S</em> is empty, its span is by definition {0}.  We do <em>not</em> require that <em>S</em> be finite.
+
+<LI> Warning: in general the space <em>F</em>[<em>X</em>]
+<nobr>(a.k.a. <em>P</em>(<em>F</em>))</nobr>
+of polynomials in <em>X</em>, and its subspaces
+<nobr><em>P</em><sub><em>n</em></sub>(<em>F</em>)</nobr>
+of polynomials of degree at most <em>n</em>,
+might not be naturally identified
+with a subspace of the space <em>F<sup>F</sup></em> of
+functions from <em>F</em> to itself.  The problem is that
+two different polynomials may yield the same function.
+For example if <em>F</em> is the field of 2 elements 
+the polynomial <nobr><em>X</em><sup>2</sup>&minus;<em>X</em></nobr>
+gives rise to the zero function.  In general different polynomials
+can represent the same function if and only if
+<em>F</em> is finite &mdash; do you see why?
+
+<LI> (See also Exercise 11 in Axler 1.C, assigned as part of the first
+problem set)<br>
+If <em>U<sub>i</sub></em> are any subspaces of a vector space <em>V</em>
+then so is their intersection
+<nobr><font size="+1">&cap;</font><sub><em>i</em></sub>
+ <em>U<sub>i</sub></em></nobr>.  Note that this doesn&rsquo;t specify
+a finite intersection: <em>i</em> could range over an
+&ldquo;index set&rdquo; <em>I</em> of any cardinality
+(so we would write the intersection as
+<nobr><font size="+1">&cap;</font><sub><em>i</em><font size="-2">&in;</font><em>I</em></sub>
+ <em>U<sub>i</sub></em> ).</nobr>
+We don&rsquo;t usually want to intersect an <em>empty</em> family of sets
+(do you see why?),
+but for subsets of a given set&nbsp;<em>V</em> we can declare that
+<nobr><font size="+1">&cap;</font><sub><em>i</em><font size="-2">&in;</font>&emptyset;</sub>
+ <em>U<sub>i</sub></em> = <em>V</em>.</nobr>
+<LI> For any field (or even any ring) <em>F</em> there is a canonical
+ ring homomorphism, call it <em>h</em>, from <b>Z</b> to <em>F</em>.
+ &ldquo;Ring homomorphism&rdquo; means:
+ <nobr><em>h</em>(0) = 0</nobr>,
+ <nobr><em>h</em>(1) = 1</nobr>,
+ and for any integers <nobr><em>m</em>, <em>n</em></nobr> we have
+ <nobr><em>h</em>(<em>m</em>+<em>n</em>)
+  = <em>h</em>(<em>m</em>) + <em>h</em>(<em>n</em>)</nobr> and
+ <nobr><em>h</em>(<em>mn</em>)
+  = <em>h</em>(<em>m</em>) <em>h</em>(<em>n</em>)</nobr>
+  (and <nobr><em>h</em>(&minus;<em>n</em>)
+  = &minus;<em>h</em>(<em>n</em>)</nobr>,
+  though this follows from the other properties).
+But this doesn&rsquo;t quite mean that we get an isomorphic copy of
+ <b>Z</b> in <em>F</em>, because <em>h</em> might not be injective.
+ Equivalently, the <em>kernel</em> (that is, the preimage
+ <nobr><em>h</em><sup>&minus;1</sup>({0})
+   = {<em>n</em> : <em>h</em>(<em>n</em>) = 0})</nobr> 
+  might be larger than just&nbsp;{0}.  In general, <em>I</em> must be an
+  <em>ideal</em>, i.e. an additive subgroup of&nbsp;<b>Z</b> that is
+  closed under multiplication by <em>arbitrary</em> integers
+  (whether in <em>I</em> or not &mdash; this mimics the definition of
+  a subspace, though as it happens for ideals in&nbsp;<b>Z</b>
+  it&rsquo;s automatic).  Now ideals in&nbsp;<b>Z</b> are either {0} or
+  <nobr>(<em>n</em>) := {<em>cn</em> | <em>c</em> in <b>Z</b>}</nobr>
+  for some <em>n</em> (namely the least positive element of the ideal).
+  For rings, any <em>n</em> may arise, most easily for the ring
+  <nobr><b>Z</b>/<em>n</em><b>Z</b></nobr> of integers mod&nbsp;<em>n</em>.
+  But if <em>F</em> is a field and <em>I</em>=(<em>n</em>) then
+  <em>n</em> must be either zero or prime, lest <em>F</em> have
+  zero divisors (elements <em>a</em> and <em>b</em>,
+  neither zero, for which <em>ab</em>=0).
+  This <em>n</em> is then called the <em>characteristic</em> of
+  the field&nbsp;<em>F</em>.  The familiar fields
+  <nobr><b>Q</b>, <b>R</b>, <b>C</b></nobr> all have characteristic zero.
+  For any prime <em>p</em>, there are fields of characteristic&nbsp;<em>p</em>,
+  notably the &ldquo;prime field&rdquo;
+  <nobr><b>Z</b>/<em>p</em><b>Z</b></nobr>
+  (mentioned above; this is the key fact from elementary (but nontrivial)
+  number theory that any nonzero element of
+  <nobr><b>Z</b>/<em>p</em><b>Z</b></nobr> has a multiplicative inverse!).
+  This field <nobr><b>Z</b>/<em>p</em><b>Z</b></nobr>
+  and other prime fields have important uses in number theory, combinatorics,
+  computer science, and elsewhere, often using the linear algebra that
+  we develop in Math&nbsp;55a.
+ 
+<LI>[cf. the boxed note on page 42 of Axler] It is natural to wonder whether
+<b>every</b> vector space, finite-dimensional or not, has a basis.
+The polynomial ring <em>F</em>[<em>z</em>], considered as a vector space
+over&nbsp;<em>F</em> (and denoted by a fancy script <em>P</em> in Axler),
+does have a basis (powers of <em>z</em>), as does a polynomial ring in
+several variables, or even infinitely many (see the next item);
+but does <em>F</em><sup>&infin;</sup>?  The answer is yes &mdash;
+but only under the <a href="https://en.wikipedia.org/wiki/Axiom_of_choice"
+ target="_blank">Axiom of Choice</a> (equivalently,
+<a href="https://en.wikipedia.org/wiki/Zorn%27s_lemma"
+  target="_blank">Zorn&rsquo;s Lemma</a>)!
+[&ldquo;but only under&rdquo; because it is known that Choice/Zorn is
+<em>equivalent</em> to the claim that every vector space has a basis.
+Don&rsquo;t spend too much time trying to find an explicit basis for
+<em>F</em><sup>&infin;</sup>, or for <b>R</b> as a vector space
+over&nbsp;<b>Q</b> (a &ldquo;Hamel basis&rdquo;)&hellip;]
+Using the same tool one can prove analogues of some other results in
+Chapter&nbsp;2, such as 2.33 (p.41: every linearly independent set
+extends to a basis), and thus 2.34 (p.42: every subspace is a
+direct summand; again, don&rsquo;t spend too much time trying to do this
+explicitly for <b>Q</b> as a subspace of the <b>Q</b>-vector space <b>R</b>,
+or for <nobr>&oplus;<sub><em>n</em>&ge;1</sub><em>F</em></nobr>
+as a subspace <nobr>of <em>F</em><sup>&infin;</sup></nobr>!).
+NB some other results clearly fail in infinite dimensions,
+even when we have an explicit basis; e.g. the even powers of&nbsp;<em>z</em>
+form a linearly independent subset of&nbsp;<em>F</em>[<em>z</em>]
+that has the same cardinality as a basis but is not a basis.
+ 
+<LI> However, 2.31 (p.40: every spanning list contains a basis)
+still holds with no further axioms for spanning sets <em>S</em>
+of arbitrary size, as long as <em>V</em> is finite dimensional.
+The reason is that <em>V</em> has a finite spanning set,
+say <em>S</em><sub>0</sub>, and every element of
+<em>S</em><sub>0</sub> is a linear combination of elements of <em>S</em>,
+and sincelinear combinations are of necessity finite it takes only
+a finite subset of <em>S</em> to span <em>S</em><sub>0</sub>
+and thus&nbsp;<em>V</em>.  Now apply the proof of 2.31 to this
+finite subset.  We may call this generalization &ldquo;2.31+&rdquo;.
+
+<LI>[from the Sep.12 lecture] Here&rsquo;s an extreme example of how
+basic theorems about finite-dimensional vector spaces can become
+utterly false for finitely-generated modules:
+a module generated by just one element 
+can have a submodule that is not finitely generated.  Indeed, 
+for any field <em>F</em> let <em>A</em> be the ring of polynomials
+in infinitely many variables <em>X<sub>j</sub></em>.
+[The letter &ldquo;<em>A</em>&rdquo; is a common name for a ring,
+from French <em>anneau</em>, cognate with English &ldquo;annulus&rdquo;.]
+  As usual
+we can regard <em>A</em> as a module over itself, with a single
+generator&nbsp;1.  Then a submodule is just an ideal of the ring.
+Choose the ideal <em>I</em> generated by all the <em>X<sub>j</sub></em>,
+which consists of all polynomials with constant coefficient equal&nbsp;0.
+Then if there are infinitely many indices <em>j</em> then <em>I</em>
+is infinitely generated; indeed any generating set must be
+at least as large as the index set of <nobr><em>j</em>&rsquo;s</nobr>,
+so for every cardinal &alefsym; we can make a ring <em>A</em> with a
+singly-generated module (namely <em>A</em> itself) and with a submodule
+that cannot be generated by fewer than &alefsym; elements. 
+
+<br>
+
+For a subtler example, consider the ring we might call
+</nobr>&ldquo;<em>F</em>[<em>X</em><sup>1/2<sup>&infin;</sup></sup>]&rdquo;</nobr>,
+consisting of </nobr><em>F</em>-linear</nobr> combinations of monomials
+</nobr><em>X</em><sup><em>n</em>/2<sup>k</sup></sup></em></nobr>
+for arbitrary nonnegative integers <em>n</em> and&nbsp;<em>k</em>.
+Again let <em>I</em> be the ideal generated by the nonconstant monomials,
+which is not finitely generated, though there are generating sets
+that are &ldquo;only&rdquo; countably infinite.
+The new behavior involves the countable generating set
+<nobr>{<em>X</em><sup>1/2<sup>k</sup></sup> | k&ge;0}</nobr>:
+there is no minimal generating subset, because each
+<nobr><em>X</em><sup>1/2<sup>k</sup></sup></nobr>
+is a multiple of <nobr><em>X</em><sup>1/2<sup>k'</sup></sup></nobr>
+for any <nobr>k'&gt;k</nobr>.  Likewise for the ring generated
+by all monomials </nobr><em>X</em><sup><em>r</sup></em></nobr>
+with <em>r</em> any nonnegative rational number (or even all
+</nobr><em>X</em><sup><em>r</sup></em></nobr>
+with <em>r</em> any nonnegative real number).
+
+<br>
+
+(When <em>A</em> is <a href="https://en.wikipedia.org/wiki/Noetherian_ring"
+  target="_blank">Noetherian</a>, submodules of finitely-generated modules
+<em>are</em> finitely-generated, but might still require more generators;
+for example, there are Noetherian rings <em>A</em> with
+&ldquo;non-principal ideals&rdquo; <em>I</em>, which give examples of
+a 1-generator module with a submodule that requires at least 2 generators.)
+
+<LI> As with the notions of span and linear combination, the definition of
+a linear transformation makes sense for modules over any ring <em>A</em>
+(whether commutative or not), and in that generality is called an
+<nobr><em>A-module homomorphism</em></nobr> (so you now know the
+&ldquo;morphisms&rdquo; in the &ldquo;category&rdquo; of
+<nobr><em>A</em>-modules</em></nobr>);
+when <em>A</em> is a skew field, we still call this a
+linear transformation, and the &ldquo;rank-nullity theorem&rdquo;
+(3.22, page 63) still holds for finite-dimensional vector spaces
+in that context.
+
+<LI> Suppose <em>T</em> : <em>V</em> &rarr; <em>W</em>
+is a linear transformation.
+Axler&rsquo;s notation for the image of&nbsp;<em>T</em>
+was already becoming rather old-fashioned when he wrote the first edition of
+his book; these days simply <nobr><em>T</em>(<em>V</em>)</nobr> is common 
+(and likewise for any function at all).
+The terminology &ldquo;null space&rdquo; (whether one or two words)
+for <nobr><em>T</em><sup> &minus;1</sup>({0})</nobr> is also somewhat quaint;
+we usually say &ldquo;kernel&rdquo; and write
+</nobr>&ldquo;ker(<em>T</em>)&rdquo;</nobr>
+[and (L<font size=-2>A</font>)TeX already provides the command
+<tt>\ker</tt> to typeset this properly].
+While I&rsquo;m at it, best to avoid the use of
+<nobr>&ldquo;one-to-one&rdquo;</nobr> to mean 
+<nobr>&ldquo;injective&rdquo;</nobr> (see boxed note on page 60),
+because it is also sometimes used for
+<nobr>&ldquo;bijective&rdquo;</nobr>.
+
+<LI> Please avoid Axler&rsquo;s notation &ldquo;product&rdquo; and
+<nobr>&ldquo;<em>V</em> &times; <em>W</em>&thinsp;&rdquo;</nobr> (p.91, 3.71 ff.).
+I understand the motivation for this notation: it is formally correct,
+and avoids the need to distinguish between &ldquo;external direct sum&rdquo;
+(the usual name for that vector space) and &ldquo;internal direct sum&rdquo;
+(a vector space sum [within some larger vector space] that happens to be direct).
+The problem with this is that in Math 55 (and ubiquitously in the literature)
+we shall introduce before long a &ldquo;tensor product&rdquo;
+<nobr><em>V</em> &otimes; <em>W</em></nobr> of vector spaces,
+whose dimension is the product of the dimensions of
+<em>V</em> and&nbsp;<em>W</em> when those two dimensions are finite; and
+it would be a much bigger source of confusion to have <em>that</em> notation
+coexist with <nobr>&ldquo;<em>V</em> &times; <em>W</em>&thinsp;&rdquo;</nobr>
+where the dimensions add.  So please stick with
+<nobr>&ldquo;<em>V</em> &oplus; <em>W</em>&thinsp;&rdquo;</nobr>
+and the name &ldquo;external direct sum&rdquo; &mdash; or if you must,
+&ldquo;Cartesian product&rdquo; to avoid confusion with tensor products.
+For a possibly infinite Cartesian product, which is <em>not</em>
+the same as a direct sum
+(because an element of the direct sum must have only finitely many
+nonzero components), we still have the notation
+<nobr>&Pi;<sub><em>i</em><font size="-2">&in;<em>I</em></font></sub><em>V<sub>i</sub></em></nobr>
+to distinguish the Cartesian product from the direct sum
+<nobr>&oplus;<sub><em>i</em><font size="-2">&in;<em>I</em></font></sub><em>V<sub>i</sub></em></nobr>.
+
+<LI> More notes on notation: I understand why Axler wants to distinguish
+<em>V'</em> and <em>T'</em> (dual space and transformation)
+from <em>V*</em> and <em>T*</em>, and
+<em>U</em><sup><font size="-2">0</font></sup> (annihilator) from
+<em>U</em><sup><font size="-1">&perp;</font></sup>.
+(See the boxed note on page 104.)
+I&rsquo;ll try to stick with <em>U</em><sup><font size="-2">0</font></sup>
+in this class.  But for the duals, using &ldquo; ' &rdquo; this way
+incurs a steep price of the very useful construction exemplified by
+&ldquo;let <em>V</em> and <em>V'</em> be vector spaces&rdquo;:
+we already have few enough good letters to name mathematical structures
+that even &pi; is pressed into double duty (not just 3.14159&hellip; but
+also the quotient &pi;rojection from <em>V</em> to <em>V</em>/<em>U</em>).
+I&rsquo;ll stick with the common <em>V*</em> and <em>T*</em> here.
+
+<LI> An equivalent statement of the identity (<em>ST</em>)* = <em>T*S*</em>
+  (third part of 3.101, page 104 of Axler),
+together with (<em>I<sub>V</sub></em>)* = <em>I<sub>V*</sub></em>
+  (which Axler might not even bother stating explicitly),
+is that duality of vector spaces and linear transformations constitutes a
+&ldquo;<a href="https://en.wikipedia.org/wiki/Functor#Covariance_and_contravariance">contravariant
+  functor</a>&rdquo; from the category of
+<nobr><em>F</em>-vector</nobr> spaces and linear transformations to itself.
+
+<LI> The results about quotient spaces and duality in sections E and F of
+Chapter&nbsp;3 are often described in terms of
+<em><a href="https://en.wikipedia.org/wiki/Exact_sequence"
+  target="_blank">exact sequences</a></em>.
+A sequence <nobr>&hellip; &rarr; <em>L</em> &rarr; <em>M</em>
+  &rarr; <em>N</em> &rarr; &hellip;</nobr>
+of linear transformations (or <nobr><em>A</em>-module</nobr> homomorphisms,
+&ldquo;etc.&rdquo;) is said to be &ldquo;exact at&nbsp;<em>M</em>&thinsp;&rdquo;
+if the kernel of the map <nobr><em>M</em> &rarr; <em>N</em></nobr>
+is the image of the map <nobr><em>L</em> &rarr; <em>M</em></nobr>
+(that is, if the elements of&nbsp;<em>M</em> that go to zero in&nbsp;<em>N</em>
+are precisely those that come from&nbsp;<em>L</em>).  The sequence is
+&ldquo;exact&rdquo; if it is exact at each step with both an incoming
+and an outgoing map.  In particular a map
+<nobr><em>M</em> &rarr; <em>N</em></nobr> is injective <u>iff</u>
+it extends to a sequence <nobr>0 &rarr; <em>M</em> &rarr; <em>N</em></nobr>
+that is exact at&nbsp;<em>M</em>, and surjective <u>iff</u>
+it extends to a sequence <nobr><em>M</em> &rarr; <em>N</em> &rarr; 0</nobr>
+that is exact at&nbsp;<em>N</em>.  (Note that in each case there is no
+choice about the function from or to the trivial vector space&nbsp;0,
+and likewise at least for modules.)  Thus the map is an isomorphism
+<u>iff</u> <nobr>0 &rarr; <em>M</em> &rarr; <em>N</em> &rarr; 0</nobr>
+is exact (at both <em>M</em> and&nbsp;<em>N</em>).  Even more easily,
+<nobr>0 &rarr; <em>M</em> &rarr; 0</nobr> is exact <u>iff</u> <em>M</em>=0.
+A <em>short exact sequence</em> is the next case, with three modules
+other than the initial and final&nbsp;0.  The standard example is
+<nobr>0 &rarr; <em>L</em> &rarr; <em>M</em>
+  &rarr; <em>M</em>/<em>L</em> &rarr; 0</nobr>
+where the map <nobr>0 &rarr; <em>L</em> &rarr; <em>M</em></nobr>
+is an inclusion map (thus an injection) and the map
+<nobr><em>M</em> &rarr; <em>M</em>/<em>L</em> &rarr; 0</nobr>
+is the quotient map (thus a surjection).  In general if
+<nobr>0 &rarr; <em>L</em> &rarr; <em>M</em> &rarr; <em>N</em> &rarr; 0</nobr>
+is a short exact sequence then the injection
+<nobr><em>L</em> &rarr; <em>M</em></nobr> identifies <em>L</em> with
+a submodule of&nbsp;<em>M</em>, and then the surjection
+<nobr><em>M</em> &rarr; <em>N</em></nobr> is identified with the
+quotient map.  More generally, <em>any</em> homomorphism 
+<nobr><em>L</em> &rarr; <em>M</em></nobr> extends (uniquely up to equivalence)
+to an exact sequence with <em>four</em> modules between the outer zeros:
+<nobr>0 &rarr; <em>K</em> &rarr; <em>L</em>
+ &rarr; <em>M</em> &rarr; <em>N</em> &rarr; 0</nobr>,
+where <em>K</em> is the kernel of the map
+<nobr><em>L</em> &rarr; <em>M</em></nobr>, and <em>N</em> is its
+&ldquo;<em><a href="https://en.wikipedia.org/wiki/Cokernel#Intuition"
+  target="_blank">cokernel</a></em>&thinsp;&rdquo;, that is, the quotient of
+<em>M</em> by the image of&nbsp;<em>L</em>.
+<p>
+Now consider the case of vector spaces.  Then to each linear transformation
+<nobr><em>V</em> &rarr; <em>W</em></nobr> we associate the dual transformation
+<nobr><em>V*</em> &larr; <em>W*</em></nobr>, with the dual of a composition
+<nobr><em>V</em> &rarr; <em>W</em> &rarr; <em>X</em></nobr>
+being the composition of the dual transformations
+<nobr><em>V</em>* &larr; <em>W</em>* &larr; <em>X</em>*</nobr>
+in reverse order; this makes duality a &ldquo;contravariant functor&rdquo;
+on the category of <nobr><em>F</em>-vector</nobr> spaces.  The key fact is
+that <em>for finite-dimensional vector spaces, duality preserves exactness</em>
+of sequences of linear transformations.  Thus starting from any linear
+<nobr><em>V</em> &rarr; <em>W</em></nobr>, we can extend to an exact sequence
+<nobr>0 &rarr; <em>U</em> &rarr; <em>V</em>
+ &rarr; <em>W</em> &rarr; <em>X</em> &rarr; 0</nobr>
+with <em>U</em> the kernel and <em>X</em> the cokernel,
+and dualize to deduce the exactness of
+<nobr>0 &larr; <em>U*</em> &larr; <em>V*</em> &larr;
+  <em>W*</em> &larr; <em>X*</em> &larr; 0</nobr>
+with <nobr><em>V*</em> &larr; <em>W*</em></nobr> the dual map.
+This immediately encodes Axler 3.108 (page 107): the map
+<nobr><em>V</em> &rarr; <em>W</em></nobr> is surjective
+<u>iff</u> <em>X</em> is zero <u>iff</u> <em>X*</em> is zero
+<u>iff</u> the dual map is injective.  Likewise for 3.110 (p.108)
+via the vanishing of <em>U</em> and&nbsp;<em>U*</em>.
+With a bit more work we can get the general relations
+<nobr>ker(<em>T*</em>) =
+  (im(<em>T</em>))<sup><font size="-2">0</font></sup></nobr>
+(3.107, p.106) and
+<nobr>im(<em>T*</em>) =
+  (ker(<em>T</em>))<sup><font size="-2">0</font></sup></nobr>
+(3.109, p.107) between the kernels and images of <em>T</em> and its dual,
+again assuming that <em>T</em> is a linear map between finite-dimensional
+vector spaces.  Conversely, the fact that duality preserves exactness
+(for sequences of linear maps between finite-dimensional vector spaces)
+can be deduced as a special case of 3.107 and 3.109.
+<p>
+You can now understand <a href="coke.pdf" target="_blank">this joke</a>
+  (such as it is).
+<LI> Another way to think about the eigen-basics: &ldquo;Lemma 5.0&rdquo;:
+  If <em>T</em> is an operator on any vector space&nbsp;<em>V</em>,
+  and &lambda; any scalar, then <em>U</em> is an invariant subspace
+  for&nbsp;<em>T</em> <u>iff</u> it is an invariant subspace for
+  <nobr><em>T</em> &minus; &lambda;<em>I<sub>V</sub></em></nobr>.
+  So, for instance, since ker&nbsp;<em>T</em> is an invariant subspace,
+  so is
+  <nobr>ker(<em>T</em> &minus; &lambda;<em>I<sub>V</sub></em>)</nobr>,
+  a.k.a. the <nobr>&lambda;-eigenspace</nobr>.
+<LI> Yet another note on notation: Axler&rsquo;s name
+ &ldquo;<em>T/U</em>&thinsp;&rdquo; (for the operator on <em>V/U</em>
+ induced from the action of&nbsp;<em>T</em> on a vector space <em>V</em>
+ with an invariant subspace&nbsp;<em>U</em>, see 5.14 on p.137)
+ is a nice notation, but (unlike
+  <nobr><em>T</em>&thinsp;|<sub><em>U</em></sub></nobr>
+ for the restriction of&nbsp;<em>T</em> to&nbsp;<em>U</em>)
+ is seen rarely if at all in the research literature.
+ Normally it will be called plain <em>T</em>, or possibly
+ <tt>\bar{T}</tt> (since it is constructed by descending to <em>V/U</em>
+ the composition of <em>T</em> with the quotient map
+ <nobr><em>V</em> &rarr; <em>V/U</em></nobr>).
+
+<LI> Let <em>T</em> be a linear operator on <em>V</em>.  The algebraic
+ properties of polynomial evaluation at&nbsp;<em>T</em> can be summarized
+ by saying that the map <nobr>from <em>F</em>[<em>X</em>]</nobr>
+ <nobr>to End(<em>V</em>)</nobr> that takes any polynomial <em>P</em>
+ to <nobr><em>P</em>(<em>T</em>)</nobr> is not just linear but a
+<em>ring homomorphism</em>.  [Since <nobr><em>F</em>[<em>X</em>]</nobr>
+is a commutative ring, so is the image of this homomorphism, even though
+<nobr>End(<em>V</em>)</nobr> is not commutative once
+<nobr>dim(<em>V</em>) &gt; 1</nobr>.]  In particular the kernel
+is an ideal <nobr>in <em>F</em>[<em>X</em>]</nobr>; when <em>V</em>
+is finite dimensional, this ideal must be nonzero, and its generator is
+what we shall call the &ldquo;minimal polynomial&rdquo; of&nbsp;<em>T</em>.
+<em>Special case:</em> if <em>V</em> is <em>F</em> itself, then we
+naturally identify <nobr>End(<em>V</em>)</nobr> with&nbsp;<em>F</em>,
+and we get for any field element <em>x</em>
+the evaluation homomorphism <nobr>from <em>F</em>[<em>X</em>]</nobr>
+to&nbsp;<em>F</em> that takes any polynomial to its value at&nbsp;<em>x</em>.
+
+
+<LI> Axler proves the Fundamental Theorem of Algebra using
+complex analysis, which cannot be assumed in Math 55a
+(we&rsquo;ll get to it at the end of 55b).
+<A HREF="fta.pdf">Here</A>&rsquo;s a proof using the topological tools
+we&rsquo;ll develop at the start of 55b.
+(Axler gives one standard complex-analytic proof in 4.13 on page 124.)
+
+<LI> Triangular matrices are intimately related with &ldquo;flags&rdquo;.
+A (complete) <em>flag</em> in a finite dimensional vector space <em>V</em>
+is a sequence of subspaces {0}=<em>V</em><SUB>0</SUB>,
+<em>V</em><SUB>1</SUB>, <em>V</em><SUB>2</SUB>, &hellip;,
+<em>V<SUB>n</SUB></em>=<em>V</em>, with each
+<em>V<SUB>i</SUB></em> of dimension <em>i</em> and containing
+<em>V</em><SUB><em>i</em>&minus;1</SUB>.  A basis
+<nobr><em>v</em><SUB>1</SUB>, <em>v</em><SUB>2</SUB>, &hellip;,
+<em>v<SUB>n</SUB></em></nobr>
+determines a flag: <em>V<SUB>i</SUB></em> is the span of the first
+<em>i</em> basis vectors.  Another basis
+<nobr><em>w</em><SUB>1</SUB>, <em>w</em><SUB>2</SUB>, &hellip;,
+<em>w<SUB>n</SUB></em></nobr>
+determines the same flag if and only if each
+<em>w<SUB>i</SUB></em> is a linear combination of
+<nobr><em>v</em><SUB>1</SUB>, <em>v</em><SUB>2</SUB>, &hellip;,
+<em>v<SUB>i</SUB></em></nobr>
+(necessarily with nonzero <em>v<SUB>i</SUB></em> coefficient).
+The <em>standard flag</em> in <em>F<SUB>n</SUB></em> is the flag
+obtained in this way from the standard basis of unit vectors
+<nobr><em>e</em><SUB>1</SUB>, <em>e</em><SUB>2</SUB>, &hellip;,
+<em>e<SUB>n</SUB></em></nobr>.
+The punchline is that, just as a diagonal matrix is one that respects
+the standard basis (equivalently, the associated decomposition of
+<em>V</em> as a direct sum of 1-dimensional subspaces),
+<em>an upper-triangular matrix is one that respects the standard
+flag.</em>
+Note that the <em>i</em>-th diagonal entry of a triangular matrix
+gives the action on the one-dimensional quotient space
+<em>V<SUB>i</SUB></em>/<em>V</em><SUB><em>i</em>&minus;1</SUB>
+(each <em>i</em>=1,&hellip;,<em>n</em>).
+</UL>
+
+<img src="redball.gif">
+While the third edition of Axler includes quotients and duality,
+it still lacks <strong>tensor algebra</strong>.
+This is no surprise, but it will not stop us in Math&nbsp;55!
+<A href="tensor.pdf">Here</a>&rsquo;s an introduction
+[As you might guess from <tt>\oplus</tt>,
+the TeXism for the tensor-product symbol is <tt>\otimes</tt>.]
+
+<UL>
+<LI> One of many applications is the <strong>trace</strong> of
+an operator on a finite dimensional <em>F</em>-vector space <em>V</em>.
+This is a linear map from Hom(<em>V</em>,<em>V</em>) to <em>F</em>.
+We can define it simply as the composition of two maps:
+our identification of <nobr>Hom(<em>V</em>,<em>V</em>)</nobr> with
+the tensor product of <em>V</em><sup>*</sup> and <em>V</em>,
+and the natural map from this tensor product to <em>F</em>
+coming from the bilinear map taking
+<nobr>(<em>v</em><sup>*</sup>,<em>v</em>)</nobr>
+to <nobr><em>v</em><sup>*</sup>(<em>v</em>)</nobr>.
+We shall see that this is the same as the classical definition:
+the trace of <em>T</em> is the sum of the diagonal entries of
+the matrix of <em>T</em> with respect to any basis.
+The coordinate-independent construction via tensor algebra 
+explains why the trace does not change under change of basis.
+(The invariance can also be proved by checking explicitly that
+<em>AB</em> and <em>BA</em> have the same trace for any square matrices
+<nobr><em>A</em>, <em>B</em></nobr> of the same size.)
+
+<LI> Here are some basic definitions and facts about general 
+<A HREF="norm.html"><strong>norms</strong></A>
+on real and complex vector spaces. 
+
+<LI> Just as we can study bilinear symmetric forms
+on a vector space over any field, not just <strong>R</strong>,
+we can study sesquilinear conjugate-symmetric forms
+on a vector space over any field <em>with a conjugation</em>,
+not just <strong>C</strong>.
+Here a &ldquo;conjugation&rdquo; on a field <em>F</em> is a field automorphism
+<nobr>&sigma;:<em>F</em>&rarr;<em>F</em></nobr>
+such that &sigma; is not the identity
+but &sigma;<sup>2</sup> is (that is, &sigma; is an involution).
+Given a basis {<em>v<sub>i</sub></em>} for&nbsp;<em>F</em>,
+a sesquilinear form &lang;.,.&rang; on&nbsp;<em>F</em>
+is determined by the field elements
+<nobr><em>a</em><sub><em>i,j</em></sub>
+= &lang;<em>v</em><sub><em>i</em></sub>,<em>v</em><sub><em>j</em></sub>&rang;,</nobr>
+and is conjugate-symmetric if and only if
+<nobr><em>a<sub>j,i</sub></em> = &sigma;(<em>a<sub>i,j</sub></em>)</nobr>
+for all <em>i,j</em>.
+Note that the &ldquo;diagonal entries&rdquo; <em>a<sub>i,i</sub></em>
+&mdash; and more generally &lang;<em>v</em>,<em>v</em>&rang;
+for any <em>v</em> in&nbsp;<em>V</em> &mdash; must be elements
+of the subfield of <em>F</em> fixed by&nbsp;&sigma;.
+<li> &ldquo;Sylvester&rsquo;s Law of Inertia&rdquo; states that
+for a nondegenerate pairing on a finite-dimensional vector space
+<em>V</em>/<em>F</em>, where either
+<em>F</em>=<strong>R</strong> and the pairing is
+bilinear and symmetric, or
+<em>F</em>=<strong>C</strong> and the pairing is
+sesquilinear and conjugate-symmetric,
+<em>
+the counts of positive and negative inner products
+for an orthogonal basis constitute an invariant of the pairing
+</em>
+and do not depend on the choice of orthogonal basis.
+(This invariant is known as the &ldquo;signature&rdquo; of the pairing.)
+The key trick in proving this result is as follows.
+Suppose <em>V</em> is the orthogonal direct sum of subspaces
+<em>U</em><sub>1</sub>, <em>U</em><sub>2</sub>
+for which the pairing is positive definite on <em>U</em><sub>1</sub>
+and negative definite on <em>U</em><sub>2</sub>.
+Then any subspace <em>W</em> of <em>V</em>
+on which the pairing is positive definite
+has dimension no greater than dim(<em>U</em><sub>1</sub>).
+Proof: On the intersection of <em>W</em> with <em>U</em><sub>2</sub>,
+the pairing is both positive and negative definite;
+hence that subspace is {0}.  The claim follows by a dimension count,
+and we quickly deduce Sylvester&rsquo;s Law.
+
+<li> Over any field not of characteristic 2,
+we know that for any non-degenerate
+symmetric pairing on a finite-dimensional vector space
+there is an orthogonal basis, or equivalently
+a choice of basis such that the pairing is
+(<em>x</em>,<em>y</em>)=&Sigma;<sub><em>i</em></sub>(<em>a<sub>i</sub>&nbsp;x<sub>i</sub>&nbsp;y<sub>i</sub></em>)
+for some nonzero scalars <em>a<sub>i</sub></em>.
+But in general it can be quite hard to decide whether
+two different collections of <em>a<sub>i</sub></em>
+yield isomorphic pairings.  Even over <strong>Q</strong>
+the answer is already tricky in dimensions 2 and 3,
+and I don&rsquo;t think it&rsquo;s known in a vector space of arbitrary dimension.
+Over a finite field of odd size there are always exactly two
+possibilities, as I think we&rsquo;ll see in a few weeks.
+
+<li> If <em>U</em> is a subspace of inner-product space <em>V</em>,
+but not necessarily finite dimensional, there is not generally a complement:
+one can still define <em>U</em><sup>&perp;</sup>, but the direct orthogonal
+sum <nobr><em>U</em> &oplus; <em>U</em><sup>&perp;</sup></nobr> might be
+strictly smaller than&nbsp;<em>V</em>.  What then happens to
+<nobr>6.56 (p.198 in 6.C)</nobr>, which describes the orthogonal projection
+<nobr><em>P<sub>U</sub></em>(<em>v</em>)</nobr> as the vector
+in&nbsp;<em>U</em> closest to&nbsp;<em>v</em>
+(i.e., minimizing the norm <nobr>||<em>v</em>&minus;<em>u</em>||</nobr>)?
+Well, <em>if</em> there exists such&nbsp;<em>u</em> then indeed
+ <nobr><em>v</em>&minus;<em>u</em></nobr> is orthogonal to&nbsp;<em>U</em>,
+but in general the minimum need not be attained: at best we can construct
+a sequence of vectors <em>u<sub>n</sub></em> in&nbsp;<em>U</em> such that
+<nobr>||<em>v</em>&minus;<em>u<sub>n</sub></em>||</nobr> <em>approaches</em>
+<nobr>inf<sub><em>u</em><font size="-2">&in;</font><em>U</em></sub>||<em>v</em>&minus;<em>u</em>||</nobr>.
+It then follows from
+<a href="https://en.wikipedia.org/wiki/Apollonius%27_theorem"
+ target="_blank">Apollonius&rsquo; theorem</a>
+(see the front cover of Axler! and also Exercise 31 of 6.A, page&nbsp;179)
+that the <em>u<sub>n</sub></em> constitute a
+<a href="https://en.wikipedia.org/wiki/Cauchy_sequence"
+ target="_blank">Cauchy sequence</a>
+in&nbsp;<em>U</em> (else <nobr>(<em>u<sub>m</em>+<em>u<sub>n</em>)/2</nobr>
+is too close to&nbsp;<em>v</em>).
+So if <em>U</em> is <em>complete</em> with respect to the norm distance
+then there is a nearest vector and we can proceed as before.
+But in general infinite-dimensional inner product spaces are not complete
+(the complete ones are
+<a href="https://en.wikipedia.org/wiki/Hilbert_space"
+ target="_blank">Hilbert spaces</a>, and that is a very special case).
+We shall say a lot more about completeness and related notions
+at the start of Math&nbsp;55b.
+
+<li> A regular graph of degree <em>d</em> is a
+<em><a href="https://en.wikipedia.org/wiki/Moore_graph"
+ target="_blank">Moore graph</a></em> of girth 5
+if any two different vertices are linked by a unique path of length
+at most&nbsp;2.  Such a graph necessarily has
+<nobr><em>n</em> = 1 + <em>d</em> + <em>d</em>(<em>d</em>&minus;1)
+= <em>d</em><sup>2</sup> + 1 </nobr> vertices.
+Let <em>A</em> be the adjacency matrix, and
+<strong>1</strong> the all-ones vector.  Then (because each vertex
+has degree&nbsp;<em>d</em>) <strong>1</strong> is a
+<nobr><em>d</em>-eigenvector</nobr> of&nbsp;<em>A</em>.
+We have
+<nobr>(1 + <em>A</em> + <em>A</em><sup>2</sup>) <em>v</em> =
+<em>d v </em> + &lang;<em>v</em>, <strong>1</strong>&rang; <strong>1</strong>
+</nobr> for all <em>v</em>
+(proof: check on unit vectors and use linearity).
+Thus <em>A</em> takes the orthogonal complement
+<nobr>of <strong>R</strong>&middot;<strong>1</strong></nobr>
+to itself and satisfies
+<nobr>(1 + <em>A</em> + <em>A</em><sup>2</sup>) = <em>d</em></nobr>
+on that space.  Since this quadratic equation has distinct roots
+<em>m</em> and <nobr>&minus;1&minus;<em>m</em></nobr>
+for some <nobr> <em>m</em> &gt; 0 </nobr> (namely the positive root of
+<nobr>(1 + <em>m</em> + <em>m</em><sup>2</sup>) = <em>d</em></nobr>),
+it follows that the orthogonal complement
+<nobr>of <strong>R</strong>&middot;<strong>1</strong></nobr>
+is the direct sum of the corresponding eigenspaces.
+Let <em>d</em><sub>1</sub> and <em>d</em><sub>2</sub>
+be their dimensions.  These sum to
+<nobr><em>n</em>&minus;1 = <em>d</em><sup>2</sup></nobr>, and satisfy
+<nobr><em>md</em><sub>1</sub> + (&minus;1&minus;<em>m</em>)<em>d</em><sub>2</sub> + <em>d</em> = 0</nobr>
+because the matrix <em>A</em> has trace zero.  This lets us solve
+for <em>d</em><sub>1</sub> and <em>d</em><sub>2</sub>.
+in particular we find that their difference is
+<nobr>(2<em>d</em> &minus; <em>d</em><sup>2</sup>) / (2<em>m</em>+1)</nobr>.
+Since that&rsquo;s an integer, either <nobr><em>d</em>=2</nobr>
+(giving the pentagon graph) or <em>m</em> is an integer.
+Substituting <nobr><em>m</em><sup>2</sup> + <em>m</em> + 1</nobr>
+for&nbsp;<em>d</em>, we find that
+<nobr>16(<em>d</em><sub>1</sub> &minus; <em>d</em><sub>2</sub>)</nobr>
+is an integer plus <nobr>15/(2<em>m</em>+1)</nobr>, whence
+<em>m</em> is one of 0, 1, 2, or 7.  The first of these is impossible,
+and the others give <nobr><em>d</em> = 3</nobr>, 7, or&nbsp;57
+as claimed.
+<p>
+It is clear that the pentagon is the unique Moore graph of girth&nbsp;5,
+and degree&nbsp;2, and it is not hard to check that the Petersen graph
+is the unique example with <nobr><em>d</em> = 3</nobr>.  For
+<nobr><em>d</em> = 7</nobr> there is again a unique graph up to
+an interesting group of automorphisms; see this
+<A HREF="http://math.harvard.edu/~elkies/Misc/hsgraph.pdf"
+target="_blank">proof outline</A>, which also lets one count
+the automorphisms of this graph.
+<!--  There is no spectral graph theory
+there, but this approach is suggested by the inequality you&rsquo;ll prove
+in the fifth problem of <A HREF="p7.pdf">problem set&nbsp;7</A>:
+if the 50 vertices are divided into two equal subsets, what&rsquo;s
+the smallest possible number of edges between them?
+-->
+<li> Why the name &ldquo;spectral theorem&rdquo;?  The set (or sometimes the
+  &ldquo;<a href="https://en.wikipedia.org/wiki/Multiset
+   target="_blank">multiset</a>&rdquo;) of eigenvalues
+ of a linear operator on a vector space&nbsp;<em>V</em>
+ is often called its
+ &ldquo;<a href="https://en.wikipedia.org/wiki/Spectrum#Mathematics"
+ target="_blank">spectrum</a>&rdquo;, especially when
+ <em>V</em> is a real or complex vector space, either
+  finite or infinite dimensional.  This is related with the
+ visual (and by extension the electromagnetic) spectrum, for reasons that
+ would take us much too far into wave and quantum mechanics,
+ so we shall say little more of that here (but you may encounter it again
+ in your physics class(es)).
+</ul>
+
+<img src="redball.gif">
+We&rsquo;ll <em>define</em> the determinant of an operator <em>T</em>
+on a finite dimensional space <em>V</em> as follows:
+<em>T</em> induces a linear operator
+<nobr><font size="+1">&wedge;</font><sup><em>n</em></sup>(<em>T</em>)</nobr>
+on the top exterior power
+<nobr><font size="+1">&wedge;</font><sup><em>n</em></sup>(<em>V</em>)</nobr> of&nbsp;<em>V</em>
+(where <nobr><em>n</em> = dim <em>V</em></nobr>);
+this exterior power is one-dimensional,
+so an operator on it is multiplication by some scalar;
+det(<em>T</em>) is by definition the scalar corresponding to
+<nobr><font size="+1">&wedge;</font><sup><em>n</em></sup>(<em>T</em>)</nobr>.
+The &ldquo;top exterior power&rdquo;
+is a subspace of the &ldquo;exterior algebra&rdquo;
+<nobr><font size="+1">&wedge;</font><sup>&bullet;</sup>(<em>V</em>)</nobr>
+ of&nbsp;<em>V</em>,
+which is the quotient of the tensor algebra by
+the ideal generated by
+<nobr>{<em>v</em> &otimes; <em>v</em>: <em>v</em> in <em>V</em>}</nobr>.
+We&rsquo;ll still have to construct the sign homomorphism from the
+symmetry group of order dim(<em>V</em>) to <nobr>{1,&minus;1}</nobr>
+to make sure that this exterior algebra is as large
+as we expect it to be, and that in particular that
+the (dim(<em>V</em>))-th exterior power has dimension 1
+rather than zero.
+<p>
+  <img src="purpball.gif"> Interlude: normal subgroups;
+  short exact sequences in the context of groups:
+  A subgroup <em>H</em> of <em>G</em> is <strong>normal</strong>
+  (satisfies <nobr><em>H</em> = <em>g</em><sup>&minus;1</sup><em>Hg</em></nobr>
+  for all <em>g</em> in <em>G</em>) <u>iff</u>
+  <em>H</em> is the kernel of some group homomorphism from <em>G</em>
+  <u>iff</u> the injection <nobr><em>H</em> &rarr; <em>G</em> </nobr>
+  fits into a short exact sequence
+  <nobr>{1}
+    &rarr; <nobr><em>H</em>
+    &rarr; <em>G</em>
+    &rarr; <em>Q</em>
+    &rarr; {1},
+  </nobr>
+  in which case <em>Q</em> is the <strong>quotient group</strong>
+  <nobr><em>G</em>/<em>H</em></nobr>.
+  [The notation {1} for the one-element (&ldquo;trivial&rdquo;) group
+  is usually abbreviated to plain 1, as in
+  <nobr>1
+    &rarr; <nobr><em>H</em>
+    &rarr; <em>G</em>
+    &rarr; <em>Q</em>
+    &rarr; 1.]
+  </nobr>
+  This is not in Axler but can be found in any introductory text in
+  abstract algebra; see for instance Artin, Chapter 2, section&nbsp;10.
+  Examples:
+  <nobr>1
+    &rarr; <nobr><em>A<sub>n</sub></em>
+    &rarr; <em>S<sub>n</sub></em>
+    &rarr; {&plusmn;1}
+    &rarr; 1;
+  </nobr>
+  also, the determinant homomorphism
+  <nobr>
+  GL<em><sub>n</sub></em>(<em>F</em>) &rarr; <em>F</em><sup>*</sup>
+  </nobr>
+  gives the short exact sequence
+  <nobr>1
+    &rarr; <nobr>SL<em><sub>n</sub></em>(<em>F</em>)
+    &rarr; GL<em><sub>n</sub></em>(<em>F</em>)
+    &rarr; <em>F</em><sup>*</sup>
+    &rarr; 1,
+  </nobr>
+  and this works even if <em>F</em> is just a commutative ring with unit
+  as long as <nobr><em>F</em><sup>*</sup></nobr> is understood as
+  the group of invertible elements of&nbsp;<em>F</em> &mdash; for example,
+  <nobr><strong>Z</strong><sup>*</sup> = {&plusmn;1}.</nobr>
+<p>
+Some more tidbits about exterior algebra:
+<ul>
+<li>If <em>w</em>, <em>w</em>' are elements of the
+ <em>m</em>-th and <em>m</em>'-th exterior powers of <em>V</em>,
+ then <em>ww</em>'=(&minus;1)<sup><em>mm</em>'</sup><em>w</em>'<em>w</em>;
+ that is, <em>w</em> and <em>w</em>' commute
+ unless <em>m</em> and <em>m</em>' are both odd
+ in which case they anticommute.
+<li>If <em>m</em>+<em>m</em>'=<em>n</em>=dim(<em>V</em>)
+ then the natural pairing from the
+ <em>m</em>-th and <em>m</em>'-th exterior powers
+ to the <em>n</em>-th is nondegenerate,
+ and so identifies the <nobr><em>m</em>'-th</nobr> exterior power
+ canonically with the dual of the <nobr><em>m</em>-th</nobr>
+ <em>tensored with the top (n-th) exterior power</em>.
+<li> In particular, if <em>m</em>=1,
+ and <em>T</em> is any invertible operator on <em>V</em>,
+ then we find that the induced action of <em>T</em>
+ on the (<em>n</em>&minus;1)st exterior power
+ is the same as its action on <em>V</em><sup>*</sup>
+ multiplied by det(<em>T</em>).
+ This yields the formula connecting the inverse and cofactor matrix
+ of an invertible matrix (a formula which you may also know
+ in the guise of &ldquo;Cramer&rsquo;s rule&rdquo;).
+<!--
+<p>
+ One consequence of this formula is that
+ an <em>n</em>-by-<em>n</em> integer matrix <em>A</em>
+ had an inverse with integer entries if and only if
+ |det(<em>A</em>)|=1.  This in turn implies that
+ |det(<em>M</em>)| is an invariant of the lattice
+ <em>L</em>=<em>M</em><strong>Z</strong><sup><em>n</em></sup>.
+ In 55b we&rsquo;ll interpret this invariant as
+ the &ldquo;covolume&rdquo; of <em>L</em>, that is,
+ the volume of the <em>n</em>-dimensional torus
+ <strong>R</strong><sup><em>n</em></sup>/<em>L</em>.
+<p>
+-->
+<li> For each <em>m</em> there is a natural non-degenerate pairing
+ between the <em>m</em>-th exterior powers of
+ <em>V</em> and <em>V</em><sup>*</sup>,
+ which identifies these exterior powers with each other&rsquo;s dual.
+</ul>
+More will be said about exterior algebra when differential forms
+appear in Math 55b.
+<p>
+We&rsquo;ll also show that a symmetric (or Hermitian) matrix
+is positive definite <u>iff</u> all its eigenvalues are positive
+<u>iff</u> it has positive principal minors
+(the &ldquo;principal minors&rdquo; are the determinants
+of the square submatrices of all orders containing the (1,1) entry).
+More generally we&rsquo;ll show that the eigenvalue signs determine
+the signature, as does the sequence of signs of principal minors
+if they are all nonzero.  More precisely: an invertible
+symmetric/Hermitian matrix has signature
+<nobr>(<em>r</em>,<em>s</em>)</nobr> where
+<em>r</em> is the number of positive eigenvalues and
+<em>s</em> is the number of negative eigenvalues;
+if its principal minors are all nonzero then
+<em>r</em> is the number of <em>j</em> in
+<nobr>{1,2,&hellip;,<em>n</em>}</nobr> such that the
+<nobr><em>j</em>-th</nobr> and <nobr>(<em>j</em>&minus;1)-st</nobr> minors
+have the same sign, and
+<em>s</em> is the number of <em>j</em> in that range such that the
+<nobr><em>j</em>-th</nobr> and <nobr>(<em>j</em>&minus;1)-st</nobr> minors
+have opposite sign [for <nobr><em>j</em>=1</nobr> we always count
+the &ldquo;zeroth minor&rdquo; as being the positive number&nbsp;1].
+This follows inductively from the fact that the determinant has sign
+<nobr>(&minus;1)<sup><em>s</em></sup></nobr> and the signature
+<nobr>(<em>r</em>',<em>s</em>')</nobr> of the restriction of a pairing
+to a subspace has
+<nobr><em>r</em>' &le; <em>r</em></nobr> and
+<nobr><em>s</em>' &le; <em>s</em></nobr>.
+<p>
+For positive definiteness, we have the two further
+equivalent conditions: the symmetric (or Hermitian) matrix
+<em>A</em>=(<em>a<sub>ij</sub></em>) is positive definite
+<u>iff</u> there is a basis (<em>v<sub>i</sub></em>)
+of <strong>F</strong><sup><em>n</em></sup> such that
+<nobr><em>a<sub>ij</sub></em>&thinsp;=&thinsp;&lang;<em>v<sub>i</sub></em>,<em>v<sub>j</sub></em>&rang;</nobr>
+for all <em>i</em>,<em>j</em>, and
+<u>iff</u> there is an invertible matrix <em>B</em> such that
+<em>A</em>=<em>B</em><sup>*</sup><em>B</em>.
+For example, the matrix with entries 1/(<em>i</em>+<em>j</em>&minus;1)
+(&ldquo;Hilbert matrix&rdquo;) is positive-definite, because it is
+the matrix of inner products (integrals on [0,1]) of the basis
+1,<em>x</em>,<em>x</em><sup>2</sup>,&hellip;,<em>x</em><sup><em>n</em>&minus;1</sup>
+for the polynomials of degree &lt;<em>n</em>.
+See the 10th problem set for a calculus-free proof of the
+positivity of the Hilbert matrix, and an evaluation of its determinant.
+<br>
+For any matrix <em>B</em> (not necessarily invertible or even square)
+with columns <nobr><em>v<sub>i</sub></em></nobr>,
+the matrix <nobr><em>B</em><sup>*</sup><em>B</em></nobr> with entries
+<nobr><em>a<sub>ij</sub></em>&thinsp;=&thinsp;&lang;<em>v<sub>i</sub></em>,<em>v<sub>j</sub></em>&rang;</nobr>
+is known as the <em>Gram matrix</em> of the columns of&nbsp;<em>B</em>.
+It is invertible iff those columns are linearly independent.
+If we add an <nobr>(<em>n</em>+1)-st</nobr> vector, the determinant of
+the Gram matrix increases by a factor equal to the squared distance
+between this vector and the span of the columns of&nbsp;<em>B</em>.
+<!--
+You&rsquo;ll use this too in PS10.
+-->
+</ul>
+
+<li> All of Chapter 8 works over an arbitrary algebraically closed field,
+not only over <strong>C</strong>
+(except for the minor point about extracting square roots,
+which breaks down in characteristic&nbsp;2); and
+the first section (&ldquo;Generalized Eigenvalues&rdquo;) works over any field.
+<li> More about nilpotent operators: let <em>T</em> be any operator
+on a vector space <em>V</em> over a field <em>F</em>, not assumed
+algebraically closed.  If <em>V</em> is finite-dimensional, then
+The Following Are Equivalent:
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(1) There exists a nonnegative integer <em>k</em>
+such that <em>T<sup>k</sup></em>=0;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(2) For any vector <em>v</em>, there exists a nonnegative integer
+<em>k</em> such that <em>T<sup>k</sup>v</em>=0;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(3) <em>T<sup>n</sup></em>=0, where <em>n</em>=dim(<em>V</em>).
+<br>
+Note that (1) and (2) make no mention of the dimension,
+but are still not equivalent for operators on infinite-dimensional spaces.
+(For example, consider differentiation on the
+<nobr><b>R</b>-vector space</nobr> <nobr><b>R</b>[<em>x</em>]</nobr>.)
+We readily deduce the further equivalent conditions:
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(4) There exists a basis for <em>V</em> for which
+<em>T</em> has an upper-triangular matrix
+with every diagonal entry equal zero;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(5) Every upper-triangular matrix for <em>T</em>
+has zeros on the diagonal,
+and there exists at least one upper-triangular matrix for <em>T</em>.
+<br>
+Recall that the second part of (5) is automatic
+if <em>F</em> is algebraically closed.
+<li> The space of generalized 0-eigenvectors
+(the maximal subspace on which <em>T</em> is nilpotent)
+is sometimes called the <em>nilspace</em> of <em>T</em>.
+It is an invariant subspace.  When <em>V</em> is finite dimensional,
+<em>V</em> is the direct sum of the nilspace and another invariant
+subspace <em>V'</em>, consisting of the intersection of the subspaces
+<em>T<sup>k</sup></em>(<em>V</em>) as <em>k</em> ranges over all
+positive integers (8.5). This can be used to prove Cayley-Hamilton
+using the standard definition of the characteristic polynomial as
+<nobr>det(<em>xI</em>&minus;<em>T</em>)</nobr>.
+<li> An example in infinite dimension when (8.5) fails:
+<em>V</em> is the real vector space of continuous functions from
+<b>R</b> to&nbsp;<b>R</b>, and <em>T</em> is multiplication
+by&nbsp;<em>x</em>.  [That is a useful counterexample for many other
+aspects of &ldquo;eigenstuff&rdquo; when we try to go beyond
+finite dimension; for example, there are no eigenvectors, but
+for <em>every</em> real number &lambda; the operator
+<nobr>&lambda;<em>I</em>&minus;<em>T</em></nobr> is not invertible!]
+<li> The dimension of the space of generalized <em>c</em>-eigenvalues
+(i.e., of the nilspace of <em>T&minus;cI</em>) is usually called the
+<em>algebraic</em> multiplicity of <em>c</em>
+(since it&rsquo;s the multiplicity of <em>c</em>
+as a root of the characteristic polynomial of <em>T</em>),
+to distinguish it from the &ldquo;geometric multiplicity&rdquo;
+which is the dimension of <nobr>ker(<em>T&minus;cI</em>)</nobr>.
+</UL>
+
+<p>
+
+<A NAME="today">
+<img src="orangeball.gif">
+Our source for <em>representation theory</em> of finite groups
+(on finite-dimensional vector spaces over&nbsp;<strong>C</strong>)
+will be Artin&rsquo;s <em>Algebra</em>, Chapter&nbsp;9.  We&rsquo;ll omit
+sections&nbsp;3 and&nbsp;10 (which require not just topology and
+calculus but also, at least for &sect;3, some material beyond 55b
+to do properly, namely the construction of Haar measures);
+also we won&rsquo;t spend much time on &sect;7, which works out in detail
+the representation theory of a specific group that Artin
+calls&nbsp;<em>I</em> (the icosahedral group,
+<nobr>a.k.a. <em>A</em><sub>5</sub></nobr>).
+There are many other sources for this material,
+some of which take a somewhat different point of view via the
+&ldquo;group algebra&rdquo; <nobr><strong>C</strong>[<em>G</em>]</nobr>
+of a finite group&nbsp;<em>G</em> (a.k.a. the algebra of
+functions on&nbsp;<em>G</em> under convolution).
+See for instance Chapter&nbsp;1 of <em>Representation Theory</em>
+by Fulton and Harris (mentioned in class).  A canonical treatment
+of representations of finite groups is
+Serre&rsquo;s <em>Linear Representations of Finite Groups</em>,
+which is the only entry for this chapter in the list of
+&ldquo;Suggestions for Further Reading&rdquo; at the end of Artin&rsquo;s book
+(see p.604).
+
+<p>
+
+While we&rsquo;ll work almost exclusively over&nbsp;<strong>C</strong>,
+most of the results work equally well (though with somewhat different
+proofs) over any field <em>F</em> that contains the roots of unity
+of order <nobr>#(<em>G</em>)</nobr>, as long as the characteristic
+of&nbsp;<em>F</em> is not a factor of <nobr>#(<em>G</em>)</nobr>.
+Without roots of unity, many more results are different,
+but there is still a reasonably satisfactory theory available.
+Dropping the characteristic condition leads to much trickier territory,
+e.g. even Maschke&rsquo;s theorem (every finite-dimensional
+representation is a direct sum of irreducibles) fails;
+some natural problems are still unsolved!
+
+<p>
+
+Here&rsquo;s an alternative viewpoint on representations of a finite group
+<em>G</em> (not in Artin, though you can find it elsewhere, e.g.
+Fulton-Harris pages 36ff.): a representation of&nbsp;<em>G</em> over
+a field&nbsp;<em>F</em> is equivalent to a module for the
+<em>group ring</em> 
+<nobr><em>F</em>[<em>G</em>]</nobr>.
+The group ring is an associative <nobr><em>F</em>-algebra</nobr>
+(commutative iff <em>G</em> is commutative) that consists of the
+formal <nobr><em>F</em>-linear</nobr> combinations of group elements.
+This means that <nobr><em>F</em>[<em>G</em>]</nobr>
+is <nobr><em>F<sup>G</sup></em></nobr> as an
+<nobr><em>F</em>-vector</nobr> space,
+and the algebra structure is defined by setting
+<nobr><em>e</em><sub><em>g</em><sub>1</sub></sub><em>e</em><sub><em>g</em><sub>2</sub></sub>
+= <em>e</em><sub><em>g</em><sub>1</sub><em>g</em><sub>2</sub></sub></nobr>
+for all <nobr><em>g</em><sub>1</sub><em>, g</em><sub>2</sub></nobr>
+in&nbsp;<em>G</em>, together with the
+<nobr><em>F</em>-bilinearity</nobr> of the product.
+This means that if we identify elements of the group ring with
+functions <nobr><em>G</em>&rarr;<em>F</em></nobr> then the
+multiplication rule is
+<nobr>(<em>f</em><sub>1</sub> * <em>f</em><sub>2</sub>)(<em>g</em>)
+= &Sigma;<sub><em>g</em><sub>1</sub><em>g</em><sub>2</sub>=<em>g</em></sub>
+<em>f</em><sub>1</sub>(<em>g</em><sub>1</sub>) <em>f</em><sub>2</sub>(<em>g</em><sub>2</sub>)</nobr>
+&mdash; yes, it&rsquo;s convolution again.  To identify an
+<nobr><em>F</em>[<em>G</em>]-module</nobr> with a representation,
+use the action of <em>F</em> to define the vector space structure,
+and let <nobr>&rho;(<em>g</em>)</nobr> act by multipliction by
+the unit vector&nbsp;<em>e<sub>g</sub></em>.  In particular,
+the regular representation is <nobr><em>F</em>[<em>G</em>]</nobr>
+regarded in the usual way as a module over itself.  If we identify
+the image of this representation with certain permutation matrices
+of <nobr>order #(<em>G</em>)</nobr>, we get an explicit model of
+<nobr><em>F</em>[<em>G</em>]</nobr> as a subalgebra of the
+algebra of square matrices the same order.  For example, if
+<nobr><em>G</em> = <strong>Z</strong>/<em>n</em><strong>Z</strong></nobr>
+we recover the algebra of circulant matrices of order&nbsp;<em>n</em>.
+<p>
+
+
+<hr>
+
+<img src="redball.gif">
+<A HREF="p1.pdf">First problem set / Linear Algebra I:</A>
+ vector space basics; an introduction to convolution rings
+<br>
+<b>Clarifications (2.ix.16):</b>
+<br>
+&bullet;
+ &ldquo;Which if any of these basic results would fail if
+ <b>F</b> were replaced by <b>Z</b>?&rdquo; &mdash;
+ but don&rsquo;t worry about this for problems 7 and 24,
+ which specify&nbsp;<b>R</b>.
+<br>
+&bullet;
+ Problem 12: If you see how to compute this efficiently but not
+ what this has to do with Problem&nbsp;8, please keep looking for
+ the connection.
+<br>
+<img src="greenball.gif">
+<a href="http://www.math.harvard.edu/~elkies/halmos.html">Here</a>&rsquo;s
+ the &ldquo;Proof of Concept&rdquo; mini-crossword with links concerning
+ the &#8718; <!-- Halmos square --> symbol.
+<a href="http://www.math.harvard.edu/~elkies/halmos_sol.html">Here</a>&rsquo;s
+ an excessively annotated solution.
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p2.pdf">Second problem set / Linear Algebra II:</A>
+ dimension of vector spaces; torsion groups/modules and divisible groups
+<br>
+<b>About Problem 5:</b> You may wonder: if not determinants,
+what <em>can</em> you use?  See Axler, Chapter 4, namely 4.8 through 4.12
+<nobr>(pages 121&ndash;123),</nobr> and note that the proof of 4.8
+(using techniques we won&rsquo;t cover till next week) can be replaced by
+the ordinary algorithm for polynomial long division, which you probably
+learned with real coefficients but works over any field.
+While I&rsquo;m at it, 4.7 (page&nbsp;120) works over any <em>infinite</em>
+field; Axler&rsquo;s proof is special to the real and complex numbers,
+but 4.12 yields the result in general.  (We already remarked that
+this result does not hold for finite fields.)
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p3.pdf">Third problem set / Linear Algebra III:</A>
+Countable vs. uncountable dimension of vector spaces;
+linear transformations and duality 
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p4.pdf">Fourth problem set / Linear Algebra IV:</A>
+Duality; projective spaces; more connections with polynomials
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p5.pdf">Fifth problem set / Linear Algebra V:</A>
+&ldquo;Eigenstuff&rdquo;
+(with a prelude on exact sequences and more duality)
+<br>
+<strong>corrected</strong> 4.x.10:
+<br>
+<em>Problem 2:</em> <em>F<sup>N</sup></em> / <em>V<sup>*</sup></em>,
+not <em>V<sup>N</sup></em> / <em>V<sup>*</sup></em> (noted by many students);
+<br>
+<em>Problem 5ii:</em> all &alpha; in&nbsp;<em>F</em>,
+not all &alpha; in&nbsp;<em>V</em>
+(noted by Hikari Sorensen).
+<br>
+<strong>Due date extended</strong> from Oct.7 (Fri.) to Oct.12 (Wed.) in class
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p6.pdf">Sixth problem set / Linear Algebra VI:</A>
+Tensors, eigenstuff cont&rsquo;d, and a bit on inner products
+<br>
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p7.pdf">Seventh problem set / Linear Algebra VII:</A>
+Pairings and inner products, cont&rsquo;d
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p8.pdf">Eighth problem set / Linear Algebra VIII:</A>
+The spectral theorem; spectral graph theory; symplectic structures
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p9.pdf">Ninth problem set / Linear Algebra IX:</A>
+Trace, determinant, and more exterior algebra
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p10.pdf">Tenth problem set</A>:
+Linear Algebra X (determinants and distances);
+representations of finite abelian groups (Discrete Fourier transform)
+
+<P>
+
+<A NAME="current_homework">
+<img src="orangeball.gif">
+<A HREF="p11.pdf">Eleventh and final problem set</A>:
+Representations of finite abelian groups
+

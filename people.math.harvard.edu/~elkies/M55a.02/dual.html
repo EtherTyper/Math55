@@ -1,0 +1,73 @@
+<TITLE>
+Math 55a: Duality basics
+</TITLE>
+
+<body bgcolor="eecccc">
+
+<H2>
+Math 55a: Duality basics
+</H2>
+
+The <em>dual</em> of an <em>F</em>-vector space <em>V</em>
+is the <em>F</em>-vector space Hom(<em>V</em>,<em>F</em>)
+of linear maps from <em>V</em> to <em>F</em>,
+often called <em>functionals</em> on <em>V</em>.
+We'll usually denote the dual of <em>V</em> by <em>V</em><sup>*</sup>.
+If <em>W</em> is the direct sum of <em>U</em> and <em>V</em>
+Then <em>W</em><sup>*</sup> is the direct sum
+of <em>U</em><sup>*</sup> and <em>V</em><sup>*</sup>;
+for instance, the copy of <em>U</em><sup>*</sup>
+in <em>W</em><sup>*</sup> consists of the functionals
+mapping all vectors in <em>U</em> to zero
+(the ``annihilator'' of <em>U</em> in <em>W</em><sup>*</sup>).
+The dual of a quotient space <em>V/U</em>
+is naturally a subspace of <em>V</em><sup>*</sup>,
+namely the annihilator of <em>U</em> in <em>V</em><sup>*</sup>.
+
+<p>
+
+If <em>V</em> has finite dimension <em>n</em>
+then so does <em>V</em><sup>*</sup>.
+The dimension of the annihilator of <em>U</em>
+in <em>V</em><sup>*</sup>
+then equals the codimension of <em>U</em> in <em>V</em>.
+If we choose a basis of <em>V</em>,
+and use it to identify elements of <em>V</em> with ``column vectors''
+of length <em>n</em>, then elements of <em>V</em><sup>*</sup>
+correspond to ``row vectors'' of the same length.
+There is in general no canonical isomorphism between
+<em>V</em> and <em>V</em><sup>*</sup>,
+even if <em>V</em> is finite dimensional.
+We do, however, have a canonical map from <em>V</em>
+to its <em>second dual</em> <em>V</em><sup>**</sup>,
+which is an isomorphism when <em>V</em> is finite dimensional.
+The key idea is that <em>v</em><sup>*</sup>(<em>v</em>)
+is ``bilinear'': not only is it a linear function of <em>v</em>
+for each choice of <em>v</em><sup>*</sup>, but it's also
+a linear function of <em>v</em><sup>*</sup> for each choice
+of <em>v</em> -- so each <em>v</em> may be considered as
+a functional on <em>V</em><sup>*</sup>,
+that is, as an element of <em>V</em><sup>**</sup>!
+
+<p>
+
+If <em>T</em> is a linear transformation from <em>V</em> to <em>W</em>
+then we get a linear transformation <em>T</em><sup>*</sup>
+from <em>W</em><sup>*</sup> to <em>V</em><sup>*</sup>,
+called the <em>adjoint</em> of <em>T</em> and denoted by
+<em>T</em><sup>*</sup>, defined as follows:
+<em>T</em><sup>*</sup>(<em>w</em><sup>*</sup>)
+is the element of <em>V</em><sup>*</sup> taking any <em>v</em> to
+<em>w</em><sup>*</sup>(<em>T</em>(<em>v</em>)).
+The adjoint is itself a linear map from
+Hom(<em>V</em>,<em>W</em>) to
+Hom(<em>W</em><sup>*</sup>,<em>V</em><sup>*</sup>).
+This map is an isomorphism when <em>V</em> and <em>W</em>
+are finite dimensional.  In that case, if we choose bases
+for <em>V</em> and <em>W</em> then the matrix of <em>T</em><sup>*</sup>
+with respect to the dual bases (see PS7, #6) is the <em>transpose</em>
+of the matrix of <em>T</em> with respect to our bases for <em>V,W</em>.
+Naturally <em>T</em><sup>**</sup> is identified with <em>T</em>
+under the canonical maps that identify 
+<em>V</em><sup>**</sup> and <em>W</em><sup>**</sup>
+with <em>V</em> and <em>W</em>.

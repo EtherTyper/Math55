@@ -1,0 +1,178 @@
+<TITLE>
+About the field and vector space axioms
+</TITLE>
+<BODY BGCOLOR="#ccffff">
+
+The field axioms listed below describe the basic properties of
+the four operations of arithmetic: ambition, distraction,
+uglification, and derision.  [Don't blame me for this last;
+it's due to C.L.Dodgson, a.k.a. Lewis Carroll.  Go
+<A HREF="http://www.ruthannzaroff.com/wonderland/turtle.htm">here</A>
+for the relevant quote from <EM>Alice</EM>.]  Actually,
+only ambition and uglification -- er, addition and multiplication
+-- are needed, together with additive and multiplicative inverses
+and identities.
+
+A <EM>field</EM>, then, is a set <EM>F</EM> equipped with:
+
+<UL>
+<LI> Two distinguished elements called 0 and 1, which must be different
+<LI> A function from <EM>F</EM> to <EM>F</EM> called
+ <EM>additive inverse</EM> and denoted by the unary minus sign
+ (so the additive inverse of <EM>a</EM> is <EM>-a</EM>), and
+ a function from <EM>F</EM>-{0} to <EM>F</EM>-{0}
+ called <EM>multiplicative inverse</EM> that takes <EM>a</EM>
+ to an element called <EM>a</EM><SUP>-1</SUP> (we shall usually
+ write <EM>F<SUP>*</SUP></EM> for <EM>F</EM>-{0})
+<LI> Two functions <EM>F</EM><SUP>2</SUP> to <EM>F</EM> called
+ <EM>addition</EM> and <EM>multiplication</EM>; as usual we shall
+ denote the images of (<EM>a,b</EM>) under these two functions by
+ <EM>a + b</EM> and <EM>a*b</EM> (or simply <EM>ab</EM>).
+</UL>
+
+These must satisfy the following nine conditions, or axioms:
+
+<P>
+
+i) For all <EM>a</EM> in <EM>F</EM>, <EM>a</EM>+0=0+<EM>a=a</EM>
+[i.e. 0 is an additive identity]
+<BR>
+
+ii) For all <EM>a</EM> in <EM>F</EM>,
+<EM>a</EM>+(-<EM>a</EM>)=(-<EM>a</EM>)+<EM>a</EM>=0
+[this is what ``additive inverse'' means]
+<BR>
+
+iii) For all <EM>a,b,c</EM> in <EM>F</EM>, <EM>a+(b+c)=(a+b)+c</EM>
+[i.e. addition is associative]
+
+<BLOCKQUOTE>
+ Conditions (i), (ii), (iii) assert that (<EM>F</EM>,0,-,+) is
+ a <EM>group</EM>.  Familiar consequences are the right and left
+ <EM>cancellation rules</EM>: if, for any <EM>a,b,c</EM> in <EM>F</EM>,
+ we have <EM>a+c=b+c</EM> or <EM>c+a=b+a</EM>, then <EM>a=b</EM>.
+ This is proved by adding (<EM>-c</EM>) to both sides from the right
+ or left respectively.  In particular, <EM>a+a=a</EM> if and only if
+ <EM>a</EM>=0.  Likewise, for any <EM>a,b</EM> in <EM>F</EM>,
+ the equation <EM>a+x=b</EM> has the unique solution
+ <EM>x=b+(-a)</EM>, usually abbreviated <EM>x=b-a</EM>
+ (do not confuse this binary operation of ``subtraction''
+ with the unary additive inverse!).
+ Another standard consequence of (iii) is that,
+ for any <EM>a</EM><SUB>1</SUB>, <EM>a</EM><SUB>2</SUB>, ... ,
+ <EM>a<SUB>n</SUB></EM> in <EM>F</EM>, the sum
+ <EM>a</EM><SUB>1</SUB> + <EM>a</EM><SUB>2</SUB> + ... + <EM>a<SUB>n</SUB></EM>
+ is the same no matter how it is parenthesized.  (In how many ways
+ <EM>can</EM> that expression be parenthesized?)
+</BLOCKQUOTE>
+
+iv) For all <EM>a,b</EM> in <EM>F</EM>, <EM>a+b=b+a</EM>
+[i.e. addition is commutative]
+
+<BLOCKQUOTE>
+ Conditions (i), (ii), (iii) assert that (<EM>F</EM>,0,-,+) is
+ a <EM>commutative group</EM>, a.k.a. 
+ <EM>abelian group</EM> or <EM>additive group</EM>.
+ The first alias is a tribute to N.H.Abel (1802-1829);
+ the second reflects the fact that in general one only uses ``+''
+ for a group law when the group is commutative -- else multiplicative
+ notation is almost always used.
+</BLOCKQUOTE>
+
+v) For all <EM>a</EM> in <EM>F</EM>, <EM>a</EM>*1=1*<EM>a=a</EM>
+[i.e. 1 is a multiplicative identity]
+<BR>
+
+vi) For all <EM>a</EM> in <EM>F</EM><SUP>*</SUP>,
+<EM>a</EM>*<EM>a</EM><SUP>-1</SUP>=<EM>a</EM><SUP>-1</SUP>*<EM>a</EM>=1
+[this is what ``multiplicative inverse'' means]
+<BR>
+
+vii) For all <EM>a,b,c</EM> in <EM>F</EM>, <EM>a(bc)=(ab)c</EM>
+[i.e. multiplication is associative]
+
+<BLOCKQUOTE>
+ In particular, restricting (v), (vi) and (vii) to
+ <EM>F<SUP>*</SUP></EM>, we are asserting that 
+ (<EM>F<SUP>*</SUP></EM>,1,<SUP>-1</SUP>,*) is a group.
+</BLOCKQUOTE>
+
+viii) For all <EM>a,b</EM> in <EM>F</EM>, <EM>ab=ba</EM>
+[i.e. multiplication is commutative]
+
+<BLOCKQUOTE>
+ So, the group (<EM>F<SUP>*</SUP></EM>,1,<SUP>-1</SUP>,*)
+ is also abelian.  If <EM>F</EM> satisfies all the field axioms
+ except (viii), it is called a <EM>skew field</EM>;
+ the most famous example is the <EM>quaternions</EM> of
+ W.R.Hamilton (1805-1865).  Much of linear algebra can
+ still be done over skew fields, but we shall not pursue
+ this in Math 55.
+</BLOCKQUOTE>
+
+ix) For all <EM>a,b,c</EM> in <EM>F</EM>,
+<EM>a(b+c)=(ab)+(ac)</EM> and <EM>(a+b)c=(ac)+(bc)</EM>.
+[distributive law.  The second part is of course redundant
+by commutativity; it is required in the skew case.]
+
+<P>
+
+From (ix) together with the additive properties follows the
+basic identity:
+
+<BLOCKQUOTE>
+For all <EM>a</EM> in <EM>F</EM>, <EM>a</EM>*0=0*<EM>a</EM>=0.
+</BLOCKQUOTE>
+
+<EM>Proof</EM>: apply the distributive law to <EM>a</EM>(0+0) and
+(0+0)<EM>a</EM>, and use the fact that 0 is the only solution of
+<EM>x+x=x</EM>.
+
+<P>
+
+Thus also:
+
+<BLOCKQUOTE>
+For all <EM>a,b</EM> in <EM>F</EM>, <EM>ab</EM>=0 if and only if
+<EM>a</EM>=0 or <EM>b</EM>=0 (or both).
+</BLOCKQUOTE>
+
+<EM>Proof</EM>: If <EM>a</EM> is nonzero, multiply <EM>ab</EM>=0
+by <EM>a</EM><SUP>-1</SUP> to conclude <EM>b</EM>=0.
+
+<P>
+
+That is, a field has no (nontrivial) zero divisors.
+
+<P>
+
+Note that (vi) is the only axiom using the multiplicative inverse.
+If we drop the existence of multiplicative inverses and axiom (vi),
+we obtain the structure of a <EM>ring</EM> (commutative with unity).
+For example, <STRONG>Z</STRONG> is a ring which is not a field.
+A ring may have nontrivial zero divisors (you have seen an
+example of this already in class); if it does not, it is called
+a <EM>domain</EM>.
+
+<HR>
+
+A <EM>vector space</EM> over a field <EM>F</EM> is an additive
+group <EM>V</EM> (the ``vectors'') together with a function
+(``scalar multiplication'') taking a field element (``scalar'')
+and a vector to a vector, as long as this function satisfies the axioms
+
+<UL>
+<LI> 1*<EM>v=v</EM> for all <EM>v</EM> in <EM>V</EM>
+[so 1 remains a multiplicative identity],
+<LI> for all scalars <EM>a,b</EM> and all vectors <EM>u,v</EM> we have
+<EM>a(u+v)=au+av</EM> and <EM>(a+b)u=au+bu</EM>
+[distributive properties].
+</UL>
+
+Notice that these axioms do not use the multiplicative inverse;
+they can thus be used equally when <EM>F</EM> is any ring,
+in which case the resulting structure is called a <EM>module</EM>
+over <EM>F</EM>.  But multiplicative inverses are used to prove
+the basic theorems on vector spaces, so those theorems do not hold
+in the more general setting of modules; for instance one cannot speak
+of the dimension of a general module, even over <STRONG>Z</STRONG>.

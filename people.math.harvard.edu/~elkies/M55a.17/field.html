@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About the field and vector space axioms</title>
+<!-- MathJax header Copyright (c) 2009-2017 The MathJax Consortium -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="../MathJax-2.7.1/MathJax.js"></script>
+
+<style>
+h1 {text-align:center}
+h2 {
+  font-weight: bold;
+  background-color: #DDDDDD;
+  padding: .2em .5em;
+  margin-top: 1.5em;
+  border-top: 3px solid #666666;
+  border-bottom: 2px solid #999999;
+}
+</style>
+</head>
+<body>
+
+<noscript>
+<div style="color:#CC0000; text-align:center">
+<b>Warning: <a href="http://www.mathjax.org/">MathJax</a>
+requires JavaScript to process the mathematics on this page.<br />
+If your browser supports JavaScript, be sure it is enabled.</b>
+</div>
+<hr>
+</noscript>
+
+<BODY BGCOLOR="#ccffff">
+
+The field axioms listed below describe the basic properties of
+the four operations of arithmetic: ambition, distraction,
+uglification, and derision.  [Don&rsquo;t blame me for this last;
+it&rsquo;s due to C.&nbsp;L.&nbsp;Dodgson, a.k.a. Lewis Carroll.  Go
+<A HREF="http://www.ruthannzaroff.com/wonderland/turtle.htm"
+ target="_blank">here</A>
+for the relevant quote from <em>Alice</em>.]  Actually,
+only ambition and uglification &mdash; er, addition and multiplication
+&mdash; are needed, together with additive and multiplicative inverses
+(which let us define $-,/$ in terms of $+,\times$) and identities.
+
+A <em>field</em>, then, is a set $F$ equipped with:
+
+<UL>
+<LI> Two distinguished elements called $0$ and $1\!$, which must be different
+<LI> A function from $F$ to $F$ called
+ <em>additive inverse</em> and denoted by the unary minus sign
+ (so the additive inverse of $a$ is $-a$), and
+ a function from $F - \{0\}$ to $F - \{0\}$
+ called <em>multiplicative inverse</em> that takes $a$ to
+ an element called $a^{-1}$
+ (we shall usually write $F^*$ for $F - \{0\}$)
+<LI> Two functions from $F^2$ to $F$ called
+ <em>addition</em> and <em>multiplication</em>; as usual we shall
+ denote the images of $(a,b)$ under these two functions by
+ $a+b$ and $a \times b$ (or $a \cdot b$, or simply $ab$).
+</UL>
+
+These must satisfy the following nine conditions, or axioms:
+
+<p>
+
+i) For all $a$ in $F\!$, we have $a+0=0+a=a$
+[i.e., $0$ is an additive identity]
+<br>
+
+ii) For all $a$ in $F\!$, we have $a + (-a) = (-a) + a = 0$
+[this is what &ldquo;additive inverse&rdquo; means]
+<br>
+
+iii) For all $a,b,c$ in $F\!$, we have $a+(b+c) = (a+b)+c$
+[i.e., addition is associative]
+
+<blockquote>
+ Conditions (i), (ii), (iii) assert that $(F,0,-,+)$ is a <em>group</em>.
+ Familiar consequences are the right and left <em>cancellation rules</em>:
+ if, for any $a,b,c$ in $F\!$, we have $a+c=b+c$ or $c+a=b+a$, then $a=b$.
+ This is proved by adding $(-c)$ to both sides from the right
+ or left respectively.  In particular, $a+a=a$ if and only if $a=0$.
+ Likewise, for any $a,b$ in $F\!$, the equation $a+x=b$ has the unique
+ solution $a = b+(-a)$, usually abbreviated $x = b - a$
+ (do not confuse this binary operation of &ldquo;subtraction&rdquo;
+ with the unary additive inverse!).
+ Another standard consequence of (iii) is that,
+ for any $a_1,a_2,\ldots,a_n$ in $F\!$, the sum
+ $a_1 + a_2 + \cdots + a_n$ is the same no matter how it is parenthesized.
+ (In how many ways <em>can</em> that expression be parenthesized?)
+</blockquote>
+
+iv) For all $a,b$ in $F\!$, we have $a+b = b+a$
+[i.e., addition is commutative]
+
+<blockquote>
+ Conditions (i), (ii), (iii), (iv) assert that $(F,0,-,+)$
+ is a <em>commutative group</em>, a.k.a. 
+ <em>abelian group</em> or <em>additive group</em>.
+ The first alias is a tribute to N.&nbsp;H.&nbsp;Abel (1802&ndash;1829);
+ the second reflects the fact that in general one only uses &ldquo;+&rdquo;
+ for a group law when the group is commutative &mdash; else multiplicative
+ notation is almost always used.
+</blockquote>
+
+v) For all $a$ in $F\!$, we have $a \times 1 = 1 \times a = a$
+[i.e., $1$ is a multiplicative identity]
+<br>
+
+vi) For all $a$ in $F\!$, we have $a \times a^{-1} = a^{-1} \times a = 1$
+[this is what &ldquo;multiplicative inverse&rdquo; means]
+<br>
+
+vii) For all $a,b,c$ in $F\!$, we have $a(bc)=(ab)c$
+[i.e., multiplication is associative]
+
+<blockquote>
+ In particular, restricting (v), (vi) and (vii) to $F^*\!$,
+ we are asserting that $(F^*, 1, {}^{-1}, \times)$ is a group.
+ You probably know already that &ldquo;$a^{-1}$&rdquo; is
+ a special case of the notation $a^n$ for any integer $n$, with
+ $a^1 = a$ and $a^{m+n} = a^m a^n$ for all integers $m,n$
+ (which implies $a^0 = 1$ in at least two ways); that is,
+ in any group&nbsp;$G$, if we fix a group element $a$ then the map
+ $m \mapsto a^m$ gives a <i>group homomorphism</i> from
+ $({\bf Z}, +)$ to&nbsp;$G$.
+</blockquote>
+
+viii) For all $a,b$ in $F\!$, we have $ab=ba$
+[i.e., multiplication is commutative]
+
+<blockquote>
+ So, the group $(F^*, 1, {}^{-1}, \times)$ is also abelian.
+ For $a,b \in F$ with $a \neq 0$, the unique solution $a^{-1}\!b$ of $ax=b$
+ is usually written $b/a$ <nobr>(or $\frac b a$);</nobr>
+ in particular $a^{-1}$ is also $1/a$.
+ Do not use the notation $b/a$ in a non-commutative group,
+ because of the ambiguity between $a^{-1}\!b$ and $ba^{-1}$.
+</blockquote>
+
+ix) For all $a,b,c$ in $F\!$, we have $a(b+c)=(ab)+(ac)$ and $(a+b)c=(ac)+(bc)$.
+[distributive law.  The second part is of course redundant by commutativity;
+it is required in the &ldquo;skew&rdquo; case (see below).]
+
+<p>
+
+From (ix) together with the additive properties follows the basic identity:
+
+<blockquote>
+For all $a$ in $F\!$, we have $a \times 0 = 0 \times a = 0$.
+</blockquote>
+
+<em>Proof</em>: apply the distributive law to $a(0+0)$ and $(0+0)a$,
+and use the fact that $0$ is the only solution of $x+x=x$.
+
+<p>
+
+Thus also:
+
+<blockquote>
+For all $a,b$ in $F\!$, we have $ab=0$ if and only if $a=0$ or $b=0$ (or both).
+</blockquote>
+
+<em>Proof</em>:
+If $a$ is nonzero, multiply $ab=0$ by $a^{-1}$ to conclude $b=0$.
+
+<p>
+
+That is, a field has no (nontrivial) zero divisors.
+
+<p>
+
+If $F$ satisfies all the field axioms
+except (viii), it is called a <em>skew field</em>;
+the most famous example is the <em>quaternions</em> of
+W.&nbsp;R.&nbsp;Hamilton (1805&ndash;1865).  Much of linear algebra can
+still be done over skew fields, but we shall not pursue this
+much, if at all, in Math&nbsp;55.
+
+<p>
+
+Note that (vi) is the only axiom using the multiplicative inverse.
+If we drop the existence of multiplicative inverses and axiom&nbsp;(vi),
+<em>as well as the condition</em>&nbsp;$0\neq1$,
+we obtain the structure of a commutative <em>ring</em> with unity.
+For example, $\bf Z$ is such a ring which is not a field.
+A ring may have nontrivial zero divisors (we shall see an example
+of this in class); if it does not, it is called a <em>domain</em>.
+
+<p>
+
+If we also drop axiom (viii) from the ring axioms, we have a
+ring with unity which need not be commutative.  An example is
+the set of the Hamilton quaternions $a+bi+cj+dk$
+whose coefficients $a,b,c,d$ are all integers.
+Curiously if we allow the coefficients to be either all integers
+or all <nobr>integers-plus-&frac12;</nobr> then we still get a ring,
+called the ring of
+<a href="http://en.wikipedia.org/wiki/Hurwitz_quaternion">Hurwitz
+quaternions</a>.
+
+<p>
+
+If $F$ is a ring that need not be a field, the notation
+$F^*$ means <b>not</b> $F-\{0\}$ but the set of
+(multiplicatively) invertible elements of&nbsp;$F\!$.
+So if $F$ <em>is</em> a field the two notations coincide.
+Whether or not $F$ is a field, $F^*$ is called the
+<em>multiplicative group</em> of&nbsp;$F\!$.
+(One sometimes also sees the equivalent term &ldquo;unit group&rdquo;,
+because the invertible elements of a ring are called its &ldquo;units&rdquo;.)
+You should verify that it is indeed a group.  For example,
+the multiplicative group in the ring of Hamilton quaternions with
+integer coefficients consists of the 8 elements $\pm 1,\pm i, \pm j, \pm k$;
+it is known as the &ldquo;quaternion group&rdquo;.
+How large is the unit group of the Hurwitz quaternions?
+
+
+<HR>
+
+A <em>vector space</em> over a field $F$ is an additive
+group $V$ (the &ldquo;vectors&rdquo;)
+together with a function (&ldquo;scalar multiplication&rdquo;)
+taking a field element (&ldquo;scalar&rdquo;) and a vector to a vector,
+as long as this function satisfies the axioms
+
+<UL>
+<LI> $1*v = v$ for all $v$ in $V$ [so $1$ remains a multiplicative identity],
+<LI> for all scalars $a,b$ and all vectors $u,v$ we have
+$a(u+v)=au+av$ and $(a+b)u=au+bu$ [distributive properties],
+<LI> for all scalars $a,b$ and all vectors $v$ we have $a(bv)=(ab)v$
+[associative property].
+</UL>
+
+[If $F$ is a skew field, there are two kinds of vector spaces,
+depending on whether scalar multiplication is
+&ldquo;from the left&rdquo; or &ldquo;from the right&rdquo;;
+the distinction affects the associative law: does multiplying a vector
+first by $b$ and then by $a$ amount to multiplying by $ab$ or $ba$?
+The former would be indicated by multiplying from the left;
+the latter, from the right.  Even if you don&rsquo;t much care about
+linear algebra over skew fields, you&rsquo;ll encounter this issue soon
+when we compose linear transformations and other functions.]
+
+<p>
+
+Notice that these axioms do not use the multiplicative inverse;
+they can thus be used equally when $F$ is any ring
+(even a non-commutative ring), in which case
+the resulting structure is called a <em>module</em> over&nbsp;$F\!$.
+But multiplicative inverses are used to prove most of the basic theorems
+on vector spaces, so those theorems do not hold in the more general setting
+of modules; for instance one cannot speak of the dimension of a general
+module, even <nobr>over $\bf Z$</nobr>.

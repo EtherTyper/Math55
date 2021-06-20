@@ -1,0 +1,830 @@
+<TITLE>
+Math 55b: Honors Advanced Calculus and Linear Algebra (Spring 1999-2000)
+</TITLE>
+
+<BODY BACKGROUND="http:/~elkies/M55a.99/calabi.gif">
+
+<STRONG>
+Lecture notes for
+Math 55b: Honors Advanced Calculus and Linear Algebra
+(Spring 1999-2000)
+</STRONG>
+
+<P>
+
+If you find a mistake, omission, etc., please
+<A HREF="mailto:elkies@math.harvard.edu">let me know</A>
+by e-mail.
+
+<P>
+
+The <FONT COLOR="#B87800">orange</FONT COLOR> balls
+mark our <A HREF="#today">current location</A> in the course,
+and the <A HREF="#current_homework">current problem set</A>.
+
+<HR>
+
+<img src="http:/~elkies/redball.gif">
+To develop
+<STRONG>univariate differential calculus</STRONG>,
+we largely follow Rudin, chapter 5.
+
+<BLOCKQUOTE>
+
+As Rudin notes at the end of this chapter, differentiation can also
+be defined for vector-valued functions of one real variable.  As Rudin
+does not note, the vector space can even be infinite-dimensional,
+provided that it is normed; and the basic algebraic properties of the
+derivative listed in Thm. 5.3 (p.104) can be adapted to this generality,
+e.g. the formula <EM>(fg)'=f'g+fg'</EM> still holds if <EM>f,g</EM>
+take values in normed vector spaces <EM>U,V</EM> and multiplication
+is interpreted as a continuous bilinear map from <EM>U x V</EM>
+to some other normed vector space <EM>W</EM>.
+
+<P>
+
+NB The norm does not have to come from an inner product structure.
+Often this does not matter because we work in finite dimensional
+vector spaces, where all norms are equivalent, and changing to
+an equivalent norm does not affect the definition of the derivative.
+The one exception to this is Thm. 5.19 (p.113) where one needs the
+norm exactly rather than up to a constant factor.  This theorem still
+holds for a general norm but requires an additional argument.
+<A NAME="HahnBanach">
+The key ingredient of the proof is this: given a nonzero vector
+<EM>z</EM> in a vector space <EM>V</EM>, we want a continuous
+functional <EM>w</EM> on <EM>V</EM> such that ||<EM>w</EM>||=1
+and <EM>w(z)</EM>=|<EM>z</EM>|.  If <EM>V</EM> is an inner product
+space (finite-dimensional or not), the inner product with
+<EM>z</EM>/|<EM>z</EM>| provides such a functional <EM>w</EM>.
+But this approach does not work in general.  The existence of
+such <EM>w</EM> is usually proved as a corollary of the Hahn-Banach
+theorem.  When <EM>V</EM> is finite dimensional, <EM>w</EM> can
+be constructed by induction on the dimension of <EM>V</EM>.
+To deal with the general case one must also invoke the Axiom of Choice
+in its usual guise of Zorn's Lemma.
+
+</BLOCKQUOTE>
+
+<img src="http:/~elkies/redball.gif">
+
+We next start on
+<STRONG>univariate integral calculus</STRONG>,
+following Rudin, chapter 6.  The following gives
+some motivation for the definitions there.
+(And yes, it's the same Riemann who gave number theorists
+like me the Riemann zeta function and the Riemann hypothesis.)
+
+<BLOCKQUOTE>
+
+The Riemann-sum approach to integration goes back to the
+``method of exhaustion'' of classical Greek geometry,
+in which the area of a plane figure (or the volume
+of a region in space) is bounded below and above
+by finding subsets and supersets that are finite unions
+of disjoint rectangles (or boxes).  The lower and upper
+Riemann sums adapt this idea to the integrals of functions
+which may be negative as well as positive (one of the
+weaknesses of geometric Greek mathematics is that the
+ancient Greeks had no concept of negative quantities
+-- nor, for that matter, of zero).
+<A NAME="quadrature">
+You may have encountered the quaint technical term ``quadrature'',
+used in some contexts as a synonym for ``integration''.
+This too is an echo of the geometrical origins of integration.
+``Quadrature'' literally means ``squaring'', meaning not
+``multiplying by itself'' but ``constructing a square of
+the same size as'', which is equivalent to ``finding the area of''
+-- cf. the phrase ``squaring the circle''.  For instance,
+Greek geometry contains a theorem equivalent to the
+integration of <EM>x</EM><SUP>2</SUP><EM>dx</EM>; this
+result is called the ``quadrature of the parabola''.
+The proof is tantamount to the evaluation of lower and
+upper Riemann sums for the integral of
+<EM>x</EM><SUP>2</SUP><EM>dx</EM>.
+
+<P>
+
+An alternative explanation of the upper and lower Riemann sums
+is that they arise by repeated application of the following two
+axioms describing the integral:
+<UL>
+<LI> For any <EM>a,b,c</EM> (with <EM>a < b < c</EM>), the integral
+of a function from <EM>a</EM> to <EM>c</EM> is the sum of its integrals
+from <EM>a</EM> to <EM>b</EM> and from <EM>b</EM> to <EM>c</EM>;
+<LI> If a function <EM>f</EM> on [<EM>a,b</EM>] takes values in
+[<EM>m,M</EM>] then its integral from <EM>a</EM> to <EM>b</EM>
+is in [<EM>m</EM>(<EM>b-a</EM>), <EM>M</EM>(<EM>b-a</EM>)]
+(again assuming <EM>a < b</EM>).
+</UL>
+The latter axiom is a consequence of the following two: the integral of
+a constant function from <EM>a</EM> to <EM>b</EM> is that constant
+times the length <EM>b-a</EM> of the interval [<EM>a,b</EM>]; and if
+<EM>f</EM><=<EM>g</EM> on some interval then the integral of <EM>f</EM>
+over that interval does not exceed the integral of <EM>g</EM>.  Note
+that again all these axioms arise naturally from an interpretation
+of the integral as a ``signed area''.
+
+<P>
+
+Recall the ``integration by parts'' identity: <EM>fg</EM>
+is the integral of <EM>f dg + g df</EM>.  The Stieltjes integral
+is a way of making sense of this identity even when <EM>f</EM>
+and/or <EM>g</EM> is not continuously differentiable.  To be
+sure, some hypotheses on <EM>f</EM> and <EM>g</EM> must still
+be made for the Stieltjes integral of <EM>f dg</EM> to make sense.
+Rudin specifies one suitable system of such hypotheses.
+
+<P>
+
+Here's a version of Riemann-Stieltjes integrals that works cleanly
+for integrating bounded functions from [<EM>a</EM>,<EM>b</EM>]
+to any complete normed vector space:
+<A HREF="http:/~elkies/M55b.99/vint.pdf">vint.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/vint.ps">vint.ps</A>.
+
+<P>
+
+<EM>Riemann-Stieltjes integration by parts</EM>: Suppose both
+<EM>f</EM> and <EM>g</EM> are increasing functions on
+[<EM>a,b</EM>].  For any partition
+<EM>a = x</EM><SUB>0</SUB></EM> < ... < <EM>x<SUB>n</SUB> = b </EM>
+of the interval, write 
+<EM>f</EM>(<EM>b</EM>)<EM>g</EM>(<EM>b</EM>)
+- <EM>f</EM>(<EM>a</EM>)<EM>g</EM>(<EM>a</EM>)
+as the telescoping sum of
+<EM>f</EM>(<EM>x<SUB>i</SUB></EM>)<EM>g</EM>(<EM>x<SUB>i</SUB></EM>) -
+<EM>f</EM>(<EM>x</EM><SUB><EM>i</EM>-1</SUB>)<EM>g</EM>(<EM>x</EM><SUB><EM>i</EM>-1</SUB>)
+from <EM>i</EM>=1 to <EM>n</EM>.  Now rewrite the <EM>i</EM>-th summand
+as
+<EM>f</EM>(<EM>x<SUB>i</SUB></EM>) (<EM>g</EM>(<EM>x<SUB>i</SUB></EM>)-<EM>g</EM>(<EM>x</EM><SUB><EM>i</EM>-1</SUB>)) +
+<EM>g</EM>(<EM>x</EM><SUB><EM>i</EM>-1</SUB>) (<EM>f</EM>(<EM>x<SUB>i</SUB></EM>)-<EM>f</EM>(<EM>x</EM><SUB><EM>i</EM>-1</SUB>)).
+[Naturally it is no accident that this identity resembles the
+one used in the familiar proof of the formula for the derivative of
+<EM>fg</EM>!]  Summing this over <EM>i</EM> yields the upper
+Riemann-Stieltjes sum for the integral of <EM>f dg</EM> plus
+the lower R.-S. sum for the integral of <EM>g df</EM>.  Therefore:
+if one of these integrals exists, so does the other, and their sum is
+<EM>f</EM>(<EM>b</EM>)<EM>g</EM>(<EM>b</EM>)
+- <EM>f</EM>(<EM>a</EM>)<EM>g</EM>(<EM>a</EM>).  [Cf. Rudin, page 141,
+Exercise 17.]
+
+</BLOCKQUOTE>
+
+<img src="http:/~elkies/redball.gif">
+
+Most of <STRONG>Chapter 7</STRONG> of Rudin we've covered already
+in the 55a lectures and problem sets.  For more counterexamples
+along the lines of the first section of that chapter, see
+<EM>Counterexamples in Analysis</EM> by B.R.Gelbaum and J.M.H.Olsted --
+there are two copies in the science center library (QA300.G4).
+After covering a few odds and ends from this chapter, we'll proceed to
+<STRONG>power series</STRONG> and the exponential and logarithmic
+functions in <STRONG>Chapter 8</STRONG>; we'll use these to derive the
+binomial theorem for arbitrary exponents.  This will give us a way to
+simplify a key ingredient in the
+<STRONG>Stone-Weierstrass theorem</STRONG>,
+which is the one major result of Chapter 7 we haven't seen yet.
+We postpone discussion of Euler's Beta and Gamma integrals
+(also in Chapter 8) so that we can use multivariate integration to
+give a more direct proof of the formula relating them.
+
+<P>
+
+The result mentioned several times in our Feb.14 meeting re the
+convergence of alternating series is stated and proved on pages
+70-71 of Rudin (Theorem 3.42).
+
+<P>
+
+The original Weierstrass approximation theorem (7.26 in Rudin)
+can be reduced to the uniform approximation of the single function
+|<EM>x</EM>| on [-1,1].  From this function we can construct an
+arbirtrary piecewise linear continuous function, and such P.L.
+functions uniformly approximate any continuous function on a
+closed interval.  To get at |<EM>x</EM>|, we'll rewrite it as
+[1-(1-<EM>x</EM><SUP>2</SUP>)]<SUP>1/2</SUP>, and use the
+power series for (1-<EM>X</EM>)<SUP>1/2</SUP>.  See the first part of
+exercise 22 for chapter 8, on p.201, for this power series (and
+more generally for the power series for
+(1-<EM>X</EM>)<SUP><EM>a</EM></SUP>).
+We need (1-<EM>X</EM>)<SUP>1/2</SUP> to be approximated by its
+power series uniformly on the <EM>closed</EM> interval [-1,1]
+(or at least [0,1]); but fortunately this too follows from the proof
+of Abel's theorem (8.2, pages 174-5).  Actually this is a subtler
+result than we need, since the <EM>x<SUP>n</SUP></EM> coefficient
+of the power series for (1-<EM>X</EM>)<SUP>1/2</SUP> is negative
+for every <EM>n</EM>>0.  If a power series in <EM>X</EM> has
+radius of convergence 1 and all but finitely many of its nonzero
+coefficients have the same sign, then it is easily shown that the sum
+of the coefficients converges if and only if <EM>f</EM>(<EM>X</EM>) has
+a finite limit as <EM>X</EM> approaches 1, in which case the sum
+equals that limit and the power series converges uniformly on [0,1].
+That's all we need because clearly (1-<EM>X</EM>)<SUP>1/2</SUP>
+extends to a continuous function on [0,1].  (For an alternative approach
+to uniformly approximating |<EM>x</EM>|, see exercise 23 on p.169.)
+
+<P>
+
+An explicit upper bound of 4 on Pi can be obtained by calculating
+cos(2) < 1 - 2^2/2! + 2^4/4! = -1/3 < 0.  For much better estimates,
+integrate (<EM>x-x</EM><SUP>2</SUP>)<SUP>4</SUP>
+<EM>dx</EM>/(<EM>x</EM><SUP>2</SUP>+1) from 0 to 1 and note that
+0 < 1/(<EM>x</EM><SUP>2</SUP>+1) <= 1.  :-)
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+
+We next begin <STRONG>multivariate differential calculus</STRONG>,
+starting at the middle of Rudin Chapter 9 (since the first part
+of that chapter is for us a review of linear algebra).  Again,
+Rudin works with functions from open subsets of
+<STRONG>R</STRONG><SUP><EM>n</EM></SUP>
+to <STRONG>R</STRONG><SUP><EM>m</EM></SUP>,
+but must of the discussion works equally well with the target space
+<STRONG>R</STRONG><SUP><EM>m</EM></SUP> replaced by an arbitrary
+normed vector space <EM>V</EM>.  As in the
+<A HREF="#HahnBanach">univariate case</A>,
+proving the Mean Value Theorem in the multivariate context
+(Theorem 9.19) requires either that <EM>V</EM> have an inner-product
+norm, or the use of the Hahn-Banach theorem
+to construct suitable functionals on <EM>V</EM>.  Once this is done,
+the key Theorem 9.21 can also be proved for functions to <EM>V</EM>,
+and without first doing the case <EM>m</EM>=1.  To do this,
+first prove the result in the special case when each
+<EM>D<SUB>j</SUB> f</EM>(<STRONG>x</STRONG>)
+vanishes; then reduce to this case by subtracting from
+<EM>f</EM> the linear map from <STRONG>R</STRONG><SUP><EM>n</EM></SUP>
+to <EM>V</EM> indicated by the partial derivatives
+<EM>D<SUB>j</SUB> f</EM>(<STRONG>x</STRONG>).
+
+<P>
+
+The <EM>Inverse function theorem</EM> (9.24) is a special case
+of the <EM>Implicit function theorem</EM> (9.28), and its
+proof amounts to specializing the proof of the implicit function
+theorem.  But Rudin proves the Implicit theorem as a special
+case of the Inverse theorem, so we have to do Inverse first.
+(NB of course for these two theorems we do
+need that our target space is finite-dimensional.)
+The proof of the second part of the implicit function theorem,
+which asserts that the implicit function <STRONG>g</STRONG> not only
+exists but is also continuously differentiable with derivative
+at <STRONG>b</STRONG> given by formula (58) (p.225), can be done
+more easily using the chain rule, since <STRONG>g</STRONG> has been
+constructed as the composition of the following three functions:
+first, send <STRONG>y</STRONG> to (<STRONG>0,y</STRONG>); then,
+apply the inverse function <STRONG>F</STRONG><SUP>-1</SUP>;
+finally, project the resulting vector (<STRONG>x,y</STRONG>)
+to <STRONG>x</STRONG>.  The first and last of these three functions
+are linear, so certainly <EM>C</EM><SUP>1</SUP>; and the continuous
+differentiability of <STRONG>F</STRONG><SUP>-1</SUP> comes from
+the inverse function theorem.
+
+<P>
+
+Here's an approach to <EM>D<SUB>ij</SUB>=D<SUB>ji</SUB></EM>
+that works for a <EM>C</EM><SUP>2</SUP> function to an arbitrary
+normed space.  As in Rudin (see p.235) we reduce to the case of
+a function of two variables, and define <EM>u</EM> and Delta.
+Assume first that <EM>D</EM><SUB>21</SUB> <EM>f</EM> vanishes
+at (<EM>a,b</EM>).  Then use the Fundamental Theorem of Calculus
+to write Delta(<EM>f,Q</EM>) as as the integral of
+<EM>u'</EM>(<EM>t</EM>)<EM>dt</EM> on [<EM>a</EM>,<EM>a+h</EM>],
+and then write <EM>u'</EM>(<EM>t</EM>) as an integral of 
+<EM>D</EM><SUB>21</SUB> <EM>f</EM>(<EM>t,b+u</EM>)<EM>du</EM>
+on [0,<EM>k</EM>].  Conclude that
+<EM>u'</EM>(<EM>t</EM>)=<EM>o</EM>(<EM>k</EM>)
+and thus that Delta(<EM>f,Q</EM>) / <EM>hk</EM> approaches zero.  
+Now apply this to the function
+<EM>f</EM>-<EM>xyD</EM><SUB>21</SUB> <EM>f</EM>(<EM>x,y</EM>)
+to see that in general Delta(<EM>f,Q</EM>) / <EM>hk</EM> approaches
+<EM>D</EM><SUB>21 </SUB><EM>f</EM>(<EM>x,y</EM>).  Do the same
+in reverse order to conclude that
+<EM>D</EM><SUB>21</SUB> <EM>f</EM>(<EM>x,y</EM>)=<EM>D</EM><SUB>12</SUB> <EM>f</EM>(<EM>x,y</EM>).
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+
+The next topic is <STRONG>multivariate integral calculus</STRONG>,
+covered in Chapter 10.  After going over the basic definitions and
+properties through the change-of-variable formula, we take a detour
+back to Chapter 8 to treat Euler's <STRONG>Beta</STRONG> and
+<STRONG>Gamma</STRONG> functions, which are a fundamental tool
+in the evaluation of definite integrals and even in many identities
+and asymptotic formulas which do not seem to involve integration at all.
+The canonical approach to the identity
+<P>
+<CENTER>
+Beta(<EM>x,y</EM>) = Gamma(<EM>x</EM>) Gamma(<EM>y</EM>) / Gamma(<EM>x+y</EM>)
+</CENTER>
+<P>
+is through change of variables in a double integral, as outlined in
+the exercises from Chapter 10 assigned for this week; but the approach
+in Chapter 8 via logarithmic convexity and the Bohr-Mollerup theorem
+has its own virtues: it yields some integral identities which cannot 
+be obtained directly from double integration, as well as the product
+formula from which follow such results as
+<P>
+<CENTER>
+Gamma(<EM>x</EM>) Gamma(1-<EM>x</EM>) = Pi / sin(Pi*<EM>x</EM>).
+</CENTER>
+<P>
+This last is also the only reasonable way -- or at least the
+only one I know -- to evaluate Beta(<EM>x</EM>,1-<EM>x</EM>)
+without complex analysis.
+
+<P>
+
+Rudin uses a fact about convex functions that is only presented
+as an exercise earlier in the book (p.100, #23).  Namely:
+let <EM>f</EM> be a convex function on some interval <EM>I</EM>,
+and consider <EM>s</EM>(<EM>x</EM>, <EM>y</EM>) :=
+(<EM>f</EM>(<EM>x</EM>)-<EM>f</EM>(<EM>y</EM>)) / (<EM>x-y</EM>)
+as a function on the set of (<EM>x</EM>, <EM>y</EM>) in
+<EM>I</EM> x <EM>I</EM> with <EM>x</EM> > <EM>y</EM>;
+then <EM>s</EM> is an increasing function of both variables.
+The proof is fortunately not hard.  For instance, to prove that if
+<EM>x</EM> > <EM>y'</EM> > <EM>y</EM> then
+<EM>s</EM>(<EM>x</EM>, <EM>y'</EM>) > <EM>s</EM>(<EM>x</EM>, <EM>y</EM>),
+write <EM>y'</EM> as <EM>px</EM>+<EM>qy</EM> and calculate that
+<EM>s</EM>(<EM>x</EM>, <EM>y'</EM>) > <EM>s</EM>(<EM>x</EM>, <EM>y</EM>)
+is equivalent to the usual convexity condition.  The case
+<EM>x</EM> > <EM>x'</EM> > <EM>y</EM> works in exactly the same way.
+
+<P>
+
+By the way, the rather obscure integration by parts in Rudin, p.194
+is not necessary.  A straightfoward choice of ``parts'' yields
+<P>
+<CENTER>
+<EM>x</EM> B(<EM>x</EM>, <EM>y</EM>+1) =
+<EM>y</EM> B(<EM>x</EM>+1, <EM>y</EM>) ;
+</CENTER>
+<P>
+This may seem to go in a useless direction,
+but the elementary observation that
+<P>
+<CENTER>
+B(<EM>x</EM>, <EM>y</EM>) =
+B(<EM>x</EM>, <EM>y</EM>+1) + B(<EM>x</EM>+1, <EM>y</EM>)
+</CENTER>
+<P>
+recovers the recursion (97).
+
+In addition to the trigonometric definite integrals noted by Rudin
+(formula 98), Beta functions also turn up in the evaluation of
+the definite integral of
+<EM>u<SUP> a</SUP> du</EM> /
+(1+<EM>u<SUP> b</SUP></EM>)<SUP><EM>c</EM></SUP> over (0,infinity):
+let <EM>t</EM> = <EM>u<SUP> b</SUP></EM> / (1+<EM>u<SUP> b</SUP></EM>).
+What is the value of that integral?  Can you obtain in particular
+the formula Pi / (<EM>b</EM> sin(<EM>a</EM> Pi/<EM>b</EM>)) for the
+special case <EM>c</EM>=1?
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+
+We're back to Chapter 10 now, setting up the machinery of
+differential forms that is the framework for the higher-dimensional
+generalization of the Fundamental Theorem of Calculus that comprises
+the divergence, Stokes, and Green theorems and much else besides.
+
+<P>
+
+<BLOCKQUOTE>
+
+<img src="http:/~elkies/purpball.gif"> Here's an introduction to
+the underlying algebraic structure of <EM>exterior algebra</EM>, in
+<A HREF="http:/~elkies/M55b.99/exterior.ps">.ps</A> or
+<A HREF="http:/~elkies/M55b.99/exterior.pdf">.pdf</A> format.
+
+</BLOCKQUOTE>
+
+The basic formula (92) that yields generalized Stokes (formula 91)
+is even more easily proved for oriented <EM>k</EM>-cells instead of
+<EM>k</EM>-simplices, since each term of <EM>d</EM>(omega) on the
+left-hand side of the identity yields the sum of 2 of the 2<EM>k</EM>
+terms of the boundary occurring on the right-hand side.  Naturally the
+signs that enter when one does it for a <EM>k</EM>-simplex are the
+reason we put the (-1)<SUP><EM>j</EM></SUP> into the definition of
+the boundary (formula 85).  One interpretation of generalized Stokes
+is that the operators <EM>d</EM> on differential forms, and boundary
+on chains, are adjoints relative to the pairing given by integration.
+In fact just as <EM>d</EM><SUP> 2</SUP>=0 we have
+(boundary)<SUP>2</SUP>=0; this is easy to show, and further
+bolsters our confidence in our choice of signs in formula 85.
+Just as we defined the <EM>k</EM>-th cohomology of <EM>E</EM>
+as the quotient of the closed <EM>k</EM>-forms on <EM>E</EM>
+by the exact <EM>k</EM>-forms, we can define the <EM>k</EM>-th
+<EM>homology H<SUB>k</SUB></EM>(<EM>E</EM>) to be the quotient
+of the closed <EM>k</EM>-chains in <EM>E</EM> by the boundaries
+of (<EM>k</EM>+1)-chains, where as you might expect a chain is
+said to be ``closed'' if its boundary is a trivial chain (this
+generalizes the notion of a ``closed curve'').  For instance,
+<EM>H</EM><SUB>0</SUB>(<EM>E</EM>) has one generator for each
+component of <EM>E</EM>; when <EM>k</EM> is positive,
+<EM>H<SUB>k</SUB></EM>(<EM>E</EM>) is trivial if <EM>E</EM> is convex;
+and <EM>H</EM><SUB>1</SUB>(<STRONG>R</STRONG><SUP>2</SUP>-{0}) is
+one-dimensional, generated by a circle around the origin.  Moreover,
+thanks to generalized Stokes, integration yields a pairing of
+<EM>H<SUB>k</SUB></EM>(<EM>E</EM>) with
+<EM>H<SUP> k</SUP></EM>(<EM>E</EM>).  You will learn in
+differential topology that this pairing often identifies each of these
+two spaces with the other's dual.  You can already check that this
+holds for the punctured plane <STRONG>R</STRONG><SUP>2</SUP>-{0}.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+The following remarks may help explain how come a function from
+an open set in <STRONG>R</STRONG><SUP>3</SUP>
+to <STRONG>R</STRONG><SUP>3</SUP> yields both a 1-form and a 2-form
+(formulas 124, 125 on page 281).
+In general, once we choose a generator for the <EM>n</EM>-th
+exterior power of an <EM>n</EM>-dimensional vector space <EM>V</EM>
+over some field (remember that this top exterior power is
+1-dimensional), the exterior product yields for each <EM>k</EM>
+a pairing between the <EM>k</EM>-th and (<EM>n-k</EM>)-th exterior
+powers of <EM>V</EM>, which identifies each of the two spaces with
+the other's dual.  In our case <EM>n</EM>=3 and <EM>k</EM>=1, so
+we identify the dual of <STRONG>R</STRONG><SUP>3</SUP> with its
+exterior square.  But, once we have chosen an inner product structure
+on <STRONG>R</STRONG><SUP>3</SUP>, we have identified it with its
+own dual; and once we also give <STRONG>R</STRONG><SUP>3</SUP> an
+orientation, we get a generator for its top exterior power, namely
+<EM>e</EM><SUB>1</SUB>^<EM>e</EM><SUB>2</SUB>^<EM>e</EM><SUB>3</SUB>
+for any positively oriented orthonormal basis
+(<EM>e</EM><SUB>1</SUB>, <EM>e</EM><SUB>2</SUB>, <EM>e</EM><SUB>3</SUB>).
+So, we have an identification of <STRONG>R</STRONG><SUP>3</SUP> with
+its exterior square, and thus can naturally identify the 1- and 2-forms
+on any open set in <STRONG>R</STRONG><SUP>3</SUP> with functions from
+that set to <STRONG>R</STRONG><SUP>3</SUP>.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+
+We're about to start on <STRONG>Fourier analysis</STRONG>, using
+K&ouml;orner's book (a bit of this material can also be found in
+Chapter 8 of Rudin).  The natural context for Fourier analysis
+is the notion of a <STRONG>Hilbert space</STRONG>.  The one strange
+choice K&ouml;rner makes is to suppress this notion entirely
+(Hilbert's name does not even appear in the index!), as if to
+prove that all of Fourier analysis can be done without Hilbert
+spaces, as Axler set out to do all of linear algebra without
+determinants.  But doing Fourier without Hilbert seems perverse.
+We shall thus begin with an introduction to the structure of
+Hilbert spaces, in particular separable ones.  The first handout
+(<A HREF="http:/~elkies/M55b.99/hilbert1.pdf">hilbert1.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/hilbert1.ps">hilbert1.ps</A>)
+gives the definition, basic examples, and the fundamental notion
+of an orthonormal topological basis.  The second handout
+(<A HREF="http:/~elkies/M55b.99/hilbert2.pdf">hilbert2.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/hilbert2.ps">hilbert2.ps</A>)
+introduces separability, and the behavior of orthogonal complements,
+projections, and duality for a Hilbert space.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+With what we know already, we can give another kind of proof that
+the complex exponentials are an ontb for L<SUB>2</SUB>([0,1]):
+their linear span is a <STRONG>C</STRONG>-subalgebra of
+<EM>C</EM>([0,1]) which separates points and is ``self-adjoint''
+(closed under complex conjugation); therefore, by the complex
+Stone-Weierstrass theorem (Thm. 7.33 on page 165 of Rudin), it
+is dense in <EM>C</EM>([0,1]) in the sup metric.  [In fact
+Rudin's introduction to the theory of Fourier series in Chapter 8
+uses this argument; see Thm. 8.15 on page 190.]
+Thus <EM>a fortiori</EM> that linear span is dense in <EM>C</EM>([0,1])
+also relative to the L<SUB>2</SUB> metric, and therefore
+is dense in L<SUB>2</SUB>([0,1]), as desired.  Rudin only deals
+with Fourier series in one dimension, but the same method also
+works for Fourier series on <STRONG>T</STRONG><SUP><EM>n</EM></SUP>
+for <EM>n</EM>>1.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+We'll proceed by developing Fourier analysis starting with
+the following chapters of K&ouml;rner:
+1 (Introduction),
+2 (Statement and proof of Fej&eacute;r's theorem,
+3 (Weyl equidistribution),
+9,15,16,18 (some results on convergence and divergence of Fourier series).
+Chapters 4 through 6 contain material most of which we have seen
+already, but the second part of Chapter 6 may still surprise you.
+You might also be interested in Chapter 19, which states without
+proof several results much more precise (though necessarily much
+harder) than is done in Chapter 18.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+Re Chapter 3: Weyl showed more generally the following theorem:
+Let
+<EM>T</EM><SUB>1</SUB>, <EM>T</EM><SUB>2</SUB>, <EM>T</EM><SUB>3</SUB>,...
+be real numbers mod 2*pi, i.e. elements of <STRONG>T</STRONG>.  Then
+the following are equivalent:
+<UL>
+<LI> For all <EM>a,b</EM> with 0 < <EM>a</EM> < <EM>b</EM> < 1,
+the number of <EM>t<SUB>r</SUB></EM>
+with <EM>r</EM> <= </EM>n</EM> lying in 2*pi[<EM>a,b</EM>]
+is asymptotic to (<EM>b-a)</EM> <EM>n</EM>;
+<LI> For any continuous function <EM>f</EM> from
+<STRONG>T</STRONG> to <STRONG>C</STRONG>,
+as <EM>n</EM> grows to infinity the average of
+<EM>f</EM>(<EM>t<SUB>r</SUB></EM>) over <EM>r</EM> <= </EM>n</EM>
+approaches the average of <EM>f</EM> over <STRONG>T</STRONG>
+<LI> For each nonzero integer <EM>s</EM>, the average of
+<EM>e<SUP>ist<SUB>r</SUB></SUP></EM> approaches 0
+as <EM>n</EM> grows to infinity.
+</UL>
+When these equivalent conditions hold, the sequence
+{<EM>t<SUB>r</SUB></EM>} is said to be ``equidistributed mod 2*pi''.
+Thus the proof of Thm. 3.1 is in effect the application of this
+criterion to prove the equidistribution mod 1 of the sequence of
+integer multiples of a given irrational.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+Re Chapter 18: As noted in class, what's really going on here is the
+following result: Let <EM>V,W</EM> be normed vector spaces, with
+<EM>V</EM> complete.  Then any weakly convergent sequence
+{<EM>T<SUB>n</SUB></EM>} in <EM>B</EM>(<EM>V,W</EM>) must be bounded;
+in fact if {<EM>T<SUB>n</SUB></EM>} is unbounded then there are vectors
+<EM>v</EM> in <EM>V</EM> such that |<EM>T<SUB>n</SUB>v</EM>|
+approaches infinity.  (Recall that {<EM>T<SUB>n</SUB></EM>} is
+said to <EM>converge weakly</EM> to a linear transformation <EM>T</EM>
+if <EM>T<SUB>n</SUB>v</EM> approaches <EM>Tv</EM> for all <EM>v</EM> in
+<EM>V</EM> -- in which case of course {<EM>T<SUB>n</SUB>v</EM>}
+is bounded.)
+
+<P>
+
+To prove this result: Assume on the contrary that
+{<EM>T<SUB>n</SUB></EM>} is unbounded.  Without loss of generality
+(i.e. by passing to a subsequence), assume that
+||<EM>T</EM><SUB>1</SUB>||>1 and, for each <EM>n</EM>, we have
+||<EM>T<SUB>n</SUB></EM>|| > 100 ||<EM>T</EM><SUB><EM>n</EM>-1</SUB>||.
+let <EM>v<SUB>n</SUB></EM> be a vector of norm 1 such that
+|<EM>T<SUB>n</SUB>v<SUB>n</SUB></EM>| > ||<EM>T<SUB>n</SUB></EM>|| / 2.
+Now define <EM>v</EM> as a sum of a convergent sequence thus:
+<EM>u</EM><SUB>0</SUB>=0; given <EM>u<SUB>n</EM></SUB>,
+choose for <EM>u</EM><SUB><EM>n</EM>+1</SUB></EM> whichever of
+<EM>u<SUB>n</SUB></EM>+10<SUP><EM>-n</EM></SUP><EM>v<SUB>n</SUB></EM>
+or
+<EM>u<SUB>n</SUB></EM>-10<SUP><EM>-n</EM></SUP><EM>v<SUB>n</SUB></EM>
+makes |<EM>T<SUB>n</SUB>u</EM><SUB><EM>n</EM>+1</SUB>| larger; by the
+triangle inequality, |<EM>T<SUB>n</SUB>v</EM><SUB><EM>n</EM>+1</SUB>|
+is then at least ||<EM>T<SUB>n</SUB></EM>||/(2*10<SUP><EM>n</EM></SUP>).
+Let <EM>v</EM> be the limit of <EM>u<SUB>n</EM></SUB>.  Then
+|<EM>T<SUB>n</SUB>v</EM>| is at least
+(1/2-1/9)10<SUP><EM>-n</EM></SUP>||<EM>T<SUB>n</SUB></EM>||,
+so approaches infinity as claimed.
+[Except for the needlessly large factors of 100 and 10,
+this is essentially what happens in Chapter 18 for the sequence
+of functionals on <EM>C</EM>([0,1]) taking <EM>f</EM> to
+<EM>S<SUB>n</SUB></EM>(<EM>f,t</EM>).]
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+Next on the menu: Chapters 40 and 41, on orthogonal polynomials and
+Gaussian <A HREF="#quadrature">quadrature</A>.  Unaccountably missing
+from the end of Chapter 40 is the following result, which
+I'll call ``Theorem 40.9'': let <EM>a,b,r,u<SUB>n</SUB></EM>
+be as in Theorem 40.8; then there is a ``three-term recurrence''
+<EM>u</EM><SUB><EM>n</EM>+1</SUB> =
+(<EM>A<SUB>n</SUB>t</EM>+<EM>B<SUB>n</SUB></EM>)<EM>u<SUB>n</SUB></EM>
+- <EM>C<SUB>n</SUB></EM><EM>u</EM><SUB><EM>n</EM>-1</SUB>,
+for some real scalars
+<EM>A<SUB>n</SUB> , B<SUB>n</SUB> , C<SUB>n</SUB></EM>.
+For instance, the existence of such a recurrence for the
+Tchebychev polynomials follows from the product formula for
+cos(<EM>nx</EM>)cos(<EM>x</EM>).  In general, the recurrence
+can be proved by comparing the expansions of (<EM>t u<SUB>n</SUB></EM>)
+as a linear combination of the <EM>u<SUB>m</SUB></EM> and
+(<EM>t u<SUB>m</SUB></EM>) as a linear combination of the
+<EM>u<SUB>n</SUB></EM>.  This method also gives explicitly formulas
+for <EM>A<SUB>n</SUB> , C<SUB>n</SUB></EM> (but not generally
+<EM>B<SUB>n</SUB></EM>) in terms of the leading coefficients
+and norms of the <EM>u<SUB>n</SUB></EM>.
+
+<P>
+
+All the results of Chapter 41 generalize directly to integration
+with respect to an arbitrary weight on a finite interval, using
+zeros of polynomials orthogonal with respect to that weight.
+Note too that Lemma 41.1 can also be obtained as a consequence
+of the fact that, over any field <EM>F</EM>, evaluation at
+<EM>n</EM> distinct field elements is a linear bijection from
+the polynomials of degree <<EM>n</EM> to <EM>F<SUP>n</SUP></EM>.
+This can be proved either computationally, as in K&ouml;rner,
+or from general linear-algebra facts together with the observation
+that the kernel of the map is zero.  The left-hand side (even with
+an arbitrary weight function) is a linear functional on that space,
+etc.
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+
+We're starting on discrete Fourier analysis, from chapters 98ff.
+in K&ouml;rner.  Fourier series, discrete Fourier analysis,
+and the Fourier transform (which we'll proceed to next) are
+special cases of <EM>Pontrjagin duality</EM>.  We shall not be
+able to develop Pontrjagin duality in anything like its full scope
+in 55b; even the basic theorems require detailed study of things like
+Haar measure that are normally not established until well into a
+graduate analysis course like Math 212.  But can still state some of
+the definitions and key theorems to suggest the framework into which
+the various Fourier variants fit.  Here's an
+<A HREF="http:/~elkies/M55b.99/pontrjagin.html">outline</A>.
+For another glimpse into the Pontrjagin framework,
+in the special case of finite abelian groups where
+everything can be stated and proved using only linear algebra,
+see Chapters 103-4 of the textbook.
+
+<P>
+
+In each of our Fourier settings, to pointwise multiply two
+functions on a group <EM>G</EM> we <EM>convolve</EM> their
+Fourier transforms, and vice versa (up to scalar multiplication).
+See Chapters 51, 52 for <EM>convolution</EM> on <STRONG>R</STRONG>
+and <STRONG>T</STRONG>.  Convolution on 
+<STRONG>Z</STRONG>/<EM>n</EM><STRONG>Z</STRONG>
+is defined in 97.7 and described in 97.8 on page 495.
+In general the convolution of two functions <EM>f,g</EM>
+is the function <EM>f*g</EM> whose value at any <EM>t</EM> is the
+sum/average/integral over <EM>x</EM> of
+<EM>f</EM>(<EM>t-x</EM>)<EM>g</EM>(<EM>x</EM>).  We encountered
+such things already in connection with the Dirichlet and
+Fej&eacute;r kernels; they will also be the key to our use
+of the fast Fourier transform (FFT, Chapter 98) to fast multiplication
+(Chapter 99).  Note that the behavior of Pontrjagin duality on
+subgroups is also an important ingerdient in the FFT, which
+separates even and odd integers mod 2<EM>N</EM>.
+
+<P>
+
+<A NAME="today">
+<img src="http:/~elkies/orangeball.gif">
+
+Our final topic is <EM>Fourier transforms</EM>, Section IV of the
+text.  We'll concentrate on the material in Chapters 46 (introduction,
+and Fej&eacute;r part I), 49 (conclusion of Fej&eacute;r, and some
+applications), 51 (convolution on <STRONG>R</STRONG>), and 60
+(the inversion formula).  Chapters 47 and 48 contain warnings
+and justifications of changing the order of integration that
+should be familiar and routine by now; you may want to read them
+for review purposes, but be aware that at least one typo is lurking
+(In Lemma 48.6 on page 234, <EM>f</EM> is a function not on
+<STRONG>R</STRONG> but on <STRONG>R</STRONG><SUP>2</SUP>).
+For that matter there are at least two typos in Ch.46: in Lemm 46.3
+we need <EM>f</EM> to satisfy the hypotheses of Lemma 46.2
+(integrability and absolute convergence), not 41.2; and on the
+top line of p.224, it's the continuity of <EM>f^</EM> that we need,
+not of <EM>f</EM>.  [Also, there's only one `m' in ``imitate''!]
+The end of Chapter 49 recommends attention to Lemma 50.2, which
+contains two important integral formulas.  Unfortunately
+K&ouml;rner proves them with complex analysis, which most of
+you probably don't know yet.  Fortunately 50.2(i) is also proved
+in Rudin (Example 9.43, pages 237-8), and 50.2(ii) will be easy
+once we have the inversion theorem of Chapter 60.  As a natural
+extension of the results of Chapter 51 we have Parseval's
+identity and an application to the behavior at infinity
+of Fourier transforms of integrable functions:
+<A HREF="http:/~elkies/M55b.99/parseval.pdf">parseval.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/parseval.ps">parseval.ps</A>.
+
+<HR>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p1.pdf">p1.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p1.ps">p1.ps</A>:
+First problem set: Univariate differential calculus
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p2.pdf">p2.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p2.ps">p2.ps</A>:
+Second problem set: Univariate integral calculus
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p3.pdf">p3.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p3.ps">p3.ps</A>:
+Third problem set: More univariate calculus, and Stone-Weierstrass
+
+<P>
+
+<BLOCKQUOTE>
+
+<img src="http:/~elkies/yellowball.gif"> About problem 9(ii):
+The trick is to integrate by parts max(2, <EM>n</EM><SUB>0</SUB>)
+times so that alpha and beta are replaced by continuous functions
+integrated against each of 1, <EM>x</EM>, <EM>x</EM><SUP>2</SUP>, etc.,
+and one can apply the result of 9(i).  Just make sure that at each
+iteration one uses the antiderivative that vanishes at <EM>x</EM>=1.
+
+</BLOCKQUOTE>
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p4.pdf">p4.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p4.ps">p4.ps</A>:
+Fourth problem set: Multivariate differential calculus
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p5.pdf">p5.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p5.ps">p5.ps</A>:
+Fifth problem set: Integration in
+<STRONG>R</STRONG><SUP><EM>k</EM></SUP>,
+and special functions
+
+<P>
+
+<BLOCKQUOTE>
+
+<img src="http:/~elkies/yellowball.gif"> The mystery numbers that
+show up in the final problem of the fifth problem set are essentially
+the <EM>Bernoulli</EM> and <EM>Euler numbers</EM>.  The Bernoulli
+numbers <EM>B<SUB>n</SUB></EM> were already introduced in the second
+problem set; they can also be defined by the generating function:
+<EM>t</EM> / (<EM>e<SUP>t</SUP></EM> - 1) is the sum of
+<EM>B<SUB>n</SUB> x<SUP>n</SUP></EM> / <EM>n</EM>!
+as <EM>n</EM> ranges from 0 to infinity.  The Euler numbers
+1, -1, 5, -61, 1385, -50521, ... are similarly generated by
+1/cosh(<EM>t</EM>).  They can also be obtained by evaluating the
+Bernoulli polynomials at 1/4.  All this will become much easier
+to explain once we develop the theory of Fourier series.
+
+</BLOCKQUOTE>
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p6.pdf">p6.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p6.ps">p6.ps</A>:
+Sixth problem set: Convexity and Euler's integrals
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p7.pdf">p7.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p7.ps">p7.ps</A>:
+Seventh problem set: Exterior algebra and differential forms
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p8.pdf">p8.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p8.ps">p8.ps</A>:
+Eighth problem set: Exterior algebra, differential forms, chains,
+and integration
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p9.pdf">p9.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p9.ps">p9.ps</A>:
+Ninth problem set:
+Life in Hilbert space, and a bit on Fourier and summability methods
+
+<P>
+
+<img src="http:/~elkies/redball.gif">
+<A HREF="http:/~elkies/M55b.99/p10.pdf">p10.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p10.ps">p10.ps</A>:
+Tenth problem set:
+Weyl, continued; differentiation of Fourier series;
+more Fourier applications
+
+<P>
+
+<A NAME="current_homework">
+<img src="http:/~elkies/orangeball.gif">
+<A HREF="http:/~elkies/M55b.99/p11.pdf">p11.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/p11.ps">p11.ps</A>:
+Eleventh problem set:
+Fourier variations
+(Orthogonal polynomials and discrete Fourier analysis)
+
+<P>
+
+<img src="http:/~elkies/greenball.gif">
+<A HREF="http:/~elkies/M55b.99/pp.pdf">pp.pdf</A>,
+<A HREF="http:/~elkies/M55b.99/pp.ps">pp.ps</A>:
+An assortment of practice problems
+

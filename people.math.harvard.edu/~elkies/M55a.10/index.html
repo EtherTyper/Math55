@@ -1,0 +1,1435 @@
+<TITLE>
+Math 55a: Honors Abstract Algebra (Fall 2010)
+</TITLE>
+
+<!--
+<BODY BACKGROUND="calabi.gif">
+-->
+<body bgcolor="#bbddff">
+
+<strong>
+Lecture notes for
+Math 55a: Honors Abstract Algebra
+(Fall 2010)
+</strong>
+
+<P>
+
+If you find a mistake, omission, etc., please
+<A HREF="mailto:elkies@math.harvard.edu">let me know</A>
+by e-mail.
+
+<P>
+
+The <FONT COLOR="#B87800">orange</FONT COLOR> balls
+mark our <A HREF="#today">current location</A> in the course,
+and the <A HREF="#current_homework">current problem set</A>.
+
+<HR>
+
+<img src="redball.gif">
+<A HREF="h1.pdf"><em>Ceci n'est pas un</em> Math 55a syllabus</A>
+
+<p>
+
+<img src="redball.gif">
+Tony Feng's section and office hours:
+<br>
+Section: Wednesdays (starting September 8), 4-5 PM, Science Center 103b
+<br>
+Office hours: Thursdays (starting September 9), 7-8 PM, Science Center 310
+<br>
+<strong>revised:</strong> now Thursdays 8-9 and 9-10, both in
+Science Center 411
+
+<p>
+
+<hr>
+
+<img src="orangeball.gif">
+at least in the beginning of the <strong>linear algebra</strong>
+unit, we'll be following the Axler textbook closely enough that
+supplementary lecture notes should not be needed.  Some important
+extensions/modifications to the treatment in Axler:
+
+<UL>
+<LI> [cf. Axler, p.3]
+Unless noted otherwise, <strong>F</strong> may be an arbitrary
+field, not only <strong>R</strong> or <strong>C</strong>.  The
+most important fields other than those of real and complex numbers
+are the field <strong>Q</strong> of rational numbers, and the
+finite fields <strong>Z</strong>/<em>p</em><strong>Z</strong>
+(<em>p</em> prime).  Other examples are the field
+<strong>Q</strong>(<em>i</em>) of complex numbers with rational
+real and imaginary parts; more generally,
+<strong>Q</strong>(<em>d</em><SUP>1/2</SUP>) for any nonsquare
+rational number <em>d</em>; the &ldquo;<em>p</em>-adic numbers&rdquo;
+<strong>Q</strong><SUB><em>p</em></SUB> (<em>p</em> prime),
+of which we'll say more when we study topology next term;
+and more exotic finite fields such as the 9-element field
+(<strong>Z</strong>/<em>3</em><strong>Z</strong>)(<em>i</em>).
+Here's a <A HREF="field.html">review</A>
+of the axioms for fields, vector spaces, and related mathematical
+structures
+ [<strong>corrected</strong> 7.ix.10: I somehow forgot to include
+ the associative property among the vector space axioms )-:]
+
+<LI> [cf. Axler, p.22] We define the <em>span</em> of an arbitrary subset
+<em>S</em> of (or tuple in) a vector space <em>V</em> as follows:
+it is the set of all (finite) linear combinations
+<em>a</em><SUB>1</SUB><em>v</em><SUB>1</SUB> + &hellip; +
+<em>a<SUB>n</SUB>v<SUB>n</SUB></em>
+with each <em>v<SUB>i</SUB></em> in <em>S</em> and each
+<em>a<SUB>i</SUB></em> in <em>F</em>.  This is still the smallest
+vector subspace of <em>V</em> containing <em>S</em>.  In particular,
+if <em>S</em> is empty, its span is by definition {0}.  We do
+<em>not</em> require that <em>S</em> be finite.
+
+<LI> Unlike Axler, we discuss &ldquo;quotient vector spaces&rdquo;
+(and even quotient modules) explicitly and introduce them early.
+If <em>N</em> is a submodule of the module <em>M</em>
+over some ring&nbsp;<em>A</em>,
+the <em>quotient module</em> <em>M/N</em> consists of all
+equivalence classes in <em>M</em>, where we define
+the equivalence <nobr>relation &ldquo;&sim;&rdquo;</nobr> to mean that
+<nobr><em>m</em>&sim;<em>m'</em></nobr> if and only if
+<nobr><em>m&minus;m'</em></nobr> is contained in&nbsp;<em>N</em>.
+One must then check that the module operations inherited
+from&nbsp;<em>M</em> do give <em>M/N</em> the structure of a
+well-defined <nobr><em>A</em>-module.</nobr>
+[&ldquo;Well-defined&rdquo; means that the operations
+do not depend on the choice of representative
+from an equivalence class.]
+A familiar example is the cyclic finite group
+<nobr><strong>Z</strong>/<em>n</em><strong>Z</strong></nobr>
+(recall that <nobr>abelian group=<strong>Z</strong>-module).</nobr>
+In the case of vector spaces, the dimension of a quotient vector space
+<em>V/U</em> is called the <em>codimension</em> in&nbsp;<em>V</em>
+of its subspace&nbsp;<em>U</em>; if <em>V</em> is finite-dimensional,
+this codimension equals <nobr>dim(<em>V</em>)&thinsp;&minus;&thinsp;dim(<em>U</em>)</nobr>.
+
+<LI> Warning: in general the space <em>F</em>[<em>X</em>]
+<nobr>(a.k.a. <em>P</em>(<em>F</em>))</nobr>
+of polynomials in <em>X</em>, and its subspaces
+<nobr><em>P</em><sub><em>n</em></sub>(<em>F</em>)</nobr>
+of polynomials of degree at most <em>n</em>,
+might not be naturally identified
+with a subspace of the space <em>F<sup>F</sup></em> of
+functions from <em>F</em> to itself.  The problem is that
+two different polynomials may yield the same function.
+For example if <em>F</em> is the field of 2 elements
+the polynomial <nobr><em>X</em><sup>2</sup>-<em>X</em></nobr>
+gives rise to the zero function.  In general different polynomials
+can represent the same function if and only if
+<em>F</em> is finite &mdash; do you see why?
+
+<LI>In Axler's Theorem 2.10, The hypothesis that the spanning set
+be finite (implicit in Axler's use of &ldquo;lists&rdquo;)
+is not necessary as long as the vector space <em>V</em>
+is finite dimensional.  Indeed let <em>S</em> be an arbitrary
+spanning set.  Since <em>V</em> is finite dimensional,
+it has a finite spanning set <em>S</em>'.  Write each element
+of <em>S'</em> as a linear combination of elements of <em>S</em>.
+These linear combinations involve only finitely many elements
+of <em>S</em>, so <em>S</em> has a finite subset <em>S</em><sub>0</sub>
+that spans <em>S</em>' and thus spans <em>V</em>.  Now apply Axler's
+argument to find a subset of <em>S</em><sub>0</sub>, and thus
+<em>a fortiori</em> of <em>S</em>, that is a basis of&nbsp;<em>V</em>.
+
+<LI>Here's an extreme example of how basic theorems about
+finite-dimensional vector spaces can become utterly false for
+finitely-generated modules: a module generated by just one element
+can have a submodule that is not finitely generated.  Indeed,
+for any field <em>F</em> let <em>A</em> be the ring of polynomials
+in infinitely many variables <em>X<sub>j</sub></em>.  As usual
+we can regard <em>A</em> as a module over itself, with a single
+generator&nbsp;1.  A submodule is then just an ideal of the ring.
+Choose the ideal <em>I</em> generated by all the <em>X<sub>j</sub></em>,
+which consists of all polynomials with constant coefficient equal&nbsp;0.
+Then if there are infinitely many indices <em>j</em> then <em>I</em>
+is infinitely generated; indeed any generating set must be
+at least as large as the index set of <nobr><em>j</em>&rsquo;s</nobr>,
+so for every cardinal &alefsym; we can make a ring <em>A</em> with a
+singly-generated module (namely <em>A</em> itself) and with a submodule
+that cannot be generated by fewer than &alefsym; elements.
+
+<br>
+
+For a subtler example, consider the ring we might call
+</nobr>&ldquo;<em>F</em>[<em>X</em><sup>1/2<sup>&infin;</sup></sup>]&rdquo;</nobr>,
+consisting of </nobr><em>F</em>-linear</nobr> combinations of monomials
+</nobr><em>X</em><sup><em>n</em>/2<sup>k</sup></sup></em></nobr>
+for arbitrary nonnegative integers <em>n</em> and&nbsp;<em>k</em>.
+Again let <em>I</em> be the ideal generated by the nonconstant monomials,
+which is not finitely generated, though there are generating sets
+that are &ldquo;only&rdquo; countably infinite.
+The new behavior involves the countable generating set
+<nobr>{<em>X</em><sup>1/2<sup>k</sup></sup> | k&ge;0}</nobr>:
+there is no minimal generating subset, because each
+<nobr><em>X</em><sup>1/2<sup>k</sup></sup></nobr>
+is a multiple of <nobr><em>X</em><sup>1/2<sup>k'</sup></sup></nobr>
+for any <nobr>k'&gt;k</nobr>.  Likewise for the ring generated
+by all monomials </nobr><em>X</em><sup><em>r</sup></em></nobr>
+with <em>r</em> a nonnegative rational number (or even all
+</nobr><em>X</em><sup><em>r</sup></em></nobr>
+with <em>r</em> a nonnegative real number).
+
+<LI> Suppose <em>T</em> : <em>V</em> &rarr; <em>W</em>
+is a linear transformation.
+Axler's notation for the image of&nbsp;<em>T</em>
+was already becoming rather old-fashioned when he wrote his book;
+these days simply <nobr><em>T</em>(<em>V</em>)</nobr> is common
+(and likewise for any function at all).
+The terminology &ldquo;null space&rdquo; (whether one or two words)
+for <nobr><em>T</em><sup> -1</sup>(0)</nobr> is also somewhat quaint;
+we usually say &ldquo;kernel&rdquo; and write
+</nobr>&ldquo;ker(<em>T</em>)&rdquo;</nobr> [and (L<font size=-2>A</font>)TeX already provides
+the command <tt>\ker</tt> to typeset this properly].
+
+<LI> Axler also unaccountably soft-pedals the important notion of
+<A HREF="dual.html"><strong>duality</strong></A>.
+ [<strong>corrected</strong> 18.ix.10: 
+ If <em>W</em> is the direct sum of <em>U</em> and <em>V</em>
+ then the copy of <em>U</em><sup>*</sup>
+ in <em>W</em><sup>*</sup> is the &ldquo;annihilator&rdquo;
+ in <em>W</em><sup>*</sup> of <em>V</em>, <u>not</u> of <em>U</em>.]
+<!-- Yale Fan -->
+
+<LI> About &ldquo;<A HREF="lemma3.pdf">Lemma 3.?</A>&rdquo;:
+some notes and warnings about the behavior of
+Hom(<em>V</em>,<em>W</em>) under (finite or infinite) direct sums.
+
+<LI> Here's a brief preview of
+<A HREF="nonsense.html">abstract nonsense</A> (a.k.a. diagram-chasing),
+and a diagram-chasing interpretation of quotients and duality.
+
+<LI> Axler proves the Fundamental Theorem of Algebra using
+complex analysis, which cannot be assumed in Math 55a
+(we'll get to it at the end of 55b).
+<A HREF="fta.pdf">Here</A>'s a proof using the topological tools
+we'll develop at the start of 55b.
+(Axler gives the complex-analytic proof on page 67.)
+[<strong>corrected</strong> 24.ix.10 to fix a minor typo:
+when f-tilde is introduced, it is f-tilde that vanishes at zero, not f]
+<!-- L.Alpoge -->
+
+<LI> We shall need some &ldquo;eigenstuff&rdquo; also in an infinite-dimensional
+setting, so will not assume that any vector space is (nonzero) finite
+dimensional unless we really must.
+
+<LI> If <em>T</em> is a linear operator on a vector space <em>V</em>,
+and <em>U</em> is an invariant subspace, then the quotient space
+<em>V</em>/<em>U</em> inherits an action of <em>T</em>.
+Moreover, the annihilator of <em>U</em> in <em>V</em><sup>*</sup>
+is an invariant subspace for the action of the adjoint operator
+<em>T</em><sup>*</sup> on <em>V</em><sup>*</sup>.
+(Make sure you understand why both these claims hold.)
+
+<LI> Triangular matrices are intimately related with &ldquo;flags&rdquo;.
+A (complete) <em>flag</em> in a finite dimensional vector space <em>V</em>
+is a sequence of subspaces {0}=<em>V</em><SUB>0</SUB>,
+<em>V</em><SUB>1</SUB>, <em>V</em><SUB>2</SUB>, &hellip;,
+<em>V<SUB>n</SUB></em>=<em>V</em>, with each
+<em>V<SUB>i</SUB></em> of dimension <em>i</em> and containing
+<em>V</em><SUB><em>i</em>-1</SUB>.  A basis
+<nobr><em>v</em><SUB>1</SUB>, <em>v</em><SUB>2</SUB>, &hellip;,
+<em>v<SUB>n</SUB></em></nobr>
+determines a flag: <em>V<SUB>i</SUB></em> is the span of the first
+<em>i</em> basis vectors.  Another basis
+<nobr><em>w</em><SUB>1</SUB>, <em>w</em><SUB>2</SUB>, &hellip;,
+<em>w<SUB>n</SUB></em></nobr>
+determines the same flag if and only if each
+<em>w<SUB>i</SUB></em> is a linear combination of
+<nobr><em>v</em><SUB>1</SUB>, <em>v</em><SUB>2</SUB>, &hellip;,
+<em>v<SUB>i</SUB></em></nobr>
+(necessarily with nonzero <em>v<SUB>i</SUB></em> coefficient).
+The <em>standard flag</em> in <em>F<SUB>n</SUB></em> is the flag
+obtained in this way from the standard basis of unit vectors
+<nobr><em>e</em><SUB>1</SUB>, <em>e</em><SUB>2</SUB>, &hellip;,
+<em>e<SUB>n</SUB></em></nobr>.
+The punchline is that, just as a diagonal matrix is one that respects
+the standard basis (equivalently, the associated decomposition of
+<em>V</em> as a direct sum of 1-dimensional subspaces),
+<em>an upper-triangular matrix is one that respects the standard
+flag.</em>
+Note that the <em>i</em>-th diagonal entry of a triangular matrix
+gives the action on the one-dimensional quotient space
+<em>V<SUB>i</SUB></em>/<em>V</em><SUB><em>i</em>&minus;1</SUB>
+(each <em>i</em>=1,&hellip;,<em>n</em>).
+</UL>
+
+<img src="redball.gif">
+Less surprising than the absence of quotients and duality
+in Axler is the lack of <strong>tensor algebra</strong>.
+That won't stop us in Math&nbsp;55, though.
+<A href="tensor.pdf">Here</a>'s an introduction
+[As you might guess from \oplus,
+the TeXism for the tensor-product symbol is \otimes.]
+<br>
+<strong>corrected</strong> 30.ix.10 and 1.x.10
+to fix a couple of minor typos and improve the presentation of
+<nobr><em>V</em> &otimes;<sub><em>F</em></sub> <em>F'</em></nobr>
+
+<UL>
+<LI> One of many applications is the <strong>trace</strong> of
+an operator on a finite dimensional <em>F</em>-vector space <em>V</em>.
+This is a linear map from Hom(<em>V</em>,<em>V</em>) to <em>F</em>.
+We can define it simply as the composition of two maps:
+our identification of Hom(<em>V</em>,<em>V</em>) with
+the tensor product of <em>V</em><sup>*</sup> and <em>V</em>,
+and the natural map from this tensor product to <em>F</em>
+coming from the bilinear map taking (<em>v</em><sup>*</sup>,<em>v</em>)
+to <em>v</em><sup>*</sup>(<em>v</em>).  We'll see that this is the same
+as the classical definition: the trace of <em>T</em> is the sum of the
+diagonal entries of the matrix of <em>T</em> with respect to any basis.
+The coordinate-independent construction via tensor algebra
+explains why the trace does not change under change of basis.
+(The invariance can also be proved by checking explicitly that
+<em>AB</em> and <em>BA</em> have the same trace for any square matrices
+<nobr><em>A</em>, <em>B</em></nobr> of the same size.)
+
+<LI> Here are some basic definitions and facts about general
+<A HREF="norm.html"><strong>norms</strong></A>
+on real and complex vector spaces.
+
+<LI> Just as we can study bilinear symmetric forms
+on a vector space over any field, not just <strong>R</strong>,
+we can study sesquilinear conjugate-symmetric forms
+on a vector space over any field <em>with a conjugation</em>,
+not just <strong>C</strong>.
+Here a &ldquo;conjugation&rdquo; on a field <em>F</em> is a field automorphism
+<nobr>&sigma;:<em>F</em>&rarr;<em>F</em></nobr>
+such that &sigma; is not the identity
+but &sigma;<sup>2</sup> is (that is, &sigma; is an involution).
+Given a basis {<em>v<sub>i</sub></em>} for&nbsp;<em>F</em>,
+a sesquilinear form &lang;.,.&rang; on&nbsp;<em>F</em>
+is determined by the field elements
+<nobr><em>a</em><sub><em>i,j</em></sub>
+= &lang;<em>v</em><sub><em>i</em></sub>,<em>v</em><sub><em>j</em></sub>&rang;,</nobr>
+and is conjugate-symmetric if and only if
+<nobr><em>a<sub>j,i</sub></em> = &sigma;(<em>a<sub>i,j</sub></em>)</nobr>
+for all <em>i,j</em>.
+Note that the &ldquo;diagonal entries&rdquo; <em>a<sub>i,i</sub></em>
+&mdash; and more generally &lang;<em>v</em>,<em>v</em>&rang;
+for any <em>v</em> in&nbsp;<em>V</em> &mdash; must be elements
+of the subfield of <em>F</em> fixed by&nbsp;&sigma;.
+<li> &ldquo;Sylvester's Law of Inertia&rdquo; states that
+for a nondegenerate pairing on a finite-dimensional vector space
+<em>V</em>/<em>F</em>, where either
+<em>F</em>=<strong>R</strong> and the pairing is
+bilinear and symmetric, or
+<em>F</em>=<strong>C</strong> and the pairing is
+sesquilinear and conjugate-symmetric,
+<em>
+the counts of positive and negative inner products
+for an orthogonal basis constitute an invariant of the pairing
+</em>
+and do not depend on the choice of orthogonal basis.
+(This invariant is known as the &ldquo;signature&rdquo; of the pairing.)
+The key trick in proving this result is as follows.
+Suppose <em>V</em> is the orthogonal direct sum of subspaces 
+<em>U</em><sub>1</sub>, <em>U</em><sub>2</sub>
+for which the pairing is positive definite on <em>U</em><sub>1</sub>
+and negative definite on <em>U</em><sub>2</sub>.
+Then any subspace <em>W</em> of <em>V</em>
+on which the pairing is positive definite
+has dimension no greater than dim(<em>U</em><sub>1</sub>).
+Proof: On the intersection of <em>W</em> with <em>U</em><sub>2</sub>,
+the pairing is both positive and negative definite;
+hence that subspace is {0}.  The claim follows by a dimension count,
+and we quickly deduce Sylvester's Law.
+<li> Over any field not of characteristic 2,
+we know that for any non-degenerate
+symmetric pairing on a finite-dimensional vector space
+there is an orthogonal basis, or equivalently
+a choice of basis such that the pairing is
+(<em>x</em>,<em>y</em>)=sum<sub><em>i</em></sub>(<em>a<sub>i</sub>&nbsp;x<sub>i</sub>&nbsp;y<sub>i</sub></em>)
+for some nonzero scalars <em>a<sub>i</sub></em>.
+But in general it can be quite hard to decide whether
+two different collections of <em>a<sub>i</sub></em>
+yield isomorphic pairings.  Even over <strong>Q</strong>
+the answer is already tricky in dimensions 2 and 3,
+and I don't think it's known in a vector space of arbitrary dimension.
+Over a finite field of odd size there are always exactly two
+possibilities, as we'll see in a few weeks.
+<li> A regular graph of degree <em>d</em> is a <em>Moore graph of girth 5</em>
+if any two different vertices are linked by a unique path of length
+at most&nbsp;2.  Such a graph necessarily has
+<nobr><em>n</em> = 1 + <em>d</em> + <em>d</em>(<em>d</em>&minus;1)
+= <em>d</em><sup>2</sup> + 1 </nobr> vertices.
+Let <em>A</em> be the adjacency matrix, and
+<strong>1</strong> the all-ones vector.  Then (because each vertex
+has degree&nbsp;<em>d</em>) <strong>1</strong> is a
+<nobr><em>d</em>-eigenvector</nobr> of&nbsp;<em>A</em>.
+We have
+<nobr>(1 + <em>A</em> + <em>A</em><sup>2</sup>) <em>v</em> =
+<em>d v </em> + &lang;<em>v</em>, <strong>1</strong>&rang; <strong>1</strong>
+</nobr> for all <em>v</em>
+(proof: check on unit vectors and use linearity).
+Thus <em>A</em> takes the orthogonal complement
+<nobr>of <strong>R</strong>&middot;<strong>1</strong></nobr>
+to itself and satisfies
+<nobr>(1 + <em>A</em> + <em>A</em><sup>2</sup>) = <em>d</em></nobr>
+on that space.  Since this quadratic equation has distinct roots
+<em>m</em> and <nobr>&minus;1&minus;<em>m</em></nobr>
+for some <nobr> <em>m</em> &gt; 0 </nobr> (namely the positive root of
+<nobr>(1 + <em>m</em> + <em>m</em><sup>2</sup>) = <em>d</em></nobr>),
+it follows that the orthogonal complement
+<nobr>of <strong>R</strong>&middot;<strong>1</strong></nobr>
+is the direct sum of the corresponding eigenspaces.
+Let <em>d</em><sub>1</sub> and <em>d</em><sub>2</sub>
+be their dimensions.  These sum to
+<nobr><em>n</em>&minus;1 = <em>d</em><sup>2</sup></nobr>, and satisfy
+<nobr><em>md</em><sub>1</sub> + (&minus;1&minus;<em>m</em>)<em>d</em><sub>2</sub> + <em>d</em> = 0</nobr>
+because the matrix <em>A</em> has trace zero.  This lets us solve
+for <em>d</em><sub>1</sub> and <em>d</em><sub>2</sub>.
+in particular we find that their difference is
+<nobr>(2<em>d</em> &minus; <em>d</em><sup>2</sup>) / (2<em>m</em>+1)</nobr>.
+Since that's an integer, either <nobr><em>d</em>=2</nobr>
+(giving the pentagon graph) or <em>m</em> is an integer.
+Substituting <nobr><em>m</em><sup>2</sup> + <em>m</em> + 1</nobr>
+for&nbsp;<em>d</em>, we find that
+<nobr>16(<em>d</em><sub>1</sub> &minus; <em>d</em><sub>2</sub>)</nobr>
+is an integer plus <nobr>15/(2<em>m</em>+1)</nobr>, whence
+<em>m</em> is one of 0, 1, 2, or 7.  The first of these is impossible,
+and the others give <nobr><em>d</em> = 3</nobr>, 7, or&nbsp;57
+as claimed.
+<p>
+It is clear that the pentagon is the unique Moore graph of girth&nbsp;5,
+and degree&nbsp;2, and it is not hard to check that the Petersen graph
+is the unique example with <nobr><em>d</em> = 3</nobr>.  For
+<nobr><em>d</em> = 7</nobr> there is again a unique graph up to
+an interesting group of automorphisms; see this
+<A HREF="http://math.harvard.edu/~elkies/Misc/hsgraph.pdf"
+target="_blank">proof outline</A>, which also lets one count
+the automorphisms of this graph.  There is no spectral graph theory
+there, but this approach is suggested by the inequality you'll prove
+in the fifth problem of <A HREF="p7.pdf">problem set&nbsp;7</A>:
+if the 50 vertices are divided into two equal subsets, what's
+the smallest possible number of edges between them?
+<p>
+For more of this kind of application of linear algebra to combinatorics,
+see for example Cameron and van Lint's text
+<em>Designs, Graphs, Codes and their Links</em>
+(London Math. Society, 1991, reprinted 1996).
+<li> All of Chapter 8 works over an arbitrary algebraically closed field,
+not only over <strong>C</strong>
+(except for the minor point about extracting square roots,
+which breaks down in characteristic&nbsp;2); and
+the first section (&ldquo;Generalized Eigenvalues&rdquo;) works over any field.
+<li> We don't stop at Corollary 8.8: let <em>T</em> be any operator
+on a vector space <em>V</em> over a field <em>F</em>, not assumed
+algebraically closed.  If <em>V</em> is finite-dimensional, then
+The Following Are Equivalent:
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(1) There exists a nonnegative integer <em>k</em>
+such that <em>T<sup>k</sup></em>=0;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(2) For any vector <em>v</em>, there exists a nonnegative integer
+<em>k</em> such that <em>T<sup>k</sup>v</em>=0;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(3) <em>T<sup>n</sup></em>=0, where <em>n</em>=dim(<em>V</em>).
+<br>
+Note that (1) and (2) make no mention of the dimension,
+but are still not equivalent for operators on infinite-dimensional spaces.
+We readily deduce the further equivalent conditions:
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(4) There exists a basis for <em>V</em> for which
+<em>T</em> has an upper-triangular matrix
+with every diagonal entry equal zero;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(5) Every upper-triangular matrix for <em>T</em>
+has zeros on the diagonal,
+and there exists at least one upper-triangular matrix for <em>T</em>.
+<br>
+Recall that the second part of (5) is automatic
+if <em>F</em> is algebraically closed.
+<li> The space of generalized 0-eigenvectors
+(the maximal subspace on which <em>T</em> is nilpotent)
+is sometimes called the <em>nilspace</em> of <em>T</em>.
+It is an invariant subspace.  When <em>V</em> is finite dimensional,
+<em>V</em> is the direct sum of the nilspace and another invariant
+subspace <em>V'</em>, consisting of the intersection of the subspaces
+<em>T<sup>k</sup></em>(<em>V</em>) as <em>k</em> ranges over all
+positive integers.  See Exercise&nbsp;8.11;
+this can be used to quickly prove Theorem 8.23
+and consequences such as Cayley-Hamilton (Theorem 8.20).
+<li> The dimension of the space of generalized <em>c</em>-eigenvalues
+(i.e., of the nilspace of <em>T&minus;cI</em>) is usually called the
+<em>algebraic</em> multiplicity of <em>c</em>
+(since it's the multiplicity of <em>c</em>
+as a root of the characteristic polynomial of <em>T</em>),
+to distinguish it from the &ldquo;geometric multiplicity&rdquo;
+which is the dimension of <nobr>ker(<em>T&minus;cI</em>)</nobr>.
+</ul>
+
+We'll not cover Chapter 9, which seems to exist mainly to prove that
+it is possible to construct the characteristic polynomial
+over&nbsp;<strong>R</strong> without introducing determinants.
+We'll proceed to Chapter&nbsp;10, which covers determinants, but&hellip;
+
+<p>
+
+<img src="redball.gif">
+We'll <em>define</em> the determinant of an operator <em>T</em>
+on a finite dimensional space <em>V</em> as follows:
+<em>T</em> induces a linear operator <em>T'</em>
+on the top exterior power of <em>V</em>;
+this exterior power is one-dimensional,
+so an operator on it is multiplication by some scalar;
+det(<em>T</em>) is by definition the scalar
+corresponding to <em>T'</em>.
+The &ldquo;top exterior power&rdquo;
+is a subspace of the &ldquo;exterior algebra&rdquo; of&nbsp;<em>V</em>,
+which is the quotient of the tensor algebra by
+the ideal generated by {<em>v</em>*<em>v</em>: <em>v</em> in <em>V</em>}.
+We'll still have to construct the sign homomorphism from the
+symmetry group of order dim(<em>V</em>) to <nobr>{1,&minus;1}</nobr>
+to make sure that this exterior algebra is as large
+as we expect it to be, and that in particular that
+the (dim(<em>V</em>))-th exterior power has dimension 1
+rather than zero.
+<p>
+  <img src="purpball.gif"> Interlude: normal subgroups;
+  short exact sequences in the context of groups:
+  A subgroup <em>H</em> of <em>G</em> is <strong>normal</strong>
+  (satisfies <nobr><em>H</em> = <em>g</em><sup>&minus;1</sup><em>Hg</em></nobr>
+  for all <em>g</em> in <em>G</em>) <u>iff</u>
+  <em>H</em> is the kernel of some group homomorphism from <em>G</em>
+  <u>iff</u> the injection <nobr><em>H</em> &rarr; <em>G</em> </nobr>
+  fits into a short exact sequence
+  <nobr>{1}
+    &rarr; <nobr><em>H</em>
+    &rarr; <em>G</em>
+    &rarr; <em>Q</em>
+    &rarr; {1},
+  </nobr>
+  in which case <em>Q</em> is the <strong>quotient group</strong>
+  <nobr><em>G</em>/<em>H</em></nobr>.
+  [The notation {1} for the one-element (&ldquo;trivial&rdquo;) group
+  is usually abbreviated to plain 1, as in
+  <nobr>1
+    &rarr; <nobr><em>H</em>
+    &rarr; <em>G</em>
+    &rarr; <em>Q</em>
+    &rarr; 1.]
+  </nobr>
+  This is not in Axler but can be found in any introductory text in
+  abstract algebra; see for instance Artin, Chapter 2, section&nbsp;10.
+  Examples:
+  <nobr>1
+    &rarr; <nobr><em>A<sub>n</sub></em>
+    &rarr; <em>S<sub>n</sub></em>
+    &rarr; {&plusmn;1}
+    &rarr; 1;
+  </nobr>
+  also, the determinant homomorphism
+  <nobr>
+  GL<em><sub>n</sub></em>(<em>F</em>) &rarr; <em>F</em><sup>*</sup>
+  </nobr>
+  gives the short exact sesquence
+  <nobr>1
+    &rarr; <nobr>SL<em><sub>n</sub></em>(<em>F</em>)
+    &rarr; GL<em><sub>n</sub></em>(<em>F</em>)
+    &rarr; <em>F</em><sup>*</sup>
+    &rarr; 1,
+  </nobr>
+  and this works even if <em>F</em> is just a commutative ring with unit
+  as long as <nobr><em>F</em><sup>*</sup></nobr> is understood as
+  the group of invertible elements of&nbsp;<em>F</em> &mdash; for example,
+  <nobr><strong>Z</strong><sup>*</sup> = {&plusmn;1}.</nobr>
+<p>
+Some more tidbits about exterior algebra:
+<ul>
+<li>If <em>w</em>, <em>w</em>' are elements of the
+ <em>m</em>-th and <em>m</em>'-th exterior powers of <em>V</em>,
+ then <em>ww</em>'=(&minus;1)<sup><em>mm</em>'</sup><em>w</em>'<em>w</em>;
+ that is, <em>w</em> and <em>w</em>' commute
+ unless <em>m</em> and <em>m</em>' are both odd
+ in which case they anticommute.
+<li>If <em>m</em>+<em>m</em>'=<em>n</em>=dim(<em>V</em>)
+ then the natural pairing from the
+ <em>m</em>-th and <em>m</em>'-th exterior powers
+ to the <em>n</em>-th is nondegenerate,
+ and so identifies the <nobr><em>m</em>'-th</nobr> exterior power
+ canonically with the dual of the <nobr><em>m</em>-th</nobr>
+ <em>tensored with the top (n-th) exterior power</em>.
+<li> In particular, if <em>m</em>=1,
+ and <em>T</em> is any invertible operator on <em>V</em>,
+ then we find that the induced action of <em>T</em>
+ on the (<em>n</em>&minus;1)st exterior power
+ is the same as its action on <em>V</em><sup>*</sup>
+ multiplied by det(<em>T</em>).
+ This yields the formula connecting the inverse and cofactor matrix
+ of an invertible matrix (a formula which you may also know
+ in the guise of &ldquo;Cramer's rule&rdquo;).
+<!--
+<p>
+ One consequence of this formula is that
+ an <em>n</em>-by-<em>n</em> integer matrix <em>A</em>
+ had an inverse with integer entries if and only if
+ |det(<em>A</em>)|=1.  This in turn implies that
+ |det(<em>M</em>)| is an invariant of the lattice
+ <em>L</em>=<em>M</em><strong>Z</strong><sup><em>n</em></sup>.
+ In 55b we'll interpret this invariant as
+ the &ldquo;covolume&rdquo; of <em>L</em>, that is,
+ the volume of the <em>n</em>-dimensional torus
+ <strong>R</strong><sup><em>n</em></sup>/<em>L</em>.
+<p>
+-->
+<li> For each <em>m</em> there is a natural non-degenerate pairing
+ between the <em>m</em>-th exterior powers of
+ <em>V</em> and <em>V</em><sup>*</sup>,
+ which identifies these exterior powers with each other's dual.
+</ul>
+More will be said about exterior algebra when differential forms
+appear in Math 55b.
+<p>
+We'll also show that a symmetric (or Hermitian) matrix
+is positive definite <u>iff</u> all its eigenvalues are positive
+<u>iff</u> it has positive principal minors
+(the &ldquo;principal minors&rdquo; are the determinants
+of the square submatrices of all orders containing the (1,1) entry).
+More generally we'll show that the eigenvalue signs determine
+the signature, as does the sequence of signs of principal minors
+if they are all nonzero.  More precisely: an invertible
+symmetric/Hermitian matrix has signature
+<nobr>(<em>r</em>,<em>s</em>)</nobr> where
+<em>r</em> is the number of positive eigenvalues and
+<em>s</em> is the number of negative eigenvalues;
+if its principal minors are all nonzero then
+<em>r</em> is the number of <em>j</em> in
+<nobr>{1,2,&hellip;,<em>n</em>}</nobr> such that the
+<nobr><em>j</em>-th</nobr> and <nobr>(<em>j</em>&minus;1)-st</nobr> minors
+have the same sign, and
+<em>s</em> is the number of <em>j</em> in that range such that the
+<nobr><em>j</em>-th</nobr> and <nobr>(<em>j</em>&minus;1)-st</nobr> minors
+have opposite sign [for <nobr><em>j</em>=1</nobr> we always count
+the &ldquo;zeroth minor&rdquo; as being the positive number&nbsp;1].
+This follows inductively from the fact that the determinant has sign
+<nobr>(&minus;1)<sup><em>s</em></sup></nobr> and the signature
+<nobr>(<em>r</em>',<em>s</em>')</nobr> of the restriction of a pairing
+to a subspace has
+<nobr><em>r</em>' &le; <em>r</em></nobr> and
+<nobr><em>s</em>' &le; <em>s</em></nobr>.
+<p>
+For positive definiteness, we have the two further
+equivalent conditions: the symmetric (or Hermitian) matrix
+<em>A</em>=(<em>a<sub>ij</sub></em>) is positive definite
+<u>iff</u> there is a basis (<em>v<sub>i</sub></em>)
+of <strong>F</strong><sup><em>n</em></sup> such that
+<nobr><em>a<sub>ij</sub></em>&thinsp;=&thinsp;&lang;<em>v<sub>i</sub></em>,<em>v<sub>j</sub></em>&rang;</nobr>
+for all <em>i</em>,<em>j</em>, and
+<u>iff</u> there is an invertible matrix <em>B</em> such that
+<em>A</em>=<em>B</em><sup>*</sup><em>B</em>.
+For example, the matrix with entries 1/(<em>i</em>+<em>j</em>&minus;1)
+(&ldquo;Hilbert matrix&rdquo;) is positive-definite, because it is
+the matrix of inner products (integrals on [0,1]) of the basis
+1,<em>x</em>,<em>x</em><sup>2</sup>,&hellip;,<em>x</em><sup><em>n</em>&minus;1</sup>
+for the polynomials of degree &lt;<em>n</em>.
+See the 10th problem set for a calculus-free proof of the
+positivity of the Hilbert matrix, and an evaluation of its determinant.
+<br>
+For any matrix <em>B</em> (not necessarily invertible or even square)
+with columns <nobr><em>v<sub>i</sub></em></nobr>,
+the matrix <nobr><em>B</em><sup>*</sup><em>B</em></nobr> with entries
+<nobr><em>a<sub>ij</sub></em>&thinsp;=&thinsp;&lang;<em>v<sub>i</sub></em>,<em>v<sub>j</sub></em>&rang;</nobr>
+is known as the <em>Gram matrix</em> of the columns of&nbsp;<em>B</em>.
+It is invertible iff those columns are linearly independent.
+If we add an <nobr>(<em>n</em>+1)-st</nobr> vector, the determinant of
+the Gram matrix increases by a factor equal to the squared distance
+between this vector and the span of the columns of&nbsp;<em>B</em>.
+You'll use this too in PS10.
+</ul>
+
+<p>
+
+<img src="purpball.gif">
+Here's a brief introduction to
+<A HREF="galois.html">field algebra</A> and Galois theory.
+
+<p>
+
+<img src="orangeball.gif">
+Our source for <em>representation theory</em> of finite groups
+(on finite-dimensional vector spaces over&nbsp;<strong>C</strong>)
+will be Artin's <em>Algebra</em>, Chapter&nbsp;9.  We'll omit
+sections&nbsp;3 and&nbsp;10 (which require not just topology and
+calculus but also, at least for &sect;3, some material beyond 55b
+to do properly, namely the construction of Haar measures);
+also we won't spend much time on &sect;7, which works out in detail
+the representation theory of a specific group that Artin
+calls&nbsp;<em>I</em> (the icosahedral group,
+<nobr>a.k.a. <em>A</em><sub>5</sub></nobr>).
+There are many other sources for this material,
+some of which take a somewhat different point of view via the
+&ldquo;group algebra&rdquo; <nobr><strong>C</strong>[<em>G</em>]</nobr>
+of a finite group&nbsp;<em>G</em> (a.k.a.\ the algebra of
+functions on&nbsp;<em>G</em> under convolution).
+See for instance Chapter&nbsp;1 of <em>Representation Theory</em>
+by Fulton and Harris (mentioned in class).  A canonical treatment
+of representations of finite groups is
+Serre's <em>Linear Representations of Finite Groups</em>,
+which is the only entry for this chapter in the list of
+&ldquo;Suggestions for Further Reading&rdquo; at the end of Artin's book
+(see p.604).
+
+<p>
+
+While we'll work almost exclusively over&nbsp;<strong>C</strong>,
+most of the results work equally well (though with somewhat different
+proofs) over any field <em>F</em> that contains the roots of unity
+of order <nobr>#(<em>G</em>)</nobr>, as long as the characteristic
+of&nbsp;<em>F</em> is not a factor of <nobr>#(<em>G</em>)</nobr>.
+Without roots of unity, many more results are different,
+but there is still a reasonably satisfactory theory available.
+Dropping the characteristic condition leads to much trickier territory,
+e.g. even Maschke's theorem (every finite-dimensional
+representation is a direct sum of irreducibles) fails;
+some natural problems are still unsolved!
+
+<p>
+
+Here's an alternative viewpoint on representations of a finite group
+<em>G</em> (not in Artin, though you can find it elsewhere, e.g.
+Fulton-Harris pages 36ff.): a representation of&nbsp;<em>G</em> over
+a field&nbsp;<em>F</em> is equivalent to a module for the
+<em>group ring</em> 
+<nobr><em>F</em>[<em>G</em>]</nobr>.
+The group ring is an associative <nobr><em>F</em>-algebra</nobr>
+(commutative iff <em>G</em> is commutative) that consists of the
+formal <nobr><em>F</em>-linear</nobr> combinations of group elements.
+This means that <nobr><em>F</em>[<em>G</em>]</nobr>
+is <nobr><em>F<sup>G</sup></em></nobr> as an
+<nobr><em>F</em>-vector</nobr> space,
+and the algebra structure is defined by setting
+<nobr><em>e</em><sub><em>g</em><sub>1</sub></sub><em>e</em><sub><em>g</em><sub>2</sub></sub>
+= <em>e</em><sub><em>g</em><sub>1</sub><em>g</em><sub>2</sub></sub></nobr>
+for all <nobr><em>g</em><sub>1</sub><em>, g</em><sub>2</sub></nobr>
+in&nbsp;<em>G</em>, together with the
+<nobr><em>F</em>-bilinearity</nobr> of the product.
+This means that if we identify elements of the group ring with
+functions <nobr><em>G</em>&rarr;<em>F</em></nobr> then the
+multiplication rule is
+<nobr>(<em>f</em><sub>1</sub> * <em>f</em><sub>2</sub>)(<em>g</em>)
+= &Sigma;<sub><em>g</em><sub>1</sub><em>g</em><sub>2</sub>=<em>g</em></sub>
+<em>f</em><sub>1</sub>(<em>g</em><sub>1</sub>) <em>f</em><sub>2</sub>(<em>g</em><sub>2</sub>)</nobr>
+&mdash; yes, it's convolution again.  To identify an
+<nobr><em>F</em>[<em>G</em>]-module</nobr> with a representation,
+use the action of <em>F</em> to define the vector space structure,
+and let <nobr>&rho;(<em>g</em>)</nobr> act by multipliction by
+the unit vector&nbsp;<em>e<sub>g</sub></em>.  In particular,
+the regular representation is <nobr><em>F</em>[<em>G</em>]</nobr>
+regarded in the usual way as a module over itself.  If we identify
+the image of this representation with certain permutation matrices
+of <nobr>order #(<em>G</em>)</nobr>, we get an explicit model of
+<nobr><em>F</em>[<em>G</em>]</nobr> as a subalgebra of the
+algebra of square matrices the same order.  For example, if
+<nobr><em>G</em> = <strong>Z</strong>/<em>n</em><strong>Z</strong></nobr>
+we recover the algebra of circulant matrices of order&nbsp;<em>n</em>.
+<p>
+
+Just as the regular representation is
+<nobr><em>F</em>[<em>G</em>]</nobr> as a module over itself,
+a subrepresentation of the regular representation is an ideal
+<nobr>of <em>F</em>[<em>G</em>]</nobr>.  The fundamental theorem
+of representation theory can be stated as an isomorphism between
+<nobr><em>F</em>[<em>G</em>]</nobr> and the direct sum of algebras
+<nobr>End(<em>V</em>)</nobr> with <em>V</em> ranging over all the
+irreducible representations of&nbsp;<em>G</em>.  Comparing dimensions
+gives the formula
+<nobr>#(<em>G</em>) = &Sigma;<sub><em>V</em></sub> dim(<em>V</em>)<sup>2</sup></nobr>.
+The <nobr><em>F</em>-linear</nobr> isomorphism from 
+<nobr><em>F</em>[<em>G</em>]</nobr> and the direct sum of the
+<nobr>End(<em>V</em>)</nobr> is a generalization of the discrete
+Fourier transform (DFT) to noncommutative groups [check that if <em>G</em>
+is commutative we recover the DFT of
+<A HREF="p10.pdf" target="_blank">Problem Set 10</A>].
+<p>
+
+In case we haven't officially said it yet:
+the <em>unitary group</em> </nobr><em>U<sub>n</sub></em></nobr> that
+figures prominently in Artin's treatment (see the start of 9.2, p.310)
+is the subgroup of <nobr>GL<sub><em>n</em></sub>(<strong>C</strong>)</nobr>
+that acts by isometries on 
+<nobr><strong>C</strong><sup><em>n</em></sup></nobr>
+with its usual inner-product norm;
+that is, matrices whose inverse equals their own Hermitian transpose.
+The unitary group
+<nobr><em>U</em>(<em>V</em>) = <em>U</em>(<em>V</em>, &lang;.,.&rang;)</nobr>
+of a complex inner-product space
+<nobr><em>V</em> = (<em>V</em>, &lang;.,.&rang;)</nobr>
+is defined in much the same way; if <em>V</em> is finite-dimensional
+then any choice of orthonormal basis identifies 
+<nobr><em>U</em>(<em>V</em>)</nobr> with
+</nobr><em>U<sub>n</sub></em></nobr>.
+
+<p>
+
+Artin derives the diagonalizability of <nobr>&rho;(<em>g</em>)</nobr>
+as Corollary 2.3 (p.310) of unitarity plus the Spectral Theorem for
+normal operators.  This is not necessary because we already know that
+a linear transformation that satisfies a polynomial equation with
+distinct roots is diagonalizable, and <nobr>&rho;(<em>g</em>)</nobr>
+satisfies such an equation, namely
+<nobr><em>X<sup>n</sup></em>&minus;1=0</nobr>
+where <em>n</em> is the order of&nbsp;<em>g</em>.
+Note that this argument applies more generally to a representation
+over any field in which
+<nobr><em>X<sup>n</sup></em>&minus;1=0</nobr>
+has <em>n</em> distinct roots.  Again this leads naturally
+to the condition that the characteristic not be a factor
+<nobr>of #(<em>G</em>)</nobr>, i.e. that
+<nobr>#(<em>G</em>)</nobr> is nonzero in&nbsp;<em>F</em>:
+this condition guarantees that also <nobr><em>n</em>&ne;0</nobr>
+in&nbsp;<em>F</em>, because <em>n</em> is always
+a factor <nobr>of #(<em>G</em>)</nobr> [a corollary of Lagrange's
+theorem that the order of any subgroup of&nbsp;<em>G</em>
+is a factor <nobr>of #(<em>G</em>)</nobr>, see e.g.
+Artin, (6.11) and (6.12) in Chapter&nbsp;2, p.58].
+
+<p>
+
+Let <em>T</em> be the character table of a group of <em>N</em> elements,
+and let <nobr><em>T</em><sup>*</sup></nobr> be its Hermitian transpose.
+The first part two parts of Theorem 5.9 in Chapter&nbsp;9 state in effect
+the identity <nobr><em>TDT</em><sup>*</sup> = <em>NI</em></nobr>
+where <em>D</em> is the diagonal matrix whose diagonal entries
+are the sizes of the conjugacy classes of&nbsp;<em>G</em>.
+But then <em>NI</em> is also
+<nobr><em>DT</em><sup>*</sup><em>T</em></nobr>.
+This means that the <em>columns</em> of&nbsp;<em>T</em>
+are also orthogonal,
+and the column indexed by conjugacy class&nbsp;<em>C</em>
+has inner product <nobr><em>N</em>/#(<em>C</em>)</nobr> with itself.
+[This is an adaptation of the familiar but still remarkable fact that
+the rows of a square matrix are orthonormal iff the columns are orthonormal.]
+That is, for any group elements <em>g</em>, <em>h</em> we have
+<nobr>&Sigma;<sub>&chi;</sub> &chi;(<em>g</em>)<font style="text-decoration:overline;">&chi;(<em>h</em>)</font> = 0</nobr>
+(the sum extending over the irrducible characters&nbsp;&chi;),
+unless <em>g</em> and <em>h</em> are conjugate, in which case
+<nobr>&chi;(<em>g</em>) = &chi;(<em>h</em>)</nobr> for all&nbsp;&chi;
+and we get
+<nobr>&Sigma;<sub>&chi;</sub><font size="+1">|</font>&chi;(<em>g</em>)<font size="+1">|</font><sup>2</sup> = N/#(<em>C</em>)</nobr>
+where <em>C</em> is the conjugacy class of&nbsp;<em>g</em>.
+In particular, taking <nobr><em>g</em> = id</nobr> we get
+<nobr><em>C</em> = {id}</nobr> and thus recover the fact that
+<em>N</em> is the sum of the squares of the dimensions of
+the irreducible representations.
+
+<p>
+
+Let <em>G</em> be a group of <em>N</em> elements, and
+<nobr>(<em>V</em>,&rho;</em>)</nobr> be
+any finite-dimensional representation over a field
+in which <em>N</em> is nonzero.  Let <em>P</em> be the operator
+<nobr><em>N</em><sup>&minus;1</sup> &Sigma;<sub><em>g</em>&isin;<em>G</em></sub> &rho;(<em>g</em>)</nobr>.
+This is a <nobr><em>G</em>-endomorphism</nobr> of&nbsp;<em>V</em>,
+i.e. it commutes with each <nobr>&rho;(<em>g</em>)</nobr>, whence
+it follows that <em>P</em> is an <em>idempotent</em>: it satisfies
+<nobr><em>P</em><sup>2</sup> = <em>P</em></nobr>.  We already know
+(PS9 1(i)) that this makes <em>V</em> the direct sum of the
+eigenspaces <nobr><em>V</em><sub>0</sub></nobr> and
+<nobr><em>V</em><sub>1</sub></nobr> of&nbsp;<em>P</em>,
+which are respectively the kernel and image of&nbsp;<em>P</em>.
+It follows that <em>P</em> has
+<nobr>trace dim(<em>V</em><sub>1</sub>)</nobr>.
+This is what lets us begin to link characters with irreducibles:
+on the one hand this trace is
+<nobr><em>N</em><sup>&minus;1</sup> &Sigma;<sub><em>g</em>&isin;<em>G</em></sub> &chi;(<em>g</em>) = &lang;&chi;, 1&rang</nobr>
+where &chi; is the character of&nbsp;<em>V</em>.
+On the other hand <nobr><em>V</em><sub>1</sub></nobr>
+is the dimension of the <nobr><em>G</em>-invariant</nobr> subspace
+<nobr><em>V<sup>G</sup></em> of&nbsp;<em>V</em>
+(which we can also canonically identify with
+<nobr>Hom<sub><em>G</em></sub>(<em>F</em>,<em>V</em>)</nobr>
+where <em>F</em> is regarded as the trivial representation).
+
+<p>
+
+To get from this to the dimension of
+<nobr>Hom<sub><em>G</em></sub>(<em>V</em>,<em>V</em>&rsquo;)</nobr>
+for any representations <nobr><em>V</em>,<em>V</em>&rsquo;</nobr>,
+recall the identification of
+<nobr>Hom(<em>V</em>,<em>V</em>&rsquo;)</nobr>
+(ignoring the <nobr><em>G</em>-action</nobr>)
+with the tensor product
+<nobr><em>V</em><sup>*</sup>&otimes;<em>V</em>&rsquo;</nobr>.
+Artin doesn't describe the action of&nbsp;<em>G</em>
+<nobr>on <em>V</em><sup>*</sup></nobr>.
+We know how to get from each <nobr>&rho;(<em>g</em>)</nobr>
+a linear operator <nobr>(&rho;(<em>g</em>))<sup>*</sup></nobr>
+<nobr>on <em>V</em><sup>*</sup></nobr>,
+but these do not compose in the right order
+(unless <em>G</em> is abelian): we have
+<nobr>(&rho;(<em>g</em>))<sup>*</sup>(&rho;(<em>h</em>))<sup>*</sup>
+ = (&rho;(<em>hg</em>))<sup>*</sup></nobr>.
+So to get a representation
+<nobr>&rho;<sup>*</sup></nobr> of&nbsp;<em>G</em>
+<nobr>on <em>V</em><sup>*</sup></nobr> we must define
+<nobr>&rho;<sup>*</sup>(<em>g</em>)
+= (&rho;(<em>g</em><sup>&minus;1</sup>))<sup>*</sup></nobr>
+for all&nbsp;<em>g</em>.  This yields the <em>dual representation</em>
+(sometimes called the &ldquo;contragredient representation&rdquo;)
+<nobr>(<em>V</em><sup>*</sup>,&rho;<sup>*</sup>)</nobr>
+<nobr>of (<em>V</em>,&rho;)</nobr>; its character
+<nobr>&chi;<sup>*</sup></nobr> is the complex conjugate of&nbsp;&chi;.
+This gives <nobr>Hom(<em>V</em>,<em>V</em>&rsquo;)
+= <em>V</em><sup>*</sup>&otimes;<em>V</em>&rsquo;</nobr>
+the structure of a representation of&nbsp;<em>G</em>,
+and we can check that the invariant subspace is precisely
+<nobr>Hom<sub><em>G</em></sub>(<em>V</em>,<em>V</em>&rsquo;)</nobr>
+[which also justifies Artin's term
+&ldquo;<nobr><em>G</em>-invariant</nobr> homomorphism&rdquo;
+for an element
+<nobr>of Hom<sub><em>G</em></sub>(<em>V</em>,<em>V</em>&rsquo;)</nobr>].
+We then deduce that the dimension of this space is
+<nobr>&lang;&chi;<sup>*</sup>&chi;', 1&rang; = &lang;&chi;', &chi;&rang;</nobr>,
+and since that's a nonnegative integer
+&mdash; and thus <em>a&nbsp;fortiori</em> real &mdash;
+it is also equal to <nobr>&lang;&chi;, &chi;'&rang;</nobr>
+as claimed.
+
+<p>
+<font color="brown">NB Artin's definition of the inner product on class functions,
+or indeed on any functions on&nbsp;<em>G</em> (Chapter 9, (5.8), page 318),
+makes this inner product semilinear in the <u>first</u> variable.
+This is consistent with his treatment elsewhere in the book
+(see Chapter 4, (4.4), page 250), and is occasionally more convenient
+&mdash; e.g. here we wouldn't have had to finish by observing that
+the inner product is real and thus its own conjugate &mdash; but is
+rarer than the convention that we (following Axler) have been using.
+We have to tweak our development accordingly.
+</font>
+
+<p>
+
+The operators introduced by Artin towards the end of his proof of
+(most of) Theorem&nbsp;5.9 have further uses when &phi; is the
+character of an irreducible representation&nbsp;<em>V</em>.
+Indeed consider
+<nobr><em>P</em><sub>&phi;</sub> := <em>N</em><sup>&minus;1</sup> &Sigma;<sub><em>g</em>&isin;<em>G</em></sub> &phi;<sup>*</sup>(<em>g</em>) &rho;(<em>g</em>)</nobr>
+acting on any representation&nbsp;<em>W</em>.  Since &phi; is a class
+function we again find that <nobr><em>P</em><sub>&phi;</sub></nobr>
+is a <nobr><em>G</em>-endomorphism</em></nobr> of&nbsp;<em>W</em>.
+Thus (by Schur) if <em>W</em> is irreducible then
+<nobr><em>P</em><sub>&phi;</sub></nobr> is a multiple of the identity.
+The correct multiple can then be identified by computing 
+the trace of <nobr><em>P</em><sub>&phi;</sub></nobr>,
+and that's <nobr>&lang;&chi;, &phi;&rang;</nobr>
+where &chi; is the character of&nbsp;<em>W</em>
+(whether or not <em>W</em> is irreducible).
+Using the orthogonality relations we deduce that if
+<em>W</em> is irreducible then
+<nobr><em>P</em><sub>&phi;</sub> = 0</nobr>,
+unless <em>W</em> is isomorphic with&nbsp;<em>V</em>, in which case
+<nobr><em>P</em><sub>&phi;</sub> = 1 / dim(<em>V</em>)</nobr>.
+It follows that if <em>W</em> is the direct sum of irreducibles
+<nobr><em>V<sub>i</sub></em></nobr> then
+<nobr>dim(<em>V</em>) &middot; <em>P</em><sub>&phi;</sub></nobr>
+is the projection to the direct sub-sum of those
+<nobr><em>V<sub>i</sub></em></nobr> that are isomorphic
+with&nbsp;<em>V</em>.  In particular, this sub-sum is independent
+of the decomposition; it is often known as the
+<nobr><em>V-isotypic subspace</em></nobr> of&nbsp;<em>W</em>.
+Examples: if <em>V</em> is the trivial representation then
+the <nobr><em>V</em>-isotypic</nobr> subspace is the fixed subspace
+we called <nobr><em>V<sup>G</sup></em></nobr>, and indeed in this case
+<nobr><em>P</em><sub>&phi;</sub></nobr> is the average of
+<nobr>&rho;(<em>g</em>)</nobr> over group elements&nbsp;<em>g</em>.
+If <em>G</em> is the group of two elements and <em>V</em> its
+<em>nontrivial</em> representation then the isotypic subspace is the
+<nobr>(&minus;1)-eigenspace</nobr> for the <nobr>non-identity</nobr>
+element <em>g</em> of&nbsp;<em>G</em>, and indeed the associated
+projection <nobr><em>P</em><sub>&phi;</sub></nobr> is the familiar
+<nobr>(1&minus;&rho;(<em>g</em>))/2</nobr>, just as projection to the
+<nobr>(+1)-eigenspace</nobr> is the averaging operator
+<nobr>(1+&rho;(<em>g</em>))/2</nobr>.
+
+<p>
+
+If you know about integral closures and related ideas (see for instance
+the beginning of the summary of <A HREF="galois.html">field algebra</A>)
+then you can also use <nobr><em>P</em><sub>&phi;</sub></nobr>
+to demonstrate the last part of Theorem&nbsp;5.9, which Artin punts on
+proving: the dimension of every irreducible representation&nbsp;<em>V</em>
+is a factor <nobr>of <em>N</em> = #(<em>G</em>)</nobr>.
+Proof: <nobr><em>N</em>/dim(<em>V</em>)</nobr>
+is an eigenvalue of the action on the regular representation of
+<nobr><em>N&middot;P</em><sub>&phi;</sub>
+= &Sigma;<sub><em>g</em>&isin;<em>G</em></sub> &phi;<sup>*</sup>(<em>g</em>) &rho;(<em>g</em>)</nobr>;
+since each of the numbers <nobr>&phi;<sup>*</sup>(<em>g</em>)</nobr>
+is an algebraic integer (it's the sum of roots of unity), it follows
+that so is <nobr><em>N</em>/dim(<em>V</em>)</nobr>, and since that
+quotient is rational we conclude that
+<nobr><em>N</em> / dim(<em>V</em>) &isin; <strong>Z</strong></nobr>
+as claimed.
+
+<p>
+
+<A NAME="today">
+<img src="orangeball.gif">
+Our final topic for Math 55a is the
+<a href="http://en.wikipedia.org/wiki/Sylow_theorems"
+target="_blank">Sylow theorems</a>, covered by Artin in
+Chapter&nbsp;6, Section&nbsp;4 (pages 205&ndash;208).
+Corollary&nbsp;4.3 (a finite group <em>G</em> contains
+an element of order&nbsp;<em>p</em> for every prime factor
+<em>p</em> <nobr>of |<em>G</em>|</nobr>) is
+<a href="http://en.wikipedia.org/wiki/Cauchy's_theorem_(group_theory)"
+target="_blank">a theorem of Cauchy</a> that predates Sylow;
+we'll start by giving its combinatorial proof,
+which will introduce the technique that we
+(following Artin) will use to prove the Sylow theorems.
+Note that Artin's statement of the &ldquo;second Sylow theorem&rdquo;
+((4.6) on page 206) is not the usual terminology, which regards
+<nobr>Corollary 4.7</nobr> as the second Sylow theorem and
+(4.6) as a step in one proof of this theorem.
+
+<p>
+
+The proof Artin gives for Sylow I can be extended to give the
+<nobr>&ldquo;1 mod <em>p</em>&rdquo;</nobr> part of Sylow&nbsp;III.
+Artin shows that the combinatorial coefficient
+<nobr>bin(<em>p<sup>e</sup>m</em>, <em>p<sup>e</sup></em>)</nobr>
+he calls <font size="-1"><em>N</em></font> is not a multiple
+of&nbsp;<em>p</em>; extending the same argument shows that
+<font size="-1"><em>N</em></font> is congruent to
+<nobr><em>m</em> mod <em>p</em></nobr>
+(the first factor is <nobr><em>m</em> mod <em>p</em></nobr>,
+and each of the other factors is <nobr>1 mod <em>p</em></nobr>).
+[Simpler yet: work in charcteristic&nbsp;<em>p</em>,
+and apply <em>e</em> times the identity
+<nobr>(1+<em>X</em>)<sup><em>p</em></sup> = 1 + <em>X<sup>p</sup></em></nobr>
+to get
+<nobr>(1+<em>X</em>)<sup><em>p<sup>e</sup>m</em></sup>
+= (1 + <em>X<sup>p<sup>e</sup></sup></em>)<sup><em>m</em></sup></nobr>;
+now look at the <nobr><em>X<sup>p<sup>e</sup></sup></em></nobr>
+coefficient.]
+Since <em>m</em> is also the number of orbits of each Sylow subgroup
+on the <nobr><em>p<sup>e</sup>m</em>-element subsets</nobr>
+of&nbsp;<em>G</em>, it follows that the number of Sylow subgroups
+is congruent mod&nbsp;<em>p</em> to <nobr><em>m</em>/<em>m</em> = 1</nobr>.
+
+<p>
+
+Artin's treatment of Sylow II may be easier to read if you just replace
+each instance of <em>s</em> by&nbsp;<em>H</em>
+(recall that <em>s</em> was introduced as the coset
+1<em>H</em> of &nbsp;<em>H</em>).
+
+<hr>
+
+<img src="redball.gif">
+<A HREF="p1.pdf">First problem set / Linear Algebra I:</A>
+ vector space basics; an introduction to convolution rings
+<br>
+ <strong>corrected</strong> 1.ix.10
+ (<em>a</em> for <em>a<sub>n</sub></em> in 10(i))
+<!-- L.Alpoge -->
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p2.pdf">Second problem set / Linear Algebra II:</A>
+ dimension of vector spaces; torsion groups/modules and divisible groups
+<br>
+
+<P>
+<img src="redball.gif">
+<A HREF="p3.pdf">Third problem set / Linear Algebra III:</A>
+Countable vs. uncountable dimension of vector spaces;
+ linear transformations and duality
+<br>
+NB: The &ldquo;trickiness&rdquo; of 2ii has nothing to do with
+subtleties of infinite cardinals, the Axiom of Choice, etc.;
+all you should need about countability (beyond the definition) is that
+a countable union of countable sets is countable (as in Cantor's proof
+of the countability of the rationals).
+<br>
+<font size=-1>
+<!--
+<img src="yellowball.gif"> For Problem 9, the dual is the product
+(not sum!) of the <em>V<sub>i</sub></em>.
+If <em>F</em> is finite (or countably infinite),
+<em>I</em> is countably infinite,
+and each <em>V<sub>i</sub></em> has positive finite dimension,
+then the direct sum <em>V</em> is countable,
+but its dual <em>V</em><sup>*</sup> is not,
+so <em>V</em> and <em>V</em><sup>*</sup> cannot be isomorphic
+(see also problem 2i).
+<br>
+<img src="yellowball.gif"> For 2ii, the sequences
+<nobr><em>p<sub>x</sub></em> := (1, <em>x</em>, <em>x</em><sup>2</sup>, <em>x</em><sup>3</sup>, &hellip;, <em>x<sup>n</sup></em>, &hellip;)</nobr>
+in <nobr><em>F</em><sup>&infin;</sup></nobr>
+are linearly independent.  Using &ldquo;eigenstuff&rdquo;
+this is easy to see because <em>p<sub>x</sub></em> is
+an <nobr><em>x</em>-eigenvector</nobr>
+for the left-shift operator, and eigenvectors with different
+eigenvalues are linearly independent.
+<br>
+<a href="2ii_ctm.html" target="_blank">Here's</a> Curt McMullen's proof,
+which does not depend on the cardinality of&nbsp;<em>F</em>.
+</font>
+-->
+
+<P>
+<img src="redball.gif">
+<A HREF="p4.pdf">Fourth problem set / Linear Algebra IV:</A>
+Eigenstuff, and a projective overture (in which
+&ldquo;<nobr><em>U</em><sup>&perp;</sup></nobr>&rdquo;
+denotes the annihilator of <em>U</em>
+in <nobr><strong>P</strong><em>V</em><sup>*</sup></nobr>)
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p5.pdf">Fifth problem set / Linear Algebra V:</A>
+Tensors, eigenstuff cont'd, and a bit on inner products
+<br>
+<font size=-1>
+<img src="yellowball.gif">
+Problem 5i can be less confusing if you start with compositions of maps
+<nobr><em>U</em> &rarr; <em>V</em> &rarr; <em>W</em></nobr>
+involving three different vector spaces,
+and only then set all of them equal&nbsp;<em>V</em>.
+Thus if <em>A</em> is in Hom(<em>V</em>,<em>W</em>)
+then the map taking <em>X</em> to <em>AX</em> goes from
+<nobr>Hom(<em>U</em>,<em>V</em>)</nobr>
+to <nobr>Hom(<em>U</em>,<em>W</em>)</nobr>,
+i.e. from <nobr><em>U<sup>*</sup></em>&otimes;<em>V</em></nobr>
+to <nobr><em>U<sup>*</sup></em>&otimes;<em>W</em></nobr>,
+so it had better be <nobr><em>I</em>&otimes;<em>A</em></nobr>.
+Likewise for <em>B</em> is in Hom(<em>U</em>,<em>V</em>)
+the map taking <em>X</em> to <em>XB</em> goes from
+<nobr><em>V<sup>*</sup></em>&otimes;<em>W</em></nobr>
+to <nobr><em>U<sup>*</sup></em>&otimes;<em>W</em></nobr>,
+so it ought to be <nobr><em>B<sup>*</sup></em>&otimes;<em>I</em></nobr>
+&mdash; not <nobr><em>B</em>&otimes;<em>I</em></nobr>
+because we need a map from&nbsp;<em>V<sup>*</sup></em>
+to&nbsp;<em>U<sup>*</sup>.</em>  (Fortunately <em>B</em>
+and its adjoint operator <em>B<sup>*</sup></em> have the same spectrum,
+so even if you made this mistake you could still get the rest of
+the problem right.)
+Of course, once you've surmised the answer
+<nobr><em>I</em>&otimes;<em>A</em> + <em>B<sup>*</sup></em>&otimes;<em>I</em></nobr>,
+you still have to prove it; by linearity, it's enough to check that
+the formulas agree on pure tensors, or in convenient coordinates
+if you prefer &mdash; which is indeed a special case because the usual
+coordinates on <nobr><em>U<sup>*</sup></em>&otimes;<em>V</em></nobr>
+come from a basis of pure tensors, namely tensors of vectors in the dual
+basis for <em>U<sup>*</sup></em> with the basis for&nbsp;<em>V</em>.
+</font>
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p6.pdf">Sixth problem set / Linear Algebra VI:</A>
+Pairings and inner products, cont'd
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p7.pdf">Seventh problem set / Linear Algebra VII:</A>
+More about the spectrum, including spectral graph theory;
+symplectic structures
+<br>
+<font size=-1>
+<img src="yellowball.gif">
+For 2i, changing each coordinate of a &lambda;-eigenvector <em>v</em>
+to its absolute value preserves
+<nobr>&lang;<em>v</em>, <em>v</em>&rang;</nobr>
+and does not decrease
+<nobr>&lang;<em>Av</em>, <em>v</em>&rang;</nobr>.
+Thus by problem 1 the new vector is also a
+<nobr>&lambda;-eigenvector</nobr>, and we get such an eigenvector
+with nonnegative entries.  If &mu; is a negative eigenvalue,
+the same construction shows that the largest eigenvalue is at least
+<nobr>|&mu;|</nobr>.
+<br>
+&bull;
+For 2ii, show that if <nobr><em>v<sub>i</sub></em> &gt; 0</nobr> but
+<nobr><em>v<sub>j</sub></em> = 0</nobr> and
+<nobr><em>a<sub>ij</sub></em> &gt; 0</nobr>
+then we can increase the &ldquo;Rayleigh quotient&rdquo;
+<nobr>&lang;<em>Av</em>, <em>v</em>&rang;
+<font size="+1">/</font> &lang;<em>v</em>, <em>v</em>&rang;</nobr>
+by making <nobr><em>v<sub>j</sub></em></nobr>
+positive but sufficiently small.
+So if not all <em>v<sub>i</sub></em> are positive we can let
+<em>I</em> be the set of indices <em>i</em> of positive coordinates,
+and <em>J</em> its complement, giving a disconnection of&nbsp;<em>A</em>
+(note that <em>I</em> cannot be empty because then <em>v</em> is the
+zero vector).  In the connected case, dimension&nbsp;1 follows because
+else some eigenvector would have both positive and negative entries.
+<br>
+&bull;
+Finally, for 2iii if there is a <nobr>(&minus;&lambda;)-eigenvector</nobr>
+<em>v</em> then changing each coordinate to its absolute value
+produces a <nobr>(+&lambda;)-eigenvector</nobr>; then if we let
+<em>I</em> be the set of indices of positive coordinates of&nbsp;<em>v</em>
+then for every positive <nobr><em>a<sub>ij</sub></em></nobr>
+exactly one of <em>i,j</em> is in&nbsp;<em>I</em>, and conversely
+if there is such a subset <em>I</em> of
+<nobr>{1,2,&hellip;,<em>n</em>}</nobr> then changing
+each coordinate of a <nobr>(+&lambda;)-eigenvector</nobr>
+to its negative produces a <nobr>(&minus;&lambda;)-eigenvector</nobr>.
+<br>
+&bull;
+NB The term &ldquo;connected&rdquo;, and the connection with
+Problem&nbsp;5 (see the next paragraph), should suggest
+forming a graph with <em>n</em> vertices and an edge for each
+<em>i,j</em> such that <nobr><em>a<sub>ij</sub></em> &gt; 0</nobr>.
+The graph is connected iff the matrix is &ldquo;connected&rdquo;,
+and then the condition of part&nbsp;iii is that this graph be
+bipartite.  This generalizes the corresponding results for the
+adjacency matrix of the same graph.
+Note that indeed the hypercube graph of Problem&nbsp;5
+is bipartite and its adjacency matrix has maximal eigenvalue <em>n</em>
+and minimal eigenvalue&nbsp;&minus;<em>n</em>.
+<br>
+&bull;
+There is an analogous result for matrices with nonnegative entries
+that are not required to be symmetric: there is a real eigenvalue
+&lambda; such that <nobr>|&mu;| &le; &lambda;</nobr> for all
+eigenvalues &mu;, even complex ones (which may exist in this generality).
+There are also equality conditions in terms of connectedness of an
+associated graph, which in this setting must be taken to be a directed graph.
+I don't know as slick a proof of this result, at least not without
+using more of the topological tools we'll develop in Math&nbsp;55b.
+<br>
+<img src="yellowball.gif">
+For 5ii, let <em>x</em> be the vector whose <em>v</em> coordinate is
++1 if <em>v</em> is in S and &minus;1 if not.  Then
+<em>x</em> is orthogonal to the <nobr>all-1</nobr> vector,
+which generates the eigenspace for eigenvalue&nbsp;<em>n</em>.
+Since the second-largest eigenvalue is <nobr><em>n</em>&minus;2</nobr>,
+it follows that
+<nobr>&lang;<em>Ax</em>, <em>x</em>&rang; &le;
+(<em>n</em>&minus;2) &lang;<em>x</em>, <em>x</em>&rang; </nobr>
+with equality iff 
+<nobr><em>Ax</em> = (<em>n</em>&minus;2) <em>x</em></nobr>.
+This yields the desired bound, with equality iff each vertex
+in&nbsp;<em>S</em> has exactly one neighbor outside&nbsp;<em>S</em>,
+which in turn is soon seen to be equivalent to the condition that
+<em>S</em> is one of the 2<em>n</em> subsets on which one of the
+<em>n</em> coordinates is constant.
+</font>
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p8.pdf">Eighth problem set / Linear Algebra VIII:</A>
+Nilpotent operators and related topics; a natural inner product strucure
+on operators on a finite-dimensional space; exterior algebra;
+recreational applications of the sign homomorphism on&nbsp;S<sub>n</sub>
+<br>
+ <strong>corrected</strong> 29.x.10
+ (unipotent operator in 3, not &ldquo;unipotent vector&rdquo;)
+<!-- L.Alpoge -->
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p9.pdf">Ninth problem set / Linear Algebra IX:</A>
+More on exterior algebra and determinants
+<br>
+ <strong>corrected</strong> to replace duplicated Problem 4 (ouch)
+<!-- L.Alpoge -->
+and fix the Axler quote
+ <br>
+ <strong>corrected again</strong> (ouch-prime)
+ to fix Problem 2:
+ <nobr>&lang;&omega;,&omega;&rang; = 0</nobr>, <u>not</u>
+ <nobr>&lang;&omega;,&omega;'&rang; = 0</nobr>
+<!-- Toan Phan & Greg Yang (independently) -->
+<br>
+<img src="yellowball.gif">
+For problem 2, certainly if
+&omega; = <em>v</em><sub>1</sub> ^ <em>v</em><sub>2</sub>
+then 
+<nobr>&omega; ^ &omega; = 
+<em>v</em><sub>1</sub> ^ <em>v</em><sub>2</sub> ^ <em>v</em><sub>1</sub> ^ <em>v</em><sub>2</sub>
+= &minus; <em>v</em><sub>1</sub> ^ <em>v</em><sub>1</sub> ^ <em>v</em><sub>2</sub> ^ <em>v</em><sub>2</sub>
+= 0.</nobr>
+The reverse implication can be proved by direct calculation, but it's
+easier to use the fact that if &omega; is not a pure tensor then it is
+of the form
+<nobr><em>v</em><sub>1</sub> ^ <em>v</em><sub>2</sub> + <em>v</em><sub>3</sub> ^ <em>v</em><sub>4</sub></nobr>
+for some basis
+<nobr>{<em>v</em><sub>1</sub>, <em>v</em><sub>2</sub>, <em>v</em><sub>3</sub>, <em>v</em><sub>4</sub>}</nobr>,
+and then
+<nobr>&omega; ^ &omega; = 2
+<em>v</em><sub>1</sub> ^ <em>v</em><sub>2</sub> ^ <em>v</em><sub>3</sub> ^ <em>v</em><sub>4</sub></nobr>
+is nonzero.
+<br>
+For problem 3, choose any basis <em>B</em> for <em>V</em>;
+let &psi; be the wedge product of all 4<em>n</em> basis vectors, and
+use for&nbsp;<em>W</em> a basis of pure exterior products of
+<nobr>2<em>n</em>-element</nobr> subsets of&nbsp;<em>B</em>.
+Then
+<nobr>&lang;&omega;,&omega;'&rang; = 0</nobr>
+for all basis elements <nobr>&omega;,&omega;'</nobr>
+unless <nobr>&omega; and &omega;'</nobr> come from complementary
+subsets of&nbsp;<em>B</em>, in which case
+<nobr>&lang;&omega;,&omega'&rang; = &plusmn;1</nobr>.
+So <em>W</em> is the orthogonal direct sum of
+<nobr><em>r</em> := dim(<em>W</em>)/2</nobr>
+<nobr>two-dimensional</nobr> subspaces, each with signature (1,1).
+Hence <em>W</em> has signature <nobr>(<em>r</em>, <em>r</em>)</nobr>.
+In each subsapce, <nobr>&omega; + &omega;'</nobr> and
+<nobr>&omega; &minus; &omega;'</nobr> constitute an orthogonal basis,
+and the basis vectors have inner products <nobr>2 and &minus;2</nobr>
+with themselves.  So we can take for <nobr><em>W</em><sub>+</sub></nobr>
+the span of the <em>r</em> positive basis vectors, and for
+<nobr><em>W</em><sub>&minus;</sub></nobr> the span of the
+<em>r</em> negative ones.
+</font>
+
+<P>
+
+<img src="redball.gif">
+<A HREF="p10.pdf">Tenth problem set / Linear Algebra X:</A>
+Signatures and real polynomials; determinants and distances;
+Pontrjagin duality
+<br>
+ <strong>corrected</strong>: in 3(ii), each
+ <em>x<sub>i</sub></em> and <em>y<sub>j</sub></em>
+ must be positive, not just greater than <nobr>&minus;1/2</nobr>
+ [I was thinking of the application to M&uuml;ntz for which
+ the matrix entries are of the form
+ <nobr>&lang;<em>t<sup>x</sup></em>,<em>t<sup>y</sup></em>&rang;
+ = 1/(<em>x</em>+<em>y</em>+1), <nobr>
+ not <nobr>1/(<em>x</em>+<em>y</em>)<nobr>]
+<!-- G.Yang -->
+<br>
+ also, <strong>corrected</strong> 11.xi: in 1(i) the
+ <nobr><em>P<sub>j</sub></em></nobr> must be pairwise coprime,
+ not merely distinct (and then there's no need to require <em>P</em>
+ and each <nobr><em>P<sub>j</sub></em></nobr> to be monic)
+<!-- Toan Phan -->
+<br>
+ and, <strong>corrected</strong> 23.xi (sorry!): in problem 3,
+ the <em>x<sub>i</sub></em> must already be assumed distinct
+ in part (ii), else the matrix is only positive semidefinite.
+<!-- L. Alpoge -->
+<br>
+<font color="red">&oplus;</font> For 1(iii), the point is to find
+a polynomial you can compute easily from the coefficients
+of&nbsp;<em>P</em>; it's no fair to just write something like
+&ldquo;<nobr>&Pi;<sub><em>i</em>&le;<em>r</em></sub>(<em>x</em>&minus;<em>i</em>)
+&Pi;<sub><em>j</em>&le;<em>s</em></sub>(<em>x</em>+<em>j</em>)</nobr>, where
+<em>P</em> has <em>r</em> positive and <em>s</em> negative roots&rdquo;:
+that's begging the question of determining <em>r</em> and&nbsp;<em>s</em>.
+Hint: the polynomial you construct need not have
+the same degree as&nbsp;<em>P</em>.
+For 8(ii), you're looking for a way to efficiently combine black boxes
+that compute DFT's on <em>H</em> and <nobr><em>G</em>/<em>H</em></nobr>
+into a technique for computing DFT's on&nbsp;<em>G</em>
+(so that one can recursively construct such a box if <em>G</em> is (say)
+a cyclic group of order <nobr>2<sup><em>r</em></nobr> from DFT's for
+tiny groups like the <nobr>2-element</nobr> group).
+This should be straightforward if <em>G</em> is simply the
+direct product of <em>H</em> and <nobr><em>G</em>/<em>H</em></nobr>.
+But what if (as suggested by the introductory paragraph)
+<em>G</em> is a cyclic group of order <nobr>2<sup><em>r</em></sup></nobr>
+and <em>H</em> is its subgroup of order&nbsp;2, or the subgroup of
+order <nobr>2<sup><em>r</em>&minus;1</sup></nobr> and index&nbsp;2?
+
+<P>
+
+<img src="orangeball.gif">
+<A NAME="current_homework">
+<A HREF="p11.pdf">Eleventh and final problem set:</A>
+Representations of finite groups
+<br>
+ <strong>corrected</strong> overnight: in problem 3,
+ <nobr><em>S<sup>k</sup></em></nobr> is not the same as
+ <nobr><em>k<sup>S</sup></em></nobr>&hellip;
+<br>
+<img src="yellowball.gif">
+Problem 3 shows one approach and a few typical applications
+for a result often known as &ldquo;Burnside's Lemma&rdquo;
+[though it was already well-known in Burnside's day,
+going back at least to Cauchy (1845) according to
+<A href="http://en.wikipedia.org/wiki/Burnside's_lemma"
+target="_blank">this Wikipage</a>].  I thank Lewis Stiller
+for pointing out the connection with representation theory
+some years back.
+<br>
+<img src="yellowball.gif">
+The construction illustrated by Problem 4(iii) is the
+&rdquo;Molien series&rdquo; or &rdquo;Hilbert-Molien series&rdquo;
+of the ring of invariants of a representation of a finite group.
+(See for example
+<a href="http://en.wikipedia.org/wiki/Molien_series#Example"
+target="_blank">this Wikipage</a>; as of this writing,
+the example there happens to be the same as the one in this problem.)
+In general the denominator can always be taken to be a product of
+factors <nobr>1-<em>t<sup>d</sup></em></nobr>, but it's rare for
+the numerator to be simple, let alone as simple as just&nbsp;1
+when we're dealing with the very special case of a
+<a href="http://en.wikipedia.org/wiki/Complex_reflection_group"
+target="_blank">complex reflection group</a>.
+<br>
+<img src="yellowball.gif">
+For problem 7(iii), there are some alternative solutions for this
+particular case, but the intended solution was to show more generally:
+if <em>V</em> is a nonzero finite-dimensional representation,
+over some field subfield <em>F</em> of <strong>C</strong>,
+of a finite group <em>G</em>, then <em>V</em> is irreducible
+if and only if <nobr>End<sub><em>G</em></sub>(<em>V</em>)</nobr>
+is a division algebra.  Note that this is easy for
+<nobr><em>F</em>=<strong>C</strong></nobr> by Schur's Lemma:
+if <em>V</em> is the direct sum over&nbsp;<em>j</em> of isotypics
+<nobr><em>V<sub>j</sub><sup>m<sub>j</sub></sup></em></nobr>, then
+<nobr>End<sub><em>G</em></sub>(<em>V</em>)</nobr>
+is the direct sum of matrix algebras
+<nobr>GL<sub><em>m<sub>j</sub></sub></em>(<strong>C</strong>)</nobr>,
+which is a division algebra if and only if
+<nobr><em>m<sub>j</sub></em>=1</nobr> for one <em>j</em> and
+<nobr><em>m<sub>j</sub></em>=0</nobr> for all other <em>j</em>.
+To do it in general, note that if some operator in
+<nobr>End<sub><em>G</em></sub>(<em>V</em>)</nobr>
+is invertible then its inverse is also a
+<nobr><em>G</em>-endomorphism</nobr> of&nbsp;<em>V</em>.
+Hence if <nobr>End<sub><em>G</em></sub>(<em>V</em>)</nobr>
+is <em>not</em> a division algebra, there is some nonzero
+<nobr><em>G</em>-endomorphism <em>T</em></nobr> of&nbsp;<em>V</em>,
+and then the kernel and image of&nbsp;<em>T</em> are subrepresentations
+of&nbsp;<em>V</em> other than {0} and <em>V</em> itself.
+Conversely, if <em>V</em> is not reducible then it is a direct sum
+<nobr><em>V</em><sub>1</sub>&oplus;<em>V</em><sub>2</sub></nobr>
+of two nonzero representations, and the projection to either factor
+is a nonzero <nobr><em>G</em>-endomorphism</nobr> of&nbsp;<em>V</em>
+that is not invertible.
+
+<hr>
+
+The <strong>FINAL EXAM</strong> is now on my office door.
+<br>
+<strong>Correction</strong> (argh...):
+The <nobr><em>n</em>-by-<em>n</em></nobr> matrix <em>A</em>
+of the introductory paragraph of the first problem
+should have been called <nobr><em>A<sub>n</sub></em></nobr>.
+Then in part&nbsp(i) take <nobr><em>n</em>=2<em>m</em></nobr>
+to get <nobr><em>A</em><sub>2<em>m</em></sub></nobr>
+[NB <strong>not</strong> <nobr><em>A</em><sub>2<em>n</em></sub></nobr>
+as I wrote earlier].
+<!-- Andrei Ciupan -->
+<!--
+and Jonathan Zhou, since I had first written A_2n, not A_2m :-(
+-->
+<br>
+Another typo <strong>correction</strong>:
+in 3(iii),
+&ldquo;<em>G</em> has a representation <nobr>(<em>V,&rho;</em>)</nobr>
+whose associated character&nbsp;&rho; takes the values&hellip;&rdquo
+should of course be
+&ldquo;whose associated character&nbsp;&chi; takes&rdquo etc.
+<!-- Levent Alpoge -->

@@ -1,0 +1,100 @@
+<TITLE>
+Outline of Pontrjagin duality
+</TITLE>
+<BODY BGCOLOR="#ffffcc">
+
+Let <EM>G</EM> be a locally compact abelian group (lcag).  Thus
+<EM>G</EM> is an abelian group with a topology making the group
+operations continuous functions from <EM>G</EM> and
+<EM>G</EM><SUP>2</SUP> to <EM>G</EM>, and under which
+any point has a neighborhood contained in a compact set.
+(Since translation by a group element is continuous,
+it is enough to find such a neighborhood of the origin of <EM>G</EM>.)
+Examples are any finite abelian group (with the discrete topology),
+the direct sum of finitely many lcag's, and the groups
+<STRONG>Z</STRONG>, <STRONG>T</STRONG>, <STRONG>R</STRONG>,
+<STRONG>C</STRONG> (which we also know as the direct sum of
+two <STRONG>R</STRONG>'s).  The <EM>p</EM>-adic integers
+<STRONG>Z</STRONG><SUB><EM>p</EM></SUB> and rationals
+<STRONG>Q</STRONG><SUB><EM>p</EM></SUB> are also lcag's for each
+prime <EM>p</EM>.  An example of a topological abelian
+group that is <EM>not</EM> locally compact is an infinite-dimensional
+Hilbert space.
+
+<P>
+
+The <EM>Pontrjagin dual</EM> <EM>G</EM>^ of a lcag <EM>G</EM> is the
+group of continuous homomorphisms from <EM>G</EM> to the unit circle
+<STRONG>C</STRONG><SUB>1</SUB>.  For instance, the duals of
+<STRONG>Z</STRONG>/<EM>n</EM><STRONG>Z</STRONG>,
+<STRONG>Z</STRONG>, <STRONG>T</STRONG>, <STRONG>R</STRONG>
+are isomorphic with
+<STRONG>Z</STRONG>/<EM>n</EM><STRONG>Z</STRONG>,
+<STRONG>T</STRONG>, <STRONG>Z</STRONG>, <STRONG>R</STRONG>
+respectively.  For each <EM>g</EM> in <EM>G</EM>, the map
+taking any <EM>g^</EM> in <EM>G</EM>^ to
+<EM>g^(g)</EM> is a homomorphism from <EM>G</EM>^ to
+<STRONG>C</STRONG><SUB>1</SUB>.  If <EM>G</EM>^ is given the
+weakest topology making all those homomorphisms continuous, it
+turns out that <EM>G</EM>^ becomes an lcag itself, and <EM>its</EM>
+Pontrjagin dual becomes canonically identified with <EM>G</EM>.
+Note that on the other hand there is in general no canonical
+identification between <EM>G</EM> and <EM>G</EM>^ even when these two
+groups are isomorphic as lcag's (e.g. for
+<STRONG>Z</STRONG>/<EM>n</EM><STRONG>Z</STRONG> or <STRONG>R</STRONG>).
+
+<P>
+
+Further properties of Pontrjagin duality: the dual of a finite
+direct sum is naturally identified with the direct sum of the duals;
+a continuous homomorphism <EM>f</EM> from <EM>G</EM> to <EM>H</EM>
+yields a continuous homomorphism <EM>f</EM>^
+from <EM>H</EM>^ to <EM>G</EM>^; this dual homomorphism <EM>f</EM>^
+is injective if <EM>f</EM> is surjective, and vice versa; and
+<EM>f</EM>^^=<EM>f</EM>.  (These results can all be checked
+either directly or with the assistance of the theorem
+<EM>G</EM>^^=<EM>G</EM>.)  In particular if <EM>G</EM> is
+a closed subgroup of <EM>H</EM> then <EM>G</EM>^ is the quotient of
+<EM>H</EM>^ by the <EM>annihilator</EM> of <EM>G</EM> in <EM>H</EM>^,
+i.e. the subgroup consisting of homomorphisms taking every element
+of <EM>G</EM> to the identity in <STRONG>C</STRONG><SUB>1</SUB>.
+Conversely the dual of a quotient <EM>H/G</EM> is the annihiliator
+of <EM>G</EM> in <EM>H</EM>^, provided <EM>G</EM> is a closed
+subgroup of <EM>H</EM>.
+(Check that this works for the subgroups
+<STRONG>Z</STRONG> of <STRONG>R</STRONG>, and
+<EM>n</EM><STRONG>Z</STRONG> of <STRONG>Z</STRONG>.)
+The dual of a compact group is discrete, and vice versa
+(hard to prove, but at least check it the examples we've seen).  
+
+<P>
+
+Except for that last sentence, the properties of Pontrjagin duality
+may remind you of duality of vector spaces.  Indeed Pontrjagin duality
+is a generalization of vector-space duality, at least for vector spaces
+over <STRONG>R</STRONG> and
+<STRONG>Z</STRONG>/<EM>p</EM><STRONG>Z</STRONG>.  For instance,
+if <EM>V</EM> is a real vector space then <EM>V</EM>* may be
+identified with <EM>V</EM>^ by regarding the functional <EM>v</EM>*
+as the homomorphism sending any <EM>v</EM> in <EM>V</EM> to
+<EM>e</EM><SUP><EM>iv</EM>*(<EM>v</EM>)</SUP>.  For
+<STRONG>Z</STRONG>/<EM>p</EM><STRONG>Z</STRONG> we instead
+raise a fixed <EM>p</EM>-th root of unity to the power
+<EM>v</EM>*(<EM>v</EM>).
+
+<P>
+
+So, what does all this theory have to do with Fourier?
+In each case we can express ``any'' function <EM>f</EM>
+on <EM>G</EM> as a ``linear combination'' of its homomorphisms
+to <STRONG>C</STRONG><SUB>1</SUB>, with the coefficients of
+the homomorphisms <EM>g^</EM> being given by a ``Fourier transform''
+<EM>f^</EM>(<EM>g^</EM>) of <EM>f</EM>.  The ``linear combination''
+may be a finite sum, infinite sum, or integral over <EM>G^</EM>
+(actually it's always an ``integral'' for a sufficiently general
+notion of integration), and except in the finite case the sense
+in which this linear combination is known coincide with <EM>f</EM>
+depends on what kind of function <EM>f</EM> is.  In each case, though,
+<EM>f^</EM>(<EM>g^</EM>) may be written as an inner product
+(<EM>f</EM>,<EM>g^</EM>), and <EM>f^^</EM> is a function on <EM>G</EM>
+proportional to <EM>f</EM>(-<EM>g</EM>).
