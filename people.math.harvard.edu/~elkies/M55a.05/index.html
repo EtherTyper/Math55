@@ -1,0 +1,728 @@
+<TITLE>
+Math 55a: Honors Advanced Calculus and Linear Algebra (Fall 2002)
+</TITLE>
+
+<!--
+<BODY BACKGROUND="calabi.gif">
+-->
+
+<STRONG>
+Lecture notes for
+Math 55a: Honors Advanced Calculus and Linear Algebra
+(Fall 2005)
+</STRONG>
+
+<P>
+
+If you find a mistake, omission, etc., please
+<A HREF="mailto:elkies@math.harvard.edu">let me know</A>
+by e-mail.
+
+<!--
+<blockquote>
+  <img src="purpball.gif">
+  <A HREF="http://www.fas.harvard.edu/~jorza/math55">Andrei's
+  Math 55 page</A>
+  <br>
+  <img src="purpball.gif">
+  <A HREF="qanda.html">Q & A</A>:
+   Questions that arose concerning lectures, problem sets, etc.,
+   and my replies
+</blockquote>
+-->
+
+<P>
+
+The <FONT COLOR="#B87800">orange</FONT COLOR> balls
+mark our <A HREF="#today">current location</A> in the course,
+and the <A HREF="#current_homework">current problem set</A>.
+
+<HR>
+
+<img src="redball.gif">
+<EM>Ceci n'est pas un</EM> Math 55a syllabus
+(<A HREF="h1.ps">PS</A> [PostScript] or <A HREF="h1.pdf">PDF</A>)
+
+<p>
+
+<img src="redball.gif">
+Our first topic is the <em>topology of metric spaces</em>,
+a fundamental tool of modern mathematics
+that we shall use mainly as a key ingredient in our rigorous development
+of differential and integral calculus.  To supplement the treatment
+in Rudin's textbook, I wrote up 20-odd pages of notes in six sections;
+copies will be distributed in class, and you also may view them
+and print out copies in advance from the PostScript or PDF files
+linked below.
+
+<P>
+
+<img src="redball.gif">
+Metric Topology I (<A HREF="top1.ps">PS</A>, <A HREF="top1.pdf">PDF</A>)
+<BR>
+Basic definitions and examples:
+the metric spaces <STRONG>R</STRONG><SUP><EM>n</EM></SUP>
+and other product spaces; isometries; boundedness and function spaces
+
+<blockquote>
+  <img src="purpball.gif">
+  If <em>S</em> is an infinite set and
+  <em>X</em> is an unbounded metric space then
+  we can't use our definition of <em>X</em><sup><em>S</em></sup>
+  as a metric space because
+   sup<sub><em>S</em></sub>&nbsp;<em>d<sub>X</sub></em>(<em>f</em>(<em>s</em>),<em>g</em>(<em>s</em>))
+  might be infinite.  But the <em>bounded functions</em> from <em>S</em>
+  to <em>X</em> <u>do</u> constitute a metric space under the same
+  definition of <em>d<sub>X<sup>S</sup></sub></em>.  A function
+  is said to be ``bounded'' if its image is a bounded set.
+  You should check that that
+  <em>d<sub>X<sup>S</sup></sub></em>(<em>f</em>,<em>g</em>)
+  is in fact finite for bounded <em>f</em> and <em>g</em>.
+</blockquote>
+
+<blockquote>
+  <img src="purpball.gif">
+  The ``Proposition'' on page 3 of the first topology handout
+  can be extended as follows:
+  <blockquote>
+   iv) For <strong>every</strong> point <em>p</em> of <em>X</em>
+   there exists a real number <em>M</em> such that
+   <em>d</em>(<em>p</em>,<em>q</em>)&lt;<em>M</em>
+   for all <em>q</em> of <em>E</em>.
+  </blockquote>
+  In other words, for every <em>p</em> in <em>X</em>
+  there exists an open ball about <em>p</em> that contains <em>E</em>.
+  Do you see why this is equivalent to (i), (ii), and (iii)?
+</blockquote>
+
+<img src="redball.gif">
+Metric Topology II
+(<A HREF="top2.ps">PS</A>, <A HREF="top2.pdf">PDF</A>)
+<BR>
+Open and closed sets, and related notions
+<br>
+<strong>corrected</strong> 22.ix.05
+(p.2: indices changed from <em>i</em> to alpha in Thm.&nbsp;2.24
+parts a,b;
+<br>
+p.4:
+closure of <em>B<sub>r</sub></em>(<em>p</em>)
+ vs.&nbsp;closed ball of radius&nbsp;<em>r</em>,
+<!-- Thanks to Kevin Carde for this last -->
+also fixed typo ``subet'' for subset)
+
+<P>
+
+<img src="redball.gif">
+Metric Topology III
+(<A HREF="top3.ps">PS</A>, <A HREF="top3.pdf">PDF</A>)
+<BR>
+Introduction to functions and continuity
+<br>
+<strong>corrected</strong> 25.ix.05
+(V for Z five times in p.3, paragraph 2)
+
+
+<P>
+
+<img src="redball.gif">
+Metric Topology IV
+(<A HREF="top4.ps">PS</A>, <A HREF="top4.pdf">PDF</A>)
+<BR>
+Sequences and convergence, etc.
+<BR>
+
+<P>
+
+<img src="redball.gif">
+Metric Topology V
+(<A HREF="top5.ps">PS</A>, <A HREF="top5.pdf">PDF</A>)
+<BR>
+Compactness and sequential compactness
+<br>
+<strong>corrected</strong> 1.x.05 to fix various minor typos
+<!-- About half of which were again found by Kevin Carde -->
+
+<P>
+
+<img src="redball.gif">
+Metric Topology VI
+(<A HREF="top6.ps">PS</A>, <A HREF="top6.pdf">PDF</A>)
+<BR>
+Cauchy sequences and related notions
+(completeness, completions, and a third formulation of compactness)
+<BR>
+<!--
+<blockquote>
+  <img src="purpball.gif">
+  Here's <A HREF="fermat.html">Fermat's trick</A>
+  for integrating <em>x<sup>t</sup>&nbsp;dx</em>.
+</blockquote>
+-->
+
+<hr>
+
+<img src="redball.gif">
+at least in the beginning of the <STRONG>linear algebra</STRONG>
+unit, we'll be following the Axler textbook closely enough that
+supplementary lecture notes should not be needed.  Some important
+extensions/modifications to the treatment in Axler:
+
+<UL>
+<LI> [cf. Axler, p.3]
+Unless noted otherwise, <STRONG>F</STRONG> may be an arbitrary
+field, not only <STRONG>R</STRONG> or <STRONG>C</STRONG>.  The
+most important fields other than those of real and complex numbers
+are the field <STRONG>Q</STRONG> of rational numbers, and the
+finite fields <STRONG>Z</STRONG>/<EM>p</EM><STRONG>Z</STRONG>
+(<EM>p</EM> prime).  Other examples are the field
+<STRONG>Q</STRONG>(<EM>i</EM>) of complex numbers with rational
+real and imaginary parts; more generally,
+<STRONG>Q</STRONG>(<EM>d</EM><SUP>1/2</SUP>) for any nonsquare
+rational number <EM>d</EM>; the ``<EM>p</EM>-adic numbers''
+<STRONG>Q</STRONG><SUB><EM>p</EM></SUB> (<EM>p</EM> prime),
+introduced at the end of our topology unit; and more exotic
+finite fields such as the 9-element field
+(<STRONG>Z</STRONG>/<EM>3</EM><STRONG>Z</STRONG>)(<EM>i</EM>).
+Here's a <A HREF="field.html">review</A>
+of the axioms for fields, vector spaces, and related mathematical
+structures.
+
+<LI> [cf. Axler, p.22] We define the span of an arbitrary subset
+<EM>S</EM> of (or tuple in) a vector space <EM>V</EM> as follows:
+it is the set of all (finite) linear combinations
+<EM>a</EM><SUB>1</SUB> <EM>v</EM><SUB>1</SUB> + ... +
+<EM>a<SUB>n</SUB> v<SUB>n</SUB></EM>
+with each <EM>v<SUB>i</SUB></EM> in <EM>V</EM> and each
+<EM>a<SUB>i</SUB></EM> in <EM>F</EM>.  This is still the smallest
+vector subspace of <EM>V</EM> containing <EM>S</EM>.  In particular,
+if <EM>S</EM> is empty, its span is by definition {0}.  We do
+<EM>not</EM> require that <EM>S</EM> be finite.
+
+<LI> About the infamous ``<A HREF="lemma3.pdf">Lemma 3.?</A>'':
+some notes and warnings about the behavior of
+Hom(<em>V</em>,<em>W</em>) under (finite or infinite) direct sums.
+
+<!--
+<LI> Unlike Axler, we spend some time on ``quotient vector spaces'',
+described a bit more fully in the
+<A HREF="qanda.html#quotient">Q & A</A> page.
+-->
+<LI> Unlike Axler, we spend some time on ``quotient vector spaces''.
+
+<LI> Axler also unaccountably soft-pedals the important notion of
+<A HREF="dual.html"><strong>duality</strong></A>.
+
+<LI> Here's a brief preview of
+<A HREF="nonsense.html">abstract nonsense</A> (a.k.a. diagram-chasing),
+and a diagram-chasing interpretation of quotients and duality.
+
+<LI> Axler proves the Fundamental Theorem of Algebra using
+complex analysis, which cannot be assumed in Math 55.
+<A HREF="fta.ps">Here</A>'s a proof using the topological tools
+we developed in the first month of class, in
+<A HREF="fta.ps">PS</A> and <A HREF="fta.pdf">PDF</A>.
+(Axler gives the complex-analytic proof on page 67.)
+
+<LI> We shall need some ``eigenstuff'' also in an infinite-dimensional
+setting, so will not assume that any vector space is (nonzero) finite
+dimensional unless we really must.
+
+<LI> If <em>T</em> is a linear operator on a vector space <em>V</em>,
+and <em>U</em> is an invariant subspace, then the quotient space
+<em>V</em>/<em>U</em> inherits an action of <em>T</em>.
+Moreover, the annihilator of <em>U</em> in <em>V</em><sup>*</sup>
+is an invariant subspace for the action of the adjoint operator
+<em>T</em><sup>*</sup> on <em>V</em><sup>*</sup>.
+(Make sure you understand why both these claims hold.)
+
+<LI> Triangular matrices are intimately related with ``flags''.
+A <EM>flag</EM> in a finite dimensional vector space <EM>V</EM>
+is a sequence of subspaces {0}=<EM>V</EM><SUB>0</SUB>,
+<EM>V</EM><SUB>1</SUB>, <EM>V</EM><SUB>2</SUB>, ...,
+<EM>V<SUB>n</SUB>=V</EM>, with each
+<EM>V<SUB>i</SUB></EM> of dimension <EM>i</EM> and containing
+<EM>V</EM><SUB><EM>i</EM>-1</SUB>.  A basis
+<EM>v</EM><SUB>1</SUB>, <EM>v</EM><SUB>2</SUB>, ...,
+<EM>v<SUB>n</SUB></EM>
+determines a flag: <EM>V<SUB>i</SUB></EM> is the span of the first
+<EM>i</EM> basis vectors.  Another basis
+<EM>w</EM><SUB>1</SUB>, <EM>w</EM><SUB>2</SUB>, ...,
+<EM>w<SUB>n</SUB></EM>
+determines the same flag if and only if each
+<EM>w<SUB>i</SUB></EM> is a linear combination of
+<EM>v</EM><SUB>1</SUB>, <EM>v</EM><SUB>2</SUB>, ...,
+<EM>v<SUB>i</SUB></EM>
+(necessarily with nonzero <EM>v<SUB>i</SUB></EM> coefficient).
+The <EM>standard flag</EM> in <EM>F<SUB>n</SUB></EM> is the flag
+obtained in this way from the standard basis of unit vectors
+<EM>e</EM><SUB>1</SUB>, <EM>e</EM><SUB>2</SUB>, ...,
+<EM>e<SUB>n</SUB></EM>.
+The punchline is that, just as a diagonal matrix is one that respects
+the standard basis (equivalently, the associated decomposition of
+<EM>V</EM> as a direct sum of 1-dimensional subspaces),
+<EM>an upper-triangular matrix is one that respects the standard
+flag.</EM>
+Note that the <EM>i</EM>-th diagonal entry of a triangular matrix
+gives the action on the one-dimensional quotient space
+<EM>V<SUB>i</SUB></EM>/<EM>V</EM><SUB><EM>i</EM>-1</SUB>
+(each <EM>i</EM>=1,...,<EM>n</EM>).
+</ul>
+<img src="redball.gif">
+Less surprising than the absence of quotients and duality
+in Axler is the lack of <strong>tensor algebra</strong>.
+That won't stop us in Math&nbsp;55, though.  Here's an introduction in
+<A HREF="tensor.ps">PS</A> and <A HREF="tensor.pdf">PDF</A>.
+[As you might guess from \oplus,
+the TeXism for the tensor-product symbol is \otimes.]
+<ul>
+<li> One of many applications is the <strong>trace</strong> of
+an operator on a finite dimensional <em>F</em>-vector space <em>V</em>.
+This is a linear map from Hom(<em>V</em>,<em>V</em>) to <em>F</em>.
+We can define it simply as the composition of two maps:
+our identification of Hom(<em>V</em>,<em>V</em>) with
+the tensor product of <em>V</em><sup>*</sup> and <em>V</em>,
+and the natural map from this tensor product to <em>F</em>
+coming from the bilinear map taking (<em>v</em><sup>*</sup>,<em>v</em>)
+to <em>v</em><sup>*</sup>(<em>v</em>).
+<li> Here are some basic facts about general
+<A HREF="norm.html"><strong>norms</strong></A>
+on real and complex vector spaces.
+<li> Just as we can study bilinear symmetric forms
+on a vector space over any field, not just <strong>R</strong>,
+we can study sesquilinear conjugate-symmetric forms
+on a vector space over any field <em>with a conjugation</em>,
+not just <strong>C</strong>.
+Here a ``conjugation'' on a field <em>F</em> is a field automorphism
+<nobr>sigma:<em>F</em>--&gt;<em>F</em></nobr>
+such that sigma is not the identity
+but sigma<sup>2</sup> is (that is, sigma is an involution).
+Given a basis {<em>v</em><sub>i</sub>} for&nbsp;<em>F</em>,
+a sesquilinear form &lt;.,.&gt; on&nbsp;<em>F</em>
+is determined by the field elements
+<em>a</em><sub>i,j</sub>=&lt;<em>v</em><sub>i</sub>,<em>v</em><sub>j</sub>&gt;,
+and is conjugate-symmetric if and only if
+<em>a</em><sub>j,i</sub>=sigma(<em>a</em><sub>i,j</sub>)
+for all i,j.
+Note that the ``diagonal entries'' <em>a</em><sub>i,i</sub>
+--- and more generally &lt;<em>v</em>,<em>v</em>&gt;
+for any <em>v</em> in&nbsp;<em>V</em> --- must be elements
+of the subfield of <em>F</em> fixed by&nbsp;sigma.
+<li> ``Sylvester's Law of Inertia'' states that
+for a nondegenerate pairing on a finite-dimensional vector space
+<em>V</em>/<em>F</em>, where either
+<em>F</em>=<strong>R</strong> and the pairing is
+bilinear and symmetric, or
+<em>F</em>=<strong>C</strong> and the pairing is
+sesquilinear and conjugate-symmetric,
+<em>
+the counts of positive and negative inner products
+for an orthogonal basis constitute an invariant of the pairing
+</em>
+and do not depend on the choice of orthogonal basis.
+(This invariant is known as the ``signature'' of the pairing.)
+The key trick in proving this result is as follows.
+Suppose <em>V</em> is the orthogonal direct sum of subspaces 
+<em>U</em><sub>1</sub>, <em>U</em><sub>2</sub>
+for which the pairing is positive definite on <em>U</em><sub>1</sub>
+and negative definite on <em>U</em><sub>2</sub>.
+Then any subspace <em>W</em> of <em>V</em>
+on which the pairing is positive definite
+has dimension no greater than dim(<em>U</em><sub>1</sub>).
+Proof: On the intersection of <em>W</em> with <em>U</em><sub>2</sub>,
+the pairing is both positive and negative definite;
+hence that subspace is {0}.  The claim follows by a dimension count,
+and we quickly deduce Sylvester's Law.
+<li> Over any field not of characteristic 2,
+we know that for any non-degenerate
+symmetric pairing on a finite-dimensional vector space
+there is an orthogonal basis, or equivalently
+a choice of basis such that the pairing is
+(<em>x</em>,<em>y</em>)=sum<sub><em>i</em></sub>(<em>a<sub>i</sub>&nbsp;x<sub>i</sub>&nbsp;y<sub>i</sub></em>)
+for some nonzero scalars <em>a<sub>i</sub></em>.
+But in general it can be quite hard to decide whether
+two different collections of <em>a<sub>i</sub></em>
+yield isomorphic pairings.  Even over <strong>Q</strong>
+the answer is already tricky in dimensions 2 and 3,
+and I don't think it's known in a vector space of arbitrary dimension.
+<!--
+<li> Here's an online version of the notes for the
+lecture on <A HREF="lattice.html">lattices</A>.
+-->
+<li> Re Chapter 7: we'll prove the Spectral Theorem
+for a self-adjoint or Hermitian operator <em>T</em>
+on a finite-dimensional real or complex vector space,
+not a la Axler, but by the usual method of maximizing
+the ``Rayleigh quotient'' <nobr>&lt;Tv,v&gt;/&lt;v,v&gt;</nobr>.
+Likewise for normal operators
+on a finite dimensional <strong>C</strong>-vector space,
+by maximizing <nobr>&lt;Tv,Tv&gt;/&lt;v,v&gt;</nobr>.
+<li> All of Chapter 8 works over an arbitrary algebraically closed field,
+not only over <strong>C</strong>
+(except for the minor point about extracting square roots,
+which breaks down in characteristic&nbsp;2); and
+the first section (``Generalized Eigenvalues'') works over any field.
+<li> We don't stop at Corollary 8.8: let <em>T</em> be any operator
+on a vector space <em>V</em> over a field <em>F</em>, not assumed
+algebraically closed.  If <em>V</em> is finite-dimensional, then
+The Following Are Equivalent:
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(1) There exists a nonnegative integer <em>k</em>
+such that <em>T<sup>k</sup></em>=0;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(2) For any vector <em>v</em>, there exists a nonnegative integer
+<em>k</em> such that <em>T<sup>k</sup>v</em>=0;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(3) <em>T<sup>n</sup></em>=0, where <em>n</em>=dim(<em>V</em>).
+<br>
+Note that (1) and (2) make no mention of the dimension,
+but are still not equivalent for operators on infinite-dimensional spaces.
+We readily deduce the further equivalent conditions:
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(4) There exists a basis for <em>V</em> for which
+<em>T</em> has an upper-triangular matrix
+with every diagonal entry equal zero;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+(5) Every upper-triangular matrix for <em>T</em>
+has zeros on the diagonal,
+and there exists at least one upper-triangular matrix for <em>T</em>.
+<br>
+Recall that the second part of (5) is automatic
+if <em>F</em> is algebraically closed.
+<li> The space of generalized 0-eigenvectors
+(the maximal subspace on which <em>T</em> is nilpotent)
+is sometimes called the <em>nilspace</em> of <em>T</em>.
+It is an invariant subspace.  When <em>V</em> is finite dimensional,
+<em>V</em> is the direct sum of the nilspace and another invariant
+subspace <em>V'</em>, consisting of the intersection of the subspaces
+<em>T<sup>k</sup></em>(<em>V</em>) as <em>k</em> ranges over all
+positive integers.  See Exercise&nbsp;8.11;
+This can be used to quickly prove Theorem 8.23
+and consequences such as Cayley-Hamilton (Theorem 8.20).
+<li> The dimension of the space of generalized <em>c</em>-eigenvalues
+(i.e., of the nilspace of <em>T-cI</em>) is usually called the
+<em>algebraic</em> multiplicity of <em>c</em>
+(since it's the multiplicity of <em>c</em>
+as a root of the characteristic polynomial of <em>T</em>),
+to distinguish it from the ``geometric multiplicity''
+which is the dimension of ker(<em>T-cI</em>).
+</ul>
+<A NAME="today">
+<img src="orangeball.gif">
+We'll <em>define</em> the determinant of an operator <em>T</em>
+on a finite dimensional space <em>V</em> as follows:
+<em>T</em> induces a linear operator <em>T</em>'
+on the top exterior power of <em>V</em>;
+this exterior power is one-dimensional,
+so an operator on it is multiplication by some scalar;
+det(<em>T</em>) is by definition the scalar
+corresponding to <em>T</em>'.
+The ``top exterior power'' is a subspace of the ``exterior algebra''
+of <em>V</em>, which is the quotient of the tensor algebra by
+the ideal generated by {<em>v</em>*<em>v</em>: <em>v</em> in <em>V</em>}.
+We'll still have to construct the sign homomorphism from the
+symmetry group of order dim(<em>V</em>) to {1,-1}
+to make sure that this exterior algebra is as large
+as we expect it to be, and that in particular that
+the (dim(<em>V</em>))-th exterior power has dimension 1
+rather than zero.
+<p>
+Some more tidbits about exterior algebra:
+<ul>
+<li>If <em>w</em>, <em>w</em>' are elements of the
+ <em>m</em>-th and <em>m</em>'-th exterior powers of <em>V</em>,
+ then <em>ww</em>'=(-1)<sup><em>mm</em>'</sup><em>w</em>'<em>w</em>;
+ that is, <em>w</em> and <em>w</em>' commute
+ unless <em>m</em> and <em>m</em>' are both odd
+ in which case they anticommute.
+<li>If <em>m</em>+<em>m</em>'=<em>n</em>=dim(<em>V</em>)
+ then the natural pairing from the
+ <em>m</em>-th and <em>m</em>'-th exterior powers
+ to the <em>n</em>-th is nondegenerate,
+ and so identifies the <em>m</em>'-th exterior power canonically
+ with the dual of the <em>m</em>-th
+ <em>tensored with the top (n-th) exterior power</em>.
+<li> In particular, if <em>m</em>=1,
+ and <em>T</em> is any invertible operator on <em>V</em>,
+ then we find that the induced action of <em>T</em>
+ on the (<em>n</em>-1)st exterior power
+ is the same as its action on <em>V</em><sup>*</sup>
+ multiplied by det(<em>T</em>).
+ This yields the formula connecting the inverse and cofactor matrix
+ of an invertible matrix (a formula which you may also know
+ in the guise of ``Cramer's rule'').
+ <!--
+ One consequence of this formula is that
+ an <em>n</em>-by-<em>n</em> integer matrix <em>A</em>
+ had an inverse with integer entries if and only if
+ |det(<em>A</em>)|=1.  This in turn implies that
+ |det(<em>M</em>)| is an invariant of the lattice
+ <em>L</em>=<em>M</em><strong>Z</strong><sup><em>n</em></sup>.
+ In 55b we'll interpret this invariant as
+ the ``covolume'' of <em>L</em>, that is,
+ the volume of the <em>n</em>-dimensional torus
+ <strong>R</strong><sup><em>n</em></sup>/<em>L</em>.
+ -->
+<li> For each <em>m</em> there is a natural non-degenerate pairing
+ between the <em>m</em>-th exterior powers of
+ <em>V</em> and <em>V</em><sup>*</sup>,
+ which identifies these exterior powers with each other's dual.
+</ul>
+We'll also show that a symmetric (or Hermitian) matrix
+is positive definite <u>iff</u> all its eigenvalues are positive
+<u>iff</u> it has positive principal minors
+(the ``principal minors'' are the determinants
+of the square submatrices of all orders containing the (1,1) entry).
+More generally we'll show that the eigenvalue signs determine
+the signature, as does the sequence of signs of principal minors.
+For positive definiteness, we have the two further
+equivalent conditions: the symmetric (or Hermitian) matrix
+<em>A</em>=(<em>a<sub>ij</sub></em>) is positive definite
+<u>iff</u> there is a basis (<em>v<sub>i</sub></em>)
+of <strong>F</strong><sup><em>n</em></sup> such that
+<em>a<sub>ij</sub></em>=&lt;<em>v<sub>i</sub></em>,<em>v<sub>j</sub></em>&gt;
+for all <em>i</em>,<em>j</em>, and
+<u>iff</u> there is an invertible matrix <em>B</em> such that
+<em>A</em>=<em>BB</em><sup>*</sup>.
+For example, the matrix with entries 1/(<em>i</em>+<em>j</em>-1)
+(``Hilbert matrix'') is positive-definite, because it is
+the matrix of inner products (integrals on [0,1]) of the basis
+1,<em>x</em>,<em>x</em><sup>2</sup>,...,<em>x</em><sup><em>n</em>-1</sup>
+for the polynomials of degree &lt;<em>n</em>.
+Can you find the determinant of this matrix?
+<p>
+More will be said about exterior algebra when differential forms
+appear in Math 55b.
+<P>
+<img src="redball.gif">
+Here's a brief introduction to
+<A HREF="galois.html">field algebra</A> and Galois theory.
+
+<hr>
+
+<!--
+
+<img src="yellowball.gif">
+Here's a batch of practice/review problems
+for the material covered in Math 55a
+(<A HREF="pp.ps">PS</A>,
+<A HREF="pp.pdf">PDF</A>, <A HREF="pp.pdf">PDF'</A>).
+<HR>
+
+-->
+
+<img src="redball.gif">
+First & second problem set: Metric topology
+(<A HREF="p1.ps">PS</A>, <A HREF="p1.pdf">PDF</A>)
+<br>
+<strong>corrected</strong> 19.ix.05
+(clarification in 4(i), typos in 4(iv) and 11, parenthetical addendum in 11)
+<br>
+<strong>corrected again</strong> 20.ix.05:
+#6(ii*) had the wrong condition! :-(
+Shrenik Shah was the first to show it was impossible as first stated.
+
+<P>
+
+<img src="redball.gif">
+Third problem set:
+Metrics, sequences, compactness, and a bit of general topology
+(<A HREF="p3.ps">PS</A>, <A HREF="p3.pdf">PDF</A>)
+<br>
+<!--
+<img src="yellowball.gif"> Problem 8 is the ``Lebesgue Covering Lemma'',
+and <em>r</em> is a ``Lebesgue number'' for the open cover.
+-->
+
+<P>
+
+<img src="redball.gif">
+Fourth problem set: Topology grand finale
+(<A HREF="p4.ps">PS</A>, <A HREF="p4.pdf">PDF</A>)
+<br>
+<!--
+<img src="yellowball.gif"> Problem 2 is ``Urysohn's lemma'',
+and <em>f</em> is a ``Urysohn function''.
+Problem 7 is the Arzela-Ascoli Theorem.
+-->
+
+<P>
+
+<img src="redball.gif">
+Fifth problem set / Linear Algebra I: vector space basics
+(<A HREF="p5.ps">PS</A>, <A HREF="p5.pdf">PDF</A>)
+<P>
+
+<img src="redball.gif">
+Sixth problem set / Linear Algebra II: the dimension and some of its uses
+(<A HREF="p6.ps">PS</A>, <A HREF="p6.pdf">PDF</A>)
+<br>
+<font size=-1>
+<!--
+<img src="yellowball.gif"> In Problem 2, one may construct P explicitly
+  as a linear combination of the polynomials Q(x)/(x-a<sub>i</sub>)
+  where Q is the product of all the (x-a<sub>i</sub>).
+  Or, one can show that the v<sub>i</sub> are linearly independent
+  by interpreting a purported linear dependence as a polynomial
+  of degree less than&nbsp;n with n distinct roots a<sub>i</sub>
+  and noting that such a polynomial must vanish identically.
+-->
+</font>
+
+<P>
+
+<img src="redball.gif">
+Seventh problem set / Linear Algebra III: linear maps and duality
+(<A HREF="p7.ps">PS</A>, <A HREF="p7.pdf">PDF</A>)
+<br>
+<font size=-1>
+<!--
+<img src="yellowball.gif"> For Problem 7, the dual is the product
+(not sum!) of the V<sub>i</sub>.
+If F is finite (or countably infinite), I is countably infinite,
+and each V<sub>i</sub> has positive finite dimension,
+then the direct sum V is countable, but its dual V<sup>*</sup> is not,
+so V and V<sup>*</sup> cannot be isomorphic.
+-->
+</font>
+
+
+<P>
+
+<img src="redball.gif">
+Eighth problem set / Linear Algebra IV: Eigenstuff,
+and a projective overture
+(<A HREF="p8.ps">PS</A>, <A HREF="p8.pdf">PDF</A>)
+<br>
+<strong>corrected</strong> 9.xi.05 (typo in 1/iii)
+
+<P>
+
+<img src="redball.gif">
+Ninth problem set / Linear Algebra V: Tensors, etc.
+(<A HREF="p9.ps">PS</A>, <A HREF="p9.pdf">PDF</A>)
+<br>
+<font size=-1>
+<!--
+<img src="yellowball.gif">
+  For Problem 2: there exist <em>S</em>,<em>T</em>
+  such that <em>ST-TS</em>=<em>I</em>
+  if and only if
+  <em>n</em> is a multiple of the characteristic of <em>F</em>
+  (whether this characteristic is zero or not).
+  This generalizes Corollary 10.13 in Axler;
+  recall that Axler requires that
+  F=<strong>R</strong> or <strong>C</strong>,
+  both of which have characteristic zero.
+  For the proof,
+  ``only if'' follows from the vanishing of the trace of <em>ST-TS</em>,
+  and ``if'' can be obtained by mimicking the example
+  <em>S</em>=<em>d</em>/<em>dx</em>, <em>T</em>=<em>x</em>
+  of operators on <em>F</em>[<em>x</em>]:
+  Let <em>S</em> take the <nobr><em>k</em>-th</nobr> basis vector
+  to <em>k</em> times the <nobr>(<em>k</em>-1)-st</nobr>
+  (<em>k</em>=0,1,2,...,<em>n</em>-1),
+  and let <em>T</em> take the <nobr><em>k</em>-th</nobr> basis vector
+  to the <nobr>(<em>k</em>+1)-st</nobr>
+  (with vectors number -1 and <em>n</em> being zero).
+  This construction overcomes the absence of an
+  <nobr><em>n</em>-th</nobr> basis vector
+  because the image of this vector under <em>S</em>
+  would vanish in any case
+  when <em>n</em> is a multiple of the charcteristic!
+-->
+</font>
+
+<P>
+
+<img src="redball.gif">
+Tenth problem set / Linear Algebra VI:
+Inner products, lattices, and normal operators
+(<A HREF="p10.ps">PS</A>, <A HREF="p10.pdf">PDF</A>)
+<br>
+<img src="yellowball.gif">
+Here's my solution for problem 4 (and 3)
+(<A HREF="p10sol.ps">PS</A>, <A HREF="p10sol.pdf">PDF</A>)
+
+<P>
+
+<img src="redball.gif">
+Eleventh problem set / Linear Algebra VII:
+Fourier foretaste, and symplectic structures
+(<A HREF="p11.ps">PS</A>, <A HREF="p11.pdf">PDF</A>)
+
+<P>
+
+<A NAME="current_homework">
+<img src="orangeball.gif">
+Twelfth and last problem set / Linear Algebra VIII:
+Groups, exterior algebra, and determinants
+(<A HREF="p12.ps">PS</A>, <A HREF="p12.pdf">PDF</A>)
+<br>
+<strong>corrected</strong> 15.xii.05
+(<em>v<sub>i</sub></em>, not ||<em>v<sub>i</sub></em>||, in 6(i);
+typo in 7 -- thanks to Scott K. for both;
+<br>
+also in 7, a sentence to say explicitly
+that <em>k</em> is fixed throughout;
+<br>
+and in the introductory paragraph for 8, the pairing
+is on <em>V</em><sup>*</sup>, not <em>V</em>,
+and the map is from <em>V</em><sup>*</sup> to <em>V</em>,
+not <em>V</em> to <em>V</em><sup>*</sup>);
+<br>
+and (16.xii.05) again in 8, the ``associated pairing'' is now specified.
+
+<!--
+<P>
+
+<img src="redball.gif">
+Seventh problem set / Linear Algebra III: linear maps and duality
+(<A HREF="p7.ps">PS</A>,
+<A HREF="p7.pdf">PDF</A>, <A HREF="p7.pdf">PDF'</A>)
+<strong>corrected</strong> 5.xi.02 (x's instead of a's in problem 8)
+
+
+<img src="redball.gif">
+Tenth problem set / Linear Algebra VI:
+Inner products, lattices, and normal operators
+(<A HREF="p10.ps">PS</A>,
+<A HREF="p10.pdf">PDF</A>, <A HREF="p10.pdf">PDF'</A>)
+
+<blockquote>
+  <img src="purpball.gif">
+  In problem 2, an example of a proper closed subspace <em>W</em>
+  with <em>W</em><sup>\perp</sup>={0} is the space of functions
+  whose integral from 0 to 1/2 vanishes.
+  This <em>W</em> is closed because the functional
+  taking <em>f</em> to the integral of <em>f</em> over [0,1/2]
+  is continuous (with delta=sqrt(2)*epsilon).
+  In the completion of <em>V</em>, this subspace
+  is the orthogonal complement of the 1-dimensional space
+  generated by the characteristic function of the interval [0,1/2];
+  but this characteristic function is not in <em>V</em> itself.
+</blockquote>
+
+Eleventh and last problem set / Linear Algebra VII:
+Fourier foretaste, determinants, and a grand pfinale
+(<A HREF="p11.ps">PS</A>,
+<A HREF="p11.pdf">PDF</A>, <A HREF="p11.pdf">PDF'</A>)
+<strong>corrected</strong> 16.xii.02
+[missing factor of n! in the Pfaffian pformula :-(&nbsp;]
+
+<blockquote>
+  <br>
+  <img src="purpball.gif">
+  Concerning Problem 4: the order-4 Rubik's Cube
+  allows for hidden transpositions of edge ``cubies''
+  (which come in indistinguishable pairs),
+  making it possible to fake a simple transposition
+  by composing it with a hidden switch
+  to create an even permutation!
+</blockquote>
+-->

@@ -1,0 +1,71 @@
+<TITLE>
+Math 55a: Norm basics
+</TITLE>
+
+<body bgcolor="eeccdd">
+
+<H2>
+Math 55a: Norm basics
+</H2>
+
+Let the <em>F</em> be either of the fields
+<strong>R</strong>, <strong>C</strong>,
+and let <em>V</em> be a vector space over <em>F</em>.
+A <em>norm</em> on <em>F</em> is a real-valued function ||&middot;||
+on <em>V</em> satisfying the following axioms:
+<OL>
+<LI> Positivity: ||0||=0, and ||<em>v</em>|| is a positive real number
+for all nonzero vectors <em>v</em>.
+<LI> Homogeneity: ||<em>cv</em>|| = |c| ||<em>v</em>||
+for all scalars <em>c</em> and vectors <em>v</em>.
+<LI> Subadditivity:
+||<em>v</em>+<em>w</em>|| &lt;= ||<em>v</em>|| + ||<em>w</em>||
+for all vectors <em>v</em>,<em>w</em> in <em>V</em>.
+</OL>
+A normed vector space <em>V</em> is automatically a metric space
+with the distance function
+<em>d</em>(<em>v</em>,<em>w</em>):=||<em>v</em>-<em>w</em>||.
+(This still holds if Homogeneity is replaced by the weaker axiom
+||<em>v</em>||=||-<em>v</em>||.)
+
+<p>
+
+Two norms, say ||&middot;|| and [[&middot;]],
+on a vector space are said to be <em>equivalent</em>
+if there exist positive constants <em>C</em>,<em>C</em>'
+such that ||<em>v</em>||&lt;=<em>C</em>[[<em>v</em>]]
+and [[<em>v</em>]]&lt;=<em>C</em>'||<em>v</em>||
+for all vectors&nbsp;<em>v</em>.
+Equivalent norms yield the same notions of
+open/closed/bounded/compact sets,
+convergence, continuity and uniform continuity, and completeness.
+
+<p>
+
+<em>If V is finite-dimensional, all norms on V are equivalent.</em>
+In particular, the above notions are canonically defined,
+independent of choices of basis or norm (since we already know
+that any finite-dimensional <em>F</em>-vector space already has
+at least one norm).  Proof: First check that equivalence of norms
+is in fact an equivalence relation.  It is then enough to fix one norm
+||&middot;||, say the sup norm relative to some choice of basis,
+and show that any other norm is equivalent to it.
+Using homogeneity and subadditivity we see that
+[[<em>v</em>]]&lt;=<em>C</em>'||<em>v</em>||
+where <em>C</em>' is the sum of the [[&middot;]]-norms
+of the unit vectors.  In particular, it follows that
+the function [[&middot;]] is continuous in the ||&middot;||-metric.
+The get the reverse inequality, first use homogeneity
+to reduce it to the case of ||<em>v</em>||=1.
+The set of such vectors <em>v</em> is closed and bounded,
+hence compact by Heine-Borel.  The function 1/[[&middot;]]
+on this set is continuous, because it is the multiplicative inverse
+of a continuous function to the <em>positive</em> reals.
+Hence it is bounded.  We may use an upper bound for <em>C</em>.
+
+<p>
+
+An infinite-dimensional vector space may have inequivalent norms.
+For example, you can easily check that the sup and sum norms on
+<em>F</em><sup>oo</sup> are not equivalent, and readily construct
+many more pairwise inequivalent norms on this space.

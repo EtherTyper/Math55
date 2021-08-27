@@ -1,0 +1,143 @@
+<TITLE>
+Math 55a: A preview of ``abstract nonsense''
+</TITLE>
+
+<body bgcolor="eecccc">
+
+<H2>
+Math 55a: A preview of ``abstract nonsense''
+</H2>
+
+Suppose we have a sequence of vector spaces and linear maps
+
+<center>
+... --&gt;
+<em>V</em><sub><em>n</em>-1</sub> --&gt;
+<em>V</em><sub><em>n</em></sub> --&gt;
+<em>V</em><sub><em>n</em>+1</sub> --&gt;
+...
+</center>
+
+The sequence is said to be ``exact at <em>V<sub>n</sub></em>''
+if the kernel of the map
+<em>V</em><sub><em>n</em></sub>--&gt;<em>V</em><sub><em>n</em>+1</sub>
+equals the image of the map
+<em>V</em><sub><em>n</em>-1</sub>--&gt;<em>V</em><sub><em>n</em></sub>.
+[As a consequence, the composite map
+<em>V</em><sub><em>n</em>-1</sub>--&gt;<em>V</em><sub><em>n+1</em></sub>
+must be the zero map.]  The sequence is said to be ``exact''
+if it is exact at each vector space with an incoming and outgoing arrow.
+
+<p>
+
+The simplest cases:
+<UL>
+<LI>
+0 --&gt; <em>V</em><sub>1</sub> --&gt; 0
+is exact iff <em>V</em><sub>1</sub> is the zero space.
+<LI>
+0 --&gt; <em>V</em><sub>1</sub> --&gt; <em>V</em><sub>2</sub> --&gt; 0
+is exact iff the map
+<em>V</em><sub>1</sub>--&gt;<em>V</em><sub>2</sub>
+is an isomorphism.
+<LI>
+0 --&gt; <em>V</em><sub>1</sub> --&gt; <em>V</em><sub>2</sub>
+ --&gt; <em>V</em><sub>3</sub> --&gt; 0
+is exact iff 
+<em>V</em><sub>1</sub>--&gt;<em>V</em><sub>2</sub>
+is an injection,
+<em>V</em><sub>2</sub>--&gt;<em>V</em><sub>3</sub>
+is a surjection, and the image of the first map
+equals the kernel of the second; that is, if and only if
+the sequence is equivalent to
+<center>
+0 --&gt; <em>U</em> --&gt; <em>V</em>
+ --&gt; <em>V</em>/<em>U</em> --&gt; 0
+</center>
+for some vector space <em>V</em> with a subspace <em>U</em>
+mapped into <em>V</em> using the restriction to <em>U</em>
+of the identity map on <em>V</em>.
+</UL>
+An exact sequence
+ 0 --&gt; <em>U</em> --&gt; <em>V</em>
+ --&gt; <em>V</em>/<em>U</em> --&gt; 0
+is called a ``short exact sequence''; an exact sequence
+involving four or more vector spaces between the initial and final zero
+is called a ``long exact sequence''.  In any exact sequence
+of finite-dimensional vector spaces with an initial and final zero,
+the dimensions of the even- and odd-numbered vector spaces
+in the sequence have the same sum; in other words,
+the alternating sum of the dimensions
+(a.k.a. the ``Euler characteristic'' of the sequence) vanishes.
+[Check that this holds for the above cases of sequences of length
+at most 3.]
+
+<p>
+
+(Much the same definitions are made for sequences
+in some other ``categories'', such as groups,
+or modules over a given ring.  For instance,
+<center>
+0 --&gt; <strong>Z</strong> --&gt; <strong>Z</strong>
+ --&gt; <strong>Z</strong>/<em>N</em><strong>Z</strong> --&gt; 0
+</center>
+is a short exact sequence of commutative groups
+if we use multiplication by <em>N</em> as the map
+<strong>Z</strong>--&gt;<strong>Z</strong>.)
+
+<p>
+
+If the vector spaces <em>V<sub>n</em></sub>
+in our exact sequence are finite dimensional
+then the dual spaces <em>V<sub>n</em></sub><sup>*</sup>
+form an exact sequence with the arrows going in the opposite direction:
+
+<center>
+... &lt;--
+<em>V</em><sub><em>n</em>-1</sub> &lt;--
+<em>V</em><sub><em>n</em></sub> &lt;--
+<em>V</em><sub><em>n</em>+1</sub> &lt;--
+...
+</center>
+
+<font size=-1>
+[A mathematician enamored with abstract nonsense
+would express this fact by saying that ``duality
+is an exact contravariant functor on the catogery
+of finite-dimensional vector spaces and linear maps'';
+the canonical identification of the second dual
+<em>V</em><sup>**</sup> of every finite-dimensiona
+vector space <em>V</em> with <em>V</em> would likewise
+give rise to an ``exact covariant functor'' on the same category.]
+</font>
+
+<p>
+
+For instance, if we dualize
+<center>
+0 --&gt; <em>U</em> --&gt; <em>V</em>
+ --&gt; <em>V</em>/<em>U</em> --&gt; 0
+</center>
+we get
+<center>
+0 &lt;-- <em>U</em><sup>*</sup> &lt;-- <em>V</em><sup>*</sup>
+ &lt;-- (<em>V</em>/<em>U</em>)<sup>*</sup> &lt;-- 0
+</center>
+Which is to say that (<em>V</em>/<em>U</em>)<sup>*</sup>
+is the kernel of a surjective linear map from
+<em>V</em><sup>*</sup> to <em>U</em><sup>*</sup>
+obtained from the injection of <em>U</em> into <em>V</em>.
+This map is none other than the restriction map from
+linear functionals on <em>V</em> to linear functionals on <em>U</em>;
+the kernel of this map consists exactly of those linear functionals
+that vanish on all of <em>U</em>.  So we recover the fact that
+(<em>V</em>/<em>U</em>)<sup>*</sup> is the annihilator
+of <em>U</em> in <em>V</em><sup>*</sup>,
+and that the quotient of <em>V</em><sup>*</sup>
+by its subspace (<em>V</em>/<em>U</em>)<sup>*</sup>
+is canonically identified with <em>U</em><sup>*</sup>.
+
+<p>
+
+How much of this still works if we drop the requirement that
+<em>V</em> be finite dimensional?
